@@ -166,7 +166,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 독일공산당: [+ kpd_votes +]%
 
-[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
+[? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
 
 독일인민당: [+ dvp_votes +]%
 
