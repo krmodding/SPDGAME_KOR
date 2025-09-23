@@ -10,9 +10,9 @@ go-to: start_menu_2
 
 @start_menu_2
 
-- @start: Start game
-- @election_simulation: Election simulation
-- @credits: Credits
+- @start: 게임 시작
+- @election_simulation: 선거 시뮬레이션
+- @credits: 크레딧
 - @game_over.achievements
 
 
