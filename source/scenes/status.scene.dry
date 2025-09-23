@@ -156,7 +156,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 = 투표 결과 예측
 
-(지금 선거가 치러진다면):
+(지금 선거가 치러진다면?):
 
 사회민주당: [+ spd_votes +]%
 
