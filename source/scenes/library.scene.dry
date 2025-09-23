@@ -9,16 +9,16 @@ go-to: menu
 
 @menu
 
-- @government: Germany's system of government
-- @weimar_timeline: Timeline of the Weimar Republic before 1928
-- @curr_gov: Current government details
-- @demographics: Demographics
-- @parties: Parties
-- @public_opinion: Public opinion (and projected election results)
-- @paramilitaries: Paramilitary groups
-- @factions: Internal factions
-- @figures: Figures and charts
-- @backSpecialScene: Exit library.
+- @government: 독일의 정부 시스템
+- @weimar_timeline: 1928년 이전의 바이마르 공화국 연대표
+- @curr_gov: 현정부 세부사항
+- @demographics: 인구통계
+- @parties: 정당
+- @public_opinion: 여론 (투표 결과 예측)
+- @paramilitaries: 준군사조직
+- @factions: 내부정파
+- @figures: 의석수 그래프와 차트
+- @backSpecialScene: Library 나가기.
 
 @government
 go-to: menu
