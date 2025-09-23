@@ -141,11 +141,11 @@ if (Q.sa_strength) {
 
 군 충성도: [+ reichswehr_loyalty : loyalty +]
 
-프로이센 경찰 인력: [+ prussian_police_strength +] 천 명.
+프로이센 자유주 경찰 인력: [+ prussian_police_strength +] 천 명.
 
-경찰 충성도: [+ prussian_police_loyalty : loyalty +]
+프로이센 경찰 충성도: [+ prussian_police_loyalty : loyalty +]
 
-[? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
+[? if spd_in_government : 공화국 경찰 충성도: [+ interior_police_loyalty : loyalty +] ?]
 
 @polls
 on-arrival: {!
@@ -166,7 +166,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 독일 공산당: [+ kpd_votes +]%
 
-[? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
+[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
 
 독일 인민당: [+ dvp_votes +]%
 
