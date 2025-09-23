@@ -190,4 +190,4 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 종교인(가톨릭): SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
-공화정에 대한 지지도: [+ pro_republic_disp +]%
+공화국에 대한 지지도: [+ pro_republic_disp +]%
