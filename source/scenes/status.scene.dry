@@ -16,7 +16,7 @@ if (Q.economic_growth) {
 
 = **현황**
 
-[+ year +]년, [+ month : month +].
+[+ year +]년 [+ month : month +].
 
 정치자금: [+ resources +]
 
