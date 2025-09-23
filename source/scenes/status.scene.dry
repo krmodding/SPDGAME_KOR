@@ -27,7 +27,7 @@ if (Q.economic_growth) {
 
 [? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
-당내불만도: [+ dissent_percent : dissent +]
+당내갈등: [+ dissent_percent : dissent +]
 
 = **정부**
 
