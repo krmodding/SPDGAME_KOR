@@ -16,7 +16,7 @@ if (Q.economic_growth) {
 
 = 현황
 
-[+ year +] [+ month : month +]
+[+ year +]년, [+ month : month +].
 
 정치자금: [+ resources +]
 
@@ -38,20 +38,20 @@ if (Q.economic_growth) {
 공화국의회(하원) 구성:
 
 # 1928: 30, 1930: 25, 1932: 22
-{!<span class="tooltip-text" title="Social Democratic Party of Germany">사민당</span>!}: [+ spd_r +]%
+{!<span class="tooltip-text" title="독일 사회민주당">사민당</span>!}: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-{!<span class="tooltip-text" title="Center Party + Bavarian People's Party">Z/BVP</span>!}: [+ z_r +]%
+{!<span class="tooltip-text" title="독일 중앙당 + 바이에른 인민당">Z/BVP</span>!}: [+ z_r +]%
 # 1928: 10, 1930: 13
-{!<span class="tooltip-text" title="Communist Party of Germany">공산당</span>!}: [+ kpd_r +]%
+{!<span class="tooltip-text" title="독일 공산당">공산당</span>!}: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-{!<span class="tooltip-text" title="German Democratic Party">!}[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_r +]%
+{!<span class="tooltip-text" title="독일 민주당">!}[? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-{!<span class="tooltip-text" title="German People's Party">인민당</span>!}: [+ dvp_r +]%
+{!<span class="tooltip-text" title="독일 인민당">인민당</span>!}: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-{!<span class="tooltip-text" title="German National People's Party">국가인민당</span>!}: [+ dnvp_r +]%
+{!<span class="tooltip-text" title="독일 국가인민당">국가인민당</span>!}: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">나치당</span>!}: [+ nsdap_r +]%
+{!<span class="tooltip-text" title="국가사회주의 독일 노동자당 (나치)">나치당</span>!}: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
@@ -78,7 +78,7 @@ Others: [+ other_r +]%
 
 {!<span class="tooltip-text" title="독일 중앙당">중앙당</span>!}: [+ z_relation : relationships +]
 
-{!<span class="tooltip-text" title="독일 민주당">!}[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_relation : relationships +]
+{!<span class="tooltip-text" title="독일 민주당">!}[? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_relation : relationships +]
 
 {!<span class="tooltip-text" title="독일 인민당">인민당</span>!}: [+ dvp_relation : relationships +]
 
@@ -86,17 +86,17 @@ Others: [+ other_r +]%
 
 {!<span class="tooltip-text" title="독일 국가인민당">국가인민당</span>!}: [+ dnvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="국가사회주의 독일 노동자당 (나치당)">나치당</span>!}: [+ nsdap_relation : relationships +]
+{!<span class="tooltip-text" title="국가사회주의 독일 노동자당 (나치)">나치당</span>!}: [+ nsdap_relation : relationships +]
 
-= 사회민주당 내부정파 관계도
+= 사회민주당 내부정파
 
-{!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">좌파</span>!}와의 관계: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+{!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">좌파</span>!}와의 관계: [+ left_strength : strength +], 반감도: [+ left_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">중도파</span>!}와의 관계: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+{!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">중도파</span>!}와의 관계: [+ center_strength : strength +], 반감도: [+ center_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">노동계</span>!}와의 관계: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
+{!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">노동계</span>!}와의 관계: [+ labor_strength : strength +], 반감도: [+ labor_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">개혁주의자</span>!}와의 관계: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
+{!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">개혁주의자</span>!}와의 관계: [+ reformist_strength : strength +], 반감도: [+ reformist_dissent : dissent +]
 
 [? if neorevisionism > 0 : 신수정주의자와의 관계: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
 
