@@ -78,7 +78,7 @@ if (Q.economic_growth) {
 
 {!<span class="tooltip-text" title="독일 중앙당">중앙당</span>!}: [+ z_relation : relationships +]
 
-{!<span class="tooltip-text" title="독일 민주당">!}[? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_relation : relationships +]
+{!<span class="tooltip-text" title="독일 민주당">!}[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_relation : relationships +]
 
 {!<span class="tooltip-text" title="독일 인민당">인민당</span>!}: [+ dvp_relation : relationships +]
 
@@ -178,16 +178,16 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 **각 집단별 상세 결과**
 
-블루칼라: 사민당: [+ workers_spd_display +]%, 중앙당: [+ workers_z_display +]%, 공산당: [+ workers_kpd_display +]%, [? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, 인민당: [+ workers_dvp_display +]%; 국가인민당: [+ workers_dnvp_display +]%, 나치당: [+ workers_nsdap_display +]%, 기타: [+ workers_other_display +]% [? if sapd_formed: 사노당: [+ workers_sapd_display +]% ?]
+블루칼라: 사민당: [+ workers_spd_display +]%, 중앙당: [+ workers_z_display +]%, 공산당: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, 인민당: [+ workers_dvp_display +]%; 국가인민당: [+ workers_dnvp_display +]%, 나치당: [+ workers_nsdap_display +]%, 기타: [+ workers_other_display +]% [? if sapd_formed: 사노당: [+ workers_sapd_display +]% ?]
 
-신중산층: 사민당: [+ new_middle_spd_display +]%, 중앙당: [+ new_middle_z_display +]%, 공산당: [+ new_middle_kpd_display +]%, [? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, 인민당: [+ new_middle_dvp_display +]%; 국가인민당: [+ new_middle_dnvp_display +]%, 나치당: [+ new_middle_nsdap_display +]%, 기타: [+ new_middle_other_display +]% [? if sapd_formed: 사노당: [+ new_middle_sapd_display +]% ?]
+신중산층: 사민당: [+ new_middle_spd_display +]%, 중앙당: [+ new_middle_z_display +]%, 공산당: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, 인민당: [+ new_middle_dvp_display +]%; 국가인민당: [+ new_middle_dnvp_display +]%, 나치당: [+ new_middle_nsdap_display +]%, 기타: [+ new_middle_other_display +]% [? if sapd_formed: 사노당: [+ new_middle_sapd_display +]% ?]
 
-구중산층: 사민당: [+ old_middle_spd_display +]%, 중앙당: [+ old_middle_z_display +]%, 공산당: [+ old_middle_kpd_display +]%, [? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, 인민당: [+ old_middle_dvp_display +]%; 국가인민당: [+ old_middle_dnvp_display +]%, 나치당: [+ old_middle_nsdap_display +]%, 기타: [+ old_middle_other_display +]% [? if sapd_formed: 사노당: [+ old_middle_sapd_display +]% ?]
+구중산층: 사민당: [+ old_middle_spd_display +]%, 중앙당: [+ old_middle_z_display +]%, 공산당: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, 인민당: [+ old_middle_dvp_display +]%; 국가인민당: [+ old_middle_dnvp_display +]%, 나치당: [+ old_middle_nsdap_display +]%, 기타: [+ old_middle_other_display +]% [? if sapd_formed: 사노당: [+ old_middle_sapd_display +]% ?]
 
-농촌민: 사민당: [+ rural_spd_display +]%, 중앙당: [+ rural_z_display +]%, 공산당: [+ rural_kpd_display +]%, [? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, 인민당: [+ rural_dvp_display +]%; 국가인민당: [+ rural_dnvp_display +]%, 나치당: [+ rural_nsdap_display +]%, 기타: [+ rural_other_display +]% [? if sapd_formed: 사노당: [+ rural_sapd_display +]% ?]
+농촌민: 사민당: [+ rural_spd_display +]%, 중앙당: [+ rural_z_display +]%, 공산당: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, 인민당: [+ rural_dvp_display +]%; 국가인민당: [+ rural_dnvp_display +]%, 나치당: [+ rural_nsdap_display +]%, 기타: [+ rural_other_display +]% [? if sapd_formed: 사노당: [+ rural_sapd_display +]% ?]
 
-실업자: 사민당: [+ unemployed_spd_display +]%, 중앙당: [+ unemployed_z_display +]%, 공산당: [+ unemployed_kpd_display +]%, [? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, 인민당: [+ unemployed_dvp_display +]%; 국가인민당: [+ unemployed_dnvp_display +]%, 나치당: [+ unemployed_nsdap_display +]%, 기타: [+ unemployed_other_display +]% [? if sapd_formed: 사노당: [+ unemployed_sapd_display +]% ?]
+실업자: 사민당: [+ unemployed_spd_display +]%, 중앙당: [+ unemployed_z_display +]%, 공산당: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, 인민당: [+ unemployed_dvp_display +]%; 국가인민당: [+ unemployed_dnvp_display +]%, 나치당: [+ unemployed_nsdap_display +]%, 기타: [+ unemployed_other_display +]% [? if sapd_formed: 사노당: [+ unemployed_sapd_display +]% ?]
 
-종교인(가톨릭): 사민당: [+ catholics_spd_display +]%, 중앙당: [+ catholics_z_display +]%, 공산당: [+ catholics_kpd_display +]%, [? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, 인민당: [+ catholics_dvp_display +]%; 국가인민당: [+ catholics_dnvp_display +]%, 나치당: [+ catholics_nsdap_display +]%, 기타: [+ catholics_other_display +]% [? if sapd_formed: 사노당: [+ catholics_sapd_display +]% ?]
+종교인(가톨릭): 사민당: [+ catholics_spd_display +]%, 중앙당: [+ catholics_z_display +]%, 공산당: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, 인민당: [+ catholics_dvp_display +]%; 국가인민당: [+ catholics_dnvp_display +]%, 나치당: [+ catholics_nsdap_display +]%, 기타: [+ catholics_other_display +]% [? if sapd_formed: 사노당: [+ catholics_sapd_display +]% ?]
 
 공화국에 대한 지지도: [+ pro_republic_disp +]%
