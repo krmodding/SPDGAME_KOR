@@ -88,7 +88,7 @@ if (Q.economic_growth) {
 
 {!<span class="tooltip-text" title="국가사회주의 독일 노동자당 (나치)">나치당</span>!}: [+ nsdap_relation : relationships +]
 
-= **사회민주당 내부정파**
+= **내부정파**
 
 {!<span class="tooltip-text" title="좌파는 급진적이고 변혁적인 정책과 공산당과의 협력에 관심이 있다.">좌파</span>!}와의 관계: [+ left_strength : strength +], 반감도: [+ left_dissent : dissent +]
 
@@ -119,15 +119,15 @@ if (Q.sa_strength) {
 
 = **준군사조직**
 
-{!<span class="tooltip-text" title="흑적금 국기단은 민주주의를 수호하기 위한 대중 조직으로, 주로 사민당과 연계되어 있다.">국기단</span>!} 병력 수: [+ rb_strength_2 +] 천 명
+{!<span class="tooltip-text" title="흑적금 국기단은 민주주의를 수호하기 위한 대중 조직이다. 주로 사민당과 연계되어 있다.">국기단</span>!} 병력 수: [+ rb_strength_2 +] 천 명
 
 국기단 군사화: [+ rb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="적색전선전사동맹은 공산당과 연계된 공산주의 단체이다.">적색단</span>!} 병력 수: [+ rfb_strength_2 +] 천 명
+{!<span class="tooltip-text" title="적색전선전사동맹은 공산당과 관련있는 공산주의 단체이다.">적색단</span>!} 병력 수: [+ rfb_strength_2 +] 천 명
 
 적색단 군사화: [+ rfb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="전선병사동맹 철모단은 독일 국가인민당과 연계된 우익 성향의 참전용사 단체이다.">철모단</span>!} 병력 수: [+ sh_strength_2 +] 천 명
+{!<span class="tooltip-text" title="전선병사동맹 철모단은 우익 성향의 참전용사 단체이다. 독일 국가인민당과 관련있다.">철모단</span>!} 병력 수: [+ sh_strength_2 +] 천 명
 
 철모단 군사화: [+ sh_militancy : militancy +]
 
