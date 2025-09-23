@@ -141,7 +141,7 @@ if (Q.sa_strength) {
 
 군 충성도: [+ reichswehr_loyalty : loyalty +]
 
-프로이센 자유주 경찰 인력: [+ prussian_police_strength +] 천 명.
+프로이센 주 경찰 인력: [+ prussian_police_strength +] 천 명.
 
 프로이센 경찰 충성도: [+ prussian_police_loyalty : loyalty +]
 
