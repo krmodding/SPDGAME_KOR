@@ -14,7 +14,7 @@ if (Q.economic_growth) {
 }
 !}
 
-= 현황
+= **현황**
 
 [+ year +]년, [+ month : month +].
 
@@ -29,7 +29,7 @@ if (Q.economic_growth) {
 
 당내불만도: [+ dissent_percent : dissent +]
 
-= 정부
+= **정부**
 
 국가대통령: [+ president +]
 
@@ -59,7 +59,7 @@ Others: [+ other_r +]%
 
 다음선거일: [+ next_election_year +] [+ next_election_month : month +]
 
-= 경제
+= **경제**
 
 인플레이션: [+ inflation_2 +]%
 
@@ -73,7 +73,7 @@ Others: [+ other_r +]%
 
 @politics
 
-= 정당관계도
+= **정당관계도**
 
 
 {!<span class="tooltip-text" title="독일 중앙당">중앙당</span>!}: [+ z_relation : relationships +]
@@ -88,7 +88,7 @@ Others: [+ other_r +]%
 
 {!<span class="tooltip-text" title="국가사회주의 독일 노동자당 (나치)">나치당</span>!}: [+ nsdap_relation : relationships +]
 
-= 사회민주당 내부정파
+= **사회민주당 내부정파**
 
 {!<span class="tooltip-text" title="좌파는 급진적이고 변혁적인 정책과 공산당과의 협력에 관심이 있다.">좌파</span>!}와의 관계: [+ left_strength : strength +], 반감도: [+ left_dissent : dissent +]
 
@@ -117,7 +117,7 @@ if (Q.sa_strength) {
 }
 !}
 
-= 준군사조직
+= **준군사조직**
 
 {!<span class="tooltip-text" title="흑적금 국기단은 민주주의를 수호하기 위한 대중 조직으로, 주로 사민당과 연계되어 있다.">국기단</span>!} 병력 수: [+ rb_strength_2 +] 천 명
 
@@ -135,7 +135,7 @@ if (Q.sa_strength) {
 
 돌격대 군사화: [+ sa_militancy : militancy +]
 
-= 정규군/치안조직
+= **정규군/치안조직**
 
 국가방위군 병력: [+ reichswehr_strength +] 천 명.
 
@@ -154,7 +154,7 @@ Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
 !}
 
-= 투표 결과 예측
+= **투표 결과 예측**
 
 (지금 선거가 치러진다면?):
 
