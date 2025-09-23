@@ -162,7 +162,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-중앙당/바이에른인민당: [+ z_votes +]%
+중앙당/바이에른 인민당: [+ z_votes +]%
 
 독일공산당: [+ kpd_votes +]%
 
@@ -190,4 +190,4 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 종교인(가톨릭): 사민당: [+ catholics_spd_display +]%, 중앙당: [+ catholics_z_display +]%, 공산당: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, 인민당: [+ catholics_dvp_display +]%; 국가인민당: [+ catholics_dnvp_display +]%, 나치당: [+ catholics_nsdap_display +]%, 기타: [+ catholics_other_display +]% [? if sapd_formed: 사노당: [+ catholics_sapd_display +]% ?]
 
-공화국에 대한 지지도: [+ pro_republic_disp +]%
+**공화국에 대한 지지도: [+ pro_republic_disp +]%**
