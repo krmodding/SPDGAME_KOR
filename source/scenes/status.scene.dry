@@ -158,19 +158,19 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 **(지금 선거가 치러진다면?)**:
 
-사회민주당: [+ spd_votes +]%
+독일 사회민주당: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-중앙당/바이에른 인민당: [+ z_votes +]%
+독일 중앙당/바이에른 인민당: [+ z_votes +]%
 
-독일공산당: [+ kpd_votes +]%
+독일 공산당: [+ kpd_votes +]%
 
 [? if not ddp_name: 민주당?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
 
-독일인민당: [+ dvp_votes +]%
+독일 인민당: [+ dvp_votes +]%
 
-독일국가인민당: [+ dnvp_votes +]%
+독일 국가인민당: [+ dnvp_votes +]%
 
 국가사회주의 독일 노동자당: [+ nsdap_votes +]%
 
