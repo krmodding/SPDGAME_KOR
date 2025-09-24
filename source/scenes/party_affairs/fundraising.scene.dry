@@ -1,4 +1,4 @@
-title: Fundraising
+title: 자금
 new-page: true
 view-if: fundraising_timer <= 0 and (not historical_mode)
 on-arrival: fundraising_timer = 6; month_actions += 1
