@@ -1,4 +1,4 @@
-title: Inter-Party Relationships
+title: 정당 간 관계
 new-page: true
 view-if: year <= 1932 and inter_party_relationships_timer <= 0
 tags: party_affairs
