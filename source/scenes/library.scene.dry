@@ -18,7 +18,7 @@ go-to: menu
 - @paramilitaries: 준군사조직
 - @factions: 내부정파
 - @figures: 의석수 그래프와 차트
-- @backSpecialScene: Library 나가기.
+- @backSpecialScene: 나가기
 
 @government
 go-to: menu
