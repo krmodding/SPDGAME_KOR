@@ -201,7 +201,7 @@ go-to: menu
 
 신중산층 - 사민당: [+ new_middle_spd_display +]%, 중앙당: [+ new_middle_z_display +]%, 공산당: [+ new_middle_kpd_display +]%, [+ ddp_name +]: [+ new_middle_ddp_display +]%, DVP: [+ new_middle_dvp_display +]%; 국가인민당: [+ new_middle_dnvp_display +]%, 나치당: [+ new_middle_nsdap_display +]%, 기타: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-구중산층: 사민당: [+ old_middle_spd_display +]%, 중앙당: [+ old_middle_z_display +]%, 공산당: [+ old_middle_kpd_display +]%, [+ ddp_name +]: [+ old_middle_ddp_display +]%, DVP: [+ old_middle_dvp_display +]%; 국가인민당: [+ old_middle_dnvp_display +]%, 나치당: [+ old_middle_nsdap_display +]%, 기타: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+구중산층 - 사민당: [+ old_middle_spd_display +]%, 중앙당: [+ old_middle_z_display +]%, 공산당: [+ old_middle_kpd_display +]%, [+ ddp_name +]: [+ old_middle_ddp_display +]%, DVP: [+ old_middle_dvp_display +]%; 국가인민당: [+ old_middle_dnvp_display +]%, 나치당: [+ old_middle_nsdap_display +]%, 기타: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
 농촌민: 사민당: [+ rural_spd_display +]%, 중앙당: [+ rural_z_display +]%, 공산당: [+ rural_kpd_display +]%, [+ ddp_name +]: [+ rural_ddp_display +]%, DVP: [+ rural_dvp_display +]%; 국가인민당: [+ rural_dnvp_display +]%, 나치당: [+ rural_nsdap_display +]%, 기타: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
