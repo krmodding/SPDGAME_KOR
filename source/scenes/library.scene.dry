@@ -296,50 +296,50 @@ go-to: neorevisionists if neorevisionism > 0; menu if neorevisionism <= 0
 
 **Internal factions of the SPD**
 
-Overall dissent: [+ dissent_percent : dissent +]
+당내갈등: [+ dissent_percent : dissent +]
 
-**Left**
+**좌파**
 
-Many leftists are former members of the USPD (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the KPD, and some support extraparliamentary action.
+많은 좌파들은 과거 "독립"사회민주당 출신이거나 젊은 급진주의자들로 구성되어 있다. 다수는 공산당과의 긴밀한 협력을 원하며, 일부는 원외활동을 지원한다.
 
-Strength: [+ left_strength : strength +]
+유대감: [+ left_strength : strength +]
 
-Dissent: [+ left_dissent : dissent +]
+반감도: [+ left_dissent : dissent +]
 
-**Centrists**
+**중도파**
 
-Centrists in the SPD are followers of the doctrine of orthodox Marxism as expounded by Karl Kautsky and later Rudolf Hilferding. They seek a middle course between reform and revolution, while defending the democratic state.
+중도파는 카를 카우츠키와 루돌프 힐퍼딩이 정립한 정통 마르크스주의 교리를 따른다. 이들은 민주주의를 수호하는 동시에, 개혁과 혁명 사이의 중간 노선을 추구한다.
 
-Strength: [+ center_strength : strength +]
+유대감: [+ center_strength : strength +]
 
-Dissent: [+ center_dissent : dissent +]
+반감도: [+ center_dissent : dissent +]
 
-**Labor**
+**노동파**
 
-Many SPD members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
+사민당의 다수는 자유노동조합 연맹체인 일반독일노동조합동맹(ADGB)의 회원이다. 그들은 경제 개혁과 노동자들의 복지 증진을 원한다.
 
-Strength: [+ labor_strength : strength +]
+유대감: [+ labor_strength : strength +]
 
-Dissent: [+ labor_dissent : dissent +]
+반감도: [+ labor_dissent : dissent +]
 
-**Reformists**
+**개혁주의**
 
-Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the far right and left. [? if spd_prussia : They are dominant in the state government of Prussia. ?]
+개혁주의자들은 정부 내에서 실용주의를 추구한다. 복지국가를 달성하기 위해 노력하고, 극우·극좌 세력으로부터 민주주의를 수호하려 한다. [? if spd_prussia : 그들은 현재 프로이센 주정부를 지배하고 있다. ?]
 
-Strength: [+ reformist_strength : strength +]
+유대감: [+ reformist_strength : strength +]
 
-Dissent: [+ reformist_dissent : dissent +]
+반감도: [+ reformist_dissent : dissent +]
 
 @neorevisionists
 go-to: menu
 
-**Neorevisionists**
+**신수정주의**
 
-Neorevisionists focus on defending the republic and expanding democracy, while also expanding the party's base beyond the working class to create a people's party. They support new propaganda methods and extraparliamentary action in defense of the republic.
+신수정주의자들은 민주주의 확대에 주력하는 한편, 노동계급을 초월해 당의 기반을 확장하길 원한다. 대중정당 노선을 걷고자 하며, 공화국 수호를 위한 새로운 선전 방법과 원외활동을 모색한다.
 
-Strength: [+ neorevisionist_strength : strength +]
+유대감: [+ neorevisionist_strength : strength +]
 
-Dissent: [+ neorevisionist_dissent : dissent +]
+반감도: [+ neorevisionist_dissent : dissent +]
 
 
 @figures
