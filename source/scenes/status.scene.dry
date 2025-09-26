@@ -21,7 +21,7 @@ if (Q.economic_growth) {
 정치자금: [+ resources +]
 
 사민당 위치: [? if spd_toleration : 신임공급 ?][? if spd_in_government : 정부구성 - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : 야당 ?][? if spd_caretaker : 임시내각 ?]
-[? if in_weimar_coalition and spd_in_government: 바이마르 연정 ?][? if in_grand_coalition and spd_in_government: 대연정 ?][? if in_popular_front and spd_in_government: 인민전선 ?][? if in_left_front and spd_in_government: 좌파전선 ?][? if in_spd_majority and spd_in_government: 다수당 ?][? if in_minority_government and spd_in_government: 소수당 ?][? if in_emergency_government and spd_in_government: 비상내각 ?]
+[? if in_weimar_coalition and spd_in_government: 바이마르 연정 ?][? if in_grand_coalition and spd_in_government: 대연정 ?][? if in_popular_front and spd_in_government: 인민전선 ?][? if in_left_front and spd_in_government: 좌파전선 ?][? if in_spd_majority and spd_in_government: 집권다수당 ?][? if in_minority_government and spd_in_government: 집권소수당 ?][? if in_emergency_government and spd_in_government: 비상내각 ?]
 
 [? if spd_in_government and not in_spd_majority and not in_left_front : 연정갈등: [+ coalition_dissent : coalition_dissent +] ?]
 
@@ -178,16 +178,16 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 **각 집단별 상세 결과**
 
-블루칼라: 사민당: [+ workers_spd_display +]%, 중앙당: [+ workers_z_display +]%, 공산당: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, 인민당: [+ workers_dvp_display +]%; 국가인민당: [+ workers_dnvp_display +]%, 나치당: [+ workers_nsdap_display +]%, 기타: [+ workers_other_display +]% [? if sapd_formed: 사노당: [+ workers_sapd_display +]% ?]
+블루칼라 - 사민당: [+ workers_spd_display +]%, 중앙당: [+ workers_z_display +]%, 공산당: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, 인민당: [+ workers_dvp_display +]%; 국가인민당: [+ workers_dnvp_display +]%, 나치당: [+ workers_nsdap_display +]%, 기타: [+ workers_other_display +]% [? if sapd_formed: 사노당: [+ workers_sapd_display +]% ?]
 
-신중산층: 사민당: [+ new_middle_spd_display +]%, 중앙당: [+ new_middle_z_display +]%, 공산당: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, 인민당: [+ new_middle_dvp_display +]%; 국가인민당: [+ new_middle_dnvp_display +]%, 나치당: [+ new_middle_nsdap_display +]%, 기타: [+ new_middle_other_display +]% [? if sapd_formed: 사노당: [+ new_middle_sapd_display +]% ?]
+신중산층 - 사민당: [+ new_middle_spd_display +]%, 중앙당: [+ new_middle_z_display +]%, 공산당: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, 인민당: [+ new_middle_dvp_display +]%; 국가인민당: [+ new_middle_dnvp_display +]%, 나치당: [+ new_middle_nsdap_display +]%, 기타: [+ new_middle_other_display +]% [? if sapd_formed: 사노당: [+ new_middle_sapd_display +]% ?]
 
-구중산층: 사민당: [+ old_middle_spd_display +]%, 중앙당: [+ old_middle_z_display +]%, 공산당: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, 인민당: [+ old_middle_dvp_display +]%; 국가인민당: [+ old_middle_dnvp_display +]%, 나치당: [+ old_middle_nsdap_display +]%, 기타: [+ old_middle_other_display +]% [? if sapd_formed: 사노당: [+ old_middle_sapd_display +]% ?]
+구중산층 - 사민당: [+ old_middle_spd_display +]%, 중앙당: [+ old_middle_z_display +]%, 공산당: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, 인민당: [+ old_middle_dvp_display +]%; 국가인민당: [+ old_middle_dnvp_display +]%, 나치당: [+ old_middle_nsdap_display +]%, 기타: [+ old_middle_other_display +]% [? if sapd_formed: 사노당: [+ old_middle_sapd_display +]% ?]
 
-농촌민: 사민당: [+ rural_spd_display +]%, 중앙당: [+ rural_z_display +]%, 공산당: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, 인민당: [+ rural_dvp_display +]%; 국가인민당: [+ rural_dnvp_display +]%, 나치당: [+ rural_nsdap_display +]%, 기타: [+ rural_other_display +]% [? if sapd_formed: 사노당: [+ rural_sapd_display +]% ?]
+농촌민 - 사민당: [+ rural_spd_display +]%, 중앙당: [+ rural_z_display +]%, 공산당: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, 인민당: [+ rural_dvp_display +]%; 국가인민당: [+ rural_dnvp_display +]%, 나치당: [+ rural_nsdap_display +]%, 기타: [+ rural_other_display +]% [? if sapd_formed: 사노당: [+ rural_sapd_display +]% ?]
 
-실업자: 사민당: [+ unemployed_spd_display +]%, 중앙당: [+ unemployed_z_display +]%, 공산당: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, 인민당: [+ unemployed_dvp_display +]%; 국가인민당: [+ unemployed_dnvp_display +]%, 나치당: [+ unemployed_nsdap_display +]%, 기타: [+ unemployed_other_display +]% [? if sapd_formed: 사노당: [+ unemployed_sapd_display +]% ?]
+실업자 - 사민당: [+ unemployed_spd_display +]%, 중앙당: [+ unemployed_z_display +]%, 공산당: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, 인민당: [+ unemployed_dvp_display +]%; 국가인민당: [+ unemployed_dnvp_display +]%, 나치당: [+ unemployed_nsdap_display +]%, 기타: [+ unemployed_other_display +]% [? if sapd_formed: 사노당: [+ unemployed_sapd_display +]% ?]
 
-종교인(가톨릭): 사민당: [+ catholics_spd_display +]%, 중앙당: [+ catholics_z_display +]%, 공산당: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, 인민당: [+ catholics_dvp_display +]%; 국가인민당: [+ catholics_dnvp_display +]%, 나치당: [+ catholics_nsdap_display +]%, 기타: [+ catholics_other_display +]% [? if sapd_formed: 사노당: [+ catholics_sapd_display +]% ?]
+종교인(가톨릭) - 사민당: [+ catholics_spd_display +]%, 중앙당: [+ catholics_z_display +]%, 공산당: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, 인민당: [+ catholics_dvp_display +]%; 국가인민당: [+ catholics_dnvp_display +]%, 나치당: [+ catholics_nsdap_display +]%, 기타: [+ catholics_other_display +]% [? if sapd_formed: 사노당: [+ catholics_sapd_display +]% ?]
 
 **공화국에 대한 지지도: [+ pro_republic_disp +]%**

@@ -73,75 +73,75 @@ go-to: cabinet if spd_in_government; menu if not spd_in_government
 
 = Current Government
 
-President: [+ president +]
+국가대통령: [+ president +]
 
-Chancellor: [+ chancellor +] ([+ chancellor_party +])
+국가수상: [+ chancellor +] ([+ chancellor_party +])
 
-Reichstag composition:
+공화국의회(하원) 구성:
 
 # 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_r +]%
+사민당: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_r +]%
+중앙당블록: [+ z_r +]%
 # 1928: 10, 1930: 13
-KPD: [+ kpd_r +]%
+공산당: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)
 [+ ddp_name +]: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-DVP: [+ dvp_r +]%
+인민당: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-DNVP: [+ dnvp_r +]%
+국가인민당: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
-NSDAP: [+ nsdap_r +]%
+나치당: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
-Others: [+ other_r +]%
+기타: [+ other_r +]%
 
-SPD position: [? if spd_toleration : 신임 공급 ?][? if spd_in_government : 정부 구성 - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : 야당 ?][? if spd_caretaker : 임시 내각 ?]
-[? if in_weimar_coalition and spd_in_government: 바이마르 연정 ?][? if in_grand_coalition and spd_in_government: 대연정 ?][? if in_popular_front and spd_in_government: 인민 전선 ?][? if in_left_front and spd_in_government: 좌파 전선 ?][? if in_spd_majority and spd_in_government: 다수당 ?][? if in_minority_government and spd_in_government: 소수당 ?][? if in_emergency_government and spd_in_government: 비상 내각 ?]
+사민당 위치: [? if spd_toleration : 신임공급 ?][? if spd_in_government : 정부구성 - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : 야당 ?][? if spd_caretaker : 임시내각 ?]
+[? if in_weimar_coalition and spd_in_government: 바이마르 연정 ?][? if in_grand_coalition and spd_in_government: 대연정 ?][? if in_popular_front and spd_in_government: 인민전선 ?][? if in_left_front and spd_in_government: 좌파전선 ?][? if in_spd_majority and spd_in_government: 집권다수당 ?][? if in_minority_government and spd_in_government: 집권소수당 ?][? if in_emergency_government and spd_in_government: 비상내각 ?]
 
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and not in_spd_majority and not in_left_front : 연정갈등: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and (in_left_front or in_popular_front): 연정갈등(공산당): [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
 
-Current cabinet:
+현 내각:
 
-Labor: [+ labor_minister_party +]
+노동장관: [+ labor_minister_party +]
 
-Interior: [+ interior_minister_party +]
+국가내무장관: [+ interior_minister_party +]
 
-Finance: [+ finance_minister_party +]
+재무장관: [+ finance_minister_party +]
 
-Economic: [+ economic_minister_party +]
+경제장관: [+ economic_minister_party +]
 
-Justice: [+ justice_minister_party +]
+법무장관: [+ justice_minister_party +]
 
-Foreign: [+ foreign_minister_party +]
+외무장관: [+ foreign_minister_party +]
 
-Reichswehr: [+ reichswehr_minister_party +]
+국방장관: [+ reichswehr_minister_party +]
 
-Agriculture: [+ agriculture_minister_party +]
+식량·농업장관: [+ agriculture_minister_party +]
 
 
 @demographics
 go-to: menu
 
-**Demographic Groups**
+**인구통계**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are socialist, supporting either the SPD or KPD. They make up 40-50% of the population.
+**블루칼라**: 공장, 작업장, 광산 등에서 일하는 도시 노동자들이다. 대부분 사회주의를 지지하므로 사민당과 공산당에 투표한다. 인구의 40~50%를 차지한다.
 
-**Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the far right. 10-15% of the population.
+**구중산층**: 독립적인 장인, 상점주인, 소규모 사업가로 구성되어 있다. 보수적인 성향이 강하며 극우의 가장 강력한 지지 기반이다. 인구의 10~15%를 차지한다.
 
-**New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of liberalism. 10-15% of the population.
+**신중산층**: 화이트칼라 노동자와 공무원으로 구성되어 있다. 자유주의를 지지하며 인구의 10~15%를 차지한다.
 
-**Rural**: Small and large farmers and independent rural workers. Protestant farmers often support the DNVP. 20-30% of the population.
+**농촌민**: 중소 자영농과 광작농, 독립적인 시골 노동자로 구성되어 있다. 개신교 농민들은 종종 국가인민당을 지지한다. 인구의 20~30%을 지지한다.
 
-**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the Center Party (or the Bavarian People's Party in Bavaria).
+**카톨릭 신자**는 전체 인구의 약 30%로 가장 큰 종교적 소수자 집단이다. 이들은 대체로 중앙당(혹은 바이에른 인민당)을 지지한다. 
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the DDP, although substantial numbers support the SPD or KPD.
+**유대인**은 인구의 0.5~1%를 차지한다. 상당수는 사민당과 공산당을 지지하나, 자유주의 정당(주로 민주당)을 지지하는 경향도 있다.
 
 
 @public_opinion
@@ -154,60 +154,60 @@ view-if: (not historical_mode) or game_over
 go-to: election_algorithm
 set-jump: election_projections
 
-**Public Opinion**
+**대중 여론**
 
 #Support for Socialism: [+ socialism +]%
 
 #Support for Nationalism: [+ nationalism +]%
 
-Support for the Republic: [+ pro_republic_disp +]%
+공화국에 대한 지지도: [+ pro_republic_disp +]%
 
 
 @election_projections
 view-if: (not historical_mode) or game_over
 go-to: menu
 
-**Projected election results** (if the election were to be held now):
+**투표 결과 예측** (만약 지금 선거가 치러진다면?):
 
 # 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_votes +]%
+독일 사회민주당: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
 # 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_votes +]%
+독일 중앙당/바이에른 인민당: [+ z_votes +]%
 
 # 1928: 10, 1930: 13
-KPD: [+ kpd_votes +]%
+독일 공산당: [+ kpd_votes +]%
 
 # 1928: 5, 1930: 4 (as DstP)
-[+ ddp_name +]: [+ ddp_votes +]%
+독일 [+ ddp_name +]: [+ ddp_votes +]%
 
 # 1928: 9, 1930: 5
-DVP: [+ dvp_votes +]%
+독일 인민당: [+ dvp_votes +]%
 
 # 1928: 14, 1930: 7
-DNVP: [+ dnvp_votes +]%
+독일 국가인민당: [+ dnvp_votes +]%
 
 # 1928: 3, 1930: 18
-NSDAP: [+ nsdap_votes +]%
+국가사회주의 독일 노동자당: [+ nsdap_votes +]%
 
 # 1928: 9, 1930: 10
-Others: [+ other_votes +]%
+기타: [+ other_votes +]%
 
-**Detailed results for each demographic**
+**각 집단별 상세 결과**
 
-Workers: SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [+ ddp_name +]: [+ workers_ddp_display +]%, DVP: [+ workers_dvp_display +]%; DNVP: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+블루칼라 - 사민당: [+ workers_spd_display +]%, 중앙당: [+ workers_z_display +]%, 공산당: [+ workers_kpd_display +]%, [+ ddp_name +]: [+ workers_ddp_display +]%, 인민당: [+ workers_dvp_display +]%; 국가인민당: [+ workers_dnvp_display +]%, 나치당: [+ workers_nsdap_display +]%, 기타: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [+ ddp_name +]: [+ new_middle_ddp_display +]%, DVP: [+ new_middle_dvp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, 공산당: [+ new_middle_kpd_display +]%, [+ ddp_name +]: [+ new_middle_ddp_display +]%, DVP: [+ new_middle_dvp_display +]%; 국가인민당: [+ new_middle_dnvp_display +]%, 나치당: [+ new_middle_nsdap_display +]%, 기타: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [+ ddp_name +]: [+ old_middle_ddp_display +]%, DVP: [+ old_middle_dvp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, 공산당: [+ old_middle_kpd_display +]%, [+ ddp_name +]: [+ old_middle_ddp_display +]%, DVP: [+ old_middle_dvp_display +]%; 국가인민당: [+ old_middle_dnvp_display +]%, 나치당: [+ old_middle_nsdap_display +]%, 기타: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [+ ddp_name +]: [+ rural_ddp_display +]%, DVP: [+ rural_dvp_display +]%; DNVP: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, 공산당: [+ rural_kpd_display +]%, [+ ddp_name +]: [+ rural_ddp_display +]%, DVP: [+ rural_dvp_display +]%; 국가인민당: [+ rural_dnvp_display +]%, 나치당: [+ rural_nsdap_display +]%, 기타: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [+ ddp_name +]: [+ unemployed_ddp_display +]%, DVP: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, 공산당: [+ unemployed_kpd_display +]%, [+ ddp_name +]: [+ unemployed_ddp_display +]%, DVP: [+ unemployed_dvp_display +]%; 국가인민당: [+ unemployed_dnvp_display +]%, 나치당: [+ unemployed_nsdap_display +]%, 기타: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [+ ddp_name +]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, 공산당: [+ catholics_kpd_display +]%, [+ ddp_name +]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; 국가인민당: [+ catholics_dnvp_display +]%, 나치당: [+ catholics_nsdap_display +]%, 기타: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 @parties
 go-to: menu
