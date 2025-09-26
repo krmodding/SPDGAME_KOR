@@ -221,7 +221,7 @@ go-to: menu
 현재 관계도: [+ z_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
-**독일 민주당** - *Deutsche Demokratische Partei* (DDP, 민주당) - 은 중도좌파 자유주의 정당으로, 지식인과 교육받은 중산층 사이에서 인기가 높다. 민주당은 사민당과 자주 연정을 구성해 왔다. [? if year >= 1930 : 최근에 독일 민주당은 독일 국가당(Deutsche Staatspartei, DStP)으로 재편성되었다. ?]
+**독일 민주당** - *Deutsche Demokratische Partei* (DDP, 민주당) - 은 중도좌파 자유주의 정당으로, 지식인과 교육받은 중산층 사이에서 인기가 높다. 민주당은 사민당과 자주 연정을 구성해 왔다. [? if year >= 1930 : 최근에 독일 민주당은 독일 국가당(*Deutsche Staatspartei*, DStP)으로 재편성되었다. ?]
 
 현재 관계도: [+ ddp_relation : relationships +]
 
@@ -243,7 +243,7 @@ go-to: menu
 
 현재 관계도: [+ nsdap_relation : relationships +]
 
-**기타**는 자그마한 보수 성향의 정당들이 다수 존재한다. 독일 중산층 경제당·독일 농민당·농업동맹 등이 그 예이며, 이들의 정치적 입장은 대체로 인민당과 국가인민당 사이에 위치한다. 
+**기타**에서는 자그마한 보수 성향의 정당들이 여럿 존재한다. 독일 중산층 경제당·독일 농민당·농업동맹 등이 그 예이며, 이들의 정치적 입장은 대체로 인민당과 국가인민당 사이에 위치한다. 
 
 @paramilitaries
 on-arrival: {!
