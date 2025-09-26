@@ -77,7 +77,7 @@ go-to: cabinet if spd_in_government; menu if not spd_in_government
 
 국가수상: [+ chancellor +] ([+ chancellor_party +])
 
-**Reichstag 구성:**
+**Reichstag composition:**
 
 # 1928: 30, 1930: 25, 1932: 22
 사민당: [+ spd_r +]%
