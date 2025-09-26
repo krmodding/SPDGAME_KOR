@@ -167,7 +167,7 @@ set-jump: election_projections
 view-if: (not historical_mode) or game_over
 go-to: menu
 
-**Projected election results** (만약 지금 선거가 치러진다면?):
+**투표 결과 예측** (만약 지금 선거가 치러진다면?):
 
 # 1928: 30, 1930: 25, 1932: 22
 독일 사회민주당: [+ spd_votes +]%
