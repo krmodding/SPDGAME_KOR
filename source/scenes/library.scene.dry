@@ -83,7 +83,7 @@ go-to: cabinet if spd_in_government; menu if not spd_in_government
 사민당: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-중앙당블록: [+ z_r +]%
+중앙당 블록: [+ z_r +]%
 # 1928: 10, 1930: 13
 공산당: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)
