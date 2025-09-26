@@ -77,7 +77,7 @@ go-to: cabinet if spd_in_government; menu if not spd_in_government
 
 국가수상: [+ chancellor +] ([+ chancellor_party +])
 
-공화국의회(하원) 구성:
+**Reichstag composition:**
 
 # 1928: 30, 1930: 25, 1932: 22
 사민당: [+ spd_r +]%
@@ -107,7 +107,7 @@ go-to: cabinet if spd_in_government; menu if not spd_in_government
 @cabinet
 go-to: menu
 
-현 내각:
+**Cabinet**
 
 노동장관: [+ labor_minister_party +]
 
@@ -129,7 +129,7 @@ go-to: menu
 @demographics
 go-to: menu
 
-**인구통계**
+**Demographic Groups**
 
 **블루칼라**: 공장, 작업장, 광산 등에서 일하는 도시 노동자들이다. 대부분 사회주의를 지지하므로 사민당과 공산당에 투표한다. 인구의 40~50%를 차지한다.
 
@@ -154,7 +154,7 @@ view-if: (not historical_mode) or game_over
 go-to: election_algorithm
 set-jump: election_projections
 
-**대중 여론**
+**Public Opinion**
 
 #Support for Socialism: [+ socialism +]%
 
@@ -167,7 +167,7 @@ set-jump: election_projections
 view-if: (not historical_mode) or game_over
 go-to: menu
 
-**투표 결과 예측** (만약 지금 선거가 치러진다면?):
+**Projected election results** (만약 지금 선거가 치러진다면?):
 
 # 1928: 30, 1930: 25, 1932: 22
 독일 사회민주당: [+ spd_votes +]%
