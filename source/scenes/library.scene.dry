@@ -255,39 +255,39 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**Reichsbanner Schwarz-Rot-Gold**: The Reichsbanner is an organization affiliated with all of the democratic parties - the SPD, Z, and DDP, but primarily with the SPD. Historically, this has been an unarmed organization.
+**흑적금국기단**: 흑적금 국기단은 사민당·중앙당·민주당 등 모든 민주적인 정당과 연계된 조직이지만, 주로 사민당과 관련이 깊다. 역사적으로 이 조직은 비무장 단체였다.
 
-Strength: [+ rb_strength +] thousand
+병력 수: [+ rb_strength +] 천 명.
 
-Militarization: [+ rb_militancy : militancy +]
+무장수준: [+ rb_militancy : militancy +]
 
-**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the KPD.
+**적색전선사동맹**: 적색단은 공산당과 관련돼 있다.
 
-Strength: [+ rfb_strength +] thousand
+병력 수: [+ rfb_strength +] 천 명.
 
-Militarization: [+ rfb_militancy : militancy +]
+무장수준: [+ rfb_militancy : militancy +]
 
-**Der Stahlhelm**: A right-wing nationalist organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Associated with the DNVP.
+**전선병사동맹 철모단**: 철모단은 주로 제1차 세계대전 참전용사들로 구성된 우익 민족주의 단체로, 전후에 등장한 *자유군단*의 후신이다. 독일 국가인민당과 연계돼 있다.
 
-Strength: [+ sh_strength +] thousand
+병력 수: [+ sh_strength +] 천 명.
 
-Militarization: [+ sh_militancy : militancy +]
+무장수준: [+ sh_militancy : militancy +]
 
-**Sturmabteilung (SA)**: This is the nazi paramilitary group.
+**돌격대**: 돌격대는 나치의 준군사조직이다.
 
-Strength: [+ sa_strength +] thousand
+병력 수: [+ sa_strength +] 천 명.
 
-Militarization: [+ sa_militancy : militancy +]
+무장수준: [+ sa_militancy : militancy +]
 
 **Official military/paramilitary groups:**
 
-**Reichswehr**: [+ reichswehr_strength +] thousand troops. This is Germany's military.
+**국가방위군**: [+ reichswehr_strength +] 천 명. 독일의 군대이다.
 
-Loyalty: [+ reichswehr_loyalty : loyalty +]
+충성도: [+ reichswehr_loyalty : loyalty +]
 
-**Prussian police**: [+ prussian_police_strength +] thousand members.
+**프로이센 자유주 경찰**: [+ prussian_police_strength +] 천 명.
 
-Loyalty: [+ prussian_police_loyalty : loyalty +]
+충성도: [+ prussian_police_loyalty : loyalty +]
 
 
 
