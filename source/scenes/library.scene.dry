@@ -281,11 +281,11 @@ go-to: menu
 
 **Official military/paramilitary groups:**
 
-- **국가방위군**: [+ reichswehr_strength +] 천 명. 독일의 군대이다.
+**국가방위군**: [+ reichswehr_strength +] 천 명. 독일의 군대이다.
 
 충성도: [+ reichswehr_loyalty : loyalty +]
 
-- **프로이센 자유주 경찰**: [+ prussian_police_strength +] 천 명.
+**프로이센 자유주 경찰**: [+ prussian_police_strength +] 천 명.
 
 충성도: [+ prussian_police_loyalty : loyalty +]
 
