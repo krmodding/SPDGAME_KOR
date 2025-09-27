@@ -9,62 +9,62 @@ tags: party_affairs
 
 = Campaigning
 
-Whether or not we are in an electoral campaign, the party is always trying to broaden its voter base. Who should we focus our campaign efforts on?
+당은 지지층 확대를 위해 노력하고 있다. 우리의 캠페인은 누구에게 집중해야 할까?
 
-- @workers: The urban working class, our traditional support base.
-- @new_middle: The "new middle class" of government employees and white-collar workers.
-- @old_middle: The "old middle class" of small independent businessmen and artisans.
-- @rural: Rural workers and small farmers, who have felt neglected by us in the past.
-- @unemployed: The unemployed.
-- @catholics: Catholics, who typically support the Center Party.
+- @workers: "블루칼라", 그들은 우리의 전통적 지지 기반이다.
+- @new_middle: "신중산층", 공무원과 화이트칼라에 집중한다.
+- @old_middle: "구중산층", 영세자영업자와 장인에 집중한다.
+- @rural: "농촌민", 당으로부터 소외감을 느낀 농촌 노동자와 영세농민에 집중한다.
+- @unemployed: "실업자"에 집중한다.
+- @catholics: 중앙당을 지지하는 "가톨릭"에 집중한다.
 - @root: We either don't want to or cannot campaign right now.
 - @easy_discard
 
 @workers
-subtitle: -1 resources
+subtitle: 정치자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 정치자금이 충분치 않다.
 on-arrival: workers_spd += 6*(1-dissent); workers_spd -= 2 if unemployed >= 15; workers_spd -= 2 if unemployed >= 25; workers_spd += 6*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_spd += 3*(1-dissent) if nationalization_progress >= 1;
 
-We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
+당은 블루칼라를 대상으로 한 캠페인을 전개했다. [? if unemployed >= 15: 높은 실업률로, 이전보다 캠페인 효과가 줄어들었다. ?][? if wtb_adopted = 1 : WTB 계획은 블루칼라의 지지를 끌어모으는 새로운 결집력을 제공했다. ?]
 
 @new_middle
-subtitle: -1 resources
+subtitle: 정치자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 정치자금이 충분치 않다.
 on-arrival: new_middle_spd += 6*(1-dissent); new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1;
 
-We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards socialism among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+당은 신중산층을 대상으로 한 캠페인을 전개했다. [? if socialism <= 49 and peoples_party == 0: 최근 이들 사이에서 사회주의에 대한 반감이 커졌기 때문에, 이전보다 캠페인 효과가 줄어들었다. ?] [? if peoples_party > 0: 당의 대중정당 노선 채택으로, 우리는 중산층의 지지를 쉽게 얻을 수 있었다. ?]
 
 @old_middle
-subtitle: -1 resources
+subtitle: 정치자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 정치자금이 충분치 않다.
 on-arrival: old_middle_spd += 5*(1-dissent); resources -= 1; old_middle_spd -= 3 if nationalism >= 51 and peoples_party == 0; peoples_party_support += 1
 
-We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+당은 구중산층을 대상으로 한 캠페인을 전개했다. [? if nationalism >= 51 and peoples_party == 0: 최근 들어 민족주의 정서가 짙어졌기 때문에, 이전보다 캠페인 효과가 줄어들었다. ?] [? if peoples_party > 0: 당의 대중정당 노선 채택으로, 우리는 중산층의 지지를 쉽게 얻을 수 있었다. ?]
 
 @rural
-subtitle: -1 resources
+subtitle: 정치자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 정치자금이 충분치 않다.
 on-arrival: rural_spd += 5*(1-dissent); rural_spd -= 3*(1-dissent) if peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2
 
-We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
+당은 농부들을 대상으로 한 캠페인을 전개했다. [? if peoples_party == 0: 당은 오래전부터 농촌을 도외시했기 때문에, 농민들은 우리를 쉽게 신뢰하지 않는다. ?][? if peoples_party > 0: 당의 대중정당 노선을 채택으로, 우리는 농부들의 지지를 쉽게 얻을 수 있었다. ?][? if rural_policy >= 2 : 내각의 농업 정책 덕분에, 이전보다 농민들의 지지를 쉽게 끌어올 수 있었다. ?]
 
 @unemployed
-subtitle: -1 resources
+subtitle: 정치자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 정치자금이 충분치 않다.
 on-arrival: unemployed_spd += 6*(1-dissent); resources -= 1; unemployed_spd -= 3 if welfare < 0; unemployed_spd += 6*(1-dissent) if wtb_adopted = 1; unemployed_spd += 3*(1-dissent) if welfare >= 2;
 
-We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
+당은 실업자들을 대상으로 한 캠페인을 전개했다. [? if welfare < 0: 복지 삭감과 빈곤 상승으로, 이전보다 당의 캠페인 효과가 줄어들었다. 현재 당은 내각에 참여하므로, 이러한 캠페인은 오히려 역효과를 낼 수 있다는 보고가 들어왔다. ?][? if wtb_adopted = 1 : WTB 계획은 실업자의 지지를 끌어모으는 새로운 결집력을 제공했다. ?]
 
 @catholics
-subtitle: -1 resources
+subtitle: 정치자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 정치자금이 충분치 않다.
 view-if: peoples_party == 1
 on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
 
-We have increased our campaigning among Catholics.
+당은 가톨릭 신자들을 대상으로 한 캠페인을 전개했다.
