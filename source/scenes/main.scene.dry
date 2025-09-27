@@ -14,7 +14,7 @@ max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1928 and month = 2 : 현 부르주아지-우익 정부가 무너졌다. 올해 5월에 차기 선거가 예정되어 있다. ?]
+[? if year = 1928 and month = 2 : 마침내 부르주아 우파 정부가 무너졌다! 올해 5월에 차기 선거가 예정되어 있다. ?]
 
 - @party
 - @govt
