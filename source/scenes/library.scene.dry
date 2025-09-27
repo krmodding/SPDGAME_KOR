@@ -495,7 +495,7 @@ if (d3 && window) {
 
 = Party support history
 
-[? if historical_mode: Not available in historical mode. ?]
+[? if historical_mode: 역사모드에서는 이 기능을 사용할 수 없다. ?]
 
 {!<svg id="party_support_history" style="width: 500px; height: 400px;"> </svg>!}
 
