@@ -8,7 +8,7 @@ view-if: muller_advisor = 1
 = Herman Müller
 
 
-뮐러는 전직 [? if chancellor = "Müller": 국가수상이자 현 ?] 국가수상이다. 그는 오랫동안 사회민주주의를 대표해온 인물이다.
+뮐러는 전직 [? if chancellor = "Müller": 국가수상이자 현 ?] 국가수상이다. 그는 오랫동안 사회민주주의를 대표해온 지도자이다.
 
 - @coalition
 - @toleration
