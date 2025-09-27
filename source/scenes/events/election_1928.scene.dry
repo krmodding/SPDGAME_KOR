@@ -203,7 +203,7 @@ data = data.concat([
     {
         "id": "spd",
         "legend": "SPD",
-        "name": "SPD",
+        "name": "사민당",
         "seats": Math.round(Q.spd_r*5),
     },
     {
