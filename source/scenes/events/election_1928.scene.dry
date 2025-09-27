@@ -13,7 +13,7 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 = [+ year +]년 [+ month : month +] 독일 국가의회 선거
 
-독일 총선 결과가 속속 발표되고 있습니다.
+총선 결과가 속속 발표되고 있습니다.
 
 - @election_algorithm: May we do our best...
 - @cancel_elections
