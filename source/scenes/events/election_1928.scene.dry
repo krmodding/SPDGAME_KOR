@@ -11,9 +11,9 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 # the low priority means that this event is only seen after all other events are resolved for the month.
 
-= Elections, [+ year +]년 [+ month : month +]
+= [+ year +]년 [+ month : month +] 독일 국가의회 선거
 
-The Reichstag elections are to be held now.
+독일 총선이 실시되다!
 
 - @election_algorithm: May we do our best...
 - @cancel_elections
