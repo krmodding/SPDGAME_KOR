@@ -17,7 +17,7 @@ tags: party_affairs
 - @rural: "농촌민", 당으로부터 소외감을 느낀 농촌 노동자와 영세농민에 집중한다.
 - @unemployed: "실업자"에 집중한다.
 - @catholics: 중앙당을 지지하는 "가톨릭"에 집중한다.
-- @root: We either don't want to or cannot campaign right now.
+- @root: 당장은 캠페인을 원하지 않거나, 자금이 부족하다.
 - @easy_discard
 
 @workers
