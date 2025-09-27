@@ -298,7 +298,7 @@ go-to: coalition_menu
 
 **연정 구상도:**
 
-바이마르 연정 (사민당 + 중앙당 + [+ ddp_name +]): [+ weimar_coalition +]%
+바이마르 연정 (SPD + 중앙당 + [+ ddp_name +]): [+ weimar_coalition +]%
 
 대연정 (사민당 + 중앙당 블록 + [+ ddp_name +] + 인민당): [+ grand_coalition +]%
 
