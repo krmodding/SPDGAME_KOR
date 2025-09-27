@@ -281,7 +281,7 @@ go-to: menu
 
 **Official military/paramilitary groups:**
 
-**국가방위군**: [+ reichswehr_strength +] 천 명. 독일의 군대이다.
+**국가방위군**: [+ reichswehr_strength +] 천 명, 독일의 군대이다.
 
 충성도: [+ reichswehr_loyalty : loyalty +]
 
