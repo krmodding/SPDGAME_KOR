@@ -1,4 +1,4 @@
-title: Otto Braun
+title: 오토 브라운
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/BraunOtto.jpg
@@ -7,7 +7,7 @@ new-page: true
 
 = Otto Braun
 
-Braun [? if spd_prussia = 1 : is ?][? if spd_prussia = 0 : was ?] the Minister-President of Prussia, the largest state in Germany. He is a reformist leader who seeks to work with the bourgeois parties.
+브라운은 독일에서 가장 큰 주인 프로이센 자유주의 총리를 [? if spd_prussia = 1 : 역임하고 있다. ?][? if spd_prussia = 0 : 역임했다. ?] 그는 부르주아 정당들과 협력을 모색하는 개혁주의 지도자이다
 
 - @coalition
 - @prussian_bulwark
