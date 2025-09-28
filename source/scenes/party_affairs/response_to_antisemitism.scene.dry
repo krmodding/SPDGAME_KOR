@@ -1,4 +1,4 @@
-title: Confronting Antisemitism
+title: 반유대주의
 new-page: true
 is-card: true
 view-if: iron_front_formed == 1 and nazi_urgency >= 3

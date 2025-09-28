@@ -1,4 +1,4 @@
-title: Confronting the Nazis
+title: 나치에 대한 대응
 new-page: true
 is-card: true
 view-if: (nsdap_r >= 10 and nazi_urgency > 1) and confronting_nazis_timer == 0 and iron_front_formed == 0

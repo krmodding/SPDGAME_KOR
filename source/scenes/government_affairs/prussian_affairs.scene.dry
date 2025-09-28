@@ -1,4 +1,4 @@
-title: The Prussian Bulwark
+title: 프로이센 주 정책
 new-page: true
 is-card: true
 view-if: spd_prussia = 1 and prussian_affairs_timer <= 0

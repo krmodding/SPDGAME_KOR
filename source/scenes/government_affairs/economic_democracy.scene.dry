@@ -1,4 +1,4 @@
-title: Economic Democracy
+title: 경제민주화
 is-card: true
 new-page: true
 on-arrival: economic_democracy_timer += 10; month_actions += 1
