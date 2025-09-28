@@ -534,7 +534,7 @@ In response to the KPD's entrance into the government, the right-wing immediatel
 
 
 @right_coalition
-title: 정부 구성을 거부하면 우익 연정이 형성될 것이다.
+title: 정부 구성에 참여하지 않는다. (우익 연정이 형성되도록 허락한다)
 subtitle: 중앙당 + 바이에른 인민당 + 독일 인민당 + 독일 국가인민당 + 기타 정당 ([+ right_coalition +]%)
 unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
 view-if: right_coalition >= 50
