@@ -9,31 +9,31 @@ tags: party_affairs
 
 = Fundraising
 
-For better or for worse, the party cannot exist without money.
+좋든 싫든, 당은 정치자금 없이 존재할 수 없다.
 
-- @maintain: Maintain our current dues.
-- @reduce: Reduce dues.
-- @increase: Increase dues.
+- @maintain: 당비를 유지하기.
+- @reduce: 당비를 감액하기.
+- @increase: 당비를 증액하기.
 
 @maintain
-subtitle: [+ dues +] resources gained.
+subtitle: 정치자금 +[+ dues +]
 on-arrival: resources += dues;
 
-We maintain our current dues.
+당은 당비를 유지하기로 결정했다.
 
 @reduce
-subtitle: [+ dues - 1 +] resources gained.
+subtitle: 정치자금 +[+ dues - 1 +]
 choose-if: dues > 1
 on-arrival: dues -= 1; resources += dues; left_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; labor_dissent -= 8
 
-Our current members appreciate this, but no one decides to join a party because of the low dues.
+당원들은 고마워하지만, 안타깝게도 낮은 당비를 이유로 정당에 가입하려는 사람들은 없는 듯하다.
 
 @increase
-subtitle: [+ dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
+subtitle: 정치자금 +[+ dues + 1 +] [? if unemployed >= 15 : 현재의 경제 상황을 고려할 때, 이는 일반 당원에게 큰 부담이 될 수 있다. ?][? if dues >= 4 : 당비는 이미 상당히 높다; 당비를 증액할 경우, 당원 수가 감소할 수 있다. ?]
 on-arrival: dues += 1; resources += dues; workers_spd -= 3; unemployed_spd -= 3; workers_spd -= 10 if unemployed >= 15; unemployed_spd -= 10 if unemployed >= 15; workers_spd -= 3*dues if dues >= 5; unemployed_spd -= 3*dues if dues >= 5
 view-if: dues <= 4
 
-Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. 
+모두가 이에 불평하며, 당에 헌신적이지 않은 일부 당원들은 탈당하기도 했다. 하지만 지도부는 추가로 확보한 정치자금을 활용할 수 있게 되었다.
 
-[? if unemployed >= 15 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?]
+[? if unemployed >= 15 : 어려운 경제적 상황 속에서, 당원들은 추가 당비부담을 버거워하고 있다. ?]
 
