@@ -33,7 +33,7 @@ subtitle: 정치자금 +[+ dues + 1 +] [? if unemployed >= 15 : 현재의 경제
 on-arrival: dues += 1; resources += dues; workers_spd -= 3; unemployed_spd -= 3; workers_spd -= 10 if unemployed >= 15; unemployed_spd -= 10 if unemployed >= 15; workers_spd -= 3*dues if dues >= 5; unemployed_spd -= 3*dues if dues >= 5
 view-if: dues <= 4
 
-모두가 이에 불평하며, 당에 헌신적이지 않은 일부 당원들은 탈당하기도 했다. 하지만 지도부는 추가로 확보한 정치자금을 활용할 수 있게 되었다.
+모두가 이에 불평했고, 당에 헌신적이지 않은 일부 당원들은 탈당하기도 했다. 하지만 지도부는 추가로 확보한 정치자금을 활용할 수 있게 되었다.
 
 [? if unemployed >= 15 : 어려운 경제적 상황 속에서, 당원들은 추가 당비부담을 버거워하고 있다. ?]
 
