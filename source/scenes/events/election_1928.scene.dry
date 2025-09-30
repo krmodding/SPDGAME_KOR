@@ -1135,7 +1135,7 @@ Who should be the chancellor?
 title: 헤르만 뮐러를 국가수상으로!
 view-if: muller_dead = 0
 subtitle: Müller is popular within the party, and is the preferred candidate of the Center and other parties.
-on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "뮐러"; chancellor_party = "사민당"; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
 Müller's appointment as chancellor is approved by all our potential allies.
