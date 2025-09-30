@@ -1,40 +1,40 @@
-title: Center Party Conference
-subtitle: The Center Party chooses their new leader...
+title: 중앙당 전당대회
+subtitle: 중앙당, 새로운 당수를 선출하다...
 view-if: year = 1928 and month = 12 and z_party_leader = "Marx"
 max-visits: 1
 tags: event
 new-page: true
 
-= Center Party Conference
+= 중앙당 전당대회
 
 # reference: Evans, Ellen L. “Adam Stegerwald and the Role of the Christian Trade Unions in the Weimar Republic.” The Catholic Historical Review 59, no. 4 (1974): 602–26.
 
-Wilhelm Marx, former Center Party chancellor and presidential candidate, has chosen to resign from leadership of the Center Party. Now, the party holds a conference to replace him.
+전 총리이자 대통령 후보였던 중앙당의 빌헬름 마르크스가 당수직 사임을 결정했습니다. 이제 당은 그의 후임을 선출하기 위한 전당대회를 개최합니다.
 
-The consensus candidate on the right is Ludwig Kaas, a Catholic priest who represents the party's traditionalists. On the other hand, there is Joseph Joos, a leader of the Catholic trade unions, who has been more supportive of cooperation with the SPD than most of the Center Party.
+우파가 미는 합의 후보는 당내 전통주의자들을 대표하는 가톨릭 사제 루트비히 카스입니다. 한편, 가톨릭 노조의 지도자인 요제프 요스도 있습니다. 그는 대부분의 중앙당원들보다 우리 사민당과의 협력에 더 긍정적인 인물입니다.
 
-- @kaas: The Center Party elects Ludwig Kaas as the party chair.
-- @joos: Influence the Center Party to select Joseph Joos as the party chair.
-- @joos_campaign: We must hold a campaign in support of Joseph Joos as party chair.
+- @kaas: 중앙당이 루트비히 카스를 당수로 선출한다.
+- @joos: 중앙당에 영향력을 행사하여 요제프 요스를 선출하도록 한다.
+- @joos_campaign: 요제프 요스 당선 지지 캠페인을 열어야 한다.
 
 @kaas
 on-arrival: z_party_leader = "Kaas"; z_relation -= 5
 
-Ludwig Kaas has been selected as the chairman of the Center Party. He seems to represent a rightward turn from Marx, and will preside over a Center Party less inclined to compromise with the left.
+루트비히 카스가 중앙당의 당수로 선출되었습니다. 그는 마르크스보다 우경화된 인물로 보이며, 앞으로 좌파와의 타협에 더 인색한 중앙당을 이끌게 될 것입니다.
 
 @joos
-unavailable-subtitle: Our relations are not good enough.
-subtitle: Joos is likely to be friendlier to us than Kaas.
+unavailable-subtitle: 관계가 충분히 좋지 않습니다.
+subtitle: 요스는 카스보다 우리에게 더 우호적일 것입니다.
 choose-if: z_relation >= 70
 on-arrival: z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3
 
-With our grassroots connections, we have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the Center Party to the working class.
+우리의 풀뿌리 조직망을 이용해 중앙당 대의원들이 요제프 요스를 새로운 당수로 지지하도록 영향력을 행사하는 데 성공했습니다. 그는 오랫동안 사민당의 친구였으며, 카스보다 우리와 협력하는 데 훨씬 더 적극적일 것입니다. 또한 그의 당선은 중앙당이 노동계급에 더 다가가는 계기가 될 것입니다.
 
 @joos_campaign
 choose-if: z_relation >= 62 and resources >= 1 
 view-if: z_relation < 70
-unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
-subtitle: -1 resource. Joos is likely to be friendlier to us than Kaas.
+unavailable-subtitle: [? if z_relation <= 62 : 관계가 충분히 좋지 않습니다. ?] [? if resources < 1 : 자금이 부족합니다. ?]
+subtitle: 자금 -1. 요스는 카스보다 우리에게 더 우호적일 것입니다.
 on-arrival: resources -= 1; z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3
 
-With our grassroots connections as well as a professional campaign, we have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the Center Party to the working class.
+우리의 풀뿌리 조직망과 전문적인 지지 캠페인을 통해, 중앙당 대의원들이 요제프 요스를 지지하도록 하는 데 성공했습니다. 그는 오랫동안 사민당의 친구였으며, 카스보다 우리와 협력하는 데 훨씬 더 적극적일 것입니다. 또한 그의 당선은 중앙당이 노동계급에 더 다가가는 계기가 될 것입니다.

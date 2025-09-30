@@ -1,14 +1,14 @@
-title: Centrist leaders resign
+title: 중도파 지도부 사임
 new-page: true 
-subtitle: Centrist disagreements with our policies have grown too severe.
+subtitle: 우리 정책에 대한 당내 중도파의 불만이 극에 달했습니다.
 tags: event
 view-if: center_dissent >= 60
 on-arrival: center_strength *= 0.3; workers_spd -= 5; n_advisors -= 1 if wels_advisor == 1; n_advisors -= 1 if hilferding_advisor == 1; n_advisors -= 1 if muller_advisor == 1; wels_advisor = 0; hilferding_advisor = 0; muller_advisor = 0; rb_strength -= 100; centrists_resign = 1
 go-to: sapd_formed if left_split = 1 and not sapd_formed
 max-visits: 1
 
-= Centrist leaders resign
+= 중도파 지도부 사임
 
-Our policy choices have greatly offended the Centrist faction. Many of our most experienced leaders have resigned.
+우리의 정책 노선은 당내 중도파의 극심한 반발을 샀습니다. 결국 가장 경험 많은 지도자들 다수가 당을 떠났습니다.
 
-[? if left_split = 1 : Many former Centrist Marxists have joined with the SAPD, the party formed by dissident leftists. They have brought their support base and organization skills to the party, leading to its growth as a nascent rival to the SPD for the support of the working class. ?]
+[? if left_split = 1 : 구 중도 마르크스주의자들 다수가 탈당한 좌파들이 창당한 독일 사회주의노동자당(SAPD)에 합류했습니다. 이들은 지지 기반과 조직력을 바탕으로 당을 성장시키며, 노동계급의 지지를 두고 우리 사민당과 경쟁할 새로운 라이벌로 떠올랐습니다. ?]

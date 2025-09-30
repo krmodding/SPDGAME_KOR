@@ -1,61 +1,61 @@
-title: May Day, 1929
+title: 1929년 노동절
 new-page: true
-subtitle: A Communist demonstration
+subtitle: 공산주의 시위
 tags: event
 view-if: year = 1929 and month = 5
 max-visits: 1
 face-image: img/redfront.jpg
 
-= May Day, 1929
+= 1929년 노동절
 
-Tensions run high in Berlin. The Communists are planning a demonstration to commemorate the 10th anniversary of the Spartacist Uprising. No one has forgotten that it was our party members who ordered the uprising's suppression, and the Communists still blame us for the deaths of Rosa Luxemburg and Karl Liebknecht.
+베를린에 긴장감이 감돌고 있습니다. 공산주의자들이 스파르타쿠스 봉기 10주년 기념 시위를 계획 중입니다. 이 봉기를 진압하라고 명령한 것이 바로 우리 당원들이었음을 아무도 잊지 않았으며, 공산당은 여전히 로자 룩셈부르크와 카를 리프크네히트의 죽음을 우리 탓으로 돌리고 있습니다.
 
-Many non-communists are afraid of the possibility of another violent uprising, and our allies in the Prussian coalition are asking the Prussian Interior Ministry to ban the demonstrations.
+많은 이들이 또 다른 폭력 봉기가 일어날 것을 두려워하며, 프러시아 연정의 동맹 정당들은 내무부에 시위 금지 조치를 요구하고 있습니다.
 
-- @ban: Ban the demonstrations.
-- @allow_police: Allow the demonstrations to proceed, but maintain a heavy police presence.
-- @allow: Allow the demonstrations to proceed.
-- @join: Join in the demonstrations ourselves.
+- @ban: 시위를 금지한다.
+- @allow_police: 삼엄한 경찰 감시 하에 시위를 허용한다.
+- @allow: 시위를 허용한다.
+- @join: 우리도 직접 시위에 참여한다.
 
 @ban
 on-arrival: blutmai = 1; kpd_relation -= 25; z_relation += 5; dvp_relation += 5; workers_spd -= 3; unemployed_spd -= 3; workers_kpd += 3; unemployed_kpd += 3; communist_coalition -= 3; strife += 1
 face-image: img/blutmai.jpg
 
-We issued the order to ban the demonstrations, and sent police to enforce the ban. There was a confrontation between the police and Communists, and violence erupted. Reports say that the Berlin police killed dozens of demonstrators and innocent bystanders. The Communists are already calling this incident *Blutmai*, "Bloody May".
+우리는 시위 금지 명령을 내리고 이를 집행할 경찰을 투입했습니다. 경찰과 공산당원들 사이에 충돌이 있었고 폭력 사태가 벌어졌습니다. 보도에 따르면 베를린 경찰이 수십 명의 시위대와 무고한 시민들을 살해했다고 합니다. 공산당은 이미 이 사건을 *Blutmai*, 즉 '피의 5월'이라 부르고 있습니다.
 
-This may end any attempt at reconciliation with the KPD, but the Center and People's parties approve of our action.
+이 일로 공산당과의 화해 시도는 물거품이 될지도 모르지만, 중앙당과 인민당은 우리의 조치를 지지하고 있습니다.
 
-- @corrupt_police: It is the fault of corrupt and reactionary elements within the police. Purge those responsible.
-- @communist_fault: It is the fault of the Communists for refusing to follow the rule of law.
-- @no_fault: It is an unfortunate incident that should not have happened, but is no one's fault at all.
+- @corrupt_police: 경찰 내 부패한 반동적인 분자들의 잘못이다. 책임자들을 숙청해야 한다.
+- @communist_fault: 법치를 따르지 않은 공산당의 잘못이다.
+- @no_fault: 일어나서는 안 될 불행한 사건이었지만, 누구의 잘못도 아니다.
 
 @corrupt_police
 on-arrival: kpd_relation += 10; z_relation -= 2; dvp_relation -= 2; prussian_police_loyalty += 0.05
 
-We arrested the police responsible for the killings, and put them on trial. [? if judicial_reform = 0 : Unfortunately, the reactionary judiciary let them go free with barely any punishment at all. ?]
+우리는 살해 책임이 있는 경찰관들을 체포해 재판에 넘겼습니다. [? if judicial_reform = 0 : 안타깝게도, 반동적인 사법부는 이들을 솜방망이 처벌만 내리고 석방해버렸습니다. ?]
 
-This assuages some of the Communists' outrage, but certainly not all.
+이 조치로 공산당의 분노가 일부 누그러졌지만, 전부는 아니었습니다
 
 @communist_fault
 on-arrival: kpd_relation -= 10; z_relation += 5; dvp_relation += 5; rfb_strength -= 80; rfb_banned = 1
 
-If the KPD continues to act illegally, they must suffer the consequences. Thus, we have banned the RFKB, their paramilitary group. The bourgeois and right-leaning parties approve.
+공산당이 계속해서 불법 행동을 저지른다면, 응당한 대가를 치러야 합니다. 이에 우리는 공산당의 준군사조직인 적색전선전사동맹(RFB)을 해산시켰습니다. 부르주아와 우파 정당들은 이를 지지했습니다.
 
 @no_fault
 
-This position gains us no allies, and does not alienate anyone any further.
+이 입장은 우리에게 어떤 새로운 지지도 가져다주지 않았고, 기존의 관계를 악화시키지도 않았습니다.
 
 
 @allow_police
 on-arrival: kpd_relation += 5; workers_kpd += 5; unemployed_kpd += 5
 
-The demonstration proceeds peacefully under the watchful eyes of the police. Onlookers admire the strength of the Communist workers, and perhaps some of our supporters have been peeled off.
+시위는 경찰의 엄중한 감시 아래 평화롭게 진행되었습니다. 구경꾼들은 공산주의 노동자들의 단결된 힘에 감탄했고, 우리 지지자 중 일부가 마음을 돌렸을지도 모릅니다.
 
 
 @allow
 on-arrival: workers_kpd += 5; unemployed_kpd += 5; kpd_relation += 10; rfb_strength += 50; z_relation -= 3; dvp_relation -= 3; coalition_dissent += 1; rfb_militancy += 0.1
 
-The demonstration proceeds peacefully, with a minimal police presence. Onlookers admire the strength of the Communist workers, and perhaps some of our members have been peeled off. The KPD will never admit it, but they are developing a less hostile view towards us (even if they do not *like* us yet). Our centrist allies denounce the demonstration, but their cries are ineffectual.
+시위는 최소한의 경찰 병력만 배치된 채 평화롭게 진행되었습니다. 구경꾼들은 공산주의 노동자들의 단결된 힘에 감탄했고, 우리 당원 중 일부가 마음을 돌렸을지도 모릅니다. 공산당은 절대 인정하지 않겠지만, 이 일을 계기로 우리에 대한 적대감이 누그러졌습니다 (물론 여전히 우리를 좋아하지는 않지만). 중도파 연정 파트너들은 시위를 맹비난했지만, 그들의 목소리는 공허한 메아리에 그쳤습니다.
 
 
 @join
@@ -64,4 +64,4 @@ unavailable-subtitle: The Communists do not trust us enough.
 on-arrival: kpd_relation += 15; workers_kpd += 5; unemployed_kpd += 5; workers_spd += 5; unemployed_spd += 5; new_middle_spd -= 5; old_middle_spd -= 5; z_relation -= 10; dvp_relation -= 10; coalition_dissent += 2; communist_coalition += 2; rfb_strength += 100; rfb_militancy += 0.1; sa_strength += 50; sh_strength += 50
 achievement: die_rote_fahne
 
-It is difficult to persuade the Communists to let us march with them, given the histories of their party and ours. However, they eventually relent. The display of proletarian unity inspires the workers and terrifies the bourgeoisie and middle class. [? if in_grand_coalition : Our coalition partners in the government are outraged at our display with the communists, and are threatening to break up the government. ?] The far-right paramilitaries increase their recruitment to counter us.
+두 당의 껄끄러운 역사를 생각하면 공산당을 설득해 우리와 함께 행진하도록 하는 것은 어려운 일이었습니다. 하지만 마침내 그들이 동의했습니다. 프롤레타리아의 단결을 보여주는 이 광경은 노동자들을 고무시켰고, 부르주아와 중산층을 공포에 떨게 했습니다.  [? if in_grand_coalition : 우리 연정 파트너들은 공산당에 동조한 우리의 행동에 격분하며 연정 파기를 위협하고 있습니다 ?] 극우 준군사조직들은 이에 맞서 세력 확장에 나섰습니다.
