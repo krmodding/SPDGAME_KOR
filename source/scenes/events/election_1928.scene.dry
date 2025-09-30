@@ -1135,7 +1135,7 @@ Who should be the chancellor?
 title: 헤르만 뮐러를 국가수상으로!
 view-if: muller_dead = 0
 subtitle: Müller is popular within the party, and is the preferred candidate of the Center and other parties.
-on-arrival: spd_in_government = 1; chancellor = "뮐러"; chancellor_party = "사민당"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
 Müller's appointment as chancellor is approved by all our potential allies.
@@ -1144,7 +1144,7 @@ Müller's appointment as chancellor is approved by all our potential allies.
 title: 오토 벨스를 국가수상으로!
 view-if: muller_dead = 1
 subtitle: Otto Wels is a party leader, but can he also be chancellor?
-on-arrival: spd_in_government = 1; chancellor = "벨스"; chancellor_party = "사민당"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
 Otto Wels's appointment as chancellor is approved by our potential allies.
@@ -1163,7 +1163,7 @@ The Center party has significant qualms about appointing Braun as chancellor, gi
 @braun_2
 subtitle: Otto Braun will be Chancellor.
 view-if: not historical_mode
-on-arrival: spd_in_government = 1; chancellor = "브라운"; chancellor_party = "사민당"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
 We have promised to let the Center have more influence in the government in response to the appointment of Braun as chancellor.
@@ -1251,7 +1251,7 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
 view-if: labor_minister_party != "SPD"
-on-arrival: leverage -= 5; labor_minister_party = "사민당"; labor_minister = "Wissell"
+on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
 go-to: ministries
 
 Rudolf Wissell of the SPD has been appointed labor minister.
@@ -1263,7 +1263,7 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
 view-if: interior_minister_party != "SPD"
-on-arrival: leverage -= 5; interior_minister_party = "사민당"; interior_minister = "Severing"
+on-arrival: leverage -= 5; interior_minister_party = "SPD"; interior_minister = "Severing"
 go-to: ministries
 
 Carl Severing of the SPD has been appointed Interior Minister.
@@ -1275,7 +1275,7 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
 view-if: finance_minister_party != "SPD"
-on-arrival: leverage -= 10; finance_minister_party = "사민당"; finance_minister = "Hilferding"
+on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
 go-to: ministries
 
 Rudolf Hilferding of the SPD has been appointed Finance Minister.
@@ -1287,7 +1287,7 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
 view-if: economic_minister_party != "SPD"
-on-arrival: leverage -= 10; economic_minister_party = "사민당"; economic_minister = "Schmidt"
+on-arrival: leverage -= 10; economic_minister_party = "SPD"; economic_minister = "Schmidt"
 go-to: ministries
 
 Robert Schmidt of the SPD has been appointed Economic Minister.
@@ -1299,7 +1299,7 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
 view-if: justice_minister_party != "SPD"
-on-arrival: leverage -= 10; justice_minister_party = "사민당"; justice_minister = "Radbruch"
+on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
 go-to: ministries
 
 Gustav Radbruch of the SPD has been appointed Justice Minister.
@@ -1311,7 +1311,7 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
 view-if: foreign_minister_party != "SPD"
-on-arrival: leverage -= 10; foreign_minister_party = "사민당"; foreign_minister = "Breitscheid"
+on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
 go-to: ministries
 
 Rudolf Breitscheid of the SPD has been appointed Foreign Minister.
@@ -1323,7 +1323,7 @@ subtitle: This is not our usual domain.
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 10 
 view-if: agriculture_minister_party != "SPD"
-on-arrival: leverage -= 10; agriculture_minister_party = "사민당"; agriculture_minister = "Baade"
+on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"
 go-to: ministries
 tags: mins_1928
 
@@ -1336,7 +1336,7 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 15 
 view-if: reichswehr_minister_party != "SPD"
-on-arrival: leverage -= 15; reichswehr_minister_party = "사민당"; reichswehr_minister = "Leber"
+on-arrival: leverage -= 15; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"
 go-to: ministries
 
 Julius Leber of the SPD has been appointed Reichswehr Minister.
