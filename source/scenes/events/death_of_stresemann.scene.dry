@@ -1,4 +1,4 @@
-title: The Death of Gustav Stresemann
+title: 구스타프 슈트레제만의 사망
 view-if: year = 1929 and month >= 9
 frequency: 1000
 max-visits: 1
@@ -7,6 +7,6 @@ on-arrival: stresemann_dead = 1; dvp_relation -= 5
 face-image: img/portraits/StresemannGustav.jpg
 new-page: true
 
-= The Death of Gustav Stresemann
+= 구스타프 슈트레제만의 사망
 
-Gustav Stresemann, leader of the DVP and longtime foreign minister, has died at the tragically young age of 51. He was the primary force driving his party to support democracy; without him, the democratic forces in the Republic will be so much weaker.
+독일인민당(DVP)의 지도자이자 오랜 기간 외무장관을 역임한 구스타프 슈트레제만이 51세의 젊은 나이로 비극적으로 세상을 떠났습니다. 그는 자신의 당이 민주주의를 지지하도록 이끈 핵심 인물이었습니다. 그가 없는 공화국의 민주 세력은 크게 약화될 것입니다.

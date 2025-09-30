@@ -1,13 +1,13 @@
-title: Economic Sanctions
-subtitle: Our military buildup has caused sanctions from France and other countries.
+title: 경제 제재
+subtitle: 우리의 군비 증강이 프랑스를 비롯한 여러 국가의 제재를 불러왔습니다.
 new-page: true
 on-arrival: workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed += 3; workers_spd -= 4 if spd_in_government; new_middle_spd -= 5 if spd_in_government; old_middle_spd -= 5 if spd_in_government; rural_spd -= 4 if spd_in_government; economic_growth -= 1; nationalism += 5; pacifism -= 1
 tags: event
 view-if: reichswehr_strength > 140
 max-visits: 1
 
-= Economic Sanctions
+= 경제 제재
 
-In response to our military rearmament in contravention of the Versailles Treaty, the Western Allies have imposed economic sanctions on Germany. The costs of the sanctions are largely borne by the proletariat; the people are facing increasing poverty.
+베르사유 조약을 위반한 우리의 재무장에 대응하여 서방 연합국이 독일에 경제 제재를 부과했습니다. 제재로 인한 비용은 대부분 노동자 계급에게 전가되어, 국민들은 더욱 심각한 빈곤에 직면하고 있습니다.
 
 # options: 

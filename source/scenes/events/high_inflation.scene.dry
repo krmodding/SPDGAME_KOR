@@ -1,44 +1,44 @@
-title: High Inflation
-subtitle: Workers are seeing their purchasing power decline.
+title: 극심한 인플레이션
+subtitle: 노동자들의 실질 구매력이 하락하고 있습니다.
 view-if: inflation >= 7 and high_inflation_timer = 0 and spd_in_government
 new-page: true
 on-arrival: capital_strike_progress += 1; workers_spd -= 4; old_middle_spd -= 6; new_middle_spd -= 6; rural_spd -= 5; unemployed_spd -= 4; high_inflation_timer = 6; high_inflation_timer = 4 if inflation > 8; high_inflation_timer = 2 if inflation >= 10; pro_republic -= 5; old_middle_nsdap += 2; new_middle_nsdap += 2; rural_nsdap += 2
 tags: event
 
-= High Inflation
+= 극심한 인플레이션
 
-Inflation has risen. People of all social classes are seeing their purchasing power fall. Memories of the hyperinflation period of 1923 echo through the public conscious, even though the present inflation is not nearly as severe.
+물가 상승률이 치솟고 있습니다. 모든 계층의 국민들이 구매력 하락을 겪고 있습니다. 지금의 인플레이션이 그때만큼 심각하지는 않지만, 대중들의 뇌리에는 1923년 초인플레이션 사태의 끔찍한 기억이 되살아나고 있습니다.
 
-The people and the press are clamoring for action to reduce inflation.
+국민과 언론은 인플레이션을 잡기 위한 대책을 촉구하며 들끓고 있습니다.
 
-- @taxes: Raise taxes.
-- @welfare: Reduce welfare and social spending.
-- @price_controls: Impose price and wage controls.
-- @bank: Surely the Reichsbank has a plan this time?
-- @nothing: Realistically, there is nothing we can do.
+- @taxes: 세금을 올린다.
+- @welfare: 복지와 사회적 지출을 줄인다.
+- @price_controls: 가격 및 임금 통제를 실시한다.
+- @bank: 이번에는 제국은행에 대책이 있겠지?
+- @nothing: 현실적으로 우리가 할 수 있는 일은 없다.
 
 @taxes
 on-arrival: upper_tax_rates += 1; lower_tax_rates += 1; budget += 2; unemployed += 1.5; capital_strike_progress -= 1; inflation -= 1; new_middle_spd -= 3; old_middle_spd -= 3; workers_spd -= 3; rural_spd -= 3; kpd_coalition_dissent += 1; kpd_relation -= 5; left_dissent += 5; economic_growth -= 0.4
 
-Raising taxes is unpopular among everyone, but it might be what it takes to keep inflation under control.
+증세는 모두에게 인기 없는 정책이지만, 인플레이션을 억제하기 위해서는 불가피할 수 있습니다.
 
 @welfare
 on-arrival: welfare -= 1; budget += 1; capital_strike_progress -= 2; unemployed += 1.5; new_middle_spd += 4*(1-dissent); old_middle_spd += 4*(1-dissent); workers_spd -= 5; unemployed_spd -= 5; inflation -= 1; left_dissent += 5; labor_dissent += 5; center_dissent += 5; kpd_coalition_dissent += 1; economic_growth -= 0.4
 
-Reducing the amount of government spending should reduce the inflation rate, according to classical economics. But it imposes pain upon the people who are suffering the most.
+고전 경제학 이론에 따르면 정부 지출을 줄이면 물가 상승률을 낮출 수 있습니다. 하지만 이는 가장 고통받는 이들에게 더 큰 고통을 안겨주는 조치입니다.
 
 @price_controls
 on-arrival: capital_strike_progress += 3; inflation -= 3; coalition_dissent += 1; unemployed += 1; old_middle_spd -= 4; new_middle_spd -= 3; rural_spd -= 5; workers_spd -= 2; unemployed_spd += 3; labor_dissent += 6; dvp_relation -= 6; z_relation -= 4; ddp_relation -= 4; economic_growth -= 0.4
 
-Price controls are very unpopular with the bourgeoisie and their representatives, as well as rural producers, while wage controls hurt organized workers. However, the policies do stem the tide of inflation, at least somewhat.
+가격 통제는 부르주아 계급과 그들을 대변하는 정치인들, 그리고 농민들에게 매우 인기가 없으며, 임금 통제는 조직 노동자들에게 타격을 줍니다. 하지만, 이 정책들은 적어도 어느 정도는 인플레이션의 기세를 꺾는 효과가 있습니다.
 
 @bank
 on-arrival: capital_strike_progress += 2
 
-Unfortunately, but perhaps expectedly, the Reichsbank is refusing to help the government, claiming that our socialist policies are solely to blame. Reichsbank president [? if year <= 1930 : Hjalmar Schacht ?][? if year > 1930 : Hans Luther ?] is all but calling for the fall of the government.
+불행히도, 아니나 다를까, 제국은행은 현 사태가 전적으로 우리의 사회주의 정책 탓이라며 정부에 대한 협조를 거부하고 있습니다. [? if year <= 1930 : 햘마르 샤흐트 ?][? if year > 1930 : 한스 루터 ?] 제국은행 총재는 거의 현 정부의 퇴진을 요구하는 수준입니다.
 
 @nothing
 on-arrival: capital_strike_progress += 1
 
-Realistically, there is nothing we can do to stem the tide of inflation.
+현실적으로, 치솟는 인플레이션을 막기 위해 우리가 할 수 있는 일은 없습니다.
 

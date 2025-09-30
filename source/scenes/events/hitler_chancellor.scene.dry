@@ -1,35 +1,35 @@
-title: Hitler appointed Chancellor!
-subtitle: The beginning of the end...
+title: 히틀러, 총리로 임명되다!
+subtitle: 종말의 시작…
 view-if: year >= 1933 and president = "Hindenburg" and (chancellor = "Papen" or chancellor = "Schleicher") and in_grand_coalition = 0 and spd_in_government = 0 and largest_party = "NSDAP" and hitler_deported = 0 and not presidential_powers and not schleichers_scheme_success
 on-departure: chancellor = "Hitler"; chancellor_party = "NSDAP"
 tags: event
 new-page: true
 
-= Hitler Appointed Chancellor!
+= 히틀러, 총리로 임명되다!
 
-Internal scheming by the camarilla surrounding the president has caused President Hindenburg to appoint Hitler as chancellor, replacing the unpopular [+ chancellor +]. [? if hitler_deported : Despite his earlier deportation, the Nazi leaders and their reactionary allies have connived for the president to give him German citizenship after all. ?] Some of the reactionaries surrounding Hindenburg believe that he will restore Germany to its supposed former glory, while others believe that they can control him and his movement.
+대통령 주변 막후 실세들의 공작으로, 힌덴부르크 대통령이 인기가 없는 [+ chancellor +] 총리를 경질하고 히틀러를 신임 총리로 임명했습니다. [? if hitler_deported : 이전에 추방당했음에도 불구하고, 나치 지도자들과 그들의 반동 동맹 세력은 대통령을 구슬려 기어이 그에게 독일 시민권을 부여하게 만들었습니다. ?] 힌덴부르크 주변의 일부 반동주의자들은 히틀러가 독일의 옛 영광을 되찾아 줄 것이라 믿고 있으며, 다른 이들은 그와 그의 정치 운동을 자신들이 통제할 수 있다고 믿고 있습니다.
 
-He has promised a campaign of revenge against the socialists, and the Nazis have already spilled blood. In his published manifesto, he promises a campaign of unspeakable horror against Jews, and endless wars of violent expansion that will ruin all of Europe.
+그는 사회주의자들에 대한 복수를 공언했으며, 나치는 이미 거리에서 피를 흘렸습니다. 그가 출판한 저서에는 유대인에 대한 형언할 수 없는 끔찍한 탄압과 유럽 전역을 파멸로 이끌 끝없는 폭력적인 팽창 전쟁을 약속하고 있습니다.
 
-What are we to do now?
+이제 우리는 어떻게 해야 할까요?
 
-- @fight: We will fight on the streets to prevent Hitler from taking power.
-- @give_up: We will vote against the nazis in the Reichstag.
+- @fight: 히틀러의 집권을 막기 위해 거리에서 싸울 것이다.
+- @give_up: 우리는 제국의회에서 나치에 반대 투표로 맞설 것이다.
 
 
 @fight
 
-Do we realize that this means civil war, against the full force of the state?
+국가의 모든 공권력에 맞서 싸우는 것, 이것이 내전을 의미한다는 것을 알고 있습니까?
 
-- @civil_war: Yes.
-- @give_up: We are not ready for war. Instead, we will vote against the nazis in the Reichstag.
+- @civil_war: 그렇다.
+- @give_up: 우리는 전쟁 준비가 되어 있지 않다. 대신 제국의회에서 나치에 반대 투표로 맞서겠다.
 
 @give_up
 
-Speeches are made. Votes are held. Bullets fly in the streets. Some socialists are killed or jailed. Others flee the country. What can votes even do at this juncture?
+연설과 투표가 이어집니다. 거리에서는 총탄이 빗발칩니다. 몇몇 사회주의자들은 살해당하거나 투옥됩니다. 다른 이들은 국외로 탈출합니다. 이 마당에 과연 투표가 무슨 소용이 있단 말입니까?
 
-The Reichstag is burned, ostensibly by a foreign communist. In the wake, the Nazis pass decrees giving them unlimited power. They, combined with the DNVP, will win a majority at the next elections.
+제국의회 의사당이 외국인 공산주의자의 소행으로 추정되는 방화로 불타버렸습니다. 그 직후, 나치는 자신들에게 무소불위의 권력을 부여하는 긴급 법령들을 통과시켰습니다. 그들은 독일국가인민당(DNVP)과 연합하여 다음 선거에서 과반수를 차지할 것입니다.
 
-Germany is lost.
+독일의 운명은 다했습니다.
 
 - @game_over

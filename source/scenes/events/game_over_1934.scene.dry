@@ -23,4 +23,4 @@ if (!Q.economic_plan) {
 }
 !}
 
-- @game_over: Game over.
+- @game_over: 게임 오버.

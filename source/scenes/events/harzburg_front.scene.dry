@@ -1,21 +1,21 @@
-title: The Harzburg Front
-subtitle: The right-wing forces unite against the incumbent government.
+title: 하르츠부르크 전선
+subtitle: 우익 세력이 현 정부에 맞서 단결합니다.
 new-page: true
 on-arrival: harzburg_front_seen = 1; sh_strength += 100; sa_strength += 100; old_middle_nsdap += 5; unemployed_nsdap += 5; rural_nsdap += 5; nazi_urgency += 1; iron_front_timer = 0
 tags: event
 view-if: (year = 1931 and month >= 10 and chancellor != "Schleicher" and chancellor != "Papen") or (coup_progress >= 6)
 max-visits: 1
 
-= The Harzburg Front
+= 하르츠부르크 전선
 
-The far-right parties and paramilitaries - the NSDAP (and its paramilitary the SA), the Stahlhelm paramilitary group, and the DNVP - have united to form the Harzburg Front, as a force dedicated to the overthrow of the current government.
+극우 정당과 준군사조직들, 즉 나치당(NSDAP)과 그 산하의 돌격대(SA), 철모단(Stahlhelm), 그리고 독일국가인민당(DNVP)이 현 정부 타도를 목표로 단결하여 '하르츠부르크 전선’을 결성했습니다.
 
-- @strategy: We must develop a coherent strategy to combat the Right.
-- @confronting_nazis.iron_front: We must form the Iron Front!
-- @iron_front: The Iron Front will be our answer!
+- @strategy: 우리는 우파에 맞서기 위한 일관된 전략을 수립해야 한다.
+- @confronting_nazis.iron_front: 우리는 강철전선을 결성해야 한다!
+- @iron_front: 강철전선이 우리의 해답이 될 것이다!
 
 @strategy
 view-if: nazi_urgency < 3
 on-arrival: nazi_urgency += 1
 
-We do not yet have a coherent strategy for combatting the fascists. We must develop one as soon as possible.
+우리는 아직 파시스트에 맞설 일관된 전략이 없습니다. 하루빨리 대책을 마련해야 합니다.
