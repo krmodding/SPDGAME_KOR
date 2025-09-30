@@ -1,6 +1,6 @@
-title: Suspension of the Austrian parliament
+title: 오스트리아 의회 기능 정지
 new-page: true
-subtitle: Our southern neighbor is sliding into dictatorship.
+subtitle: 남쪽 이웃 국가가 독재의 길로 빠져들고 있습니다.
 view-if: year = 1933 and (month = 3 or month = 4) and ((spd_in_government and foreign_minister_party = "SPD") or (austria_relation >= 1))
 max-visits: 1
 on-arrival: austrian_parliament_seen = 1
@@ -9,47 +9,47 @@ tags: event
 
 # Must control foreign ministry or have made contact with Austrian socialists.
 
-= Suspension of the Austrian Parliament
+= 오스트리아 의회 기능 정지
 
-Due to a controversial proposal regarding a railroad strike in the Austrian National Council, all three presidents of the National Council resigned, leaving it without any presiding officers. This is a constitutional crisis. Austrian chancellor Engelbert Dollfuß has taken advantage of this crisis by suspending the parliament and ruling by emergency decree, forming an "Austrofascist" government. Dollfuß consolidates his power by persecuting his political opponents, especially our fellow Social Democrats in the SDAPÖ (Social Democratic Worker's Party of Austria).
+오스트리아 국민의회에서 철도 파업 관련 안건을 둘러싼 논란으로 의장단 3명 전원이 사퇴하여 의회를 이끌 사람이 없는 초유의 사태가 벌어졌습니다. 이는 명백한 헌법적 위기입니다. 오스트리아 총리 엥겔베르트 돌푸스는 이 위기를 틈타 의회 기능을 정지시키고 비상 행정명령을 통해 통치하는 "오스트로파시스트" 정부를 수립했습니다. 돌푸스는 그의 정적들, 특히 우리의 동지인 오스트리아 사회민주노동당(SDAPÖ) 당원들을 탄압하며 권력을 공고히 하고 있습니다.
 
-Is there anything we could do?
+우리가 할 수 있는 일은 없을까요?
 
 # - use EU to sanction Austria (will prevent civil war and restore democracy)
 # - apply diplomatic pressure to Austria (without EU)
 # - fund the Schutzbund
 # after this, supporting Austrians will raise sdapo_strength; if sdapo_strength >= 2, they'll enter a long civil war; if sdapo_strength >= 5, they'll win.
 
-- @eu_sanctions: Call upon the European Union to sanction Austria, unless the National Council is restored.
-- @diplomatic_pressure: Apply diplomatic pressure to Austria to restore the National Council.
-- @fund_schutzbund: Support the SDAPÖ's underground organizing.
-- @nothing: Nothing can be done.
+- @eu_sanctions: 유럽연합에 국민의회 복원을 조건으로 오스트리아 제재를 촉구한다.
+- @diplomatic_pressure: 국민의회를 복원하도록 오스트리아에 외교적 압력을 가한다.
+- @fund_schutzbund: SDAPÖ의 지하 조직 활동을 지원한다.
+- @nothing: 아무것도 할 수 없다.
 
 @eu_sanctions
 view-if: eu = 1
 on-arrival: sdapo_strength += 3; sdapo_strength += 1 if customs_union; eu_austria = 1
 
-The European Union is a largely untested body, and from the beginning contained members that are at best quasi-democratic. Most of its members are more concerned by power politics than democratic values. However, as its founder, Germany holds a special influence in the EU, and we manage to persuade the other members to join in the pressure against Austrofascism.
+유럽연합은 아직 역사가 짧은 기구인데다, 출범 당시부터 준민주적인 국가들이 회원국으로 포함되어 있었습니다. 이들 대부분은 민주적 가치보다는 권력 정치에 더 관심이 많습니다. 하지만 창립국인 독일은 EU 내에서 특별한 영향력을 행사하며, 우리는 다른 회원국들을 설득하여 오스트로파시즘에 대한 압박에 동참시키는 데 성공했습니다.
 
-The Dollfuß regime does not give in, but it is weakened and isolated.
+돌푸스 정권은 굴복하지 않았지만, 그의 입지는 약화되고 고립되었습니다.
 
 @diplomatic_pressure
 view-if: foreign_minister_party = "SPD"
 on-arrival: sdapo_strength += 1; sdapo_strength += 2 if customs_union
 
-We still have much economic influence in Austria, and the threat of sanctions.
+우리는 여전히 오스트리아에 막대한 경제적 영향력을 행사할 수 있으며, 제재라는 위협 카드도 쥐고 있습니다.
 
-The Dollfuß regime does not give in, but it is somewhat weakened.
+돌푸스 정권은 굴복하지 않았지만, 다소 약화되었습니다.
 
 @fund_schutzbund
 on-arrival: resources -= 1; sdapo_strength += 1; sdapo_strength += 1 if customs_union
-subtitle: -1 resource
+subtitle: 자원 -1 
 choose-if: resources >= 1
 
-It is somewhat of a breach of diplomatic protocol for the SPD to so directly interfere in another country's affairs, supporting the Austrian social democrats.
+사민당이 오스트리아 사회민주당원들을 지원하며 타국의 내정에 직접 개입하는 것은 외교적 관례에 어긋나는 일입니다.
 
-The Dollfuß regime does not give in, but its opponents have an added advantage. That may not be enough when dealing with the total force of the fascist state.
+돌푸스 정권은 굴복하지 않았지만, 그의 반대파들은 추가적인 힘을 얻게 되었습니다. 하지만 파시스트 국가의 총력에 맞서기에는 이것만으로는 부족할지도 모릅니다.
 
 @nothing
 
-Unfortunately, there is nothing we can do for our Austrian comrades.
+안타깝게도, 오스트리아 동지들을 위해 우리가 할 수 있는 일은 아무것도 없습니다.

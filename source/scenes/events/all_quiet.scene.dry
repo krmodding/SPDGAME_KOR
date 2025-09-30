@@ -1,45 +1,44 @@
-title: All Quiet on the Western Front
-subtitle: Censorship and violence over a movie...
+title: 서부 전선 이상 없다
+subtitle: 영화 한 편을 둘러싼 검열과 폭력...
 view-if: year = 1930 and month = 12 and spd_prussia
 max-visits: 1
 tags: event
 new-page: true
 face-image: img/All_Quiet.jpg
 
-= All Quiet on the Western Front
+= 서부 전선 이상 없다
 
-The American film *All Quiet on the Western Front*, based on the German novel *Im Westen nichts Neues* by Erich Maria Remarque, is a film about the experiences of German soldiers in the Great War, and how they gradually became disillusioned with the ideas of patriotism and nationalism. 
+에리히 마리아 레마르크의 동명 소설을 원작으로 한 미국 영화 *서부 전선 이상 없다*가 개봉했습니다. 이 영화는 제1차 세계대전에 참전한 독일군 병사들이 애국심과 민족주의라는 숭고한 이념에 점차 환멸을 느끼게 되는 과정을 그리고 있습니다.
 
-As an anti-war film, it is the target of major protest by far-right actors, especially the Nazis and the Stahlhelm. They are calling for the government to ban the film. If we do not ban it, the SA threatens to violently stop the film from being shown or watched.
+이 반전(反戰) 영화는 극우 세력, 특히 나치와 철모단(Stahlhelm)의 거센 항의의 표적이 되고 있습니다. 이들은 정부에 영화 상영을 금지하라고 요구하고 있으며, 만약 요구가 받아들여지지 않는다면 나치 돌격대(SA)가 폭력적인 수단을 동원해서라도 상영을 막겠다고 위협하고 있습니다.
 
-- @ban: Ban the film, to prevent Nazi violence.
-- @allow: Allow the film to be shown.
-- @allow_protect: Allow the film to be shown, and use the Prussian police to prevent Nazi disruptions.
-- @everyone: In fact, everyone needs to learn the lessons of this film. Give free tickets to students and government employees.
+- @ban: 나치의 폭력을 막기 위해 상영을 금지한다.
+- @allow: 상영을 허가한다.
+- @allow_protect: 프로이센 경찰을 동원하여 나치의 방해를 막고 상영을 허가한다.
+- @everyone: 이 영화의 교훈은 모두가 배워야 할 가치가 있다. 학생들과 공무원들에게 무료 관람권을 배부한다.
 
 @ban
 on-arrival: old_middle_nsdap += 5; new_middle_nsdap += 4; workers_nsdap += 2; unemployed_nsdap += 2; sa_strength += 50; nationalism += 6; pro_republic -= 5
 
-When we ban the film, the Nazis immediately celebrate it as a major victory; they claim that even the red Marxists agree with them! It is a major boost to their morale.
+정부가 영화를 상영 금지하자, 나치는 이를 즉각 자신들의 위대한 승리로 자축했습니다. 그들은 심지어 "붉은 마르크스주의자들"조차 자기네 편이라고 주장합니다! 이는 그들의 사기를 크게 진작시키는 계기가 되었습니다.
 
 
 @allow
 on-arrival: nationalism += 3; old_middle_nsdap += 4; new_middle_nsdap += 3; workers_nsdap += 1; sa_strength += 15; pro_republic -= 3; strife += 1
 
-While we allow the film, showings are marred by violence. Showings of the film eventually stop, and the Nazis claim victory.
+정부가 영화 상영을 허가했지만, 상영관은 폭력 사태로 얼룩지고 말았습니다. 결국 영화 상영은 중단되었고, 나치는 승리를 선언했습니다.
 
 
 @allow_protect
 choose-if: prussian_police_loyalty >= 0.65
-unavailable-subtitle: The police are not willing to protect the film.
+unavailable-subtitle: 경찰이 영화 상영 보호에 비협조적입니다.
 on-arrival: nationalism -= 4; pro_republic += 4*(1-dissent); strife += 1
 
-Under the protection of the police, the people are allowed to watch the film in peace. Nazi disturbances are kept to a minimum.
+경찰의 보호 아래, 시민들은 평화롭게 영화를 관람할 수 있었습니다. 나치의 방해 행위는 최소한으로 억제되었습니다.
 
 @everyone
 choose-if: prussian_police_loyalty >= 0.75
-unavailable-subtitle: The police are unable to guarantee the safety of all the attendees.
+unavailable-subtitle: 경찰력만으로는 모든 관객의 안전을 보장할 수 없습니다.
 on-arrival: nationalism -= 5; pro_republic += 5*(1-dissent); workers_nsdap -= 3; unemployed_nsdap -= 3; new_middle_nsdap -= 3
 
-Under police protection, crowds throng the film's showings, as Nazis protest outside. The reception is mixed, but a new national conversation develops, reexamining the right-wing histories of the war. Quietly, many minds are changed, or at least affected in subtle ways.
-
+나치가 밖에서 격렬하게 항의하는 가운데, 경찰의 보호를 받으며 수많은 인파가 상영관으로 몰려들었습니다. 영화에 대한 평가는 엇갈리지만, 전쟁에 대한 우익의 역사관을 재검토하는 새로운 국가적 담론이 형성되었습니다. 조용히, 많은 사람의 생각이 바뀌거나 적어도 미묘한 영향을 받았습니다.`

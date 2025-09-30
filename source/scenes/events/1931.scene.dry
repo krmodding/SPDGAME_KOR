@@ -1,5 +1,5 @@
 title: 1931
-subtitle: A new year 
+subtitle: 새해 
 on-arrival: {!
 // increase NSDAP vote share 
 // TODO: if a public works program has started, unemployment is not so bad.
@@ -25,4 +25,4 @@ view-if: year = 1931 and month = 1
 priority: 2
 max-visits: 1
 
-A new year begins. [? if works_program = 0 : Unemployment continues to spiral upwards. The strength of the NSDAP continues to rise. ?][? if works_program > 0 : A works program has been enacted in order to reduce unemployment. ?] [? if works_program > 0 and unemployment > 15 : However, unemployment remains too high for comfort. ?]
+새해가 밝았습니다. [? if works_program = 0 : 실업률은 걷잡을 수 없이 치솟고 있으며, NSDAP의 세력 또한 계속해서 커지고 있습니다. ?][? if works_program > 0 : 실업 문제 해결을 위해 공공근로 사업이 시행되었습니다. ?] [? if works_program > 0 and unemployment > 15 : 하지만 실업률은 여전히 안심할 수 없는 수준입니다. ?]

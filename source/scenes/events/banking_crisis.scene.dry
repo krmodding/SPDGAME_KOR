@@ -1,5 +1,5 @@
-title: Banking Crisis
-subtitle: The collapse of the German banking system...
+title: 금융 위기
+subtitle: 독일 은행 시스템의 붕괴...
 new-page: true
 on-arrival: banking_crisis_seen = 1; workers_kpd += 5; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed += 3; crisis_urgency += 1; workers_spd -= 4 if spd_in_government; new_middle_spd -= 5 if spd_in_government; old_middle_spd -= 5 if spd_in_government; rural_spd -= 4 if spd_in_government; economic_growth -= 1;
 tags: event
@@ -7,22 +7,22 @@ view-if: customs_union = 1 and banking_crisis_timer = 0
 max-visits: 1
 face-image: img/danat_bank.jpg
 
-= Banking Crisis
+= 금융 위기
 
-The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the government's pursuit of a customs union with Austria, which led to de facto international sanctions.
+다름슈타트 운트 나치오날 은행, 일명 다나트 은행이 파산했습니다! 이와 함께 독일의 은행 시스템 대부분이 무너져 내렸습니다. 오스트리아와의 관세 동맹 체결이 사실상의 국제 제재를 불러온 것이 원인으로 보입니다.
 
-This is a bourgeois dispute, but the costs will be borne by the proletariat. The people are facing ever-increasing hunger and poverty, and perhaps we are partly to blame.
+이는 부르주아들의 다툼이지만, 그 대가는 프롤레타리아가 치르게 될 것입니다. 국민들은 날이 갈수록 심해지는 굶주림과 빈곤에 직면하고 있으며, 어쩌면 우리에게도 일부 책임이 있을지 모릅니다.
 
-- @nothing_to_do: There is nothing we can do.
-- @stabilization: Take action to stabilize the economy!
-- @austerity: Chancellor [+ chancellor +]'s response is, as always, more austerity.
-- @end_toleration: We are tired of austerity. End the toleration arrangement!
+- @nothing_to_do: 우리가 할 수 있는 일은 없다.
+- @stabilization: 경제 안정을 위한 조치를 취한다!
+- @austerity: [+ chancellor +] 총리는 늘 그랬듯이, 더 강력한 긴축 정책으로 화답했습니다.
+- @end_toleration: 긴축 정책은 이제 지긋지긋하다. 내각 신임 협조를 철회한다!
 
 @nothing_to_do
 view-if: spd_in_government = 1
 on-arrival: welfare -= 1; workers_spd -= 3; unemployed_spd -= 3; pro_republic -= 3
 
-There is, essentially, nothing we can do.
+사실상, 우리가 할 수 있는 일은 없습니다.
 
 @stabilization
 view-if: spd_in_government = 1
@@ -30,19 +30,19 @@ subtitle: -1 budget
 choose-if: budget >= 1
 on-arrival: workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); unemployed -= 2; inflation += 1 if inflation < 0; budget -= 1; workers_nsdap -= 3; economic_growth += 0.9;
 
-In the face of the banking crisis, we have taken emergency action to stabilize the economy by injecting money into the banking system. It might not be enough, but it temporarily staunches the bleeding.
+금융 위기 앞에서, 우리는 은행 시스템에 자금을 투입하는 긴급 조치를 통해 경제 안정을 꾀했습니다. 이것만으로는 부족할 수 있겠지만, 일단 급한 불은 껐습니다.
 
 @austerity
 view-if: spd_in_government = 0
 on-arrival: welfare -= 1; workers_spd -= 3; unemployed_spd -= 3; pro_republic -= 3; economic_growth -= 1;
 
-Chancellor [+ chancellor +] responds to the banking crisis with more cuts to welfare.
+[+ chancellor +] 총리는 금융 위기에 더 많은 복지를 삭감하는 것으로 화답했습니다.
 
 @end_toleration
 view-if: spd_toleration = 1
 on-arrival: time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0;
 call: set_next_election_time
 
-We are tired of [+ chancellor +]'s policy of austerity. After [+ chancellor +]'s attempt to use emergency powers to pass another welfare cut, we have worked with the other parties to reverse this policy. In response, the Reichstag has been dissolved, and new elections called.
+우리는 [+ chancellor +]의 긴축 정책에 신물이 났습니다. [+ chancellor +]가 또다시 비상 대권으로 복지 예산 삭감안을 통과시키려 하자, 우리는 다른 정당들과 협력하여 이를 저지했습니다. 이에 총리는 의회를 해산하고 새로운 총선을 요구했습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+새로운 총선은 [+ next_election_year +]년 [+ next_election_month : month +]월에 치러질 예정입니다.

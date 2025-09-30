@@ -1,5 +1,5 @@
 title: 1934
-subtitle: A new year
+subtitle: 새해
 new-page: true
 tags: event
 priority: 2
@@ -14,8 +14,8 @@ if (Q.unemployed >= 20) {
 
 = 1934
 
-A new year begins. [? if works_program = 0 : The economic depression seems to have bottomed out, but there is still much suffering. It is not too late to launch an economic rescue program. ?][? if works_program >= 1 and unemployment >= 15 : We have begun to launch a public works program, but the economy is still troubled. The recovery has begun, but more must be done. ?][? if works_program >= 1 and unemployment < 15 : Our public works program has successfully guided us through the worst of the crisis. The economy is improving, and finally people have optimism for the future. ?]
+새해가 밝았습니다. [? if works_program = 0 : 대공황이 바닥을 친 듯 보이지만, 여전히 많은 이들이 고통받고 있습니다. 경제 회생 프로그램을 시작하기에 아직 늦지 않았습니다. ?][? if works_program >= 1 and unemployment >= 15 : 공공근로 사업을 시작했지만, 경제는 여전히 위태롭습니다. 회복세에 접어들었지만, 아직 갈 길이 멉니다. ?][? if works_program >= 1 and unemployment < 15 : 우리의 공공근로 사업은 최악의 위기 국면을 성공적으로 헤쳐나갈 수 있도록 이끌어주었습니다. 경제는 나아지고 있고, 마침내 사람들은 미래에 희망을 품고 있습니다. ?]
 
-[? if return_to_normalcy: With the return to normalcy, the political landscape in Germany is shifting. Liberalism is making a return among the middle classes, and the radical parties of the right are declining. ?]
+[? if return_to_normalcy: 정상화가 이루어지면서 독일의 정치 지형도 변화하고 있습니다. 중산층 사이에서 자유주의가 다시 부상하고 있으며, 우익 급진 정당들의 세력은 약해지고 있습니다. ?]
 
-[? if president = "Hindenburg" : The president is in poor health; he is not expected to live out the year. ?]
+[? if president = "Hindenburg" : 대통령의 건강이 위독합니다. 올해를 넘기기 어려울 것으로 보입니다. ?]

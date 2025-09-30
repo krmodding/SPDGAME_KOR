@@ -1,5 +1,5 @@
-title: Austrian customs union
-subtitle: The Foreign Ministry seeks closer ties to Austria...
+title: 오스트리아 관세 동맹
+subtitle: 외무부, 오스트리아와의 관계 강화를 모색하다...
 new-page: true
 on-arrival: customs_union_seen = 1
 tags: event
@@ -8,30 +8,30 @@ max-visits: 1
 
 # TODO: this should happen regardless of the current state of the government...
 
-= Austrian Customs Union
+= 오스트리아 관세 동맹
 
-[? if spd_in_government: The [+ foreign_minister_party +] foreign minister has a proposal for a customs union with Austria. We can either accept or reject this agreement. ?]
-[? if not spd_in_government: The government of Chancellor [+ chancellor +] has a proposal for a customs union with Austria. Most likely, this will happen whatever we decide. ?]
+[? if spd_in_government: [+ foreign_minister_party +] 외무장관이 오스트리아와의 관세 동맹을 제안했습니다. 우리는 이 협정을 받아들이거나 거부할 수 있습니다. ?]
+[? if not spd_in_government: [+ chancellor +] 총리 정부가 오스트리아와의 관세 동맹을 제안했습니다. 우리의 선택과 무관하게 강행될 가능성이 높습니다. ?]
 
 
-The nationalist right has long yearned for closer ties with Austria, with the eventual goal of the merger of the two German-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
+민족주의 우파는 두 독일어권 국가의 합병을 최종 목표로 삼고 오스트리아와의 관계 강화를 오랫동안 갈망해왔습니다... 또한 많은 이들은 오스트리아와의 통합이 현재의 어려운 경제 상황을 개선해 줄 것이라 믿고 있습니다.
 
-However, the Allies, especially France, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
+하지만 연합국, 특히 프랑스가 반대할 것이 분명합니다. 이 협정은 베르사유 조약을 위반하는 것이며, 경제 제재로 이어져 우리 경제에 더 큰 타격을 줄 수 있습니다.
 
-- @let_it_happen: Let it happen.
-- @end_coalition: Stop this arrangement!
-- @end_toleration: Attempt to stop this arrangement!
+- @let_it_happen: 그대로 추진하게 둔다.
+- @end_coalition: 이 협정을 중단시킨다!
+- @end_toleration: 협정 중단을 시도한다!
 
 @let_it_happen
 on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2
 
-The customs union has been formed. Immediately, France and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
+관세 동맹이 체결되었습니다. 즉각 프랑스를 비롯한 주변국들이 항의를 제기했습니다. 이들의 장기적인 대응은 아직 지켜봐야 할 것입니다.
 
 @end_coalition
 view-if: spd_in_government = 1
 on-arrival: coalition_dissent += 1; dvp_relation -= 5; z_relation -= 4; z_relation -= 3 if chancellor_party == "Z"; dvp_relation -= 3 if chancellor_party == "Z"
 
-We attempt to impress upon our coalition partners the gravity of the potential Allied response. The proposal is dead, although the DVP and Center are not pleased.
+우리는 연정 파트너들에게 연합국의 대응이 불러올 심각한 결과를 설득하려 시도했습니다. 독일 인민당(DVP)과 중앙당이 불만을 표했지만, 제안은 철회되었습니다.
 
 
 @end_toleration
@@ -43,11 +43,11 @@ go-to: end_toleration_success if spd_r + kpd_r + ddp_r >= 50; end_toleration_fai
 on-arrival: time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0;
 call: set_next_election_time
 
-With the support of the KPD and [+ ddp_name +], we have successfully stopped the formation of the customs union. This results in the fall of the [+ chancellor +] government.
+공산당과 [+ ddp_name +]의 지지를 얻어, 관세 동맹 체결을 성공적으로 저지했습니다. 이로 인해 [+ chancellor +] 내각은 붕괴했습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+새로운 총선은 [+ next_election_year +]년 [+ next_election_month : month +]월에 치러질 예정입니다.
 
 @end_toleration_fail
 on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2
 
-Unfortunately, the far-right parties united with the government to outvote us. The customs union will be formed.
+안타깝게도, 극우 정당들이 정부와 손을 잡고 표결에서 우리를 눌렀습니다. 관세 동맹은 예정대로 체결될 것입니다.

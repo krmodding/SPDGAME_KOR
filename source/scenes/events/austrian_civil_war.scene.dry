@@ -1,43 +1,43 @@
-title: Uprising in Austria
+title: 오스트리아 봉기
 new-page: true
-subtitle: In response to police attacks, the Austrian socialists are rising up...
+subtitle: 경찰의 탄압에 맞서, 오스트리아 사회주의자들이 봉기하다...
 view-if: year = 1934 and (month = 2 or month = 3) and austrian_parliament_seen
 max-visits: 1
 on-arrival: austrian_civil_war_seen = 1
 face-image: img/schutzbund.png
 tags: event
 
-= Uprising in Austria
+= 오스트리아 봉기
 
 # pre-emptive democratic victory if sdapo strength >= 6
 # long civil war if sdapo_strength = 5 or 4 - opportunity for interference/forced peace
 # instant defeat if sdapo_strength < 4
 
-The crisis in Austria is continuing. The "Austrofascist" government led by Engelbert Dollfuß continues to rule by emergency decree. It has been persecuting its political opposition, primarily the social democrats of the SDAPÖ.
+오스트리아의 위기가 계속되고 있습니다. 엥겔베르트 돌푸스가 이끄는 "오스트로파시스트" 정부는 비상 계엄령으로 통치를 이어가며 주요 정적인 사회민주노동당(SDAPÖ)을 탄압해왔습니다.
 
-[? if sdapo_strength < 6: Now, Austria is entering a state of civil war. When the police attempted to seize weapons from the Republikanischer Schutzbund, the Schutzbund responded with force, shooting at the government troops. Fighting has sporadically broken out between Schutzbund and government forces all over Austria. ?]
+[? if sdapo_strength < 6: 마침내 오스트리아가 내전 상태에 돌입했습니다. 경찰이 사회민주당의 준군사조직인 공화수호동맹(Republikanischer Schutzbund)의 무기를 압수하려 하자, 수호동맹은 정부군에 발포하며 무력으로 저항했습니다. 오스트리아 전역에서 수호동맹과 정부군 간의 산발적인 교전이 벌어지고 있습니다. ?]
 
-[? if sdapo_strength >= 6: The government's attempts to suppress the socialist party and the Schutzbund were met with mass protest, supported by the SPD[? if foreign_minister_party = "SPD":  and the German government?]. [? if eu_austria: They are also supported by the recently formed European Union, with economic sanctions targeting the government. ?] ?]
+[? if sdapo_strength >= 6: 정부가 사회당과 수호동맹을 탄압하려 하자, 사민당[? if foreign_minister_party = "SPD": 과 독일 정부?]의 지지를 등에 업은 대규모 시위가 벌어졌습니다.. [? if eu_austria: 최근 결성된 유럽연합 또한 정부를 겨냥한 경제 제재를 가하며 이들을 지지하고 있습니다. ?] ?]
 
-Eventually...
+결국 일어났군...
 
 - @crushed
 - @long_war
 - @sdapo_victory
 
 @crushed
-title: The rebellious Schutzbund has been crushed.
+title: 반란을 일으킨 수호동맹이 진압되다
 on-arrival: austria_defeat = 1
 view-if: sdapo_strength < 4
 
-The uprising lasted for no more than a few days before it was crushed. The Schutzbund and SDAPÖ were too weak and too divided to stand against the forces of the state.
+봉기는 며칠 만에 진압되었습니다. 수호동맹과 사회민주노동당은 너무나 약하고 분열된 나머지 국가의 무력 앞에 맞설 수 없었습니다.
 
 @long_war
-title: It is a civil war.
+title: 내전으로 번지다.
 view-if: sdapo_strength = 5 or sdapo_strength = 4
 on-arrival: austria_civil_war = 1
 
-Neither side is backing down, and the SDAPÖ have formed an alternative government after defeating the government troops in some cities. Austria is in a state of civil war.
+어느 쪽도 물러서지 않는 가운데, 사회민주노동당은 몇몇 도시에서 정부군을 격퇴하고 임시 정부를 수립했습니다. 오스트리아는 내전 상태에 빠졌습니다.
 
 - @support_sdapo_party
 - @support_sdapo_govt
@@ -45,45 +45,45 @@ Neither side is backing down, and the SDAPÖ have formed an alternative governme
 - @long_war_2
 
 @support_sdapo_party
-title: As a party, the SPD will provide the SDAPÖ with support.
-subtitle: -2 resources
+title: 사민당 차원에서 오스트리아 사회민주노동당(SDAPÖ)을 지원한다.
+subtitle: 자원 -2
 choose-if: resources >= 2
 on-arrival: resources -= 2; sdapo_strength += 1
 go-to: sdapo_victory if sdapo_strength >= 6; long_war_2 if sdapo_strength < 6
 
-The SPD raises its resources to provide arms and volunteers for the SDAPÖ.
+사민당은 당 자금을 모아 오스트리아 사회주의자들에게 무기와 의용군을 지원합니다.
 
 @support_sdapo_govt
-title: The Foreign Ministry will support the democratic Austrian forces.
+title: 외무부가 오스트리아의 민주 세력을 지원한다.
 view-if: spd_in_government and foreign_minister_party = "SPD"
 on-arrival: sdapo_strength += 1
 go-to: sdapo_victory if sdapo_strength >= 6; long_war_2 if sdapo_strength < 6
 
-We provide diplomatic and some financial and material support to the SDAPÖ forces.
+우리는 오스트리아 사회민주노동당 병력에 외교적 지원은 물론, 부분적인 재정 및 물자 지원을 제공합니다.
 
 @force_peace
-title: Can we bring the sides together for a peace?
+title: 양측의 평화 협상을 주선할 수 있을까?
 view-if: spd_in_government and foreign_minister_party = "SPD" and sdapo_strength = 5
 on-arrival: austria_peace = 1; pro_republic += 3; coup_progress -= 1
 achievement: arbeiter_von_wien
 
-The Austrian government obviously sees us as biased, so there is no way they will let us host peace negotiations. However, negotiations begin nonetheless. In Switzerland, with Fascist Italy as the Austrofascists' protector and Germany as the SDAPÖ's, a peace deal is hammered out. The socialists are disarmed and give up all pretense of revolution, while the right-wing paramilitaries are also disarmed. Dictatorship ends, and normal government is restored, with free elections.
+오스트리아 정부는 당연히 우리를 편파적이라고 보기에 협상 주선을 허락하지 않았지만, 그럼에도 협상은 시작되었습니다. 스위스에서 오스트로파시스트의 보호자인 파시스트 이탈리아와 사회주의자들의 보호자인 독일이 참관한 가운데 평화 협정이 타결됩니다. 사회주의자들은 혁명의 모든 명분을 포기하고 무장 해제하며, 우익 준군사조직 또한 해체됩니다. 독재는 종식되고 자유 선거를 통해 정상적인 정부가 복원됩니다...
 
-Given the SDAPÖ's starting position, this is treated as a victory. Now begins the long work of reconstruction...
+오스트리아 사회민주노동당(SDAPÖ)이 처했던 불리한 상황을 고려하면, 이는 승리나 다름없습니다. 이제 기나긴 재건의 과업이 시작됩니다...
 
 @long_war_2
-title: There is nothing we can do.
+title: 우리가 할 수 있는 일은 없다.
 on-arrival: z_relation -= 6; dvp_relation -= 6; ddp_relation -= 3; catholics_spd -= 5; old_middle_spd -= 5; coalition_dissent += 1; economic_growth -= 0.5
 
-No matter our efforts, the war continues. Too many lives are extinguished. Refugees begin to flow into Germany, and trade suffers. Many are calling our Austrian interference a mistake.
+우리의 노력에도 전쟁은 계속됩니다. 너무나 많은 생명이 스러져 갔습니다... 많은 이들이 우리의 오스트리아 개입을 실수였다고 비난하고 있습니다.
 
 
 @sdapo_victory
-title: The Austrofascists are backing down!
+title: 오스트로파시스트들이 무릎을 꿇다!
 on-arrival: pro_republic += 5; west_relation += 1; east_relation += 1; austria_victory = 1; reichswehr_loyalty += 0.1; coup_progress -= 2
 view-if: sdapo_strength >= 6
 achievement: arbeiter_von_wien
 
-The result is that the Austrofascists have backed down! Caught in an untenable position domestically and abroad, they have agreed to restore the National Council and resign from government, holding new elections. Now begins the long work of reconstruction. Our countries are likely to be brought closer together as a result.
+마침내 오스트로파시스트들이 물러섰습니다! 국내외에서 설 자리를 잃은 그들은 국민의회를 복원하고 정권에서 물러나 새로운 선거를 실시하는 데 동의했습니다. 이제 재건이라는 긴 과업이 시작됩니다. 이번 일을 계기로 양국은 더욱 가까워질 것입니다.
 
-[? if eu_austria: This is a great success of the new European Union, and its prestige is seen to rise internationally. ?]
+[? if eu_austria: 이는 갓 출범한 유럽 연합의 커다란 성과이며, 이를 계기로 국제 사회에서 연합의 위상이 드높아졌습니다. ?]

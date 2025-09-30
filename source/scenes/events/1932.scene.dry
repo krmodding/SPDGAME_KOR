@@ -1,5 +1,5 @@
 title: 1932
-subtitle: A new year 
+subtitle: 새해 
 on-arrival: {!
 // increase NSDAP vote share 
 // TODO: if a public works program has started, unemployment is not so bad.
@@ -21,6 +21,6 @@ view-if: year = 1932 and month = 1
 priority: 2
 max-visits: 1
 
-A new year begins. [? if works_program = 0 : There is little to no good news in Germany. The economic depression has still not bottomed out. ?][? if works_program >= 1 and unemployment >= 20 : We have begun to launch a public works program, but unemployment is still stubbornly high. The people are beginning to finally have optimism, however. ?][? if works_program >= 1 and unemployment < 20 : We have begun to launch a public works program, and unemployment is finally starting to fall. The people are beginning to finally have optimism. ?]
+새해가 밝았습니다. [? if works_program = 0 : 독일에서 좋은 소식이라고는 찾아볼 수 없습니다. 대공황의 끝은 아직도 보이지 않습니다. ?][? if works_program >= 1 and unemployment >= 20 : 공공근로 사업을 시작했지만, 실업률은 여전히 요지부동입니다. 하지만 마침내 사람들 사이에서 낙관적인 분위기가 피어오르기 시작했습니다. ?][? if works_program >= 1 and unemployment < 20 : 공공근로 사업을 시작하자 마침내 실업률이 감소하기 시작했으며, 사람들 또한 드디어 미래를 낙관하기 시작했습니다. ?]
 
-The presidential election is in April of this year.
+올해 4월에는 대통령 선거가 치러질 예정입니다.
