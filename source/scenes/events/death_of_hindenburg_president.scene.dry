@@ -1,5 +1,5 @@
-title: The Death of Hindenburg
-subtitle: The President has died...
+title: 힌덴부르크의 죽음
+subtitle: 대통령이 서거하다...
 new-page: true
 view-if: year = 1934 and month >= 7 and president = "Hindenburg"
 on-arrival: round = 0; hindenburg_dead = 1; president = "Bumke (acting)"; president = "Großmann (acting)" if judicial_reform >= 4; spd_candidate = "Eckener"; kpd_candidate = "Thälmann"; kpd_candidate = "Münzenberg" if kpd_party_leader = "Conciliators"; z_candidate = "Adenauer"; ddp_candidate = "Gessler"; nsdap_candidate = "Hitler"; nsdap_candidate = "Göring" if hitler_deported; dnvp_candidate = "Seldte"; dvp_candidate = "Gessler"; other_candidate = "Seldte"; is_unity_candidate = 0; sapd_candidate = kpd_candidate;
@@ -7,40 +7,40 @@ max-visits: 1
 face-image: img/Hindenburg_head.jpg
 tags: event
 
-= The Death of Hindenburg
+= 힌덴부르크의 죽음
 
-President Paul von Hindenburg has passed away at age 86. An era of history is closing, and the future remains to be seen.
+파울 폰 힌덴부르크 대통령이 86세의 일기로 서거했습니다. 이로써 한 시대가 저물고, 미래는 한 치 앞을 알 수 없게 되었습니다.
 
-The nation engages in an outpouring of grief for its war hero and president, with even some sympathy among committed republicans and socialists. After all, Hindenburg steered the republic through some of its most challenging times, without giving in to extremists on the far right. Perhaps he is one reason democracy remains alive.
+온 국민이 전쟁 영웅이자 대통령이었던 그의 죽음을 애도하고 있으며, 이는 확고한 공화주의자나 사회주의자들 사이에서도 일부 공감을 얻고 있습니다. 어쨌든 힌덴부르크는 극우 세력에 굴복하지 않고 공화국이 가장 어려운 시기를 헤쳐나가도록 이끌었습니다. 그가 있었기에 민주주의가 살아남았다고도 할 수 있을 것입니다.
 
-New presidential elections are to be held as soon as possible. The German political landscape is wide open, with contenders from all over the political space. In the meantime, Supreme Court chief justice [? if judicial_reform < 4 : Erwin Bumke ?][? if judicial_reform >= 4 : Hermann Großmann ?] serves as the acting president.
+차기 대통령 선거가 최대한 신속하게 치러질 예정입니다. 독일 정계는 그야말로 무주공산이며, 각계각층의 후보들이 난립하고 있습니다. 그동안 대법원장인 [? if judicial_reform < 4 : 에르빈 붐케 ?][? if judicial_reform >= 4 : 헤르만 그로스만 ?]이 대통령 권한을 대행합니다.
 
 # Hermann Großmann is the supreme court chief justice in judicial reform.
 
-- @candidates: Who are the candidates so far?
+- @candidates: 현재 거론되는 후보들은 누구지?
 
 @candidates
 go-to: candidate_menu
 
-[? if not hitler_deported : Of course, Adolf Hitler will be running for the Nazis, in his third run. We have kept him out of power so far, but nothing is certain. ?]
-[? if hitler_deported : With Hitler deported, the Nazis will be running Hermann Göring as their candidate. ?]
-This might be the Nazis' last hurrah; the party's internal contradictions are heightening, and it is in desperate shortage of funds.
+[? if not hitler_deported : 물론, 아돌프 히틀러가 세 번째 대권 도전에 나섭니다. 지금까지는 그의 집권을 막아왔지만, 미래는 장담할 수 없습니다. ?]
+[? if hitler_deported : 히틀러가 추방됨에 따라, 나치는 헤르만 괴링을 후보로 내세울 것입니다. ?]
+이것이 나치의 마지막 발악이 될 수도 있습니다. 당내 모순은 격화되고 있으며, 자금난은 극심한 상황입니다.
 
-The DNVP will nominate Franz Seldte, leader of the Stahlhelm paramilitary group. He will be endorsed by many of Hindenburg's most right-wing supporters. They are working more closely with the Nazis than before, and in the second round, the far-right parties are expected to consolidate into a single anti-republican front.
+독일 국가인민당(DNVP)은 준군사조직 '철모단'의 수장인 프란츠 젤테를 후보로 지명할 것입니다. 그는 힌덴부르크를 따르던 강경 우익 세력의 폭넓은 지지를 받을 것입니다. 이들은 이전보다 나치와 더 긴밀히 협력하고 있으며, 2차 투표에서는 모든 극우 정당이 단일 반(反)공화국 전선으로 뭉칠 것으로 보입니다.
 
-[? if kpd_party_leader = "Conciliators" : Given the failure of Thälmann's previous runs for president, and his declining stature in the party, the KPD will be running Willi Münzenberg, a controversial figure sometimes called the "Red millionaire". He is a media magnate who leads a number of Communist front organizations. ?]
-[? if kpd_party_leader != "Conciliators" : This will be Ernst Thälmann's third run for president as leader of the KPD. Despite his previous electoral defeats, he retains the loyalty of the party as well as Stalin's Soviet Union. ?]
+[? if kpd_party_leader = "Conciliators" : 텔만의 거듭된 대선 패배와 당내 입지 약화로 인해, 공산당은 '붉은 백만장자'라는 별명을 가진 논란의 인물, 빌리 뮌첸베르크를 내세울 것입니다. 그는 여러 위장단체를 거느린 언론 재벌입니다. ?]
+[? if kpd_party_leader != "Conciliators" : 에른스트 텔만은 공산당 대표로서 세 번째 대선에 출마합니다. 과거의 패배에도 불구하고 그는 당과 스탈린의 소비에트 연방으로부터 굳건한 신임을 받고 있습니다. ?]
 
-Many republicans of the Center, [+ ddp_name +], and SPD float the idea of running Hugo Eckener, a nationally renowed Zeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to Nazism.
+중앙당, [+ ddp_name +], 그리고 우리 사민당 내 다수의 공화주의자들은 국민적 영웅인 비행선 선장, 후고 에케너를 단일 후보로 추대하자는 의견을 내놓고 있습니다. 그는 민족주의적 성향이 있으나, 나치즘에는 결연히 반대하는 인물입니다.
 
-Barring that, the Center and [+ ddp_name +] are planning to run separate candidates in the first round if the SPD runs its own candidate. The Center is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The [+ ddp_name +] might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the DVP and other parties who dislike the DNVP-NSDAP front.
+이것이 무산될 경우, 중앙당과 [+ ddp_name +]는 우리 당이 독자 후보를 내면 1차 투표에서 각자 후보를 낼 계획입니다. 중앙당은 쾰른 시장이자 프러시아 주의회 의원인 콘라트 아데나워를 고려하고 있습니다. 그는 가톨릭과 개신교를 모두 아우르는 보수 기독교 민주주의 연합을 주장합니다. [+ ddp_name +]는 독일 국가인민당-나치 연합에 반감을 가진 독일 인민당 등의 보수파에게도 표를 얻을 수 있는 오토 게슬러 전 국방장관을 내세울 수 있습니다.
 
-As for the SPD, we could support a joint Weimar Coalition candidate or run our own.
-[? if braun_campaign : Otto Braun is tired. He ran and failed in the previous two presidential elections, and no longer wishes to run. His wife is ill enough that he wishes to stay by her side. ?][? if braun_campaign = 0 and not spd_prussia: Otto Braun is tired. After being deposed in Prussia, he has largely retired from politics, and is devoting his time to caring for his dying wife. ?][? if braun_campaign = 0 and spd_prussia : Otto Braun is tired. He does not wish to run, but he is willing to be convinced that he is needed at this moment. His wife is terminally ill, and he does not want more responsibilities. ?]
-Kurt Schumacher is an ambitious rising star in the party, and would be all too willing to run. He was a hero in the Great War, but his relatively young age might be relevant.
-[? if womens_rights >= 6 and family_law >= 2 and womens_work >= 2 and welfare > 0: Or, perhaps it is time for a woman to become president. Germany and the SPD have been leading on women's rights for years, and it is only fitting that we should elect the world's first female president. Perhaps Marie Juchacz could be seen as the "mother of the nation" for her work in social welfare. However, her divorce 28 years ago might make it difficult for the Catholics to support her. ?]
+우리 사민당으로서는, 바이마르 연정 단일 후보를 지지하거나 독자 후보를 낼 수 있습니다.
+[? if braun_campaign : 오토 브라운은 지쳤습니다. 그는 지난 두 차례 대선에 출마했으나 낙선했으며, 더 이상 출마할 의사가 없습니다. 그 대신 아내가 병세가 심각해 곁을 지키고 싶어합니다. ?][? if braun_campaign = 0 and not spd_prussia: 오토 브라운은 지쳤습니다. 프로이센에서 축출된 후, 그는 정치에서 거의 은퇴했으며 죽어가는 아내를 돌보는 데 시간을 쏟고 있습니다. ?][? if braun_campaign = 0 and spd_prussia : 오토 브라운은 지쳤습니다. 그는 출마를 원하지 않지만, 지금 자신이 필요하다는 설득을 받아들일 용의가 있습니다. 그의 아내는 불치병에 걸렸으며, 그는 더 이상의 책임을 원하지 않습니다. ?]
+쿠르트 슈마허는 당내에서 떠오르는 야심만만한 샛별이며, 출마 의지가 매우 강합니다. 그는 대전쟁의 영웅이지만, 비교적 젊은 나이가 걸림돌이 될 수 있습니다.
+[? if womens_rights >= 6 and family_law >= 2 and womens_work >= 2 and welfare > 0: 혹은, 이제 여성이 대통령이 될 때가 온 것인지도 모릅니다. 독일과 우리 사민당은 수년간 여성 인권을 선도해왔으며, 세계 최초의 여성 대통령을 배출하는 것은 그에 걸맞은 일일 것입니다. 사회 복지 분야의 공로를 고려하면, 마리 유하츠는 '국가의 어머니'로 비칠 수 있습니다. 다만 28년 전의 이혼 경력이 가톨릭 세력의 지지를 얻는 데 어려움으로 작용할 수 있습니다. ?]
 
-[? if presidential_powers >= 1 and pro_republic >= 60 and pacifism >= 3: Since Germany has been largely democratized and presidential powers reduced, we can also support another non-traditional political figure, someone from the cultural, scientific, or literary spheres. They will perhaps be the symbol of a new Germany that has moved beyond its past. ?]
+[? if presidential_powers >= 1 and pro_republic >= 60 and pacifism >= 3: 독일의 민주주의가 성숙하고 대통령의 권한이 축소된 만큼, 문화, 과학, 문학계의 비정치적 인사를 내세우는 것도 가능합니다. 이는 과거의 상처를 극복한 새로운 독일의 상징이 될 것입니다. ?]
 # if Otto Braun ran last time: he can only run if he controls Prussia. Otherwise, it's Kurt Schumacher.
 
 # options: 
@@ -50,146 +50,146 @@ Kurt Schumacher is an ambitious rising star in the party, and would be all too w
 
 @candidate_menu
 
-- @eckener_r1: Support Hugo Eckener as a joint Weimar Coalition candidate.
-- @adenauer_r1: Support Konrad Adenauer of the Center Party.
-- @gessler_r1: Support Otto Gessler of the [+ ddp_name +].
-- @thalmann_r1: Support Ernst Thälmann of the KPD.
-- @munzenberg_r1: Support Willi Münzenberg of the KPD.
-- @braun_r1: Support Otto Braun.
-- @schumacher_r1: Support Kurt Schumacher.
-- @juchacz_r1: Support Marie Juchacz.
-- @cultural_figure: Support a nonpartisan cultural figure?
+- @eckener_r1: 후고 에케너를 바이마르 연정 단일 후보로 지지한다.
+- @adenauer_r1: 중앙당의 콘라트 아데나워를 지지한다.
+- @gessler_r1: [+ ddp_name +]의 오토 게슬러를 지지한다.
+- @thalmann_r1: 공산당의 에른스트 텔만을 지지한다.
+- @munzenberg_r1: 공산당의 빌리 뮌첸베르크를 지지한다.
+- @braun_r1: 오토 브라운을 지지한다.
+- @schumacher_r1: 쿠르트 슈마허를 지지한다.
+- @juchacz_r1: 마리 유하츠를 지지한다.
+- @cultural_figure: 무소속 문화계 인사를 지지할까?
 
 @eckener_r1
-subtitle: -1 resource - After nominating him, we still have to convince the other parties to support him.
-unavailable-subtitle: [? if resources < 1 : -1 resource - Not enough resources. ?]
+subtitle: 자금 -1 - 그를 후보로 지명했으니, 이제 다른 정당들도 그를 지지하도록 설득해야 합니다.
+unavailable-subtitle: [? if resources < 1 : 자금 -1 - 자원이 부족합니다.  ?]
 choose-if: resources >= 1
 on-arrival: spd_candidate = "Eckener"; is_unity_candidate = 1
 go-to: r1_menu
 
-We have convinced Hugo Eckener to run on behalf of the SPD, and hopefully the rest of the Weimar Coalition as well.
+우리는 후고 에케너가 사회민주당을 대표해 출마하도록 설득했으며, 바이마르 연정의 다른 정당들도 함께 지지해주기를 바랍니다.
 
 
 @adenauer_r1
 on-arrival: spd_candidate = "Adenauer"; z_relation += 4; Adenauer_bonus -= 2.5 if z_relation < 40; Seldte_bonus += 2.5 if z_relation < 40; is_unity_candidate = 1
 go-to: r1_menu
 
-We have endorsed Konrad Adenauer of the Center Party.
+우리는 중앙당의 콘라트 아데나워를 지지했습니다.
 
-[? if z_relation < 40 : With our support of Adenauer, some of the most conservative parts of the Bavarian People's Party have broken away from the Center Party, shifting their support to the Stahlhelm leader Seldte. ?]
+[? if z_relation < 40 : 우리가 아데나워를 지지하자, 바이에른 인민당 내 가장 보수적인 세력이 중앙당에서 이탈하여 철모단 지도자 젤테 지지로 돌아섰습니다. ?]
 
 @gessler_r1
 on-arrival: spd_candidate = "Gessler"; ddp_relation += 4; dvp_candidate = "Seldte" if dvp_relation < 40; is_unity_candidate = 1
 go-to: r1_menu
 
-We have endorsed Otto Gessler, independent formerly of the DDP.
+우리는 과거 독일 민주당 소속이었던 무소속 오토 게슬러를 지지했습니다.
 
-[? if dvp_relation < 40 : With our support of Gessler, the DVP components supporting him have broken away and are now shifting their support to Seldte. ?]
+[? if dvp_relation < 40 : 우리가 게슬러를 지지하자, 그를 지지하던 독일 인민당 세력이 이탈하여 젤테 지지로 돌아섰습니다. ?]
 
 @thalmann_r1
 view-if: kpd_candidate = "Thälmann" 
 choose-if: kpd_relation >= 50 and reformist_strength < left_strength
-unavailable-subtitle: [? if kpd_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this arrangement. ?]
+unavailable-subtitle: [? if kpd_relation < 50 : 공산당과의 관계가 충분히 좋지 않아, 그들은 우리의 지지를 받아들이려 하지 않습니다. ?] [? if reformist_strength >= left_strength : 개혁파가 이 연대를 지지하지 못하도록 당을 설득했습니다. ?]
 
-Supporting Thälmann is rather unpopular in our party, even if the Communists accept our support. Are we sure?
+설령 공산당이 우리 지지를 받아들인다 해도, 텔만 지지는 당내에서 인기가 없습니다. 정말 이 길로 가시겠습니까?
 
-- @support_thalmann_2: Yes, we will support Thälmann, despite the reformists' pleas against it.
-- @candidate_menu: Who else can we support?
+- @support_thalmann_2: 예, 개혁파의 반대에도 불구하고 텔만을 지지하겠습니다.
+- @candidate_menu: 다른 후보는 누가 있습니까?
 
 @support_thalmann_2
 on-arrival: spd_candidate = "Thälmann"; kpd_relation += 5; reformist_dissent += 10; center_dissent += 6; labor_dissent += 5; neorevisionist_dissent += 10; catholics_spd -= 5; new_middle_spd -= 5; old_middle_spd -= 5; rural_spd -= 5; ddp_relation -= 8; dvp_relation -= 15; z_relation -= 10; communist_coalition += 2; is_unity_candidate = 0
 go-to: r1_menu
 
-Fine. We have endorsed Ernst Thälmann of the KPD for president.
+알겠습니다. 우리는 공산당의 에른스트 텔만을 대통령 후보로 지지했습니다.
 
 
 @munzenberg_r1
-subtitle: Supporting Münzenberg is unpopular among the reformists, but less so than Thälmann would've been.
+subtitle: 뮌첸베르크 지지는 개혁파에게 인기가 없지만, 텔만만큼은 아닙니다.
 view-if: kpd_candidate = "Münzenberg" 
 choose-if: kpd_relation >= 40 and reformist_strength < left_strength
-unavailable-subtitle: [? if kpd_relation < 40 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this arrangement. ?]
+unavailable-subtitle: [? if kpd_relation < 40 : 공산당과의 관계가 충분히 좋지 않아, 그들은 우리의 지지를 받아들이려 하지 않습니다. ?] [? if reformist_strength >= left_strength : 개혁파가 이 연대를 지지하지 못하도록 당을 설득했습니다. ?]
 on-arrival: spd_candidate = "Münzenberg"; kpd_relation += 5; reformist_dissent += 5; ddp_relation -= 3; dvp_relation -= 5; z_relation -= 5; is_unity_candidate = 0
 go-to: r1_menu
 
-We have endorsed Willi Münzenberg of the KPD.
+우리는 공산당의 빌리 뮌첸베르크를 지지했습니다.
 
 
 @braun_r1
-subtitle: -2 resources.
-unavailable-subtitle: [? if resources < 2 : -2 resources - Not enough resources. ?][? if braun_campaign != 0 or not spd_prussia : Braun no longer wants to run. ?]
+subtitle: 자금 -2.
+unavailable-subtitle: [? if resources < 2 : 자금 -2 - 자금이 부족합니다.  ?][? if braun_campaign != 0 or not spd_prussia : 브라운은 더는 출마를 원치 않습니다. ?]
 choose-if: braun_campaign = 0 and spd_prussia and resources >= 2
 on-arrival: spd_candidate = "Braun"; resources -= 2; is_unity_candidate = 0
 go-to: r1_menu
 
-We have convinced Otto Braun to run for president once more.
+우리는 오토 브라운에게 다시 한번 대통령 선거에 출마해달라고 설득했습니다.
 
 
 @schumacher_r1
-subtitle: -2 resources.
-unavailable-subtitle: [? if resources < 2 : -2 resources - Not enough resources. ?]
+subtitle: 자금 -2.
+unavailable-subtitle: [? if resources < 2 : 자금 -2 - 자금이 부족합니다. ?]
 choose-if: resources >= 2
 on-arrival: spd_candidate = "Schumacher"; resources -= 2; is_unity_candidate = 0
 go-to: r1_menu
 
-We have nominated Kurt Schumacher to be our presidential candidate.
+우리는 쿠르트 슈마허를 당의 대통령 후보로 지명했습니다.
 
 
 @juchacz_r1
-subtitle: -2 resources.
-unavailable-subtitle: [? if resources < 2 : -2 resources - Not enough resources. ?]
+subtitle: 자금 -2.
+unavailable-subtitle: [? if resources < 2 : 자금 -2 - 자금이 부족합니다. ?]
 view-if: womens_rights >= 6 and family_law >= 2 and womens_work >= 2 and welfare > 0
 choose-if: resources >= 2
 on-arrival: spd_candidate = "Juchacz"; resources -= 2; is_unity_candidate = 0
 go-to: r1_menu
 
-We have nominated Marie Juchacz as our presidential candidate, the first woman ever to be nominated for this position!
+우리는 마리 유하츠를 대통령 후보로 지명했습니다. 이 자리에 여성이 지명된 것은 역사상 처음입니다!
 
 @cultural_figure
 view-if: presidential_powers >= 1 and pro_republic >= 60 and pacifism >= 3
-subtitle: The next president should be a symbol of the new Germany...
+subtitle: 다음 대통령은 새로운 독일의 상징이 되어야 합니다…
 
-Since the presidency has been made a largely ceremonial figure by our reforms, we might set a precedent by nominating a nonpartisan pro-democracy figure from the cultural, scientific, or literary worlds. There are many potential candidates...
+우리의 개혁으로 대통령직이 대부분 상징적인 자리가 되었으니, 문화, 과학, 문학계에서 민주주의를 지지하는 비당파적 인물을 지명하여 새로운 선례를 남길 수도 있습니다. 여러 후보가 있습니다…
 
-- @einstein_r1: Albert Einstein, physicist.
-- @mann_r1: Heinrich Mann, left-wing writer.
-- @ossietzky_r1: Carl von Ossietzky, pacifist journalist.
-- @candidate_menu: Actually, we should nominate someone else.
+- @einstein_r1: 알베르트 아인슈타인, 물리학자.
+- @mann_r1: 하인리히 만, 좌파 작가.
+- @ossietzky_r1: 카를 폰 오시에츠키, 평화주의 언론인.
+- @candidate_menu: 아무래도 다른 사람을 지명해야겠습니다.
 
 @einstein_r1
-subtitle: -2 resources
+subtitle: 자금 -2
 view-if: science >= 2 and kwg_research >= 1 and (major_curriculum = "scientific" or minor_curriculum = "scientific")
 choose-if: resources >= 2
 on-arrival: spd_candidate = "Einstein"; ddp_candidate = "Einstein"; resources -= 2; is_unity_candidate = 0; is_cultural_candidate = 1;
 go-to: r1_menu
 
-Albert Einstein is a Nobel Prize-winning scientist, director of the Kaiser Wilhelm Institute for Physics, and international advocate for peace. He was a founding member of the German Democratic Party (whose successor would support him in the election), but has also expressed sympathy towards socialism.
+알베르트 아인슈타인은 노벨상을 수상한 과학자이자 카이저 빌헬름 물리 연구소 소장이며, 국제적인 평화 운동가입니다. 그는 독일 민주당의 창립 멤버였고(그 후신 정당이 선거에서 그를 지지할 것입니다), 사회주의에 공감을 표하기도 했습니다.
 
-He did not wish to run for president, disliking the public nature of campaigning, but we have somehow convinced him that his candidacy will be crucial to the future of Germany and the world. As a Jewish German pacifist, his becoming president would be a repudiation of everything the Nazis stand for.
+그는 대중 앞에 나서는 선거운동을 싫어해 대통령 출마를 원치 않았지만, 그의 출마가 독일과 세계의 미래에 결정적이라고 어떻게든 설득해냈습니다. 유대계 독일인 평화주의자인 그가 대통령이 된다는 것은, 나치가 상징하는 모든 것을 정면으로 부정하는 일이 될 것입니다.
 
-The [+ ddp_name +] will endorse Einstein's candidacy.
+[+ ddp_name +]은 아인슈타인의 출마를 지지할 것입니다.
 
 @mann_r1
-subtitle: -2 resources - He might be too far left for the bourgeois parties.
+subtitle: 자금 -2 - 그는 부루주아 정당이 받아들이기에는 너무 좌익 성향이 강할 수 있습니다.
 view-if: kpd_relation >= 50
 choose-if: resources >= 2
 on-arrival: spd_candidate = "Mann"; resources -= 2; is_unity_candidate = 0; is_cultural_candidate = 1;
 go-to: r1_menu
 
-Heinrich Mann is a world-renowned novelist and poet who is also known to be a left-wing activist. His political sympathy lies with the far left, and he supported the revolutions in 1918 and 1919. He has long lived in the shadow of his better-known brother, Thomas Mann.
+하인리히 만은 세계적인 소설가이자 시인이며, 좌파 운동가로도 잘 알려져 있습니다. 그는 정치적으로 극좌파에 공감하며, 1918년과 1919년의 혁명을 지지했습니다. 한편 그는 오랫동안 더 유명한 동생 토마스 만의 그늘에 가려져 있었습니다.
 
-Mann is willing to accept the nomination for president.
+만은 대통령 후보 지명을 수락할 의사가 있습니다.
 
 
 @ossietzky_r1
 view-if: weltbuhne_dropped = 1
-subtitle: -2 resources - He might be too far left for the bourgeois parties.
+subtitle: 자금 -2 - 그는 부루주아 정당이 받아들이기에는 너무 좌익 성향이 강할 수 있습니다.
 choose-if: resources >= 2
 on-arrival: spd_candidate = "Ossietzky"; resources -= 2; is_unity_candidate = 0; is_cultural_candidate = 1;
 go-to: r1_menu
 
-Carl von Ossietzky is a left-wing journalist who is the publisher of the Weltbühne, a news magazine. He is most known for exposing the secret German rearmament program in 1929, which brought him international renown. In the 1932 presidential election, he endorsed the Communist Thälmann.
+카를 폰 오시에츠키는 시사 잡지 '벨트뷔네’의 발행인이자 좌파 언론인입니다. 그는 1929년 독일의 비밀 재무장 계획을 폭로하여 세계적인 명성을 얻은 것으로 가장 유명합니다. 1932년 대선에서는 공산당의 텔만을 지지했습니다.
 
-Ossietzky is extremely reluctant to become a politician, and has been an iconoclastic figure his entire life, criticizing the SPD as being part of the establishment. It is with a sense of irony that he accepts our nomination.
+오시에츠키는 정치인이 되기를 극도로 꺼려하며, 평생 사회민주당을 기득권 세력이라 비판해 온 반골 기질의 인물이었습니다. 그런 그가 우리의 지명을 수락한 것은 참으로 아이러니한 일입니다.
 
 
 @r1_menu
@@ -202,12 +202,12 @@ view-if: round = 0
 - @convince_dvp_spd
 - @convince_dvp_unity
 - @convince_kpd_spd
-- @round_1: Let the voting begin.
+- @round_1: 투표를 시작한다.
 
 
 # convincing Z to support a unity candidate
 @convince_z_unity
-title: Convince the Center Party to support [+ spd_candidate +].
+title: 중앙당이 [+ spd_candidate +]를 지지하도록 설득하기.
 view-if: (spd_candidate = "Eckener" or spd_candidate = "Gessler") and z_candidate != spd_candidate
 on-arrival: {!
 Q.z_support_braun = 0;
@@ -223,14 +223,14 @@ max-visits: 1
 go-to: z_failed if z_support_braun = 0 or (z_support_braun == 2 and historical_mode); z_success if z_support_braun = 1; z_partial if z_support_braun = 2 and not historical_mode
 
 # use the same supports as the Center Party in 1932
-We implore the Center Party to support [+ spd_candidate +] as a unity candidate against fascism, arguing that together, the Weimar Coalition can defeat the Nazis. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
+우리는 중앙당에게 파시즘에 맞설 단일 후보로 [+ spd_candidate +]를 지지해 달라고 강력히 요청하며, 바이마르 연정이 힘을 합치면 나치를 물리칠 수 있다고 주장했습니다. [? if z_relation >= 50 : 1918년부터 이어져 온 양당 간 협력의 역사 또한 상기시켰습니다 ?]
 
 
 # convincing Z to support an SPD candidate
 @convince_z_spd
-title: Convince the Center Party to support [+ spd_candidate +].
+title: 중앙당이 [+ spd_candidate +]를 지지하도록 설득하기.
 choose-if: spd_votes >= z_votes
-unavailable-subtitle: [? if spd_votes < z_votes: The Center knows that they are more popular than us; they do not see a reason to support our candidate. ?]
+unavailable-subtitle: [? if spd_votes < z_votes: 중앙당은 자신들이 우리보다 인기가 많다는 것을 알기에 우리 후보를 지지할 이유가 없다고 생각합니다. ?]
 view-if: (spd_candidate = "Braun" or spd_candidate = "Schumacher" or spd_candidate = "Juchacz" or is_cultural_candidate) and z_candidate != spd_candidate
 on-arrival: {!
 Q.z_support_braun = 0;
@@ -255,115 +255,115 @@ if (Q.spd_candidate == "Juchacz") {
 max-visits: 1
 go-to: z_failed if z_support_braun = 0 or (z_support_braun == 2 and historical_mode); z_success if z_support_braun = 1; z_partial if z_support_braun = 2 and not historical_mode
 
-We implore the Center Party to support [+ spd_candidate +]. We attempt to convince them of the necessity for unity in the face of fascism: that if we were divided, we would fall to the Nazis. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
+중앙당에 [+ spd_candidate +]를 지지해 달라고 강력히 요청했습니다. 파시즘 앞에서 단결하지 않으면 분열되어 나치에게 패배할 것이라며 단결의 필요성을 강조했습니다. [? if z_relation >= 50 : 1918년부터 이어져 온 양당 간 협력의 역사 또한 상기시켰습니다. ?]
 
 @z_failed
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
-Unfortunately, the Center Party is not convinced. [? if spd_candidate = "Juchacz" : The Catholics are not impressed with Marie Juchacz. This is in part because she is a woman, in part because she had a divorce. ?]
+안타깝게도, 중앙당은 설득되지 않았습니다. [? if spd_candidate = "Juchacz" : 가톨릭계는 마리 유하츠를 탐탁지 않게 여깁니다. 그녀가 여성이란 점도 있고, 이혼 경력도 있기 때문입니다. ?]
 
 @z_success
 on-arrival: z_candidate = spd_candidate; Seldte_bonus += 2.5 if z_relation < 40
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
-The Center Party is convinced! They will be supporting [+ spd_candidate +] for the election.
+중앙당이 설득되었습니다! 그들은 선거에서 [+ spd_candidate +]를 지지할 것입니다.
 
-[? if z_relation < 40 : Unfortunately, the BVP is breaking with the Center on this election, supporting Seldte of the DNVP instead.  ?]
+[? if z_relation < 40 : 안타깝게도, 바이에른 인민당(BVP)은 이번 선거에서 중앙당과 등을 돌리고 대신 독일국가인민당(DNVP)의 젤테를 지지합니다.  ?]
 
 @z_partial
 
-The Center are not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we front the resources.
+중앙당은 우리의 주장에 만족하지 않지만, 설득의 여지를 남겼습니다. 우리가 자금을 제공한다면 공동 선거 운동을 벌일 의향이 있다고 합니다.
 
-- @pay_z: Give them the resources they need.
-- @r1_menu: Forget about the Center.
-- @r2_campaigning: Forget about the Center.
+- @pay_z: 필요한 자금을 지원한다.
+- @r1_menu: 중앙당은 포기한다.
+- @r2_campaigning: 중앙당은 포기한다.
 
 @pay_z
 choose-if: resources >= 2
-subtitle: -2 resources
+subtitle: 자금 -2
 on-arrival: resources -= 2; z_candidate = spd_candidate; Seldte_bonus += 2.5 if z_relation < 40 and dnvp_candidate = "Seldte"
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
-With our resources, the Center are convinced to support [+ spd_candidate +]. Konrad Adenauer will drop out of the race.
+우리의 자금 지원으로, 중앙당은 [+ spd_candidate +]를 지지하기로 했습니다. 콘라트 아데나워는 경선에서 물러날 것입니다.
 
-[? if z_relation < 40 and dnvp_candidate = "Seldte" : Unfortunately, the BVP is breaking with the Center on this election, supporting Seldte of the DNVP instead.  ?]
+[? if z_relation < 40 and dnvp_candidate = "Seldte" : 안타깝게도, 바이에른 인민당(BVP)은 이번 선거에서 중앙당과 등을 돌리고 대신 독일국가인민당(DNVP)의 젤테를 지지합니다.  ?]
 
 
 @convince_ddp_unity
-title: Convince the [+ ddp_name +] to support [+ spd_candidate +].
+title:[+ ddp_name +]이 [+ spd_candidate +]를 지지하도록 설득하기.
 view-if: (spd_candidate = "Eckener" or spd_candidate = "Adenauer") and ddp_candidate != spd_candidate
 on-arrival: ddp_candidate = spd_candidate if ddp_relation >= 30
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 max-visits: 1
 
-[? if ddp_candidate = spd_candidate: The [+ ddp_name +] is easily persuaded to support [+ spd_candidate +]! ?]
-[? if ddp_candidate != spd_candidate: Unfortunately, the [+ ddp_name +] is unwilling to support [+ spd_candidate +]. The Weimar Coalition seems to be fracturing. ?]
+[? if ddp_candidate = spd_candidate: [+ ddp_name +]은 흔쾌히 [+ spd_candidate +]를 지지하기로 했습니다! ?]
+[? if ddp_candidate != spd_candidate: 안타깝게도, [+ ddp_name +]은 [+ spd_candidate +]를 지지하려 하지 않습니다. 바이마르 연정에 균열이 생기는 듯합니다. ?]
 
 
 @convince_ddp_spd
-title: Convince the [+ ddp_name +] to support [+ spd_candidate +].
+title: [+ ddp_name +]이 [+ spd_candidate +]를 지지하도록 설득하기.
 view-if: (spd_candidate = "Braun" or spd_candidate = "Schumacher" or spd_candidate = "Juchacz"or is_cultural_candidate) and ddp_candidate != spd_candidate
 on-arrival: ddp_candidate = spd_candidate if ddp_relation >= 40
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 max-visits: 1
 
-[? if ddp_candidate = spd_candidate: The [+ ddp_name +] is easily persuaded to support [+ spd_candidate +]! ?]
-[? if ddp_candidate != spd_candidate: Unfortunately, the [+ ddp_name +] is unwilling to support [+ spd_candidate +]. ?]
+[? if ddp_candidate = spd_candidate: [+ ddp_name +]은 흔쾌히 [+ spd_candidate +]를 지지하기로 했습니다! ?]
+[? if ddp_candidate != spd_candidate: 안타깝게도, [+ ddp_name +]은 [+ spd_candidate +]를 지지하려 하지 않습니다. ?]
 
 @convince_kpd_spd
-title: Convince the KPD to support [+ spd_candidate +].
+title: 공산당(KPD)이 [+ spd_candidate +]를 지지하도록 설득하기.
 view-if: (spd_candidate = "Braun" or spd_candidate = "Schumacher" or spd_candidate = "Juchacz" or is_cultural_candidate) and kpd_candidate != spd_candidate
 choose-if: spd_votes >= kpd_votes
-unavailable-subtitle: The KPD knows that they are more popular than us; they do not see a reason to support our candidate.
+unavailable-subtitle: 공산당은 자신들이 우리보다 인기가 많다는 것을 알기에 우리 후보를 지지할 이유가 없다고 생각합니다.
 max-visits: 1
 
-The KPD is supporting their own candidate, [+ kpd_candidate +]. [? if kpd_relation >= 50 : However, they are willing to be convinced to drop their campaign and support [+ spd_candidate +]; how do we convince them? ?][? if kpd_relation < 50 or kpd_party_leader != "Conciliators" : They do not seem willing to be convinced. ?]
+공산당은 독자 후보인 [+ kpd_candidate +]를 지지하고 있습니다. [? if kpd_relation >= 50 : 하지만 후보를 사퇴하고 [+ spd_candidate +]; 를 지지하도록 설득할 여지는 있습니다. 어떻게 그들을 설득하시겠습니까? ?][? if kpd_relation < 50 or kpd_party_leader != "Conciliators" : 그들은 설득될 기미를 보이지 않습니다. ?]
 
-- @kpd_resources: Use our resources.
-- @kpd_relations: Use our good relations.
-- @r1_menu: Forget about the KPD.
-- @r2_campaigning: Forget about the KPD.
+- @kpd_resources: 자금을 사용한다.
+- @kpd_relations: 좋은 관계를 활용한다.
+- @r1_menu: 공산당은 포기한다.
+- @r2_campaigning: 공산당은 포기한다.
 
 @kpd_resources
 view-if: kpd_relation >= 50 and not historical_mode
 choose-if: resources >= 3
-subtitle: -3 resources
-unavailable-subtitle: Not enough resources (need 3).
+subtitle: 자금 -3
+unavailable-subtitle: 자금이 부족합니다 (3 필요).
 on-arrival: resources -= 3; kpd_candidate = spd_candidate; sapd_candidate = spd_candidate;
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
-The KPD now endorses [+ spd_candidate +] in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+이제 공산당이 대통령 선거에서 [+ spd_candidate +]를 지지합니다! 우리는 부르주아 유권자들을 자극하지 않도록, 이 사실을 조용히 알려 달라고 요청합니다.
 
 @kpd_relations
 view-if: kpd_relation >= 60 or (kpd_party_leader == "Conciliators" and kpd_relation >= 45)
-unavailable-subtitle: Our relations are not good enough.
+unavailable-subtitle: 우리의 관계가 충분히 좋지 않습니다.
 on-arrival: kpd_candidate = spd_candidate; sapd_candidate = spd_candidate;
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
-The KPD now endorses [+ spd_candidate +] in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+이제 공산당이 대통령 선거에서 [+ spd_candidate +]를 지지합니다! 우리는 부르주아 유권자들을 자극하지 않도록, 이 사실을 조용히 알려 달라고 요청합니다.
 
 
 @convince_dvp_spd
-title: Convince the DVP to support [+ spd_candidate +].
-unavailable-subtitle: The DVP is not willing to support our candidate.
+title: 독일 인민당(DVP)이 [+ spd_candidate +]를 지지하도록 설득하기.
+unavailable-subtitle: 독일 인민당은 우리 후보를 지지하려 하지 않습니다.
 view-if: spd_candidate = "Braun" or spd_candidate = "Schumacher" or spd_candidate = "Juchacz" or is_cultural_candidate
 choose-if: (dvp_relation >= 50 and candidate != "Juchacz") or (dvp_relation >= 60 and candidate = "Juchacz")
 on-arrival: dvp_candidate = spd_candidate
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 max-visits: 1
 
-[? if dvp_candidate = spd_candidate: Thanks to our good relations, the DVP is persuaded to support [+ spd_candidate +]! ?]
+[? if dvp_candidate = 우리의 좋은 관계 덕분에, 독일 인민당이 [+ spd_candidate +]를 지지하기로 했습니다! ?]
 
 @convince_dvp_unity
-title: Convince the DVP to support [+ spd_candidate +].
-unavailable-subtitle: The DVP is not willing to support our candidate.
+title: 독일 인민당(DVP)이 [+ spd_candidate +]를 지지하도록 설득하기.
+unavailable-subtitle: 독일 인민당은 우리 후보를 지지하려 하지 않습니다.
 view-if: (spd_candidate = "Adenauer" or spd_candidate = "Gessler" or spd_candidate = "Eckener") and dvp_candidate != spd_candidate
 choose-if: dvp_relation >= 40
 on-arrival: dvp_candidate = spd_candidate
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 max-visits: 1
 
-[? if dvp_candidate = spd_candidate: Thanks to our good relations, and the fact that our candidate is a unity candidate not affiliated with the SPD, the DVP is persuaded to support [+ spd_candidate +]. ?]
+[? if dvp_candidate = spd_candidate: 우리의 좋은 관계와, 우리 후보가 사회민주당 소속이 아닌 단일 후보라는 점 덕분에 독일 인민당이 [+ spd_candidate +]를 지지하기로 했습니다. ?]
 
 
 
@@ -435,29 +435,29 @@ Q.round += 1
 !}
 go-to: r2_start if round = 1 and not has_majority; election_end if round > 1; r1_winner if has_majority
 
-Election results:
+선거 결과:
 
-[? if Hitler_running : Hitler - [+ Hitler_votes_disp +]% ?]
-[? if Goring_running : Göring - [+ Goring_votes_disp +]% ?]
+[? if Hitler_running : 히틀러 - [+ Hitler_votes_disp +]% ?]
+[? if Goring_running : 괴링 - [+ Goring_votes_disp +]% ?]
 
-[? if Seldte_running : Seldte - [+ Seldte_votes_disp +]% ?]
+[? if Seldte_running : 젤테 - [+ Seldte_votes_disp +]% ?]
 
-[? if Thalmann_running : Thälmann - [+ Thalmann_votes_disp +]% ?]
-[? if Munzenberg_running : Münzenberg - [+ Munzenberg_votes_disp +]% ?]
+[? if Thalmann_running : 텔만 - [+ Thalmann_votes_disp +]% ?]
+[? if Munzenberg_running : 뮌첸베르크 - [+ Munzenberg_votes_disp +]% ?]
 
-[? if Adenauer_running : Adenauer - [+ Adenauer_votes_disp +]% ?]
+[? if Adenauer_running : 아데나워 - [+ Adenauer_votes_disp +]% ?]
 
-[? if Gessler_running : Gessler - [+ Gessler_votes_disp +]% ?]
+[? if Gessler_running : 게슬러 - [+ Gessler_votes_disp +]% ?]
 
-[? if Eckener_running : Eckener - [+ Eckener_votes_disp +]% ?]
+[? if Eckener_running : 에케너 - [+ Eckener_votes_disp +]% ?]
 
-[? if Braun_running : Braun - [+ Braun_votes_disp +]% ?]
-[? if Schumacher_running : Schumacher - [+ Schumacher_votes_disp +]% ?]
-[? if Juchacz_running : Juchacz - [+ Juchacz_votes_disp +]% ?]
+[? if Braun_running : 브라운 - [+ Braun_votes_disp +]% ?]
+[? if Schumacher_running : 슈마허 - [+ Schumacher_votes_disp +]% ?]
+[? if Juchacz_running : 유하츠 - [+ Juchacz_votes_disp +]% ?]
 # cultural candidates
-[? if Einstein_running : Einstein - [+ Einstein_votes_disp +]% ?]
-[? if Ossietzky_running : Ossietzky - [+ Ossietzky_votes_disp +]% ?]
-[? if Mann_running : Mann - [+ Mann_votes_disp +]% ?]
+[? if Einstein_running : 아인슈타인 - [+ Einstein_votes_disp +]% ?]
+[? if Ossietzky_running : 오시에츠키 - [+ Ossietzky_votes_disp +]% ?]
+[? if Mann_running : 만 - [+ Mann_votes_disp +]% ?]
 
 @r2_start
 on-arrival: {!
@@ -511,16 +511,16 @@ if (Q.dvp_candidate != Q.spd_candidate && Q.dvp_candidate != Q.ddp_candidate && 
 !}
 go-to: r2_menu
 
-In the lead is [+ winner_desc +]. There is no majority in the first round. In the second round, any candidate who wins a plurality will win overall.
+현재 선두는 [+ winner_desc +]입니다. 1차 투표에서 과반 득표자가 나오지 않았습니다. 2차 투표에서는 최다 득표를 한 후보가 최종 승리합니다.
 
-[? if dnvp_candidate = "Hitler" : The DNVP and NSDAP have consolidated their electoral efforts, with the DNVP now endorsing Hitler for the second round. Some right-wing voters are uncomfortable with this arrangement, and might not vote. ?]
-[? if dnvp_candidate = "Göring" : The DNVP and NSDAP have consolidated their electoral efforts, with the DNVP now endorsing Göring for the second round. ?]
-[? if nsdap_candidate = "Seldte" : The DNVP and NSDAP have consolidated their electoral efforts, with the NSDAP now endorsing Seldte for the second round. ?]
+[? if dnvp_candidate = "Hitler" : 독일국가인민당(DNVP)과 나치당(NSDAP)이 선거 연대를 결성, 2차 투표에서 독일국가인민당이 히틀러를 지지합니다. 일부 우익 유권자들은 이 연대에 불편함을 느끼고 투표를 포기할 수도 있습니다. ?]
+[? if dnvp_candidate = "Göring" : 독일국가인민당(DNVP)과 나치당(NSDAP)이 선거 연대를 결성, 2차 투표에서 독일국가인민당이 괴링을 지지합니다. ?]
+[? if nsdap_candidate = "Seldte" : 독일국가인민당(DNVP)과 나치당(NSDAP)이 선거 연대를 결성, 2차 투표에서 나치당이 젤테를 지지합니다. ?]
 
-[? if gessler_drops_out : The liberal candidate Otto Gessler has dropped out in favor of the Center Party's Konrad Adenauer. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
-[? if adenauer_drops_out : The Center Party candidate Konrad Adenauer has dropped out in favor of the DStP-DVP candidate Otto Gessler. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
+[? if gessler_drops_out : 자유주의 진영의 오토 게슬러 후보가 중앙당의 콘라트 아데나워를 지지하며 사퇴했습니다. 이로써 온건 부르주아 진영의 표가 결집되고, 우익 군소정당의 표 일부를 흡수할 수 있게 되었습니다. ?]
+[? if adenauer_drops_out : 중앙당의 콘라트 아데나워 후보가 국가당-인민당의 오토 게슬러 후보를 지지하며 사퇴했습니다. 이로써 온건 부르주아 진영의 표가 결집되고, 우익 군소정당의 표 일부를 흡수할 수 있게 되었습니다. ?]
 
-What should we do?
+어떻게 해야 할까요?
 
 @r2_menu
 
@@ -537,71 +537,71 @@ What should we do?
 - @r2_vote: Let the voting begin.
 
 @r2_endorse_thalmann
-title: Switch our support to Thälmann of the KPD.
-subtitle: This will hurt our party's support.
+title: 지지 후보를 공산당의 텔만으로 변경한다.
+subtitle: 이 결정은 당의 지지율에 타격을 줄 것입니다.
 view-if: spd_candidate != "Thälmann" and kpd_candidate = "Thälmann"
 choose-if: kpd_relation >= 50 and left_strength > reformist_strength
-unavailable-subtitle: [? if kpd_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this bizarre arrangement. ?]
+unavailable-subtitle: [? if kpd_relation < 50 : 공산당과의 관계가 충분히 좋지 않아, 그들은 우리의 지지를 받아들이려 하지 않습니다. ?] [? if reformist_strength >= left_strength : 개혁파가 이 기이한 연대를 지지하지 못하도록 당을 설득했습니다. ?]
 on-arrival: reformist_dissent += 15; center_dissent += 10; labor_dissent += 5; neorevisionist_dissent += 10; catholics_spd -= 5; workers_spd -= 3; kpd_relation += 10; communist_coalition += 2; z_relation -= 15; dvp_relation -= 15; ddp_relation -= 12
 on-departure: z_candidate = "Adenauer" if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz"; ddp_candidate = z_candidate if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz"; dvp_candidate = z_candidate if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz"; spd_candidate = "Thälmann"; 
 max-visits: 1
 
-We have switched our endorsement to Ernst Thälmann of the KPD. [? if z_candidate = spd_candidate : Our former allies in the Center Party see this as a betrayal. ?][? if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz": Now, they will support Konrad Adenauer once again. ?][? if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz": The [+ ddp_name +] will switch their support to the Center Party candidate. ?][? if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz": The DVP will also support the Center Party candidate. ?]
+우리는 지지 후보를 공산당의 에른스트 텔만으로 변경했습니다. [? if z_candidate = spd_candidate : 이전 동맹이었던 중앙당은 이를 배신으로 간주합니다. ?][? if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz": 이제 그들은 다시 콘라트 아데나워를 지지할 것입니다. ?][? if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz": [+ ddp_name +]는 지지 후보를 중앙당 후보로 변경할 것입니다. ?][? if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz": 독일인민당(DVP) 또한 중앙당 후보를 지지할 것입니다. ?]
 
 - @r2_vote: Let the voting begin.
 
 @r2_endorse_munzenberg
-title: Switch our support to Münzenberg of the KPD.
-subtitle: This will hurt our party's support.
+title: 지지 후보를 공산당의 뮌첸베르크로 변경한다.
+subtitle: 이 결정은 당의 지지율에 타격을 줄 것입니다.
 view-if: spd_candidate != "Münzenberg" and kpd_candidate = "Münzenberg"
 choose-if: kpd_relation >= 50 and left_strength > reformist_strength
-unavailable-subtitle: [? if kpd_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this bizarre arrangement. ?]
+unavailable-subtitle: [? if kpd_relation < 50 : 공산당과의 관계가 충분히 좋지 않아, 그들은 우리의 지지를 받아들이려 하지 않습니다. ?] [? if reformist_strength >= left_strength : 개혁파가 이 기이한 연대를 지지하지 못하도록 당을 설득했습니다. ?]
 on-arrival: reformist_dissent += 12; center_dissent += 10; labor_dissent += 5; neorevisionist_dissent += 10; catholics_spd -= 5; workers_spd -= 3; kpd_relation += 10; communist_coalition += 2; z_relation -= 12; ddp_relation -= 10; dvp_relation -= 15; 
 on-departure: z_candidate = "Adenauer" if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz"; ddp_candidate = z_candidate if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz"; dvp_candidate = z_candidate if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz"; spd_candidate = "Münzenberg"; 
 max-visits: 1
 
-We have switched our endorsement to Willi Münzenberg of the KPD. [? if z_candidate = spd_candidate : Our former allies in the Center Party see this as a betrayal. ?][? if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz": Now, they will support Konrad Adenauer once again. ?][? if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz": The [+ ddp_name +] will switch their support to the Center Party candidate. ?][? if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz": The DVP will also support the Center Party candidate. ?]
+우리는 지지 후보를 공산당의 빌리 뮌첸베르크로 변경했습니다. [? if z_candidate = spd_candidate : 이전 동맹이었던 중앙당은 이를 배신으로 간주합니다. ?][? if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz": 이제 그들은 다시 콘라트 아데나워를 지지할 것입니다. ?][? if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz": [+ ddp_name +]는 지지 후보를 중앙당 후보로 변경할 것입니다. ?][? if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz": 독일인민당(DVP) 또한 중앙당 후보를 지지할 것입니다. ?]
 
 - @r2_vote: Let the voting begin.
 
 
 @r2_endorse_adenauer
-title: Switch our support to Konrad Adenauer of the Center Party.
+title: 지지 후보를 중앙당의 콘라트 아데나워로 변경한다.
 view-if: z_candidate = "Adenauer" and spd_candidate != z_candidate
 on-departure: kpd_candidate = "Thälmann" if kpd_candidate == spd_candidate and kpd_party_leader != "Conciliators"; kpd_candidate = "Münzenberg" if kpd_candidate == spd_candidate and kpd_party_leader == "Conciliators"; sapd_candidate = kpd_candidate; spd_candidate = "Adenauer"; z_relation += 4; Adenauer_bonus -= 2.5 if z_relation < 40; Seldte_bonus += 2.5 if z_relation < 40; is_unity_candidate = 1
 go-to: r2_campaigning
 
-We have endorsed Konrad Adenauer of the Center Party.
+우리는 중앙당의 콘라트 아데나워를 지지하기로 했습니다.
 
-[? if z_relation < 40 : With our support of Adenauer, some of the most conservative parts of the Bavarian People's Party have broken away from the Center Party, shifting their support to the Stahlhelm leader Seldte. ?]
+[? if z_relation < 40 : 우리가 아데나워를 지지하자, 바이에른 인민당의 가장 보수적인 세력이 중앙당을 이탈하여 철모단의 지도자 젤테를 지지하기 시작했습니다. ?]
 
-[? if kpd_candidate = spd_candidate: The KPD is now breaking from our previous coalition and supporting their own candidate. ?]
+[? if kpd_candidate = spd_candidate: 이제 공산당이 기존의 연대에서 이탈하여 독자 후보를 내세웁니다. ?]
 
 
 @r2_endorse_gessler
-title: Switch our support to Otto Gessler.
+title: 지지 후보를 오토 게슬러로 변경한다.
 view-if: ddp_candidate = "Gessler" and spd_candidate != ddp_candidate
 on-departure: kpd_candidate = "Thälmann" if kpd_candidate == spd_candidate and kpd_party_leader != "Conciliators"; kpd_candidate = "Münzenberg" if kpd_candidate == spd_candidate and kpd_party_leader == "Conciliators"; sapd_candidate = kpd_candidate; spd_candidate = "Gessler"; ddp_relation += 4; dvp_candidate = "Seldte" if dvp_relation < 40; is_unity_candidate = 1
 go-to: r2_campaigning
 
-We have endorsed Otto Gessler, independent formerly of the DDP.
+우리는 구 독일민주당(DDP) 출신의 무소속 후보, 오토 게슬러를 지지하기로 했습니다.
 
-[? if dvp_relation < 40 : With our support of Gessler, the DVP components supporting him have broken away and are now shifting their support to Seldte. ?]
+[? if dvp_relation < 40 : 우리가 게슬러를 지지하자, 그를 지지하던 독일인민당(DVP) 내 일부 세력이 이탈하여 젤테를 지지하기 시작했습니다. ?]
 
-[? if kpd_candidate = spd_candidate: The KPD is now breaking from our previous coalition and supporting their own candidate. ?]
+[? if kpd_candidate = spd_candidate: 이제 공산당이 기존의 연대에서 이탈하여 독자 후보를 내세웁니다. ?]
 
 
 
 @r2_endorse_eckener
-title: Convince the Weimar Coalition parties to unite behind Hugo Eckener.
-subtitle: -2 resources
-unavailable-subtitle: [? if resources < 2 : -2 resources - Not enough resources. ?]
+title: 바이마르 연정 정당들을 설득하여 후고 에케너를 단일 후보로 내세운다.
+subtitle: 자금 -2
+unavailable-subtitle: [? if resources < 2 : 자금 -2 - 자금이 부족합니다. ?]
 choose-if: resources >= 2 and ((z_relation >= 50 and z_leader = "Kaas") or (z_relation >= 30 and z_leader = "Joos")) and ddp_relation >= 40
 view-if: z_candidate = "Adenauer" and ddp_candidate = "Gessler" and spd_candidate != "Eckener"
 on-arrival: kpd_candidate = "Thälmann" if kpd_candidate == spd_candidate and kpd_party_leader != "Conciliators"; kpd_candidate = "Münzenberg" if kpd_candidate == spd_candidate and kpd_party_leader == "Conciliators"; sapd_candidate = kpd_candidate; spd_candidate = "Eckener"; z_candidate = "Eckener"; ddp_candidate = "Eckener"; resources -= 2; is_unity_candidate = 1
 go-to: r2_campaigning
 
-We have successfully united all of the parties of the Weimar Coalition behind Hugo Eckener!
+바이마르 연정의 모든 정당이 후고 에케너를 지지하도록 단일화하는 데 성공했습니다!
 
 
 
@@ -634,33 +634,33 @@ go-to: election_end
 @hitler_victory
 on-arrival: chancellor = "Hitler"; chancellor_party = "NSDAP"
 
-With [+ nsdap_candidate +]'s victory, the Nazis waste no time in consolidating power. [? if president = "Göring": His first act is to depose the current chancellor and appoint Hitler as chancellor, first undoing his deportation. ?][? if president = "Hitler": His first act is to depose the current chancellor and appoint himself chancellor, using his stormtroopers to attack any opposition. ?]
+With [+ nsdap_candidate +]가(이) 승리하자, 나치는 지체 없이 권력 장악에 나섰습니다.  [? if president = "Göring": 그가 가장 먼저 한 일은 현 총리를 해임하고, 추방령부터 철회한 뒤 히틀러를 총리로 임명하는 것이었습니다. ?][? if president = "Hitler": 그가 가장 먼저 한 일은 현 총리를 해임하고, 돌격대를 동원해 모든 반대 세력을 공격하며 스스로 총리 자리에 오르는 것이었습니다.  ?]
 
-- @hitler_takes_power: What next?
-- @hitler_constitutional: This is unconstitutional!
+- @hitler_takes_power: 다음은 어떻게 될 것인가?
+- @hitler_constitutional: 이것은 명백한 위헌이다!
 
 @seldte_victory
 on-arrival: chancellor = "Hitler"; chancellor_party = "NSDAP"
 
-With Seldte's victory, the balance of power passes to the Nazis. [? if hitler_deported: His first act is to depose the current chancellor and appoint Adolf Hitler as chancellor, first undoing his deportation. ?][? if not hitler_deported: His first act is to depose the current chancellor and appoint Adolf Hitler as chancellor. ?]
+젤테가 승리하면서 권력의 추가 나치에게 넘어갔습니다. [? if hitler_deported: 그가 취임 직후 한 일은 현 총리를 해임하고, 추방령부터 철회한 뒤 아돌프 히틀러를 총리로 임명하는 것이었습니다. ?][? if not hitler_deported: 그가 취임 직후 한 일은 현 총리를 해임하고 아돌프 히틀러를 총리로 임명하는 것이었습니다. ?]
 
-- @hitler_takes_power: What next?
-- @hitler_constitutional: This is blatantly unconstitutional!
+- @hitler_takes_power: 다음은 어떻게 될 것인가?
+- @hitler_constitutional: 이것은 명백한 위헌 행위다!
 
 @hitler_constitutional
 view-if: presidential_powers
 
-We have passed a constitutional amendment preventing the president from having the power to arbitrarily dismiss a government. To undo this, the far right has called a plebiscite on a new constitutional amendment. Stormtroopers are in the streets, "convincing" voters to support their proposal. Germany is nearing civil war.
+우리는 대통령이 임의로 내각을 해산할 수 없도록 하는 헌법 수정안을 통과시켰습니다. 이를 무력화하기 위해, 극우 세력은 새로운 헌법 수정안에 대한 국민투표를 발의했습니다. 돌격대가 거리를 활보하며 유권자들에게 그들의 제안을 지지하도록 "설득"하고 있습니다. 독일은 내전 직전의 상황입니다.
 
-- @fight: We will fight the fascists in the streets!
-- @defeat_democratic: We can only defeat the fascists through democratic means!
+- @fight: 거리에서 파시스트들에게 맞서 싸우겠다!
+- @defeat_democratic: 오직 민주적인 방법만이 파시즘을 이길 수 있다!
 
 @fight
 
-Do we realize that this means civil war, against the full force of the state?
+국가의 모든 공권력에 맞서 싸우는 것, 이것이 내전을 의미한다는 것을 알고 있습니까?
 
-- @civil_war: Yes.
-- @defeat_democratic: It is not too late to fight constitutionally.
+- @civil_war: 그렇다.
+- @defeat_democratic: 아직은 헌법의 테두리 안에서 싸울 수 있다.
 
 @defeat_democratic
 on-arrival: {!
@@ -675,13 +675,13 @@ go-to: ref_win if pro_democracy_votes >= 50; ref_lose if pro_democracy_votes < 5
 @ref_win
 on-arrival: constitutional_crisis = 1
 
-Despite the Nazi threats, supporters of the SPD and the democratic parties refuse to turn out for the referendum, depriving it of the necessary threshold to pass. This is a small victory, as stormtroopers still run rampant in the streets. There is no constitutional path to absolute power, but will that stop the Nazis? 
+나치의 위협에도 불구하고 사민당과 민주 정당 지지자들이 국민투표를 보이콧하여, 가결에 필요한 투표율을 미달시켰습니다. 거리에는 여전히 돌격대가 활개치고 있지만, 이것은 작은 승리입니다. 절대 권력으로 향하는 합헌적인 길은 막혔습니다. 하지만, 그것으로 나치를 막을 수 있을까요?
 
-- @game_over: The ending is yet to be seen...
+- @game_over: 결말은 아직 정해지지 않았다…
 
 @ref_lose
 
-- @hitler_takes_power: What next?
+- @hitler_takes_power: 다음은 어떻게 될 것인가?
 
 
 @election_end
@@ -698,20 +698,20 @@ on-arrival: kpd_relation = 80
 
 # TODO: depose the chancellor?
 
-Thälmann wastes no time in consolidating power, using all means available to reshape the government. In response, the far-right immediately launches a coup attempt. We have no choice but to unite with the KPD against the fascists...
+텔만은 지체 없이 모든 수단을 동원하여 정부를 자기 입맛에 맞게 개편하며 권력 장악에 나섰습니다. 이에 극우 세력은 즉각적인 쿠데타로 응수했습니다. 파시스트에 맞서려면 공산당과 손을 잡는 수밖에 없습니다…
 
-- @civil_war: This is civil war.
+- @civil_war: 이것은 내전이다.
 
 @thalmann_democrat
 
-Despite the victory of the anti-constitutionalist Thälmann, he appears to be respecting the constitutional constraints on presidential power, at least for now. There is no appetite on the right for a coup at this moment. The bourgeoisie have to live with a communist president, at least for now.
+반(反)헌법주의자인 텔만이 승리했지만, 적어도 현재로서는 헌법이 정한 대통령의 권력 제한을 존중하는 듯 보입니다. 우파 진영에서도 현시점에서는 쿠데타를 일으킬 동력이 없습니다. 부르주아 계급은 당분간 공산주의자 대통령을 감내해야 할 것입니다.
 
 
 @munzenberg_victory
 achievement: rote_millionar
 go-to: nazis_lose
 
-The bourgeois and right-wing parties are up in arms about the prospect of a Communist president, although Münzenberg and the KPD conciliators take pains to assure Germany of their commitment to the democratic republic. There is no energy for a coup against the new president. The bourgeoisie will have to live with whatever comes.
+부르주아와 우익 정당들은 공산주의자 대통령의 등장에 격렬히 반발하고 있습니다. 하지만 뮌첸베르크와 공산당 내 온건파는 민주 공화정에 헌신할 것을 독일에 약속하며 이들을 안심시키려 애쓰고 있습니다. 새 대통령에 맞서 쿠데타를 일으킬 동력은 없는 상황입니다. 부르주아 계급은 앞으로 닥칠 모든 일을 받아들여야 할 것입니다.
 
 @eckener_win
 achievement: zeppelin_kapitan
@@ -722,7 +722,7 @@ go-to: nazis_lose
 achievement: wahlrechts
 go-to: nazis_lose
 
-This is a historic victory - Marie Juchacz is the first woman to be elected president in any republic, anywhere in the world.
+이것은 역사적인 승리입니다. 마리 유하츠는 전 세계 공화국 역사상 최초로 선출된 여성 대통령입니다.
 
 @einstein_victory
 achievement: republik_der_wissenschaft
@@ -742,4 +742,4 @@ go-to: nazis_lose
 
 @nazis_lose
 
-After its electoral defeat, the NSDAP-DNVP coalition is collapsing into infighting and financial insolvency. The far-right's moment has seemingly ended, at least for now.
+선거 패배 후, 나치-독일국가인민당 연합은 내분과 재정 파탄으로 붕괴하고 있습니다. 적어도 당분간, 극우의 시대는 막을 내린 것 같습니다.

@@ -1,4 +1,4 @@
-title: DDP Reformation
+title: 독일 민주당(DDP)의 개편
 subtitle: The German Democratic Party is becoming the German State Party.
 view-if: year == 1930 and month >= 6
 new-page: true
@@ -6,21 +6,21 @@ max-visits: 1
 on-arrival: ddp_name = "국가당"; ddp_dstp_seen = 1; new_middle_ddp -= 5; old_middle_ddp -= 3; rural_ddp -= 3; ddp_relation -= 5
 tags: event
 
-= DDP Reformation
+= 독일 민주당(DDP)의 개편
 
-Leaders of the German Democratic Party, seeing the party's vote share fall over time, has decided that now is the time to completely reform the party. The party leader, Erich Koch-Weser, has engineered a merger with the political arm of the Young German Order, a nationalist paramilitary group. Now, the party will be called the German State Party, or DStP.
+계속되는 득표율 하락에 위기를 느낀 독일 민주당(DDP) 지도부가 당의 전면적인 개혁을 결심했습니다. 당수인 에리히 코흐-베저는 민족주의 성향의 준군사조직인 '청년 독일 기사단'의 정치 조직과 합당을 성사시켰고, 이제 당명은 독일 국가당(DStP)으로 변경됩니다.
 
-This has led to outcry from the left wing of the party, progressives who would rather not work with antisemites and conservative nationalists.
+ 이 결정은 반유대주의자와 보수 민족주의자들과의 연대를 거부하는 당내 좌파 진보주의자들의 거센 반발을 불러왔습니다.
 
-- @advantage: We can recruit disaffected progressives to the SPD.
-- @nothing: This is none of our concern.
+- @advantage: 불만을 품은 진보주의자들을 사민당으로 영입한다.
+- @nothing: 우리가 신경 쓸 일이 아니다.
 
 @advantage
 on-arrival: new_middle_spd += 5; peoples_party_support += 1; left_dissent += 5; reformist_strength += 3; neorevisionist_strength += 3; reformist_dissent -= 2; neorevisionist_dissent -= 2
 
-With turmoil in the DDP, we have an opportunity to recruit middle-class progressives and portions of the liberal intelligensia into our party. The left of the SPD is opposed to this path, seeing it as diluting the class character of the party. On the other hand, revisionists support this course.
+DDP의 내분은 중산층 진보주의자들과 자유주의 성향 지식인들을 우리 당으로 끌어들일 기회입니다. 당내 좌파는 이러한 행보가 당의 계급적 성격을 희석시킬 것이라며 반대하지만, 수정주의자들은 이 노선을 지지하고 있습니다.
 
 
 @nothing
 
-The DDP's internal affairs are none of our concern.
+DDP의 내부 사정은 우리가 관여할 바가 아닙니다.
