@@ -1,21 +1,21 @@
-title: Exodus from the Reichsbanner
-subtitle: Owing to its militarization, the Center Party and [+ ddp_name +] are leaving the Reichsbanner.
+title: 국기단에서의 이탈
+subtitle: 군사화 경향으로 인해, 중앙당과 [+ ddp_name +]이 국기단을 탈퇴하고 있습니다.
 view-if: rb_militancy >= 0.2 and not rb_exit and not rb_stay
 new-page: true
 tags: event
 
-= Exodus from the Reichsbanner
+= 국기단에서의 이탈
 
-The Reichsbanner has become increasingly militarized as of late, with ever-greater quantities of arms and paramilitary training, as well as a stream of radicalized SPD members. In response, the members associated with the other Weimar parties, the Center Party and [+ ddp_name +], are threatening to leave for good. They signed up for a mass movement to defend the republic, not a socialist militia.
+국기단이 갈수록 많은 무기를 보유하고 준군사 훈련을 실시하며, 급진화된 사민당원들이 유입되는 등 최근 점점 군사화되고 있습니다. 이에 바이마르 연정의 다른 축인 중앙당 및 [+ ddp_name +] 소속 단원들이 영구 탈퇴를 위협하고 나섰습니다. 그들은 공화국을 수호하는 대중 운동에 참여한 것이지, 사회주의 민병대에 가입한 것이 아니라는 주장입니다.
 
-- @let_go: Let the centrists and liberals go.
-- @lower_militancy: We must lower the Reichsbanner's militancy.
-- @keep_them: Can we convince them that a militant Reichsbanner is necessary for defending the Republic?
+- @let_go: 중도파와 자유주의자들이 떠나도록 내버려 둔다.
+- @lower_militancy: 국기단의 군사적 성향을 완화해야 한다.
+- @keep_them: 강력한 국기단이 공화국 수호에 필수적이라고 그들을 설득할 수 있을까?
 
 @let_go
 on-arrival: rb_strength *= 0.9; z_relation -= 5; ddp_relation -= 5; rb_exit = 1; left_strength += 5*(1-dissent)
 
-We have judged that the Reichsbanner's militancy is more important than maintaining a coalition with the Center Party and [+ ddp_name +]. The Reichsbanner members affiliated with these parties leave, while the left of the SPD is strengthened.
+우리는 국기단의 전투력이 중앙당 및 [+ ddp_name +]과의 연대를 유지하는 것보다 더 중요하다고 판단했습니다. 이들 정당 소속 단원들이 떠나면서, 사민당 내 좌파의 입지는 강화됩니다.
 
 # TODO: this should make it harder to form Weimar coalitions
 
@@ -23,11 +23,11 @@ We have judged that the Reichsbanner's militancy is more important than maintain
 @lower_militancy
 on-arrival: rb_militancy *= 0.5
 
-Bowing to the other parties' demands, we reduce the Reichsbanner's military training, thus inducing them to stay.
+다른 정당들의 요구를 받아들여, 국기단의 군사 훈련을 축소해 그들이 남도록 했습니다.
 
 
 @keep_them
-unavailable-subtitle: They are unable to be convinced at this time.
+unavailable-subtitle: 지금은 그들을 설득할 수 없습니다.
 choose-if: strife >= 5 and (z_relation >= 50 or (z_party_leader == "Joos" and z_relation >= 30)) and ddp_relation >= 50
 on-arrival: rb_stay = 1
 

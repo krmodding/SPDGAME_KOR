@@ -1,5 +1,5 @@
-title: Presidential Election
-subtitle: Hindenburg runs for re-election...
+title: 대통령 선거
+subtitle: 힌덴부르크가 재선에 출마하다…
 view-if: year = 1932 and (month = 4 or month = 5) and presidential_election_seen = 0
 frequency: 1000
 max-visits: 1
@@ -12,67 +12,63 @@ face-image: img/hindenburg_election.jpg
 
 @pres_election
 
-The presidential election is coming up soon. [? if spd_in_government = 0 : While the position of Chancellor is typically more important, recent governments have depended on the president's emergency decree powers, making the office vital. ?] [? if hitler_deported==0 : The Nazis will run Hitler, while the KPD will run Thälmann. A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of unspeakable horrors. ?][? if hitler_deported==1 : Since Hitler has been deported, the Nazis will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler, who, despite his legal persecution, retains a popular base who wishes to see him returned to Germany. Meanwhile, the KPD will run Ernst Thälmann. ?]
-[? if sapd_formed: The SAPD, our former leftists, are supporting Thälmann of the KPD, and will likely share an endorsement with the Communists. ?]
+곧 대통령 선거가 다가옵니다. [? if spd_in_government = 0 : 보통 총리직이 더 중요하지만, 최근 정부들은 대통령의 비상대권에 의존해왔기에 대통령직의 중요성이 매우 커졌습니다. ?] [? if hitler_deported==0 : 나치당은 히틀러를, 공산당은 텔만을 후보로 내세울 것입니다. 히틀러의 승리는 의회 민주주의의 종말이자, 형언할 수 없는 공포 시대의 시작을 의미합니다. ?][? if hitler_deported==1 : 히틀러가 추방되었기 때문에 나치당은 대신 헤르만 괴링을 후보로 내세울 것입니다. 그는 히틀러의 대리인으로 널리 알려져 있으며, 법적 박해에도 불구하고 히틀러는 여전히 독일로의 귀환을 바라는 대중적 지지 기반을 유지하고 있습니다. 한편 공산당은 에른스트 텔만을 후보로 내세울 것입니다. ?]
+[? if sapd_formed: 우리 당에서 탈당한 좌파들이 만든 사회주의노동자당(SAPD)은 공산당의 텔만을 지지하며, 공산주의자들과 공동으로 지지 선언을 할 것으로 보입니다. ?]
 
 # if hitler is deported, who would nsdap run? Duesterberg? or Goering?
 # Goering runs, essentially as a proxy for Hitler, who is now stateless.
 
-Many are calling for us to support the incumbent Hindenburg, despite his well-known reactionary tendencies. Is he truly the best bulwark against Hitler's ascension? On the other hand, many in our party are calling for Otto Braun to run again, but he is reluctant.
+많은 이들이 그의 반동적인 성향을 잘 알고 있음에도 불구하고, 현직 대통령인 힌덴부르크를 지지할 것을 요구하고 있습니다. 과연 그가 히틀러의 집권을 막을 최선의 보루일까요? 한편 당내에서는 오토 브라운을 후보로 내세우자는 목소리가 높지만, 정작 그는 출마를 꺼리고 있습니다.
 
-[? if kpd_relation >= 50 : Another strange possibilty is an united front with the Communists, either to support Thälmann or our own candidate. ?]
+[? if kpd_relation >= 50 : 또 하나의 기묘한 가능성은 텔만 혹은 우리 당 후보를 지지하기 위해 공산당과 통일전선을 형성하는 것입니다. ?]
 
 
-- @support_hindenburg: Support Hindenburg.
-- @support_braun: Run Otto Braun of the SPD.
-- @support_thalmann: Support Ernst Thälmann of the KPD.
+- @support_hindenburg: 힌덴부르크를 지지한다.
+- @support_braun: 사민당의 오토 브라운을 후보로 내세운다.
+- @support_thalmann: 공산당의 에른스트 텔만을 지지한다.
 
 @support_hindenburg
-subtitle: This is the default option.
+subtitle: 이것이 기본적인 선택지입니다.
 
-Despite his known reactionary nature, Hindenburg has at least been keeping the Nazis at bay. Thus, we must support him.
+그의 반동적인 본성에도 불구하고, 힌덴부르크는 적어도 지금까지 나치를 막아왔습니다. 따라서, 우리는 그를 지지해야만 합니다.
 
-- @final_election: The final vote...
+- @final_election: 최종 투표로…
 
 @support_braun
-subtitle: This will cost us 2 resources.
+subtitle: 자금 2가 소모됩니다.
 choose-if: resources >= 2
-unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 2; braun_campaign = 1
-go-to: braun_campaign
+unavailable-subtitle: 자금예상치 못한 선거 운동을 펼치려면 노력이 필요합니다. 우선 브라운 본인을 출마하도록 설득해야 합니다. 그 자신은 힌덴부르크 지지를 선호했기에, 그에게 주어진 운명을 받아들이도록 설득하는 데는 상당한 노력이 필요합니다.
 
-It takes effort to run a somewhat unexpected campaign. First, Braun has to be convinced to run. He himself had supported voting for Hindenburg, and it takes a good deal of prodding to convince him of his destiny.
-
-The miniscule remnants of the Democratic Party (now called the German State Party) will likely support us. Who else will? Can we convince the Center to support Braun? What about the Communists?
+미미하게 남은 민주당의 후신(현재 독일국가당으로 불리는)은 우리를 지지할 것입니다. 그 밖에 누가 있을까요? 중앙당을 설득해서 브라운을 지지하게 할 수 있을까요? 공산당은 어떻고요?
 
 
 @support_thalmann
 choose-if: kpd_relation >= 50 and reformist_strength < left_strength
-unavailable-subtitle: [? if kpd_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this arrangement. ?]
+unavailable-subtitle: [? if kpd_relation < 50 : 공산당과의 관계가 충분히 좋지 않아 우리의 지지조차 받으려 하지 않습니다. ?] [? if reformist_strength >= left_strength : 개혁파가 이 기이한 합의를 지지하지 않도록 당을 설득하고 있습니다. ?]
 
-Supporting Thälmann is rather unpopular in our party, even if the Communists accept our support. Are we sure?
+설령 공산당이 우리의 지지를 받아들인다 해도, 텔만을 지지하는 것은 당내에서 매우 인기가 없는 결정입니다. 정말 확실합니까?
 
-- @support_thalmann_2: Yes, we will support Thälmann, despite the reformists' pleas against it.
-- @support_braun: Support Braun instead.
-- @support_hindenburg: Support Hindenburg instead.
+- @support_thalmann_2: 예, 개혁파의 애원에도 불구하고 텔만을 지지하겠습니다.
+- @support_braun: 대신 브라운을 지지한다.
+- @support_hindenburg: 대신 힌덴부르크를 지지한다.
 
 @support_thalmann_2
 on-arrival: spd_support_thalmann = 1; reformist_dissent += 15; center_dissent += 10; labor_dissent += 5; neorevisionist_dissent += 10; catholics_spd -= 5; workers_spd -= 3; kpd_relation += 10; communist_coalition += 2; z_relation -= 15; dvp_relation -= 15; ddp_relation -= 10
 
-Fine. We have thrown our support to Chairman Thälmann of the KPD.
+좋습니다. 우리는 공산당의 텔만 서기장에게 지지를 표명했습니다.
 
-- @final_election: The final vote...
+- @final_election: 최종 투표로…
 
 @braun_campaign
 
-- @convince_z: Convince the Center Party.
-- @convince_kpd: Convince the Communists.
-- @convince_liberals: Convince the remaining liberals, wherever they are.
-- @final_election: The final vote...
+- @convince_z: 중앙당을 설득한다.
+- @convince_kpd: 공산당을 설득한다.
+- @convince_liberals: 남아있는 자유주의 세력을 설득한다.
+- @final_election: 최종 투표로…
 
 @convince_z
 choose-if: spd_votes >= z_votes
-unavailable-subtitle: The Center knows that they are more popular than us; they do not see a reason to support our candidate.
+unavailable-subtitle: 중앙당은 자신들의 인기가 우리보다 높다는 것을 알고 있습니다. 굳이 우리 후보를 지지할 이유가 없다고 생각합니다.
 on-arrival: {!
 Q.z_support_braun = 0;
 if (Q.z_relation >= 55 || (Q.z_relation > 35 && Q.z_party_leader == "Joos")) {
@@ -86,62 +82,62 @@ if (Q.z_relation >= 55 || (Q.z_relation > 35 && Q.z_party_leader == "Joos")) {
 go-to: z_failed if z_support_braun = 0 or (z_support_braun == 2 and historical_mode); z_success if z_support_braun = 1; z_partial if z_support_braun = 2 and not historical_mode
 max-visits: 1
 
-We remind the Center leaders of Hindenburg's anti-Catholicism, and try to convince them that Hindenburg's path will eventually lead to Hitler. We also remind them of the successes they've had as part of the Weimar coalition in Prussia with Otto Braun, and our support for the Center candidate Wilhelm Marx in the 1925 presidential election.
+우리는 중앙당 지도자들에게 힌덴부르크의 반(反)가톨릭 성향을 상기시키고, 힌덴부르크를 지지하는 길이 결국 히틀러의 집권으로 이어질 것이라고 설득합니다. 또한 오토 브라운과 함께 프로이센에서 '바이마르 연정’의 일원으로 거둔 성공들과, 1925년 대선에서 우리가 중앙당 후보 빌헬름 마르크스를 지지했던 사실을 상기시킵니다.
 
 @z_success
 go-to: braun_campaign
 
-The Center are convinced! They will be part of the Braun coalition.
+중앙당이 설득되었습니다! 그들이 브라운 지지 연대에 합류할 것입니다.
 
 @z_partial
 
-The Center are not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we front the resources.
+중앙당은 우리의 논리에 만족하지는 않지만, 설득의 여지를 열어두고 있습니다. 우리가 자원을 지원한다면 공동 선거운동을 펼칠 용의가 있다고 합니다.
 
-- @pay_z: Give them the resources they need.
-- @braun_campaign: Forget about the Center.
+- @pay_z: 필요한 자금을 지원한다.
+- @braun_campaign: 중앙당은 포기한다.
 
 @pay_z
 choose-if: resources >= 3
-subtitle: -3 resources
-unavailable-subtitle: Not enough resources (need 3)
+subtitle: 자금 -3
+unavailable-subtitle: 자금 부족 (3 필요)
 on-arrival: resources -= 3; z_support_braun = 1
 go-to: braun_campaign
 
-With our resources, the Center are convinced to support Braun over Hindenburg.
+우리의 자금 지원으로, 중앙당은 힌덴부르크 대신 브라운을 지지하기로 했습니다.
 
 @z_failed
 go-to: braun_campaign
 
-Unfortunately, we fail to turn them away from Hindenburg.
+안타깝게도, 그들을 힌덴부르크 지지에서 돌아서게 하는 데 실패했습니다.
 
 @convince_kpd
 choose-if: spd_votes >= kpd_votes
-unavailable-subtitle: The KPD knows that they are more popular than us; they do not see a reason to support our candidate.
+unavailable-subtitle: 공산당(KPD)은 자신들의 인기가 우리보다 높다는 것을 알고 있습니다. 굳이 우리 후보를 지지할 이유가 없다고 생각합니다.
 max-visits: 1
 
-The KPD is supporting their own candidate, Ernst Thälmann. [? if kpd_relation >= 50 : However, they are willing to be convinced to drop their campaign and support Braun; how do we convince them? ?][? if kpd_relation < 50 or kpd_party_leader != "Conciliators" : They do not seem willing to be convinced. ?]
+공산당은 독자 후보인 에른스트 텔만을 지지하고 있습니다. [? if kpd_relation >= 50 : 하지만, 그들은 자신들의 선거 운동을 중단하고 브라운을 지지하도록 설득될 여지가 있습니다. 어떻게 그들을 설득할 수 있을까요? ?][? if kpd_relation < 50 or kpd_party_leader != "Conciliators" : 그들은 설득될 의향이 없어 보입니다 ?]
 
-- @kpd_resources: Use our resources.
-- @kpd_relations: Use our good relations.
-- @braun_campaign: Forget about the KPD.
+- @kpd_resources: 자금을 사용한다.
+- @kpd_relations: 좋은 관계를 활용한다.
+- @braun_campaign: 공산당은 포기한다.
 
 @kpd_resources
 view-if: kpd_relation >= 50 and not historical_mode
 choose-if: resources >= 3
-subtitle: -3 resources
-unavailable-subtitle: Not enough resources (need 3).
+subtitle: 자금 -3
+unavailable-subtitle: 자금 부족 (3 필요)
 on-arrival: resources -= 3; kpd_support_braun = 1
 go-to: braun_campaign
 
-The KPD now endorses Braun in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+공산당(KPD)이 대통령 선거에서 브라운을 지지하기로 했습니다! 부르주아 유권자들이 등을 돌리지 않도록, 지지 표명은 조용히 해달라고 요청했습니다.
 
 @kpd_relations
 view-if: kpd_relation >= 60 or (kpd_party_leader == "Conciliators" and kpd_relation >= 45)
-unavailable-subtitle: Our relations are not good enough.
+unavailable-subtitle: 관계가 충분히 좋지 않습니다.
 on-arrival: kpd_support_braun = 1
 go-to: braun_campaign
 
-The KPD now endorses Braun in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+공산당이 대통령 선거에서 브라운을 지지하기로 했습니다! 부르주아 유권자들이 등을 돌리지 않도록, 지지 표명은 조용히 해달라고 요청했습니다.
 
 
 
@@ -149,19 +145,19 @@ The KPD now endorses Braun in the presidential election! We ask them to keep the
 max-visits: 1
 go-to: convince_liberals_success if dvp_relation >= 50; convince_liberals_fail if dvp_relation < 50
 
-The liberal vote ([+ ddp_name +] and DVP) has been falling over time, so they will probably be of minimal help to us. For what it's worth, the [+ ddp_name +] is already willing to support Braun.
+자유주의 정당들 ([+ ddp_name +]과 독일인민당)의 득표율은 계속 하락해왔기에, 우리에게 큰 도움은 되지 않을 것입니다. 그나마 다행인 점은, [+ ddp_name +]은 이미 브라운을 지지할 의사가 있다는 것입니다.
 
 @convince_liberals_success
 on-arrival: dvp_support_braun = 1
 go-to: braun_campaign
 
-Thanks to our good relations, the DVP has promised to support Braun in the election.
+우리의 좋은 관계 덕분에, 독일인민당은 선거에서 브라운을 지지하기로 약속했습니다.
 
 @convince_liberals_fail
 on-arrival: dvp_support_braun = 0
 go-to: braun_campaign
 
-We failed to convince the DVP to support Braun.
+독일인민당이 브라운을 지지하도록 설득하는 데 실패했습니다.
 
 
 
@@ -262,38 +258,38 @@ Q.thalmann_votes_disp = Q.thalmann_votes.toFixed(1);
 !}
 go-to: hindenburg_wins if hindenburg_majority == 1; thalmann_wins if thalmann_majority == 1; hitler_wins if hitler_majority == 1; braun_wins if braun_majority == 1; no_majority_round1 if any_majority == 0 and election_round == 1; round2_results if election_round >= 2
 
-Results:
+선거 결과:
 
-Hindenburg - [+ hindenburg_votes_disp +]%
+힌덴부르크 - [+ hindenburg_votes_disp +]%
 
 [+ nsdap_candidate +] - [+ hitler_votes_disp +]%
 
-[? if kpd_support_braun == 0 : Thälmann - [+ thalmann_votes_disp +]% ?]
+[? if kpd_support_braun == 0 : 텔만 - [+ thalmann_votes_disp +]% ?]
 
-[? if braun_campaign > 0 : Braun - [+ braun_votes_disp +]% ?]
+[? if braun_campaign > 0 : 브라운 - [+ braun_votes_disp +]% ?]
 
 @no_majority_round1
 on-arrival: hitler_support_hindenburg = 1 if (braun_plurality or thalmann_plurality)
 go-to: round2_menu
 
-There is no majority in this round. In the second round, any candidate who wins a plurality will win overall. What should we do?
+1차 투표에서 과반 득표자가 나오지 않았습니다. 2차 투표에서는 최다 득표를 한 후보가 최종 당선됩니다. 어떻게 해야 할까요?
 
-[? if braun_plurality or thalmann_plurality : In order to consolidate the vote for the Right, and to prevent a socialist from becoming president, [+ nsdap_candidate +] is no longer running in the second round, and has switched his endorsement to Hindenburg. ?]
+[? if braun_plurality or thalmann_plurality :  우파 표의 결집과 사회주의자 대통령의 당선을 막기 위해, [+ nsdap_candidate +]은(는) 2차 투표에서 사퇴하고 힌덴부르크 지지를 선언했습니다. ?]
 
 
 @round2_menu
 
-- @round2_convince_z: Convince the Center to switch their support to us.
-- @round2_convince_kpd: Convince the KPD to switch their support to us. 
-- @round2_hindenburg: Switch our support to Hindenburg.
-- @round2_thalmann: Switch our support to Thälmann of the KPD.
-- @round2_vote: Let the second round voting begin.
+- @round2_convince_z: 중앙당을 설득해 우리 지지로 돌아세운다.
+- @round2_convince_kpd: 공산당을 설득해 우리 지지로 돌아세운다.
+- @round2_hindenburg: 힌덴부르크 지지로 전환한다.
+- @round2_thalmann: 공산당의 텔만 지지로 전환한다.
+- @round2_vote: 2차 투표를 시작한다.
 
 
 @round2_convince_z
 view-if: braun_campaign > 0 and z_support_braun != 1 
 choose-if: spd_votes >= z_votes
-unavailable-subtitle: The Center knows that they are more popular than us; they do not see a reason to support our candidate.
+unavailable-subtitle: 중앙당은 자신들의 인기가 우리보다 높다는 것을 알고 있습니다. 굳이 우리 후보를 지지할 이유가 없다고 생각합니다.
 on-arrival: {!
 Q.z_support_braun = 0;
 // if Hindenburg support is greater than Hitler and Braun support, this should be much harder
@@ -319,95 +315,95 @@ max-visits: 1
 go-to: round2_menu
 on-departure: hitler_support_hindenburg = 1 if braun_votes + z_votes > hitler_votes
 
-[? if hitler_support_hindenburg : The Center's opinion is affected by the Nazis' support of Hindenburg, and is willing to turn away from him. ?] The Center are convinced! They will be part of the Braun coalition. [? if hitler_support_hindenburg : In addition, they will also bring in some minor parties who will support us. ?]
+[? if hitler_support_hindenburg : 나치가 힌덴부르크를 지지하자 중앙당의 여론이 흔들리며, 그에게서 등을 돌릴 의향을 보입니다. ?] 중앙당이 설득되었습니다! 그들이 브라운 지지 연대에 합류할 것입니다. [? if hitler_support_hindenburg : 게다가, 우리를 지지할 몇몇 소수 정당들도 함께 데려올 것입니다. ?]
 
-[? if not hitler_support_hindenburg and braun_votes + z_votes > hitler_votes: With the Center Party supporting Braun, [+ nsdap_candidate +] has dropped out of the race, and the Nazis have endorsed Hindenburg to prevent a socialist from becoming president. ?]
+[? if not hitler_support_hindenburg and braun_votes + z_votes > hitler_votes: 중앙당이 브라운 지지를 선언하자, [+ nsdap_candidate +]는 후보에서 사퇴했으며, 나치당은 사회주의자 대통령의 당선을 막기 위해 힌덴부르크 지지를 선언했습니다. ?]
 
 @r2_z_partial
 
-The Center are not satisfied with our arguments, but they are open to being convinced[? if hitler_support_hindenburg: , especially given the Nazis' support for Hindenburg. ?]. They are willing to run a joint campaign if we front the resources.
+중앙당은 우리의 논리에 만족하지는 않지만, 설득의 여지는 열어두고 있습니다[[? if hitler_support_hindenburg: 특히 나치가 힌덴부르크를 지지하는 상황이라 더욱 그렇습니다. ?]. 우리가 자원을 지원한다면 공동 선거운동을 펼칠 용의가 있다고 합니다.
 
-- @r2_pay_z: Give them the resources they need.
-- @round2_menu: Forget about the Center.
+- @r2_pay_z: 필요한 자금을 지원한다.
+- @round2_menu: 중앙당은 포기한다.
 
 @r2_pay_z
 choose-if: resources >= 2
-subtitle: -2 resources
-unavailable-subtitle: Not enough resources (need 2)
+subtitle: 자금 -2 
+unavailable-subtitle: 자금 부족 (2 필요)
 on-arrival: resources -= 2; z_support_braun = 1
 on-departure: hitler_support_hindenburg = 1 if braun_votes + z_votes > hitler_votes
 go-to: round2_menu
 
-With our resources, the Center are convinced to support Braun over Hindenburg.
+우리의 자금 지원으로, 중앙당은 힌덴부르크 대신 브라운을 지지하기로 했습니다.
 
-[? if not hitler_support_hindenburg and braun_votes + z_votes > hitler_votes: With the Center Party supporting Braun, [+ nsdap_candidate +] has dropped out of the race, and the Nazis have endorsed Hindenburg to prevent a socialist from becoming president. ?]
+[? if not hitler_support_hindenburg and braun_votes + z_votes > hitler_votes: 중앙당이 브라운 지지를 선언하자, [+ nsdap_candidate +]는 후보에서 사퇴했으며, 나치당은 사회주의자 대통령의 당선을 막기 위해 힌덴부르크 지지를 선언했습니다. ?]
 
 @r2_z_failed
 go-to: round2_menu
 
-Unfortunately, we fail to turn them away from Hindenburg. [? if hindenburg_votes > braun_votes : Given that Hindenburg received more votes than Braun, they believe that we should turn to Hindenburg, not the other way around. ?]
+안타깝게도, 그들을 힌덴부르크 지지에서 돌아서게 하는 데 실패했습니다. [? if hindenburg_votes > braun_votes : 힌덴부르크가 브라운보다 더 많은 표를 얻었기에, 그들은 우리가 그쪽으로 가야지, 그들이 우리 쪽으로 와야 할 이유가 없다고 생각합니다. ?]
 
 
 
 
 @round2_convince_kpd
 choose-if: spd_votes >= kpd_votes
-unavailable-subtitle: The KPD knows that they are more popular than us; they do not see a reason to support our candidate.
+unavailable-subtitle: 공산당(KPD)은 자신들의 인기가 우리보다 높다는 것을 알고 있습니다. 굳이 우리 후보를 지지할 이유가 없다고 생각합니다.
 view-if: braun_campaign > 0 and kpd_support_braun == 0 
 max-visits: 1
 
-The KPD is committed to supporting Ernst Thälmann. [? if kpd_relation >= 45 : However, the Nazi-Hindenburg coalition worries them enough that they are willing to be convinced to drop their campaign and support Braun. ?][? if kpd_relation < 45 : They do not seem willing to be convinced. ?]
+공산당은 에른스트 텔만 지지를 고수하고 있습니다. [? if kpd_relation >= 45 : 그러나 나치와 힌덴부르크의 연합에 위협을 느껴 선거 운동을 중단하고 브라운을 지지하도록 설득될 여지는 있습니다. ?][? if kpd_relation < 45 : 그들은 설득될 의향이 없어 보입니다. ?]
 
-- @r2_kpd_resources: Use our resources.
-- @r2_kpd_relations: Use our good relations.
-- @round2_menu: Forget about the KPD.
+- @r2_kpd_resources: 필요한 자금을 지원한다.
+- @r2_kpd_relations: 좋은 관계를 활용한다.
+- @round2_menu: 공산당은 포기한다.
 
 @r2_kpd_resources
 view-if: kpd_relation >= 45 and not historical_mode
 choose-if: resources >= 3
-subtitle: -3 resources
-unavailable-subtitle: Not enough resources (need 3).
+subtitle: 자금 -3 
+unavailable-subtitle: 자금 부족 (3 필요).
 on-arrival: resources -= 3; kpd_support_braun = 1
 go-to: round2_menu
 
-The KPD now endorses Braun in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+공산당이 대통령 선거에서 브라운을 지지하기로 했습니다! 부르주아 유권자들이 등을 돌리지 않도록, 지지 표명은 조용히 해달라고 요청했습니다.
 
 @r2_kpd_relations
 view-if: kpd_relation >= 60 or (kpd_party_leader == "Conciliators" and kpd_relation >= 45)
-unavailable-subtitle: Our relations are not good enough.
+unavailable-subtitle: 관계가 충분히 좋지 않습니다.
 on-arrival: kpd_support_braun = 1
 go-to: round2_menu
 
-The KPD now endorses Braun in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters. 
+공산당이 대통령 선거에서 브라운을 지지하기로 했습니다! 부르주아 유권자들이 등을 돌리지 않도록, 지지 표명은 조용히 해달라고 요청했습니다.
 
 @round2_thalmann
 view-if: spd_support_thalmann == 0 and kpd_support_braun == 0
 choose-if: kpd_relation >= 50 and left_strength > reformist_strength 
-unavailable-subtitle: [? if kpd_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this bizarre arrangement. ?]
+unavailable-subtitle: [? if kpd_relation < 50 : 공산당과의 관계가 충분히 좋지 않아 우리의 지지조차 받으려 하지 않습니다.  ?] [? if reformist_strength >= left_strength : 개혁파가 이 기이한 합의를 지지하지 않도록 당을 설득하고 있습니다. ?]
 max-visits: 1
 
-Supporting Thälmann is rather unpopular in our party, even if the Communists accept our support. Are we sure?
+설령 공산당이 우리의 지지를 받아들인다 해도, 텔만을 지지하는 것은 당내에서 매우 인기가 없는 결정입니다. 정말 확실합니까?
 
-- @round2_thalmann_2: Yes, we will support Thälmann, despite the reformists' pleas against it.
-- @round2_menu: Never mind.
+- @round2_thalmann_2: 예, 개혁파의 애원에도 불구하고 텔만을 지지하겠습니다.
+- @round2_menu: 그만두자.
 
 @round2_thalmann_2
 on-arrival: braun_campaign = 0; spd_support_thalmann = 1; reformist_dissent += 15; center_dissent += 10; labor_dissent += 5; neorevisionist_dissent += 10; catholics_spd -= 5; workers_spd -= 3; kpd_relation += 10; communist_coalition += 2; z_relation -= 15; dvp_relation -= 15
 on-departure: z_support_braun = 0; kpd_support_braun = 0;
 
-Fine. We have thrown our support to Chairman Thälmann of the KPD.
+좋습니다. 우리는 공산당의 텔만 의장에게 지지를 표명했습니다.
 
-[? if z_support_braun : The Center Party is confused at our capricious behavior, and have switched their support to Hindenburg. ?]
+[? if z_support_braun : 우리의 변덕스러운 행동에 혼란을 느낀 중앙당은 힌덴부르크 지지로 돌아섰습니다. ?]
 
-- @round2_vote: Let the second round voting begin.
+- @round2_vote: 2차 투표를 시작한다.
 
 @round2_hindenburg
 view-if: braun_campaign > 0 or spd_support_thalmann > 0
 on-arrival: braun_campaign = 0; spd_support_thalmann = 0
 
-We have switched our support to Hindenburg.
+우리는 힌덴부르크 지지로 전환했습니다.
 
-- @round2_vote: Let the second round voting begin.
+- @round2_vote: 2차 투표를 시작한다.
 
 @round2_vote
 go-to: election_algorithm
@@ -420,25 +416,25 @@ go-to: hindenburg_wins if hindenburg_plurality == 1; thalmann_wins if thalmann_p
 @hindenburg_wins
 on-arrival: president = "Hindenburg"
 
-As expected, the incumbent Hindenburg wins the presidency. Let's hope he continues to keep the Nazis out of power.
+예상대로, 현직 대통령 힌덴부르크가 승리했습니다. 그가 계속해서 나치를 권력에서 몰아내 주기를 바랄 뿐입니다.
 
 @thalmann_wins
 on-arrival: president = "Thälmann"; kpd_relation = 80;
 
-Ernst Thälmann of the KPD has won the presidency. Immediately, the far-right launches a coup attempt against the government. We have no choice but to unite with the KPD against the fascists...
+공산당의 에른스트 텔만이 대통령에 당선되었습니다. 즉시, 극우 세력이 정부에 대한 쿠데타를 감행했습니다. 파시스트에 맞서 공산당과 연대하는 것 외에는 선택지가 없습니다…
 
-- @civil_war: This is civil war.
+- @civil_war: 내전이다.
 
 @hitler_wins
 on-arrival: president = nsdap_candidate; chancellor = "Hitler"; chancellor_party = "NSDAP"
 
-[? if nsdap_candidate == "Hitler" : Adolf Hitler of the NSDAP has won the presidency. He wastes no time in consolidating power. ?]
-[? if nsdap_candidate != "Hitler" : The NSDAP candidate [+ president +] has won. The first action President [+ president +] takes is inviting Hitler back into Germany, and appointing him chancellor. The Nazis waste no time in consolidating power. ?]
+[? if nsdap_candidate == "Hitler" : 나치당의 아돌프 히틀러가 대통령에 당선되었습니다. 그는 지체 없이 권력 장악에 나섰습니다 ?]
+[? if nsdap_candidate != "Hitler" : 나치당 후보 [+ president +]가 당선되었습니다. [+ president +] 대통령이 가장 먼저 한 일은 히틀러를 독일로 다시 불러들여 총리로 임명하는 것입니다. 나치는 지체 없이 권력 장악에 나섭니다.  ?]
 
-- @hitler_takes_power: What do we do now?
+- @hitler_takes_power: 이제 우리는 무엇을 해야 하는가?
 
 
 @braun_wins
 on-arrival: president = "Braun"; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent);
 
-Otto Braun of the SPD has won the presidency! This is a moment of celebration for our party, and his victory is able to bolster our support.
+사민당의 오토 브라운이 대통령에 당선되었습니다! 이는 우리 당의 축제이며, 그의 승리는 우리의 지지세를 크게 높여주었습니다.

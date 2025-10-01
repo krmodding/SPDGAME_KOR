@@ -1,5 +1,5 @@
-title: Coup in Prussia
-subtitle: The Chancellor attempts to overthrow the Prussian government.
+title: 프로이센 쿠데타
+subtitle: 총리가 프로이센 정부 전복을 시도하다.
 view-if: (chancellor = "Papen" or chancellor = "Schleicher") and president = "Hindenburg" and year >= 1932 and month >= 8 and spd_in_government == 0 and spd_prussia = 1 and not presidential_powers
 on-arrival: prussian_coup_seen = 1
 new-page: true
@@ -7,25 +7,25 @@ tags: event
 max-visits: 1
 face-image: img/Reichswehr.jpg
 
-= Coup in Prussia
+= 프로이센 쿠데타
 
-A crisis! Chancellor [+ chancellor +] has ordered the dismissal of the Prussian government in a procedure known as the *Reichsexecution*. His argument is that the Prussian state government is unable to maintain order due to the battles on the streets between the SA, Reichsbanner, and other paramilitaries. This is despite his own government legalizing them.
+위기입니다! [+ chancellor +] 총리가 '국가강제집행(Reichsexecution)'이라 알려진 절차에 따라 프로이센 주정부의 해산을 명령했습니다. 그의 명분은 돌격대(SA), 국기단(Reichsbanner) 등 준군사조직 간의 시가전으로 인해 프로이센 주정부가 치안을 유지할 능력이 없다는 것입니다. 그 준군사조직들을 합법화한 것이 바로 자기 정부임에도 불구하고 말입니다.
 
-The legality of the action is questionable. Many of our members are ready to resist.
+이 조치의 합법성은 의심의 여지가 있습니다. 많은 당원들이 저항할 태세를 갖추고 있습니다.
 
 - @defend
 - @surrender
 
 
 @defend
-title: Fight against the overthrow attempt!
-subtitle: Labor will call a general strike. The Reichsbanner and the loyal elements of the Prussian police will resist the coup.
-unavailable-subtitle: We do not have the forces to resist.
+title: 전복 시도에 맞서 싸운다!
+subtitle: 노동계는 총파업을 벌일 것이며, 국기단과 충성파 프로이센 경찰 병력은 쿠데타에 저항할 것이다.
+unavailable-subtitle: 저항할 병력이 부족합니다.
 choose-if: rb_strength*rb_militancy >= 200
 
-The Reichswehr and Stahlhelm are already surrounding Berlin, and the SA is supporting them. This could be civil war. We do realize that, correct? 
+국방군과 철모단이 이미 베를린을 포위했고 돌격대가 그들을 지원하고 있습니다. 이는 내전으로 번질 수 있습니다. 이 점을 인지하고 계신 것 맞습니까?
 
-- @defend_2: We will fight, even if it leads to a civil war.
+- @defend_2: 내전으로 번지더라도, 싸울 것이다.
 - @surrender
 
 @defend_2
@@ -37,9 +37,9 @@ on-arrival: sa_strength *= 0.8; sh_strength *= 0.8; pro_republic += 10; workers_
 achievement: bollwerk_der_demokratie
 go-to: defend_2_victory_2
 
-Our forces confront the government troops and their reactionary auxiliaries, and somehow, our enemies retreat without a fight! They were overwhelmed by our display of strength, and have chosen to slink away. Chancellor [+ chancellor +] withdraws the dismissal of the Prussian government, at least for now.
+우리 세력이 정부군 및 그 반동 동맹 세력과 대치하자, 놀랍게도 적들은 싸우지도 않고 후퇴합니다! 우리의 위세에 압도된 그들은 꼬리를 말고 물러나는 쪽을 택했습니다.
 
-The show of force has reinvigorated support for the republic and for the SPD, and has weakened the fascists.
+이번 무력 과시로 공화국과 사민당에 대한 지지가 되살아났고, 파시스트들의 세력은 약화되었습니다.
 
 @defend_2_victory_2
 achievement: drei_pfeile
@@ -47,15 +47,15 @@ achievement: drei_pfeile
 
 @defend_2_civil_war
 
-Our forces confront the government troops and their supporters on the streets of Berlin, and armed fighting erupts. The reactionaries do not budge from their positions. We are caught at a disadvantage.
+우리 세력이 베를린 거리에서 정부군 및 그 지지자들과 맞서면서 무력 충돌이 벌어집니다. 반동 세력은 굳건히 자리를 지키고 있습니다. 우리는 불리한 상황에 처했습니다.
 
-- @civil_war: It is a civil war.
+- @civil_war: 이것은 내전이다.
 
 
 
 
 @surrender
-title: Give up on the Prussian government.
+title: 프로이센 정부를 포기한다.
 on-arrival: spd_prussia = 0; workers_spd -= 5; left_dissent += 10; labor_dissent += 10; rb_militancy = rb_militancy/2; rb_strength -= 1000;
 
-A pall of hopelessness and despair descends over social democracy. We have failed. Many in the Reichsbanner simply quit, demoralized by their leaders' lack of a call to action.
+사회 민주주의 진영에 절망과 무력감의 그림자가 드리웁니다. 우리는 실패했습니다. 지도부가 행동에 나서지 않는 것에 실망한 수많은 국기단 단원들이 조직을 떠났습니다.

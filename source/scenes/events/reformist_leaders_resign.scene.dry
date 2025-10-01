@@ -1,11 +1,11 @@
-title: Reformist leaders resign
+title: 개혁파 지도부가 총사퇴하다
 new-page: true 
-subtitle: Reformist disagreements with our policies have grown too severe.
+subtitle: 우리 정책에 대한 개혁파의 반발이 극에 달했습니다.
 tags: event
 view-if: reformist_dissent >= 60
 on-arrival: reformist_strength *= 0.3; workers_spd -= 10; workers_others += 5; n_advisors -= 1 if braun_advisor == 1; n_advisors -= 1 if severing_advisor == 1; braun_advisor = 0; severing_advisor = 0; rb_strength -= 250; reformists_resign = 1
 max-visits: 1
 
-= Reformist leaders resign
+= 개혁파 지도부의 총사퇴
 
-Our policy choices have greatly offended the reformist faction. Many of our most experienced leaders have resigned.
+우리의 정책 노선에 개혁파가 크게 반발했습니다. 가장 경험 많은 지도자들 중 다수가 사임했습니다.
