@@ -1,5 +1,5 @@
-title: March on Berlin
-subtitle: Right-wing militants are taking action...
+title: 베를린 행진
+subtitle: 우익 준군사조직이 행동을 개시하다…
 view-if: ((spd_in_government = 1 and coup_progress >= 10 and year >= 1930 and (sa_banned=0 or sh_banned=0)) or (year >= 1933 and month >= 2 and nsdap_normalized + dnvp_normalized >= 0.5)) and march_on_berlin_timer = 0
 new-page: true
 max-visits: 4
@@ -7,39 +7,39 @@ on-arrival: march_on_berlin_seen += 1; sa_strength += 80; sh_strength += 80; str
 go-to: ask_resign if spd_in_government and president != "Braun"; govt_menu if president = "Braun"; non_govt_menu if spd_in_government = 0 and president != "Braun"
 tags: event
 
-= March on Berlin
+= 베를린 행진
 
-The far right is mobilizing. Paramilitary forces of the Stahlhelm and SA, organized under the Harzburg Front, have marched on Berlin, threatening to violently overthrow the government.
+극우 세력이 집결하고 있습니다. 하르츠부르크 전선 휘하의 철모단과 돌격대 준군사조직이 베를린으로 행진하며, 무력으로 정부를 전복하겠다고 위협하고 있습니다.
 
-They demand either immediate elections under the "supervision" of the nationalist paramilitaries, or else the immediate resignation of the government and the appointment of Adolf Hitler as chancellor[? if hitler_deported : , and the revocation of his deportation ?]. It is obvious that they are threatening a civil war if their demands are not met.
+그들은 민족주의 준군사조직의 ‘감시’ 하에 즉각 총선을 실시하거나, 정부가 즉각 총사퇴하고 아돌프 히틀러를 총리로 임명할 것을 요구하고 있습니다.[? if hitler_deported : 또한 그의 추방령을 철회할 것도 요구하고 있습니다. ?]. 이 요구가 받아들여지지 않을 경우 내전도 불사하겠다는 위협임이 명백합니다.
 
 @non_govt_menu
 
-It appears that President [+ president +] is looking favorably upon the fascist proposals. Chancellor [+ chancellor +] has announced plans to resign.
+[+ president +] 대통령은 파시스트의 제안에 호의적인 듯 보입니다. [+ chancellor +] 총리는 사임을 발표했습니다.
 
 - @fight
 - @accept
 
 @accept
-title: There is nothing we can do.
+title: 우리가 할 수 있는 일은 없다.
 go-to: accept_election if (nsdap_normalized + dnvp_normalized >= 0.5 and far_right_coalition < 50); accept_hitler if (nsdap_normalized + dnvp_normalized < 0.5 or far_right_coalition >= 50)
 
 @accept_election
 on-arrival: next_election_time = time + 1 if next_election_time > time+1; next_election_month = month + 1 if next_election_time >= time+1; next_election_year = year if next_election_time >= time+1; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; old_middle_nsdap += 10; new_middle_nsdap += 10; workers_nsdap += 10; rural_nsdap += 10; unemployed_nsdap += 8; workers_spd -= 10; workers_kpd -= 10; sa_strength += 100;
 
-President [+ president +] has called for emergency elections, to be held next month, under a caretaker government. The SA is permitted to act with impunity, intimidating voters into supporting the fascists.
+[+ president +] 대통령은 임시 관리 내각 하에 다음 달에 치러질 조기 총선을 소집했습니다. 돌격대는 처벌의 두려움 없이 자유롭게 활동하며 유권자들이 파시스트를 지지하도록 협박하고 있습니다.
 
 
 @accept_hitler
 on-arrival: chancellor = "Hitler"; chancellor_party = "NSDAP"; spd_in_government = 0
 
-After the resignation of the chancellor, Hitler has been appointed chancellor[? if hitler_deported: , after being made a citizen again ?].
+총리가 사임한 후, 히틀러가[? if hitler_deported: 다시 독일 시민권을 회복한 뒤, ?] 총리로 임명되었습니다.
 
 - @hitler_takes_power
 
 @ask_resign
 
-President [+ president +] has asked our government to resign.
+[+ president +] 대통령이 우리 정부에 사임을 요구했습니다.
 
 - @fight
 - @fight_constitution
@@ -56,54 +56,53 @@ President [+ president +] has asked our government to resign.
 - @new_elections
 
 @fight
-title: Deploy the Reichsbanner and call a general strike to resist the fascists!
+title: 국기단을 동원하고 총파업을 선언하여 파시스트에 맞서 싸운다!
 on-arrival: defense_strength = rb_strength*rb_militancy*(1-dissent/2); defense_strength += prussian_police_strength*prussian_police_militancy*prussian_police_loyalty if spd_prussia; enemy_strength = sa_strength*sa_militancy + sh_strength*sh_militancy; defense_strength += workers_spd_normalized*(2 - dissent)*(2 - unemployed/100); defense_strength += reichswehr_strength*reichswehr_loyalty*reichswehr_militancy if president=="Braun" and spd_in_government
 go-to: fight_2_win if defense_strength >= enemy_strength and march_on_berlin_seen <= 1; fight_2_win_2 if defense_strength >= enemy_strength and march_on_berlin_seen > 1; fight_2_pre_civil_war if defense_strength < enemy_strength
 
-The Reichsbanner number at [+ rb_strength +] thousand; many are in Berlin to counter the fascist demonstration.
+국기단 병력은 [+ rb_strength +] 천여 명에 달하며, 다수가 파시스트 시위에 맞서기 위해 베를린에 집결해 있습니다.
 
-[? if spd_prussia: The Prussian police has been deployed against the fascists. ?] [? if spd_in_government and president == "Braun" : The portions of the Reichswehr that are loyal are also deployed. ?]
+[? if spd_prussia: 프로이센주 경찰이 파시스트 진압을 위해 투입되었습니다. ?] [? if spd_in_government and president == "Braun" : 정부에 충성하는 국방군 일부 병력 또한 투입됩니다. ?]
 
 
 @fight_2_win
 on-arrival: coup_progress = 0; sa_strength *= 0.7; sh_strength *= 0.7; rb_strength *= 0.9; workers_nsdap -= 12*(1-dissent); unemployed_nsdap -= 10*(1-dissent); new_middle_nsdap -= 6*(1-dissent); workers_spd += 8*(1-dissent); unemployed_spd += 6*(1-dissent); pro_republic += 15
 achievement: drei_pfeile
 
-Our forces confront the fascists, and somehow, the fascists retreat! They were overwhelmed by our display of strength, and have chosen to slink away. The attempted coup is over, at least for now.
+우리 세력이 파시스트들과 대치하자, 놀랍게도 그들이 후퇴합니다! 우리의 위세에 압도된 그들은 꼬리를 말고 물러나는 쪽을 택했습니다. 쿠데타 시도는 적어도 당분간은 끝났습니다.
 
-The show of force has reinvigorated support for the republic and for the SPD, and has weakened the fascists.
+이번 무력 과시로 공화국과 사민당에 대한 지지가 되살아났고, 파시스트들의 세력은 약화되었습니다.
 
 @fight_2_win_2
 on-arrival: coup_progress = 0; pro_republic += 5; workers_nsdap -= 2*(1-dissent); unemployed_nsdap -= 2*(1-dissent); new_middle_nsdap -= 2*(1-dissent); rb_strength *= 0.9; sa_strength *= 0.9; sh_strength *= 0.9
 
 # if march on Berlin has already been seen
 
-Our forces confront the fascists, and somehow, the fascists retreat! They were overwhelmed by our display of strength, and have chosen to slink away. The attempted coup is over, at least for now.
+우리 세력이 파시스트들과 대치하자, 놀랍게도 그들이 후퇴합니다! 우리의 위세에 압도된 그들은 꼬리를 말고 물러나는 쪽을 택했습니다. 쿠데타 시도는 적어도 당분간은 끝났습니다.
 
-The show of force has reinvigorated support for the republic and for the SPD, and has weakened the fascists.
+이번 무력 과시로 공화국과 사민당에 대한 지지가 되살아났고, 파시스트들의 세력은 약화되었습니다.
 
 
 @fight_2_pre_civil_war
 
-Our forces confront the fascists on the streets of Berlin, and armed fighting erupts. Neither side is dislodged from their positions.
+우리 세력이 베를린 거리에서 파시스트들과 맞서면서 무력 충돌이 벌어집니다. 양측 모두 한 치의 물러섬도 없이 대치하고 있습니다.
 
-- @civil_war: It is a civil war.
+- @civil_war: 이건 내전이다.
 
 
 @fight_constitution
-title: This is unconstitutional! We will keep our positions in government, and ask the courts to keep us in power.
+title: 이것은 명백한 위헌이다! 우리는 정부 직책을 유지하며, 법원에 우리의 집권을 보장해달라고 요청할 것이다.
 choose-if: judicial_reform >= 3
-unavailable-subtitle: The judiciary would never agree with us.
+unavailable-subtitle: 사법부는 결코 우리의 편을 들어주지 않을 것이다.
 
-The courts agree that President [+ president +] is wrong to dismiss us, and that we should remain in the government. The President might respect the court's decision for now, but the fascists in the streets do not. They are still demanding snap elections or the resignation of the government, and will remain in the streets until we either meet their demands, or they are forced out.
-
+법원은 [+ president +] 대통령의 해임 조치가 부당하며 우리 정부가 유지되어야 한다고 판결했습니다. 대통령은 당분간 법원의 결정을 존중할지 모르나, 거리의 파시스트들은 그렇지 않습니다. 그들은 여전히 조기 총선이나 정부 총사퇴를 요구하며, 그들의 요구가 관철되거나 강제로 해산되기 전까지는 거리를 떠나지 않을 것입니다.
 - @new_elections
 - @fight
 
 
 @new_elections
-title: Call for new snap elections.
-subtitle: We will not resign at gunpoint, and we will attempt to maintain the integrity of the elections.
+title: 조기 총선을 실시한다.
+subtitle: 우리는 총구를 겨눈 위협에 굴복하고 사임하지 않을 것이며, 선거의 공정성을 지키기 위해 노력할 것이다.
 go-to: new_elections_braun if president == "Braun"; new_elections_hindenburg if president != "Braun" and z_relation >= 40 and far_right_coalition < 50; new_elections_hindenburg_reject if president != "Braun" and (z_relation < 40 or far_right_coalition >= 50)
 
 
@@ -115,7 +114,7 @@ go-to: new_elections_braun_2 if nsdap_normalized + dnvp_normalized >= 0.5 and fa
 
 @new_elections_braun_reject
 
-The fascists reject our offer of free and fair elections. They are demanding that President [+ president +] dismisses the current government and appoints Hitler chancellor. [? if far_right_coalition >= 50 : They claim that since the far-right coalition has the majority in the Reichstag, they are constitutionally justified in appointing the chanellor. Unfortunately, their argument is not exactly wrong. ?]
+파시스트들은 공정한 선거를 치르자는 우리의 제안을 거부합니다. 그들은 [+ president +] 대통령이 현 정부를 해임하고 히틀러를 총리로 임명하라고 요구하고 있습니다. [? if far_right_coalition >= 50 : 그들은 극우 연합이 제국의회에서 과반을 점하고 있으므로, 헌법에 따라 총리를 임명할 권리가 있다고 주장합니다. 불행히도 그들의 주장이 완전히 틀린 말은 아닙니다. ?]
 
 - @braun_appoints_hitler
 - @fight
@@ -123,13 +122,13 @@ The fascists reject our offer of free and fair elections. They are demanding tha
 @new_elections_braun_2
 go-to: new_elections_2
 
-The fascists seem to believe that they would win an election if one were to be held now, so they agree to our holding an election for next month.
+파시스트들은 지금 선거를 치르면 자신들이 승리할 것이라고 믿는 듯, 다음 달에 선거를 실시하자는 우리의 제안에 동의합니다.
 
 
 @new_elections_hindenburg
 go-to: new_elections_2
 
-With the mediation of various establishment figures, new elections are called for next month, without the use of fascist "electoral monitors".
+다양한 기성 정치인들의 중재 덕분에, 파시스트 '선거 감시단’의 개입 없이 다음 달에 새로운 총선이 치러지게 되었습니다.
 
 
 @new_elections_2
@@ -138,7 +137,7 @@ on-arrival: next_election_time = time + 1 if next_election_time > time+1; next_e
 
 @new_elections_hindenburg_reject
 
-Influenced by his inner circle and by the fascists in the streets, President Hindenburg rejects our offer of new free and fair elections, and again demands that we resign. There is no arguing.
+측근들과 거리의 파시스트들에게 영향을 받은 힌덴부르크 대통령은 공정한 총선을 치르자는 우리의 제안을 거부하고, 다시 한번 우리에게 사임을 요구합니다. 더는 논쟁의 여지가 없습니다.
 
 - @resign
 - @fight
@@ -146,23 +145,23 @@ Influenced by his inner circle and by the fascists in the streets, President Hin
 
 
 @resign
-title: Resign our positions in the government.
+title: 정부 직책에서 사임한다.
 choose-if: president != "Braun"
-unavailable-subtitle: President Braun cannot resign.
+unavailable-subtitle: 브라운 대통령은 사임할 수 없습니다.
 on-arrival: chancellor = "Papen"; chancellor_party = "I"; spd_in_government = 0;
 go-to: accept
 
-We have resigned our positions in the government.
+우리는 정부 직책에서 사임했습니다.
 
 
 
 @braun_appoints_hitler
-title: We cannot do anything but appoint Hitler chancellor.
+title: 히틀러를 총리로 임명하는 것 외에는 선택지가 없다.
 view-if: president == "Braun"
 choose-if: nsdap_normalized >= 0.5 or largest_party == "NSDAP"
-unavailable-subtitle: There is no way President [+ president +] could do such a blatantly undemocratic act.
+unavailable-subtitle: [+ president +] 대통령이 그처럼 노골적인 반민주적 행위를 할 리가 없다.
 on-arrival: chancellor = "Hitler"; chancellor_party = "NSDAP"; spd_in_government = 0
 
-Threatened with a civil war, and unwilling to fight anymore, President [+ president +] dismisses the current government and appoints Hitler of the NSDAP as chancellor.
+내전의 위협과 계속되는 투쟁에 지친 [+ president +] 대통령은 현 정부를 해임하고, 나치당의 히틀러를 총리로 임명했습니다.
 
 - @hitler_takes_power
