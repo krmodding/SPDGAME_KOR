@@ -1,5 +1,5 @@
-title: KPD policy
-subtitle: The KPD ministers are carrying out their policy portfolios.
+title: 공산당의 정책
+subtitle: 공산당 장관들이 각자의 정책을 추진하고 있습니다.
 new-page: true
 view-if: (in_popular_front or in_left_front) and (labor_minister_party = "KPD" or economic_minister_party = "KPD" or finance_minister_party = "KPD") and (kpd_policy_timer = 0)
 on-arrival: kpd_policy_timer = 5
@@ -14,7 +14,7 @@ on-arrival: kpd_policy_timer = 5
 # LaPorte, Norman H. “The German Communist Party in Saxony, 1924-1933 : Factionalism, Fratricide and Political Failure,” 1998. http://dspace.stir.ac.uk/handle/1893/3259.
 
 
-= KPD Policy
+= 공산당의 정책
 
 # The Communist-run ministries are pursuing their own policy course. It is up to us whether to support or oppose these policies.
 
@@ -27,84 +27,84 @@ on-arrival: kpd_policy_timer = 5
 - @interior
 
 @labor
-title: Labor Ministry
-subtitle: The Labor Ministry is giving significant concessions to organized labor.
+title: 노동부
+subtitle: 노동부가 조직 노동계에 대폭 양보하고 있습니다.
 view-if: labor_minister_party = "KPD"
 
-The KPD-controlled Labor Ministry is taking a policy of supporting labor in every dispute between workers and employees, leading to a proliferation of strikes across the country. Given the economic circumstances, there are worries that this could harm any potential economic recovery, not to mention the conflicts this may engender with the bourgeois parties.
+공산당이 이끄는 노동부는 모든 노사 분쟁에서 노동자 측을 지지하는 정책을 펴고 있으며, 이는 전국적인 파업 확산으로 이어지고 있습니다. 현 경제 상황을 고려할 때 이러한 정책이 경제 회복에 해를 끼칠 수 있으며, 부르주아 정당들과의 갈등을 유발할 것이라는 우려가 있습니다.
 
-Do we support their radical labor policy?
+그들의 급진적인 노동 정책을 지지하시겠습니까?
 
-- @labor_support: Of course we support labor.
-- @labor_oppose: No, this is too radical.
+- @labor_support: 당연히 노동자를 지지한다.
+- @labor_oppose: 아니, 너무 급진적이다.
 
 @labor_support
 on-arrival: capital_strike_progress += 2; workers_kpd += 5; workers_spd += 3*(1-dissent); kpd_labor_support += 1; coalition_dissent += 1; z_relation -= 6; unemployment += 2; kpd_influence += 2
 
-The pro-labor policy is popular among workers and is bringing the KPD more support, but in response businesses are laying off more workers and reducing hours. This is setting the government up for a confrontation with the capitalists.
+친노동 정책은 노동자들 사이에서 인기가 높고 공산당의 지지율을 끌어올리고 있습니다. 하지만 이에 대한 반발로 기업들은 해고를 늘리고 근무 시간을 단축하고 있습니다. 이로 인해 정부와 자본가들 사이의 정면 대결이 불가피해지고 있습니다.
 
 @labor_oppose
 on-arrival: kpd_coalition_dissent += 1; workers_spd -= 5; workers_kpd += 5; kpd_relation -= 6
 
-We oppose the KPD's policy, and prevent it from being enacted. The KPD is displeased, as are the workers who would have stood to benefit.
+우리는 공산당의 정책에 반대하여 법안 통과를 막았습니다. 공산당은 물론, 혜택을 볼 수 있었던 노동자들도 불만을 표하고 있습니다.
 
 @economy
-title: Economy Ministry
-subtitle: The Economy Ministry is pursuing a policy of nationalizations.
+title: 경제부
+subtitle: 경제부가 국유화 정책을 추진하고 있습니다.
 view-if: economic_minister_party = "KPD"
 
-The KPD-controlled Economy Ministry is planning a policy of mass nationalizations. [? if budget < 3 : They plan to use deficit spending to finance state takeovers of underutilized industrial enterprises, and run them for the benefit of the workers. ?] [? if budget >= 3 : They plan to buy out closed and underutilized industrial enterprises, and run them at full capacity for the benefit of the workers. ?] 
+공산당이 이끄는 경제부가 대규모 국유화 정책을 계획하고 있습니다. [? if budget < 3 : 그들은 재정 적자를 감수하고서라도 가동률이 낮은 공장들을 국가가 인수하여, 노동자들의 이익을 위해 운영할 계획입니다. ?] [? if budget >= 3 : 그들은 폐업했거나 가동률이 낮은 공장들을 사들여, 노동자들의 이익을 위해 완전히 가동할 계획입니다. ?] 
 
-Do we support this policy?
+이 정책을 지지하시겠습니까?
 
-- @economy_support: Yes, support the nationalization policy.
-- @economy_oppose: No, this must be stopped.
+- @economy_support: 그래, 국유화 정책을 지지한다.
+- @economy_oppose: 아니, 이 정책은 중단시켜야 한다.
 
 @economy_support
 on-arrival: nationalization_progress += 1; capital_strike_progress += 4; unemployed -= 2.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; budget -= 3; works_program += 1; workers_spd += 4*(1-dissent); workers_kpd += 8*(1-dissent); unemployed_kpd += 4*(1-dissent); coalition_dissent += 2; dvp_relation -= 6; z_relation -= 4; new_middle_spd -= 3; old_middle_spd -= 3; economy_goal_completed += 1; kpd_influence += 2
 
-The KPD has gained credit with the workers for enabling many to keep their jobs. Meanwhile, the bourgeois parties and middle-class voters blame the SPD for enabling the nationalizations.
+많은 노동자들이 일자리를 지킬 수 있게 되면서, 공산당은 노동자들로부터 신임을 얻었습니다. 한편, 부르주아 정당들과 중산층 유권자들은 사민당이 국유화를 방조했다며 비난하고 있습니다.
 
 @economy_oppose
 on-arrival: kpd_coalition_dissent += 1; workers_spd -= 5; workers_kpd += 5; kpd_relation -= 6
 
-After opposing the nationalization policy, the KPD has commenced a propaganda campaign against us, accusing the SPD of yet another perfidy.
+국유화 정책이 우리의 반대로 무산되자, 공산당은 사민당이 또다시 배신했다며 우리를 비난하는 선전 활동을 시작했습니다.
 
 @finance
-title: Finance Ministry
-subtitle: The Finance Ministry is increasing taxes on the rich.
+title: 재무부
+subtitle: 재무부가 부유세 인상을 추진하고 있습니다.
 view-if: finance_minister_party = "KPD"
 
-The KPD-controlled Finance Ministry
+공산당이 이끄는 재무부
 
-- @finance_support: Yes, we support increasing taxes on the rich.
-- @finance_oppose: No, now is not the right time.
+- @finance_support: 그래, 부유층에 대한 세금 인상을 지지한다.
+- @finance_oppose: 아니, 지금은 시기가 좋지 않다.
 
 @finance_support
 
 @finance_oppose
 
 @foreign
-title: Foreign Ministry
-subtitle: The Foreign Ministry is aiding the Soviet Union.
+title: 외무부
+subtitle: 외무부가 소비에트 연방을 지원하고 있습니다.
 view-if: foreign_minister_party = "KPD"
 
-The KPD-controlled Foreign Ministry is planning to send economic aid to the Soviet Union.
+공산당이 이끄는 외무부가 소비에트 연방에 경제 원조를 보낼 계획입니다.
 
-- @foreign_support: Yes, we support aiding the Soviet Union.
-- @foreign_oppose: No, this must be stopped.
+- @foreign_support: 그래, 소비에트 연방 지원을 지지한다.
+- @foreign_oppose: 아니, 이것은 중단시켜야 한다.
 
 @foreign_support
 
 @foreign_oppose
 
 @interior
-title: Interior Ministry
-subtitle: The Interior Ministry is engaged in a purge of the security services.
+title: 내무부
+subtitle: 내무부가 보안 기관에 대한 숙청을 진행하고 있습니다.
 view-if: interior_minister_party = "KPD"
 
-- @interior_support: Yes, we support purging the security services.
-- @interior_oppose: No, this seems to be a pretext for a KPD power grab.
+- @interior_support: 그래, 보안 기관 숙청을 지지한다.
+- @interior_oppose: 아니, 공산당이 권력을 장악하기 위한 구실로 보인다.
 
 @interior_support
 

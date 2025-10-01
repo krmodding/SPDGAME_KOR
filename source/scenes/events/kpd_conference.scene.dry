@@ -1,32 +1,32 @@
-title: KPD Party Conference
-subtitle: The KPD chooses their new central committee - will the Wittorf Affair have an influence on their choice?
+title: 공산당 전당대회
+subtitle: 공산당이 새 중앙위원회를 선출합니다 - 비토르프 사건이 이번 선출에 영향을 미칠까요?
 new-page: true
 view-if: kpd_relation >= 50 and wittorf_soviet_union = 1 and year = 1929 and month >= 6 and month <= 8
 max-visits: 1
 on-arrival: kpd_party_conference_seen = 1
 tags: event
 
-= KPD Party Conference
+= 공산당 전당대회
 
-Now is the KPD's national party conference, where they will choose their new leadership. The shadow of the Wittorf Affair hangs over it. On one hand are the hardline supporters of Thälmann, who support a "social fascist" policy that places the SPD as equivalent to the Nazis. On the other hand is the "Conciliator" faction, who support a more cooperative policy towards the SPD.
+공산당(KPD)이 새 지도부를 선출하는 전당대회를 개최합니다. 대회에는 비토르프 사건의 그림자가 짙게 드리워져 있습니다. 한쪽에는 사민당을 나치와 동일시하는 ‘사회 파시즘’ 노선을 지지하는 텔만 강경파가, 다른 한쪽에는 사민당과의 협력을 지지하는 '조정파’가 있습니다.
 
-After our discussion with the Soviets, we are inclined to believe that Stalin is at least open to the Conciliators. In order to affect the KPD's leadership elections, we have to influence both the Comintern leaders as as well as the KPD membership.
+소비에트 연방과의 논의 결과, 스탈린이 적어도 온건파에게는 열려 있는 것으로 보입니다. 공산당 지도부 선거에 영향을 미치려면, 코민테른 지도부와 공산당 당원 모두를 설득해야 합니다.
 
 - @conciliator_success
 - @conciliator_fail
 
 
 @conciliator_success
-title: The Conciliators are the new leadership of the KPD.
+title: 조정파가 공산당의 새 지도부가 된다.
 choose-if: (levi_advisor or rosenfeld_advisor) and (left_strength >= reformist_strength) and (kpd_relation >= 50) 
-unavailable-subtitle: [?  if not levi_advisor and not rosenfeld_advisor: Our party leadership is not left-wing enough. ?] [? if left_strength < reformist_strength: The Comintern doubts our commitment to socialism. ?]
+unavailable-subtitle: [?  if not levi_advisor and not rosenfeld_advisor: 우리 당 지도부의 성향이 충분히 좌파적이지 않습니다. ?] [? if left_strength < reformist_strength: 코민테른은 우리의 사회주의에 대한 진정성을 의심하고 있습니다. ?]
 on-arrival: kpd_party_leader = "Conciliators"; communist_coalition += 3; kpd_relation += 10*(1-dissent); left_strength += 5; left_dissent -= 8
 achievement: versohnler
 
-With our support, the Conciliators have won the leadership contest! The new leadership is a group of Conciliators, including Arthur Ewert, Hugo Eberlein, and Ernst Meyer. Thälmann remains, but largely as a figurehead only, it seems. We hope that the new leadership will be more inclined towards cooperation.
+우리의 지원에 힘입어 조정파가 지도부 경선에서 승리했습니다! 새 지도부는 아르투어 에베르트, 후고 에버라인, 에른스트 마이어 등 온건파 인사들로 구성되었습니다. 텔만은 자리를 지켰지만, 실권 없는 상징적인 인물로 남은 듯합니다. 새 지도부가 우리와의 협력에 더 긍정적이기를 기대합니다.
 
 
 @conciliator_fail
-title: Thälmann retains his leadership position.
+title: 텔만이 그의 지도자 직위를 유지한다.
 
-Unfortunately, we could not influence the KPD leadership election against the hardliners. Thälmann quickly moves to consolidate absolute leadership, expelling or exiling his opponents.
+안타깝게도 강경파를 상대로 한 공산당 지도부 선거 개입은 실패했습니다. 텔만은 재빨리 절대적인 권력을 확립하고 반대파를 숙청하거나 추방하고 있습니다.

@@ -1,27 +1,27 @@
-title: The KPD presents its list of goals for the coalition.
+title: 공산당이 연정 목표 목록을 제시하다.
 view-if: (in_popular_front = 1 or in_left_front = 1) and kpd_goals_seen = 0 and kpd_coalition_success = 0 and next_election_time - time > 12 and spd_in_government
 on-arrival: kpd_goals_seen = 1; welfare_goal = 1; foreign_goal = 0; agriculture_goal = 1 if agriculture_minister_party != "KPD"; economy_goal = 1 if economic_minister_party != "KPD"; finance_goal = 1 if finance_minister_party != "KPD"; labor_goal = 1 if labor_minister_party != "KPD"; reichswehr_goal = 1 if reichswehr_minister_party != "KPD"; kpd_ultimatum_timer = 12; kpd_ultimatum_timer = 16 if kpd_relation >= 60; kpd_ultimatum_timer = 24 if kpd_party_leader == "Conciliators" or constructive_vonc; kpd_ultimatum_timer = next_election_time - time - 1 if next_election_time - time <= 12;
 new-page: true
 tags: event
 
-= KPD Goals
+= 공산당의 요구 사항
 
-The KPD presents us with a list of goals for the coalition:
+공산당은 연정을 위한 다음과 같은 목표 목록을 제시했습니다:
 
-[? if welfare_goal = 1 : - Expand social welfare programs. ?]
+[? if welfare_goal = 1 : - 사회 복지 프로그램 확대. ?]
 
-[? if agriculture_goal = 1 : - Enact a land reform program. ?]
+[? if agriculture_goal = 1 : - 토지 개혁 프로그램 실시. ?]
 
-[? if economy_goal = 1 : - Start substantial nationalization of the economy. ?]
+[? if economy_goal = 1 : - 주요 산업 국유화 착수. ?]
 
-[? if finance_goal = 1 : - Make taxes more progressive. ?]
+[? if finance_goal = 1 : - 조세 누진성 강화. ?]
 
-[? if labor_goal = 1 : - Support workers in labor disputes. ?]
+[? if labor_goal = 1 : - 노동 쟁의에서 노동자 측 지원. ?]
 
-[? if foreign_goal = 1 : - Improve our relations with the Soviet Union. ?]
+[? if foreign_goal = 1 : - 소비에트 연방과의 관계 개선. ?]
 
-#[? if interior_goal = 1 : - Ban the SA and Stahlhelm. ?]
+#[? if interior_goal = 1 : - 돌격대와 철모단 금지. ?]
 
-[? if reichswehr_goal = 1 : - Reduce funding for the Reichswehr. ?]
+[? if reichswehr_goal = 1 : - 국방군 예산 삭감. ?]
 
-They say that they expect to see these goals fulfilled in [+ kpd_ultimatum_timer +] months. Otherwise, they will vote to dissolve the coalition.
+그들은 이 목표들을 [+ kpd_ultimatum_timer +]개월 내에 이행할 것을 요구하며, 그렇지 않을 경우 연정 해산에 투표하겠다고 통보했습니다.

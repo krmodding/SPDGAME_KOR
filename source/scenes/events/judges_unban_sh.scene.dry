@@ -1,7 +1,7 @@
-title: Stahlhelm unbanned
-subtitle: The judges have re-legalized the Stahlhelm.
+title: 철모단(Stahlhelm) 활동 금지 해제
+subtitle: 법원이 철모단을 다시 합법화했습니다.
 view-if: sh_banned == 1 and sh_ban_timer == 0 and judicial_reform < 2
 on-arrival: sh_banned = 0; sh_strength += 100; sh_militancy += 0.01
 tags: event
 
-Judges have ordered the Stahlhelm to be re-legalized. They immediately return to mass recruiting.
+법원이 철모단의 합법화를 명령했습니다. 그들은 즉시 대규모 대원 모집을 재개했습니다.

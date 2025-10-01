@@ -1,14 +1,14 @@
-title: Hoover Moratorium
-subtitle: Owing to the economic crisis, our debt payments have been paused...
+title: 후버 모라토리엄
+subtitle: 경제 위기로 인해, 전쟁 배상금 지불이 유예되었습니다…
 new-page: true
 view-if: banking_crisis_seen = 1 and ((year == 1931 and month >= 6) or (year == 1932)) and reparations >= 0 and unemployed > 15
 on-arrival: budget += 1; reparations_negotiation += 2; hoover_moratorium_seen = 1; workers_dvp += 3 if foreign_minister_party == "DVP"; new_middle_dvp += 3 if foreign_minister_party == "DVP"; old_middle_dvp += 3 if foreign_minister_party == "DVP"; rural_dvp += 3 if foreign_minister_party == "DVP"; workers_z += 3 if foreign_minister_party == "Z"; new_middle_z += 3 if foreign_minister_party == "Z"; old_middle_z += 3 if foreign_minister_party == "Z"; rural_z += 3 if foreign_minister_party == "Z"; workers_spd += 3 if foreign_minister_party == "SPD"; new_middle_spd += 3 if foreign_minister_party == "SPD"; old_middle_spd += 3 if foreign_minister_party == "SPD"; rural_spd += 3 if foreign_minister_party == "SPD";
 tags: event
 max-visits: 1
 
-= Hoover Moratorium
+= 후버 모라토리엄
 
-In light of the current economic situation, and the German banking crisis, President Herbert Hoover of the United States has issued a moratorium on war debt payments from the Great War, including Germany's. Our budget situation should improve somewhat.
+현재의 경제 상황과 독일의 금융 위기를 고려하여, 미국 허버트 후버 대통령은 독일의 배상금을 포함한 제1차 세계대전 관련 채무 상환에 대한 지불 유예(모라토리엄)를 선언했습니다. 이로 인해 우리의 재정 상황이 다소 개선될 것입니다.
 
-[? if spd_in_government and foreign_minister_party == "SPD": Even though this is not our accomplishment, our foreign ministry is eager to take credit for this accomplishment. ?][? if not spd_in_government and foreign_minister_party != "SPD": Even though this is not the work of the foreign ministry, it is eager to take credit for this accomplishment. ?]
+[? if spd_in_government and foreign_minister_party == "SPD": 이것이 우리가 직접 이뤄낸 성과는 아니지만, 우리 외무부는 이번 성과를 자신들의 공으로 돌리고 싶어 합니다. ?][? if not spd_in_government and foreign_minister_party != "SPD": 이것이 현 외무부의 성과는 아니지만, 외무부는 이번 성과를 자신들의 공으로 돌리고 싶어 합니다. ?]
 

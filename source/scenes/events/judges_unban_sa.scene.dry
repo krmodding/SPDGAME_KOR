@@ -1,7 +1,7 @@
-title: SA unbanned
-subtitle: The judges have re-legalized the SA.
+title: 돌격대(SA) 활동 금지 해제
+subtitle: 법원이 돌격대를 다시 합법화했습니다.
 view-if: sa_banned == 1 and sa_ban_timer == 0 and judicial_reform < 2
 on-arrival: sa_banned = 0; sa_strength += 100; sa_militancy += 0.04
 tags: event
 
-Judges have ordered the Nazi SA to be re-legalized. They immediately return to mass recruiting and arming.
+법원이 나치 돌격대의 합법화를 명령했습니다. 그들은 즉시 대규모 대원 모집과 무장을 재개했습니다.
