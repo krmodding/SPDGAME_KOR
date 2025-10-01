@@ -1,5 +1,5 @@
-title: Disputes within the Popular Front
-subtitle: As expected, there are clashes between the KPD and Center Party.
+title: 인민전선 내의 갈등
+subtitle: 예상대로, 공산당과 중앙당 사이에 충돌이 발생하고 있습니다.
 view-if: in_popular_front = 1 and popular_front_dispute_timer = 0 and (labor_minister_party = "Z" or economic_minister_party = "Z" or interior_minister_party = "Z" or agriculture_minister_party = "Z")
 new-page: true
 on-arrival: popular_front_dispute_timer = 5;
@@ -7,7 +7,7 @@ on-arrival: popular_front_dispute_timer = 5;
 
 # really the popular front dispute should be on a randomized timer
 
-= Disputes within the Popular Front
+= 인민전선 내의 갈등
 
 
 @labor

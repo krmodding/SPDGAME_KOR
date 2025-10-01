@@ -1,54 +1,54 @@
-title: Panzerkreuzer B
-subtitle: A political question
+title: 장갑순양함 B
+subtitle: 정치적 문제
 tags: event
 on-arrival: panzerkreuzer_b_seen = 1
 new-page: true
 face-image: img/panzerkreuzer.jpg
 view-if: panzerkreuzer_b_seen = 0 and year = 1931 and month >= 2 and (spd_in_government = 1 or spd_toleration = 1)
 
-= Panzerkreuzer B
+= 장갑순양함 B
 
-The Navy is demanding the construction of another new battlecruiser. [? if panzerkreuzer_funded: The previous battlecruiser had been funded, and has already been launched. Another ship would futher progress Germany's rearmament. ?][? if not panzerkreuzer_funded: The previous battlecruiser requested by the Navy was not funded, thanks to us. The military remains bitter, but nevertheless they are still pursuing their rearmament plan, and must seek funding from the Reichstag. ?]
+해군이 새로운 순양전함의 추가 건조를 요구하고 있습니다. [? if panzerkreuzer_funded: 이전 순양전함은 예산이 배정되어 이미 진수되었습니다. 군함 한 척을 더 건조하는 것은 독일의 재무장을 더욱 진척시킬 것입니다. ?][? if not panzerkreuzer_funded: 해군이 요청했던 이전 순양전함은 우리의 반대로 예산 편성이 무산되었습니다. 군부는 여전히 불만을 품고 있지만, 그럼에도 재무장 계획을 계속 추진하며 제국의회에 예산을 요구하고 있습니다. ?]
 
-Much of our party is deeply opposed to rearmament, while the center and right parties are united in support. What will we do?
+우리 당의 상당수는 재무장에 강력히 반대하고 있지만, 중도와 우익 정당들은 한목소리로 지지를 표명하고 있습니다. 우리는 어떻게 해야 할까요?
 
-- @vote_yes: Vote yes, for constructing the battlecruiser.
-- @vote_no: Vote no, against constructing the battlecruiser.
-- @abstain: Abstain from the vote.
-- @ministry: Use the Reichswehr Ministry to prevent the construction.
+- @vote_yes: 순양전함 건조에 찬성한다.
+- @vote_no: 순양전함 건조에 반대한다.
+- @abstain: 투표에 기권한다.
+- @ministry: 국방부를 통해 건조를 저지한다.
 
 @vote_yes
 on-arrival: left_dissent += 10; labor_dissent += 5; center_dissent += 5; reformist_dissent += 5 if not panzerkreuzer_funded; neorevisionist_dissent += 5 if not panzerkreuzer_funded; panzerkreuzer_b_funded = 1; kpd_coalition_dissent += 1; kpd_relation -= 6; workers_spd -= 4
 
-Our grassroots party members are highly critical of our decision. Many party branches have increased their agitation against our parliamentary fraction. [? if panzerkreuzer_funded : However, given the construction of the previous battlecruiser, this seemed to be a foregone conclusion, and the reaction is muted. ?]
+우리의 결정에 풀뿌리 당원들이 매우 비판적입니다. 다수의 당 지부들이 우리 원내 지도부에 대한 반대 활동을 강화하고 있습니다. [? if panzerkreuzer_funded : 하지만, 이전 순양전함이 이미 건조되었기에 이번 결정은 예정된 수순처럼 보였고, 반발의 강도는 약합니다. ?]
 
-The vote in favor of the battlecruiser easily passes, with opposition only from the KPD. The ship will be built.
+순양전함 건조안은 공산당의 반대에도 불구하고 쉽게 가결되었습니다. 군함은 건조될 것입니다.
 
 @vote_no
 on-arrival: dvp_relation -= 8; z_relation -= 5; pacifism += 1; nationalism -= 5*(1-dissent); coalition_dissent += 1; workers_spd += 4*(1-dissent) if nationalism < 49;
 go-to: built if spd_r + kpd_r + ddp_r < 50; not_built if spd_r + kpd_r + ddp_r >= 50
 
-Our vote against the battlecruiser is unpopular among the right-wing parties[? if in_grand_coalition or in_weimar_coalition: , including our coalition partners ?][? if spd_toleration: , including the minority government that we are currently supporting ?].
+순양전함 건조에 반대한 우리의 결정은 우익 정당들 사이에서 인기가 없습니다. [? if in_grand_coalition or in_weimar_coalition: 우리 연정 파트너들을 포함해서 말입니다. ?][? if spd_toleration: 우리가 현재 묵인하고 있는 소수 정부를 포함해서 말입니다. ?].
 
 @abstain
 on-arrival: dvp_relation -= 5; z_relation -= 3; left_dissent += 5; labor_dissent += 5 if not panzerkreuzer_funded; panzerkreuzer_b_funded = 1; kpd_relation -= 3
 
-The center-right parties are critical of our decision to abstain, and the pressure from our left flank is not entirely assuaged. Despite our abstention, the vote in the Reichstag passes, with all parties in favor except the SPD and KPD. The ship will be built.
+중도우파 정당들은 우리의 기권 결정에 비판적이며, 당내 좌파의 압력도 완전히 가라앉지 않았습니다. 우리의 기권에도 불구하고, 제국의회 표결에서 건조안은 사민당과 공산당을 제외한 모든 정당의 찬성으로 통과되었습니다. 군함은 건조될 것입니다.
 
-[? if panzerkreuzer_funded : Given the construction of the previous battlecruiser, this seemed to be a foregone conclusion, and the reaction is muted. ?]
+[? if panzerkreuzer_funded : 이전 순양전함이 이미 건조되었기에 이번 결정은 예정된 수순처럼 보였고, 반발의 강도는 약합니다. ?]
 
 @built
 on-arrival: panzerkreuzer_b_funded = 1
 
-Chancellor [+ chancellor +] brings the matter to a full Reichstag vote, which passes with all parties in favor except the SPD and KPD. The ship will be built.
+Chancellor [+ chancellor +] 총리는 이 안건을 제국의회 전체 표결에 부쳤고, 사민당과 공산당을 제외한 모든 정당의 찬성으로 가결되었습니다. 군함은 건조될 것입니다.
 
 @not_built
 on-arrival: panzerkreuzer_b_funded = 0; budget += 1 if panzerkreuzer_funded = 0
 
-Our vote against the battlecruiser succeeds, with the support of the KPD and anti-war portions of the [+ ddp_name +]. The ship will not be built! [? if panzerkreuzer_funded == 0 : We have saved some budget from not funding the two ships. ?]
+순양전함 건조 반대표결이 공산당과 [+ ddp_name +] 내 반전 세력의 지지에 힘입어 가결되었습니다. 군함은 건조되지 않을 것입니다! [? if panzerkreuzer_funded == 0 : 두 척의 군함 건조를 막아 예산을 절약했습니다. ?]
 
 @ministry
 on-arrival: panzerkreuzer_b_funded = 0; budget += 1 if panzerkreuzer_funded = 0
 view-if: reichswehr_minister_party == "SPD"
 
-With our control of the Reichswehr Ministry, we have pressured the Navy to abandon its rearmament plans. The ship will not be built. [? if panzerkreuzer_funded == 0 : We have saved some budget from not funding the two ships. ?]
+우리가 장악한 국방부를 통해 해군이 재무장 계획을 포기하도록 압박했습니다. 군함은 건조되지 않을 것입니다. [? if panzerkreuzer_funded == 0 : 두 척의 군함 건조를 막아 예산을 절약했습니다. ?]

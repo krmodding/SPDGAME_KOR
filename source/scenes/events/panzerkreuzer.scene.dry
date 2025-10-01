@@ -1,5 +1,5 @@
-title: Panzerkreuzer A
-subtitle: A political question
+title: 장갑순양함 A
+subtitle: 정치적 문제
 tags: event, govt_affairs
 is-card: true
 on-arrival: panzerkreuzer_seen = 1
@@ -7,21 +7,21 @@ face-image: img/panzerkreuzer.jpg
 view-if: panzerkreuzer_seen = 0 and year = 1928 and month >= 8 and reichswehr_minister_party != "SPD" and spd_in_government = 1
 new-page: true
 
-= Panzerkreuzer
+= 장갑순양함
 
-The Reichswehr Ministry is demanding the construction of a new battlecruiser, as part of Germany's rearmament. Our coalition partners are united in support. While many of our members are vehemently against new military spending, this vote may be necessary to preserve the coalition. 
-We campaigned on food for children instead of battlecruisers. Will we really betray our campaign promises?
+국방부가 독일 재무장의 일환으로 신형 순양전함 건조를 요구하고 있습니다. 우리의 연정 파트너들은 모두 지지하고 있습니다. 당원 다수가 새로운 군비 증강에 맹렬히 반대하고 있지만, 연정을 유지하기 위해 이 표결이 필요할지도 모릅니다. 
+우리는 순양전함 대신 아이들의 배를 채우겠다고 공약했습니다. 정말로 그 공약을 저버릴 것입니까? 
 
-- @vote_yes: Vote yes, for constructing the battlecruiser.
-- @vote_no: Vote no, against constructing the battlecruiser.
-- @abstain: Abstain from the vote.
+- @vote_yes: 순양전함 건조에 찬성한다.
+- @vote_no: 순양전함 건조에 반대한다.
+- @abstain: 투표에 기권한다.
 
 @vote_yes
 on-arrival: left_dissent += 10; labor_dissent += 5; center_dissent += 5; reformist_dissent += 5; neorevisionist_dissent += 5; panzerkreuzer_funded = 1; kpd_coalition_dissent += 1; kpd_relation -= 6; workers_spd -= 3
 
-Our grassroots party members are shocked by our intransigence! Many party branches have begun agitating against the cabinet, and our Reichstag members even plan a full vote on the proposal, contravening the government's decision.
+우리의 비타협적인 태도에 풀뿌리 당원들이 충격을 받았습니다! 여러 당 지부에서 내각에 대한 반대 활동을 시작했으며, 일부 원내 의원들은 정부 결정에 반하여 이 안건을 전체 표결에 부칠 계획까지 세우고 있습니다.
 
-The campaign against the battlecruiser fails, with only the dissident SPD and KPD members voting against. The ship will be built.
+반대 의사를 표명한 사민당과 공산당 일부 의원들의 반대에도 불구하고 순양전함 반대 캠페인은 실패했습니다. 군함은 건조될 것입니다.
 
 @vote_no
 on-arrival: dvp_relation -= 8; z_relation -= 5; pacifism += 1; nationalism -= 5*(1-dissent); coalition_dissent += 1
@@ -33,19 +33,19 @@ go-to: braun if chancellor = "Braun"; muller if chancellor = "Müller"
 @braun
 on-arrival: panzerkreuzer_funded = 0; nationalism -= 3*(1-dissent); panzerkreuzer_failed = 1; workers_spd += 5*(1-dissent);
 
-Our coalition partners are shocked by our intransigence! However, Chancellor Braun manages to persuade our cabinet ministers to drop the plan to vote on the battlecruiser. The ship will not be built!
+우리의 비타협적인 태도에 연정 파트너들이 충격을 받았습니다! 하지만 브라운 총리가 내각 장관들을 설득하여 순양전함 안건 표결 계획을 철회시켰습니다. 군함은 건조되지 않을 것입니다!
 
 @muller
 on-arrival: panzerkreuzer_funded = 1
 
-Our coalition partners are shocked by our intransigence! Despite Chancellor Müller's rejection of the proposal, the other parties bring the matter to a Reichstag vote, which easily passes, with only the SPD and KPD voting against. The ship will be built.
+우리의 비타협적인 태도에 연정 파트너들이 충격을 받았습니다! 뮐러 총리가 거부했음에도 불구하고, 다른 정당들이 안건을 제국의회 표결에 부쳤고, 사민당과 공산당의 반대에도 불구하고 쉽게 가결되었습니다. 군함은 건조될 것입니다.
 
 @vote_no_pass
 on-arrival: panzerkreuzer_funded = 1
 
-Our coalition partners are shocked by our intransigence! Chancellor [+ chancellor +] brings the matter to a Reichstag vote, which passes with all parties in favor except the SPD and KPD. The ship will be built.
+우리의 비타협적인 태도에 연정 파트너들이 충격을 받았습니다! [+ chancellor +] 총리는 이 안건을 제국의회 표결에 부쳤고, 사민당과 공산당을 제외한 모든 정당의 찬성으로 가결되었습니다. 군함은 건조될 것입니다.
 
 @abstain
 on-arrival: dvp_relation -= 5; z_relation -= 3; left_dissent += 5; labor_dissent += 5; panzerkreuzer_funded = 1; kpd_relation -= 3
 
-Our coalition partners are shocked by our intransigence! Despite our abstention, the vote in the Reichstag goes through, with all parties in favor except the SPD and KPD. The ship will be built.
+우리의 비타협적인 태도에 연정 파트너들이 충격을 받았습니다! 우리가 기권했음에도, 제국의회 표결에서 안건은 사민당과 공산당을 제외한 모든 정당의 찬성으로 통과되었습니다. 군함은 건조될 것입니다.

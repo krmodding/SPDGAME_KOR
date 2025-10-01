@@ -1,5 +1,5 @@
-title: Panzerkreuzer A
-subtitle: A political question
+title: 장갑순양함 A
+subtitle: 정치적 문제
 tags: event, govt_affairs
 is-card: true
 on-arrival: panzerkreuzer_seen = 1
@@ -7,21 +7,21 @@ view-if: panzerkreuzer_seen = 0 and year = 1928 and month >= 8 and reichswehr_mi
 new-page: true
 face-image: img/panzerkreuzer.jpg
 
-= Panzerkreuzer
+= 장갑순양함
 
-Navy leaders are asking for the construction of a new battlecruiser, as promised by the previous government. Since we control the Reichswehr ministry, it is our decision as to whether to build the battlecruiser or not.
+해군 지도부가 이전 정부의 약속에 따라 신형 순양전함 건조를 요청하고 있습니다. 우리가 국방부를 장악하고 있으므로, 순양전함 건조 여부는 우리의 결정에 달려 있습니다.
 
-- @vote_yes: Build the battlecruiser.
-- @vote_no: Do not build the battlecruiser.
+- @vote_yes: 순양전함을 건조한다.
+- @vote_no: 순양전함을 건조하지 않는다.
 
 @vote_yes
 on-arrival: left_dissent += 10; labor_dissent += 10; center_dissent += 5; reformist_dissent += 5; neorevisionist_dissent += 5; reichswehr_loyalty += 0.1; panzerkreuzer_funded = 1
 
-We have pleased the military by supporting the construction of the battlecruiser. However, our grassroots party members are shocked by our intransigence! Many party branches have begun agitating against the Reichstag delegation.
+순양전함 건조를 지지하여 군부를 만족시켰습니다. 하지만 우리의 비타협적인 태도에 풀뿌리 당원들이 충격을 받았습니다! 많은 당 지부에서 원내 지도부를 비판하는 조직적인 활동을 시작했습니다.
 
 @vote_no
 on-arrival: coalition_dissent += 1; reichswehr_loyalty -= 0.05; left_dissent -= 10; labor_dissent -= 10; center_dissent -= 5; reformist_dissent -= 5; neorevisionist_dissent -= 5; nationalism -= 5; pacifism += 1; z_relation -= 5; dvp_relation -= 5; workers_spd += 5*(1-dissent); panzerkreuzer_failed = 1
 
-Military leaders are upset at the Ministry's decision to not construct the battlecruiser, and they have taken the complaints to our coalition partners. However, there is not much they can do to force the construction, as we have control over the Reichswehr ministry.
+군부 지도자들은 순양전함을 건조하지 않기로 한 국방부의 결정에 분노하여, 연정 파트너들에게 불만을 토로했습니다. 하지만 우리가 국방부를 장악하고 있는 이상, 그들이 건조를 강행할 방법은 마땅치 않습니다.
 
-No matter what, the battlecruiser will not be built. We have fulfilled one of our campaign promises, and our supporters are pleased.
+무슨 일이 있어도 순양전함은 건조되지 않을 것입니다. 우리는 선거 공약을 이행했고, 지지자들은 만족하고 있습니다.
