@@ -1,27 +1,27 @@
-title: Understanding the Enemy
-subtitle: Why did the Nazis gain so many votes?
+title: 적을 이해하기
+subtitle: 나치는 왜 그토록 많은 표를 얻었는가?
 view-if: year >= 1929 and year <= 1932 and nsdap_r >= 15 and understanding_enemy_seen = 0 and understanding_enemy_timer = 0 and neorevisionism = 0
 on-arrival: understanding_enemy_seen = 1
 max-visits: 1
 new-page: true
 tags: event
 
-= Understanding the Enemy
+= 적을 이해하기
 
-The Nazis' rise is unprecedented for a political party in modern Germany, and socialist intellectuals are doing their best to come to terms with the rapid rise of this dangerous party.
+나치의 부상은 현대 독일 정치사에서 전례 없는 일입니다. 사회주의 지식인들은 이 위험한 정당의 급격한 부상을 이해하고 분석하기 위해 최선을 다하고 있습니다.
 
 # Harsch p. 106-109
 
-The trade union researcher Theodor Geiger has written an article titled "Panik im Mittelstand", in which he describes the Nazis as being primarily a movement of the middle class, especially lower-middle civil servants and professionals who fear the proletarianizing effects of the Depression. Geiger argues that the middle class has been economically and politically unmoored, long split between many competing parties, squeezed between the big businesses and the proletariat. The mix of nationalist, anti-democratic, and loosely anti-capitalist rhetoric of the Nazis appeals to this group, perhaps only temporarily before the middle class discovers its true class interests.
+노동조합 연구원 테오도어 가이거는 '중산층의 공황(Panik im Mittelstand)'이라는 글에서 나치를 주로 중산층의 운동, 특히 대공황으로 인해 노동자 계급으로 전락할 것을 두려워하는 소시민 계층 공무원과 전문직 종사자들의 운동으로 규정합니다. 가이거는 중산층이 경제적·정치적으로 뿌리를 잃고 여러 정당으로 분열된 채 대기업과 프롤레타리아 사이에 끼어 있었다고 주장합니다. 나치의 민족주의, 반민주주의, 그리고 모호한 반자본주의가 뒤섞인 수사법이 이 계층에 매력적으로 다가가며, 이는 그들이 자신의 진정한 계급적 이해관계를 깨닫기 전까지 일시적인 현상일 수 있습니다.
 
-By contrast, the theoretician Alexander Schifrin understands the Nazis as a new, unprecedented type of political movement, a fascist party that has non-economic appeal across class lines. He calls to attention its use of violent propaganda and street demonstrations as central to their rise.
+반면, 이론가 알렉산더 쉬프린은 나치를 계급을 초월하는 비경제적 매력을 지닌 새롭고 전례 없는 유형의 파시스트 정당으로 파악합니다. 그는 나치의 부상에 폭력적 선전과 가두시위가 핵심적인 역할을 했음을 지적합니다.
 
 # Harsch p. 77-78
 
-Carlo Mierendorff, a leader of the "new revisionists", understands the Nazis as a politically incoherent but nevertheless powerful movement. They are kept together by the strength of their organizing machine and the emotional appeal of their nebulous ideology, which is able to attract less informed voters who voted based on feeling. Countering them would require a new style of campaigning, focused more on symbols and emotion rather than reason.
+'신수정주의자’의 지도자 카를로 미렌도르프는 나치를 정치적으로는 조잡하지만 그럼에도 강력한 운동으로 파악합니다. 그들은 강력한 조직력과, 이성보다는 감정에 호소하여 투표하는 정보가 부족한 유권자들을 끌어들이는 정체불명 이데올로기의 감성적 호소력으로 뭉쳐있습니다. 그들에게 맞서려면 이성보다는 상징과 감정에 초점을 맞춘 새로운 방식의 선거운동이 필요할 것입니다.
 
 
-It is possible that all or none of these hypotheses are correct. Whatever the case, there must be something we can do to stop their rise.
+이 가설들이 모두 맞거나, 모두 틀렸을 수도 있습니다. 어찌 됐든, 그들의 부상을 막기 위해 우리가 할 수 있는 일이 분명히 있을 것입니다.
 
 # Georg Decker
 
@@ -29,29 +29,29 @@ It is possible that all or none of these hypotheses are correct. Whatever the ca
 
 # Carlo Mierendorff
 
-- @p1: The Nazis are the fault of the petit bourgeoisie. It is not our responsibility as a working-class party to stop them.
-- @p2: We can combat the Nazis by adopting a "People's Party" posture that might compete for support among the middle class.
-- @p3: We should use new Mierendorff's new propaganda methods to fight the the Nazis.
-- @p4: We must focus our work among the working class to prevent Nazi in-roads.
+- @p1: 나치는 소시민 계층 탓이다. 노동계급 정당인 우리가 그들을 막을 책임은 없다.
+- @p2: 중산층의 지지를 두고 경쟁하기 위해 '대중정당’의 입장을 취함으로써 나치에 맞설 수 있다.
+- @p3: 나치와 싸우기 위해 미렌도르프의 새로운 선전 기법을 사용해야 한다.
+- @p4: 나치의 세력 확장을 막기 위해 노동계급에 대한 우리의 활동에 집중해야 한다.
 
 @p1
 
-The Nazis are the fault of the petit bourgeoisie. It is not our responsibility as a working-class party to stop them.
+나치는 소시민 계층 탓입니다. 노동계급 정당인 우리가 그들을 막을 책임은 없습니다.
 
 @p2
 on-arrival: peoples_party_support += 1; neorevisionist_strength += 5; left_strength -= 3; left_dissent += 4; center_dissent += 3;
 
-We can combat the Nazis by adopting a "People's Party" posture that might compete for support among the middle class. In order to do this, we can create a new and inclusive vision of the party that encompasses all people who work for a living, which is almost everyone in the country save the aristocrats and top capitalists.
+중산층 지지를 두고 경쟁할 수 있는 '대중정당’의 입장을 취함으로써 나치에 맞설 수 있습니다. 이를 위해, 귀족과 극소수 거대 자본가를 제외한 이 나라의 거의 모든 사람, 즉 '일하는 모든 사람’을 아우르는 새롭고 포용적인 당의 비전을 제시할 수 있습니다.
 
-[? if peoples_party = 0 : This effort faces great opposition from the left and center of our party, who would prefer a party focused on the working class. To fully adopt the vision of a people's party, we should increase our campaigning among other demographics. ?]
+[? if peoples_party = 0 : 이러한 노력은 노동계급 중심 정당을 선호하는 우리 당의 좌파와 중도파의 거센 반대에 부딪히고 있습니다. '대중정당’이라는 비전을 완전히 받아들이려면, 다른 계층에 대한 선거운동을 강화해야 합니다. ?]
 
 
 @p3
 on-arrival: neorevisionist_strength += 10; nazi_urgency += 1; neorevisionism += 1;
 
-Working together with other "neorevisionists" such as Sergei Chakhotin, Mierendorff has developed new propaganda methods to fight the rise of the Nazis. They focus on visually striking symbols and repetitious slogans. Time will tell how effective they are.
+미렌도르프는 세르게이 차호틴과 같은 다른 '신수정주의자’들과 협력하여 나치의 부상에 맞서기 위한 새로운 선전 기법을 개발했습니다. 이 기법은 시각적으로 강렬한 상징과 반복적인 구호에 중점을 둡니다. 이것이 얼마나 효과적일지는 시간이 지나야 알 수 있을 것입니다.
 
 @p4
 on-arrival: left_strength += 4; center_strength += 4; labor_strength += 4; left_dissent -= 3; center_dissent -= 3; labor_dissent -= 3; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent)
 
-The Nazis' appeals are making in-roads even among the working class, so we must redouble our propaganda campaigns among our base in order to prevent any Nazi attachment.
+나치의 선동이 노동계급에게까지 파고들고 있으므로, 우리의 지지 기반이 나치에 동조하는 것을 막기 위해 선전 활동을 두 배로 강화해야 합니다.

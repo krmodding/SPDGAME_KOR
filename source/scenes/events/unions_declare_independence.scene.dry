@@ -1,15 +1,15 @@
-title: Unions Declare Independence
+title: 노조의 독자 노선 선언
 new-page: true 
-subtitle: Labor's disagreements with our policies have grown too severe.
+subtitle: 우리 정책에 대한 노동계의 반발이 극에 달했습니다.
 tags: event
 view-if: labor_dissent >= 60
 on-arrival: unions_independent = 1; labor_strength = labor_strength/2; workers_spd -= 20; unemployed_spd -= 10; workers_other += 5 if not sapd_formed; workers_kpd += 5; workers_nsdap += 5; n_advisors -= 1 if woytinsky_advisor == 1; n_advisors -= 1 if leipart_advisor == 1; woytinsky_advisor = 0; leipart_advisor = 0; rb_strength -= 600; workers_sapd += 10 if sapd_formed; unemployed_sapd += 6 if sapd_formed;
 max-visits: 1
 
-= Unions Declare Independence
+= 노조의 독자 노선 선언
 
-Our policy choices have greatly offended the labor movement. Union leaders have declared that they are independent of any political party, and some have been seen seeking accomodation with the KPD and even the NSDAP.
+우리의 정책 노선에 노동 운동계가 크게 반발했습니다. 노조 지도자들은 특정 정당에 얽매이지 않겠다며 독자 노선을 선언했고, 일부는 공산당이나 심지어 나치당과도 타협하려는 움직임을 보이고 있습니다.
 
-Most workers remain loyal to the SPD, although their affiliation is less solid. Many workers move left[? if sapd_formed:, to the KPD or the nascent SAPD?]. Others move in a more nationalist direction, as the ADGB signals its willingness to work with the right to solve the economic crisis.
+대다수 노동자들은 여전히 사민당을 지지하고 있지만, 그 결속력은 예전 같지 않습니다. 많은 노동자들이 좌경화하여 [? if sapd_formed:, 공산당이나 신생 사회주의노동자당(SAPD)으로?]이동하고 있습니다. 다른 한편, 독일노동조합총연맹(ADGB)이 경제 위기 해결을 위해 우파와도 협력할 수 있다는 신호를 보내면서, 일부는 더 민족주의적인 방향으로 기울고 있습니다.
 
-Much of our working-class base has defected, and labor's influence in our party has greatly diminished.
+우리의 노동자 계급 기반 상당수가 이탈했으며, 당 내에서 노동계급의 영향력도 크게 약화되었습니다.

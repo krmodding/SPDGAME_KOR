@@ -1,6 +1,6 @@
-title: The Weltbühne Trial
+title: 벨트뷔네 재판
 new-page: true
-subtitle: A magazine is tried for revealing military secrets...
+subtitle: 한 잡지가 군사 기밀을 누설한 혐의로 재판을 받다…
 view-if: year = 1929 and (month = 8 or month = 9) and judicial_reform < 4
 max-visits: 1
 on-arrival: weltbuhne_seen = 1
@@ -11,17 +11,17 @@ tags: event
 # If in a grand coalition then the SPD can pressure the coalition to cancel the trial at the expense of dissent.
 # If the trial goes ahead, then reparations negotiation process gets set back by a few steps and relations with the west suffers.
 
-= The Weltbühne Trial
+= 벨트뷔네 재판
 
-The left-wing news and literary magazine Weltbühne has been targeted by the national authorities for allegedly revealing state secrets. The magazine published articles alleging a secret rearmament program by the Reichswehr, in contravention of the Treaty of Versailles. The military authorities obviously do not want this information to be known. It does not help that the magazine's editor, Carl von Ossietzky, is a well-known pacifist.
+좌파 성향의 시사 문예지 '벨트뷔네’가 국가 기밀 누설 혐의로 당국의 조사를 받고 있습니다. 이 잡지는 국방군이 베르사유 조약을 위반하며 비밀리에 재무장을 추진하고 있다고 폭로하는 기사를 실었습니다. 군 당국은 당연히 이 정보가 알려지는 것을 원치 않습니다. 잡지의 편집장인 카를 폰 오시에츠키가 저명한 평화주의자라는 사실도 상황을 더욱 복잡하게 만듭니다.
 
-[? if spd_in_government and justice_minister_party = "SPD" : With our control of the Justice Ministry, we could simply drop the case. ?]
-[? if spd_in_government and justice_minister_party != "SPD" : The Justice Ministry is seeking to persecute the editor and journalist of Weltbühne. We can try to persuade our coalition partners to drop the case, but they will likely resist. ?]
+[? if spd_in_government and justice_minister_party = "SPD" : 우리가 장악한 법무부를 통해 사건을 종결시킬 수 있습니다. ?]
+[? if spd_in_government and justice_minister_party != "SPD" : 법무부가 벨트뷔네의 편집장과 기자를 기소하려 합니다. 연정 파트너를 설득해 기소를 취하하도록 시도해볼 수 있으나, 저항이 예상됩니다. ?]
 
-- @drop_case: Drop the case.
-- @let_persecute: Let justice take its course.
-- @pressure_drop: Pressure our coalition partners to drop the case.
-- @nothing: There is nothing we can do.
+- @drop_case: 기소를 취하시킨다.
+- @let_persecute: 사법 절차에 맡긴다.
+- @pressure_drop: 연정 파트너들에게 기소를 취하하도록 압력을 넣는다.
+- @nothing: 우리가 할 수 있는 일은 없다.
 
 @drop_case
 view-if: spd_in_government
@@ -29,28 +29,28 @@ choose-if: spd_in_government and justice_minister_party = "SPD"
 unavailable-subtitle: [? if not spd_in_government : SPD not in government. ?] [? if spd_in_government and justice_minister_party != "SPD": The SPD does not control the Justice Ministry. ?]
 on-arrival: weltbuhne_dropped = 1; dvp_relation -= 4; nationalism -= 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; reichswehr_loyalty -= 0.1; west_relation += 1; east_relation += 1; coup_progress += 1; reparations_negotiation += 1; pacifism += 1
 
-The Justice Ministry has dropped all persecution of Carl von Ossietzky and Walter Kreiser, the journalist responsible for the offending publication. In fact, some say that the Weltbühne journalists should be feted as heroes.
+법무부가 문제의 기사를 작성한 기자 카를 폰 오시에츠키와 발터 크라이저에 대한 모든 소송을 취하했습니다. 일각에서는 이 벨트뷔네 기자들이 영웅으로 칭송받아야 한다는 목소리도 나옵니다.
 
-The Western powers and all countries that feel threatened by German militarism are pleased that we have turned a chapter in our history.
-[? if in_grand_coalition: On the other hand, the right-wing members of our governing coalition disapprove of this action, as does the Reichswehr. ?][? if not in_grand_coalition : On the other hand, the Reichswehr disapproves of dropping the case. ?]
+서방 강대국들과 독일 군국주의에 위협을 느끼는 나라들은 우리가 역사의 새로운 장을 열었다며 기뻐하고 있습니다.
+[? if in_grand_coalition: 반면, 우리 연정 내 우파 세력은 국방군과 마찬가지로 이 조치에 불만을 표하고 있습니다. ?][? if not in_grand_coalition : 반면, 국방군은 기소 취하에 불만을 표하고 있습니다. ?]
 
 @let_persecute
 view-if: spd_in_government
 on-arrival: weltbuhne_dropped = 0; dvp_relation += 4; reichswehr_loyalty += 0.05; west_relation -= 1; east_relation -= 1; reparations_negotiation -= 1; pacifism -= 1; nationalism += 4; left_dissent += 5
 
-The case progresses slowly, given the military secrets involved, and there will be no determination made for a while. The Reichswehr is pleased of our loyalty. However, the affair has made the Western powers suspicious of our resurgent militarism, as well as displeasing the left wing of the party.
+군사 기밀이 얽혀 있어 재판은 더디게 진행될 것이며, 당분간 판결이 내려지지 않을 것입니다. 국방군은 우리의 충성심에 만족합니다. 하지만 이 사건으로 서방 세계는 독일의 군국주의 부활을 의심하게 되었고, 당내 좌파 세력 또한 불만을 품게 되었습니다.
 
 @pressure_drop
 view-if: spd_in_government and justice_minister_party != "SPD"
 on-arrival: weltbuhne_dropped = 1; dvp_relation -= 5; nationalism += 3*(1-dissent); coalition_dissent += 1; coalition_dissent += 1 if in_grand_coalition; reichswehr_loyalty -= 0.1; coup_progress += 1; west_relation += 1; east_relation += 1; reparations_negotiation += 1
 
-We have pressured the Justice Ministry to drop the case against the Weltbühne, raising tensions with our coalition.
+우리는 법무부에 압력을 가해 벨트뷔네 사건을 취하하도록 했으며, 이로 인해 우리 연정 내의 긴장이 고조되었습니다.
 
-The Western powers and all countries that feel threatened by German militarism are pleased that we have turned a chapter in our history.
-On the other hand, the Reichswehr disapproves of dropping the case.
+서방 강대국들과 독일 군국주의에 위협을 느끼는 나라들은 우리가 역사의 새로운 장을 열었다며 기뻐하고 있습니다.
+반면, 국방군은 사건 취하에 반대하고 있습니다.
 
 @nothing
 view-if: not spd_in_government
 on-arrival: weltbuhne_dropped = 0; west_relation -= 1; east_relation -= 1; reparations_negotiation -= 1; pacifism -= 1; nationalism += 4
 
-The case progresses slowly, given the military secrets involved, and there will be no determination made for a while. However, the affair has made the Western powers suspicious of our resurgent militarism.
+군사 기밀이 연루되어 있는 만큼 사건은 더디게 진행되고 있으며, 당분간 결론이 나지 않을 것입니다. 그러나 이번 사건은 서방 열강으로 하여금 우리의 군국주의 부활을 의심하게 만들었습니다.

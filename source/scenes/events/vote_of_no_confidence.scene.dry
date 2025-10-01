@@ -1,5 +1,5 @@
-title: The Right calls a vote of no confidence against the current government!
-subtitle: We have angered our coalition partners too much...
+title: 우파가 현 정부에 대한 불신임 투표를 소집하다!
+subtitle: 연정 파트너들을 너무 화나게 한 것 같다…
 new-page: true
 on-arrival: tried_supporting_kpd = 0
 view-if: spd_in_government = 1 and ((in_grand_coalition = 1 or in_popular_front = 1 or in_minority_government = 1) and coalition_dissent >= 3) or (in_weimar_coalition = 1 and coalition_dissent >= 4) and spd_r < 50 and not constructive_vonc
@@ -9,57 +9,57 @@ go-to: vonc_menu
 # Options: spend relations to reduce coalition_dissent, ask for kpd to abstain
 # (lmao KPD toleration arc...)
 
-= Vote of No Confidence
+= 불신임 투표
 
-[? if in_grand_coalition : The DVP ?][? if in_weimar_coalition or in_popular_front or in_minority_government: The Center Party ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
+[? if in_grand_coalition : 독일인민당(DVP) ?][? if in_weimar_coalition or in_popular_front or in_minority_government: 중앙당 ?]이 우리의 다양한 정책과 의견 차이로 인해 정부 불신임 투표를 소집했습니다. 이 안이 통과되면, 몇 달 안에 총선이 치러질 것입니다.
 
 @vonc_menu
 
-- @try_assuage: Try to assuage our partners.
-- @support_kpd: Could we get the KPD to abstain?
-- @let_it_happen: Let the vote happen.
+- @try_assuage: 연정 파트너들을 설득해 본다.
+- @support_kpd: 공산당이 기권하도록 설득할 수 있을까?
+- @let_it_happen: 투표가 진행되도록 내버려 둔다.
 
 @try_assuage
 
-How do we assuage our partners?
+어떻게 연정 파트너들을 설득할까요?
 
-- @give_up_prussia: Give up on leadership of Prussia.
-- @austerity: Enact a massive austerity plan.
-- @resources: Use our resources to reduce dissent within the coalition.
-- @support_kpd: Could we get the KPD to abstain?
-- @let_it_happen: Never mind. Let the vote happen.
+- @give_up_prussia: 프로이센 지도부를 포기한다.
+- @austerity: 대규모 긴축 정책을 시행한다.
+- @resources: 우리 자금을 사용해 연정 내 불만을 잠재운다.
+- @support_kpd: 공산당이 기권하도록 설득할 수 있을까?
+- @let_it_happen: 그만두자. 투표가 진행되도록 내버려 둔다.
 
 @give_up_prussia
 view-if: spd_prussia == 1
 on-arrival: coalition_dissent = 0; spd_prussia = 0; prussian_government = "I"; reformist_dissent += 10; centrist_dissent += 10; labor_dissent += 10; left_dissent += 5; workers_spd -= 5; rural_spd -= 5; 
 
-Fine. We no longer control the government of Prussia. The vote has been called off.
+좋습니다. 이제 우리는 프로이센 주정부를 통제하지 않습니다. 불신임 투표는 철회되었습니다.
 
 @austerity
 view-if: welfare >= 0 and not secularized
 on-arrival: coalition_dissent = 0; workers_spd -= 10; unemployed_spd -= 10; workers_kpd += 7; workers_nsdap += 3; unemployed_kpd += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; kpd_coalition_dissent += 1; kpd_relation -= 10 if in_popular_front
 
-Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
+좋습니다. 연정 안정을 위해 복지를 삭감하는 대규모 긴축 프로그램을 시행했습니다. 불신임 투표는 철회되었습니다.
 
 @resources
 view-if: secularized = 0
 choose-if: resources >= 3
-unavailable-subtitle: We do not have enough resources.
-subtitle: -3 resources
+unavailable-subtitle: 자금이 충분하지 않습니다.
+subtitle: 자금 -3
 on-arrival: resources -= 3; coalition_dissent -= 1;
 
-By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
+연정 파트너에게 자그을 넘겨주는 것으로 우리 정책에 대한 그들의 반발을 줄일 수 있습니다. 조악하지만 효과적인 해결책입니다.
 
 @support_kpd
 choose-if: (in_grand_coalition and communist_coalition >= 3 and kpd_relation >= 50 and kpd_r >= dvp_r) or (in_weimar_coalition and kpd_relation >= 50 and kpd_r >= z_r and communist_coalition >= 3)
 view-if: tried_supporting_kpd = 0
 on-arrival: tried_supporting_kpd = 1
-unavailable-subtitle: [? if communist_coalition < 3 : The KPD won't take part in parliamentary government. ?] [? if kpd_relation < 50 : The KPD is not friendly enough with us. ?] [? if (in_grand_coalition and kpd_r < dvp_r) or (in_weimar_coalition and kpd_r < z_r): The KPD does not have enough votes. ?] [? if in_popular_front : We are already in a Popular Front with the KPD. ?]
+unavailable-subtitle: [? if communist_coalition < 3 : 공산당은 의회 정치에 참여하지 않을 겁니다. ?] [? if kpd_relation < 50 : 우리와 공산당의 관계가 좋지 않습니다. ?] [? if (in_grand_coalition and kpd_r < dvp_r) or (in_weimar_coalition and kpd_r < z_r): 공산당은 의석 수가 부족합니다. ?] [? if in_popular_front : 우리는 이미 공산당과 인민전선을 구성하고 있습니다. ?]
 
-If the Communists abstain, then we essentially can maintain a minority government[? if president=="Hindenburg":, although it would be very difficult to make policy without the support of President Hindenburg, which we do not have ?]. If this happens, then we will own a massive debt to the KPD. This could lead to broader cooperation in the future, for better or for worse.
+만약 공산당이 기권한다면, 우리는 사실상 소수 정부를 유지할 수 있습니다.[? if president=="Hindenburg": 힌덴부르크 대통령의 지원이 없는 상황에서 정책을 펴기는 매우 어렵겠지만 말입니다. ?] 이렇게 되면, 우리는 공산당에 큰 빚을 지게 됩니다. 이 일은 좋든 나쁘든, 미래에 더 폭넓은 협력의 길을 열 수도 있습니다.
 
-- @support_kpd_2: Persuade the KPD to "tolerate" us?
-- @let_it_happen: Never mind. Let the vote happen.
+- @support_kpd_2: 공산당을 설득해 우리 정부를 '묵인’하게 할까?
+- @let_it_happen: 그만두자. 투표가 진행되도록 내버려 둔다.
 
 @support_kpd_2
 on-arrival: communist_coalition += 1; workers_kpd += 3; kpd_relation += 5
@@ -67,18 +67,18 @@ go-to: support_kpd_weimar if in_weimar_coalition; support_kpd_grand if in_grand_
 
 # TODO: this can form an infinite loop
 
-The KPD is not interested in a "toleration" arrangement; they will only support us if they can participate in the government as part of a coalition. And, if this toleration agreement happens, the right-wing parties will not be inclined to support us. 
+공산당은 소수 정부에 대한 '묵인’에는 관심이 없습니다. 그들은 연정의 일원으로 정부에 참여할 수 있을 때만 우리를 지지할 것입니다. 그리고 만약 이런 묵인 협정이 성사된다면, 우익 정당들이 우리를 지지할 리 없습니다.
 
 @support_kpd_grand
 
-- @election_1928.popular_front_coalition: Form a "Popular Front" coalition?
+- @election_1928.popular_front_coalition: "인민 전선" 연정을 창설할까?
 - @election_1928.left_coalition
-- @try_assuage: Never mind. We must deal with this some other way.
+- @try_assuage: 그만두자. 다른 방법으로 이 문제를 해결해야 한다.
 
 @support_kpd_weimar
 
 - @election_1928.left_coalition
-- @try_assuage: Never mind. We must deal with this some other way.
+- @try_assuage: 그만두자. 다른 방법으로 이 문제를 해결해야 한다.
 
 
 @let_it_happen
@@ -89,13 +89,13 @@ go-to: let_it_happen_hindenburg if president != "Braun"; let_it_happen_braun if 
 @let_it_happen_hindenburg
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; welfare -= 2;
 
-The vote succeeds, and our government has resigned. Chancellor Brüning has been appointed as the head of an acting government, consisting solely of the bourgeois parties. He immediately proceeds to cut welfare spending substantially.
+불신임안이 가결되어 우리 정부는 총사퇴했습니다. 부르주아 정당들로만 구성된 임시 내각의 수반으로 브뤼닝 총리가 임명되었습니다. 그는 즉시 복지 예산을 대폭 삭감하기 시작했습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+차기 총선은 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정되었습니다.
 
 @let_it_happen_braun
 on-arrival: spd_caretaker = 1
 
-The vote succeeds, and our government has resigned. Chancellor [+ chancellor +] remains as the head of a caretaker government, but no longer has the power to enact new policies.
+불신임안이 가결되어 우리 정부는 총사퇴했습니다. [+ chancellor +] 총리는 임시 관리 내각의 수장으로 남아 있지만, 더 이상 새로운 정책을 입안할 힘은 없습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+차기 총선은 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정되었습니다.

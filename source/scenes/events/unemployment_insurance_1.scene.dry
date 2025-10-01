@@ -1,5 +1,5 @@
-title: Unemployment Insurance Crisis
-subtitle: The right wing of our coalition presents an ultimatum.
+title: 실업 수당 위기
+subtitle: 연정 내 우파가 최후통첩을 보내다.
 new-page: true
 view-if: spd_in_government = 1 and (year = 1930 or year = 1931 or year = 1932) and (month >= 3) and in_grand_coalition = 1 and unemployment_insurance_timer = 0 and (unemployed >= unemployment_insurance_threshold + 4 or (unemployed >= 20 and unemployed >= unemployment_insurance_threshold)) and not constructive_vonc and president == "Hindenburg"
 on-arrival: unemployment_insurance_crisis += 1; budget -= 1 if budget >= 1; unemployment_insurance_timer = 10; crisis_urgency += 1; unemployment_insurance_threshold = unemployed
@@ -8,36 +8,36 @@ max-visits: 2
 go-to: what_do if unemployment_insurance_crisis = 2
 face-image: img/Kollwitz_Arbeitslosigkeit.jpg
 
-= Unemployment Insurance Crisis
+= 실업 수당 위기
 
-The economic crisis has caused mass layoffs all throughout Germany, affecting the industrial working class the hardest. Our welfare spending is increasing due to the greater need.
+경제 위기로 독일 전역에서 대량 해고 사태가 발생했으며, 특히 산업 노동자 계급이 가장 큰 타격을 받았습니다. 이로 인해 복지 수요가 급증하면서 우리의 재정 지출도 늘어나고 있습니다.
 
-In the midst of all this, our right-wing coalition partners in the DVP and Center parties have a plan to cut benefits for the unemployed, lower taxes on the rich, and raise taxes on the working class, as part of a plan to balance the budget and discipline labor. They do not see a possibility for compromise. If we do not accept, they could blow up the coalition.
+이런 와중에 우리의 우익 연정 파트너인 독일인민당과 중앙당이 예산 균형과 노동계 길들이기 계획의 일환으로 실업 수당 삭감, 부자 감세, 노동계급 증세를 추진하려 합니다. 그들은 타협의 여지가 없다는 입장입니다. 우리가 이를 받아들이지 않으면 연정이 붕괴될 수도 있습니다.
 
-[? if unemployment_insurance_crisis = 2 : This is the second such ultimatum thrown by the Right. Obviously, the bourgeoisie are trying to remove us from the government. ?]
+[? if unemployment_insurance_crisis = 2 : 우파가 보낸 두 번째 최후통첩입니다. 명백히, 부르주아 계급이 우리를 정부에서 몰아내려 하고 있습니다. ?]
 
-- @tax_rich: Why can't we simply tax the rich?
-- @gift: This is a gift to the Communists.
+- @tax_rich: 부유층에 세금을 더 걷으면 되지 않는가?
+- @gift: 이는 공산주의자들에게만 좋은 일이다.
 
 @tax_rich
 max-visits: 1
 go-to: what_do
 
-The bourgeois parties, as representatives of the rich industrialists, would not have that.
+부유한 산업 자본가들을 대변하는 부르주아 정당들이 그것을 용납할 리가 없습니다.
 
 @gift
 go-to: what_do
 
-This is a gift to the Communists, a boost to their theory that parliamentary democracy will never benefit the working class.
+의회 민주주의는 결코 노동계급에 도움이 되지 않는다는 그들의 이론에 힘을 실어주는, 공산주의자들에게만 좋은 일입니다.
 
 @what_do
 on-arrival: dvp_relation += 5 if chancellor = "Braun"
 
-But the crux of the matter is, what can we do?
+하지만 문제의 핵심은, 우리가 무엇을 할 수 있느냐는 것입니다.
 
-- @destroy: Fine. We will end this coalition.
-- @accept: Unfortunately, we must accept the Right's demands for the sake of stability.
-- @compromise: Surely there is some compromise to be had?
+- @destroy: 좋다. 이 연정을 끝내자.
+- @accept: 안타깝게도, 우리는 안정을 위해 우파의 요구를 수용해야 한다.
+- @compromise: 정말로 일말의 타협도 안 되나?
 
 @destroy
 call: set_next_election_time
@@ -45,30 +45,30 @@ on-arrival: time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0;
 
 # TODO: if Braun is president, don't do this...
 
-Fine. If the bourgeoisie wish to blow up the government, let them do so. Socialists will not be complicit in the destruction of the working class.
+좋습니다. 자산 계급이 정부를 무너뜨리고 싶다면, 그렇게 하라죠. 사회주의자는 노동계급을 파괴하는 데 공모하지 않을 겁니다.
 
-[? if chancellor_party = "SPD" : Heinrich Brüning of the Center Party has been appointed Chancellor. ?] Brüning now leads an all-bourgeois cabinet. Using the emergency powers of Article 48, Brüning and President Hindenburg have passed the welfare cuts over the objections of the Reichstag.
+[? if chancellor_party = "SPD" : 중앙당 소속 하인리히 브뤼닝이 이제 총리가 되었습니다. ?] 브뤼닝은 이제 전원 부르주아로 구성된 내각을 이끌게 되었습니다. 브뤼닝과 힌덴부르크 대통령은 비상대권 제48조를 발동하여 제국의회의 반대를 묵살하고 복지 삭감 법안을 통과시켰습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+차기 총선은 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정되었습니다.
 
 @accept
 on-arrival: workers_spd -= 0.15*workers_spd; unemployed_spd -= 0.3*unemployed_spd; workers_kpd += 7; workers_nsdap += 7; unemployed_kpd += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; month += 1; pro_republic -= 4; kpd_relation -= 8; inflation -= 2; economic_growth -= 0.6
 
-Unfortunately, we must accept this ultimatum if we are to maintain this coalition. The Nazis and Communists are waiting in the wings for us to fail, ready to pounce upon the instability that would result from a breakup of the governing coalition.
+안타깝지만, 이 연정을 유지하려면 최후통첩을 받아들여야 합니다. 나치와 공산주의자들은 우리가 실패하기를 기다렸다가, 연정 붕괴로 인한 불안의 틈을 파고들 준비를 하고 있습니다.
 
-The workers are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the KPD's gain, and even the NSDAP, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
+노동자들은 물론 여러 분파의 상당수 당원들조차 우리의 배신에 분노하고 있습니다. 우리가 잃은 지지는 공산당으로 향했고, 심지어 부르주아 계급의 주구인 나치당조차 우리의 긴축 정책을 비난하고 나섰습니다.
 
 
 @compromise
-unavailable-subtitle: We do not have good enough relations with the right-wing parties.
+unavailable-subtitle: 우익 정당들과의 관계가 충분히 좋지 않습니다.
 choose-if: dvp_relation >= 35
 
-Thanks to our good relations, the DVP have offered a compromise that raises some taxes on the wealthy, along with lesser welfare cuts. Our members have mixed opinions on accepting this compromise. Reformists and Centrists support maintaining our government to keep the fascists and communists out, while Labor generally opposes any cuts, and the Left is opposed to compromises with the bourgeoisie.
+우리의 좋은 관계 덕분에, 독일인민당이 복지 삭감 폭을 줄이는 대신 부유층 세금을 일부 인상하는 타협안을 제시했습니다. 이 타협안 수용을 두고 당내 의견이 엇갈립니다. 개혁파와 중도파는 파시스트와 공산주의자들을 막기 위해 정부를 유지해야 한다고 지지하는 반면, 노동계는 모든 종류의 삭감에 반대하며 좌파는 자산계급과의 타협 자체를 반대하고 있습니다.
 
-- @accept_compromise: Accept the compromise.
-- @destroy: Reject the compromise and let this government fall.
+- @accept_compromise: 타협안을 수락한다.
+- @destroy: 타협안을 거부하고 정부를 해산한다.
 
 @accept_compromise
 on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 8; center_dissent += 5; welfare -= 1; budget += 1; month += 1; kpd_relation -= 4; inflation -= 1; economic_growth -= 0.3
 
-We have accepted the compromise offered by the bourgeoisie. Many of the workers and unemployed see this as a betrayal, although we present it as the successful aversion of a much worse alternative.
+우리는 자산 계급이 제시한 타협안을 받아들였습니다. 비록 우리가 최악의 상황은 피했다고 주장하지만, 많은 노동자와 실업자들은 이를 배신으로 여기고 있습니다.

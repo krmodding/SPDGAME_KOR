@@ -1,42 +1,42 @@
-title: Wittorf Affair
-subtitle: A crisis in the KPD?
+title: 비토르프 사건
+subtitle: 공산당의 위기?
 new-page: true
 view-if: kpd_relation >= 30 and comintern_seen and year = 1928 and month >= 8 and month <= 10
 max-visits: 1
 on-arrival: wittorf_affair_seen = 1
 tags: event
 
-= Wittorf Affair
+= 비토르프 사건
 
-Our spies and contacts amongst the communists have brought news of a scandal engulfing the KPD leadership. An associate of KPD chairman Ernst Thälmann, a KPD official named John Wittorf, is accused of embezzling campaign funds, diverting thousands of Reichsmarks for personal use, and Thälmann is accused of covering up the affair. The party's central committee considers this charge serious.
+공산당 내에 심어둔 우리 첩보원들이 공산당 지도부를 뒤흔드는 스캔들에 대한 정보를 가져왔습니다. 공산당 서기장 에른스트 텔만의 측근인 존 비토르프라는 간부가 선거자금 수천 라이히스마르크를 횡령했으며, 텔만 의장은 이 사건을 은폐했다는 혐의를 받고 있습니다. 당 중앙위원회는 이 혐의를 심각하게 받아들이고 있습니다.
 
-The Conciliators in the KPD, a faction opposed to the party's present hard-line policy, are said to have leaked this information to aid them in the intra-party struggle. Dissident communists in the Leninbund also have information about this affair, and are planning to publish it.
+당의 현 강경 노선에 반대하는 '조정파’가 당내 투쟁에서 우위를 점하기 위해 이 정보를 유출한 것으로 알려졌습니다. 레닌분트 소속의 반체제 공산주의자들 역시 이 사건에 대한 정보를 입수하고 이를 폭로할 계획입니다.
 
-What should we do with this information?
+이 정보를 어떻게 활용해야 할까요?
 
 - @publicize
 - @nothing
 - @secret
 
 @publicize
-title: We will publicize the scandal to damage the KPD and Thälmann.
+title: 공산당과 텔만에게 타격을 주기 위해 이 스캔들을 폭로한다.
 on-arrival: kpd_relation -= 10; workers_kpd -= 4; unemployed_kpd -= 4
 
-Our newspapers are among the first to publicize the affair, bringing a torment of criticism to the hypocrisy of the communists. We have damaged the KPD's standing among the workers, but also perhaps closed the door on further cooperation.
+우리 신문들은 이 사건을 가장 먼저 보도한 매체들 중 하나로, 공산주의자들의 위선을 강하게 비판하는 논란을 불러일으켰습니다. 우리는 노동자들 사이에서 공산당의 입지를 약화시키는 데 성공했지만, 동시에 앞으로의 협력 가능성은 닫아버린 것일 수도 있습니다.
 
-In the end, Stalin's pressure helps to keep Thälmann from facing much in the way of consequences.
+결국 스탈린의 압력이 작용하여 텔만은 큰 책임을 지는 일을 피할 수 있었습니다.
 
 @nothing
-title: Do nothing with the information.
+title: 이 정보에 대해 아무 조치도 취하지 않는다.
 on-arrival: workers_kpd -= 2; unemployed_kpd -= 2
 
-The information spreads without our help, leading to some loss of KPD support among the workers.
+우리의 개입 없이도 그 정보는 퍼져나가 노동자들 사이에서 공산당에 대한 지지가 일부 약화되었습니다.
 
 
 @secret
-title: It is best to keep this information secret. Prevent the Leninbund and dissident KPD members from spreading this.
+title: 이 정보는 비밀로 부치는 것이 최선이다. 레닌분트와 공산당 내 반체제 인사들이 이 사실을 퍼뜨리지 못하게 막는다.
 choose-if: levi_advisor or rosenfeld_advisor
-unavailable-subtitle: We do not have contacts among the dissident communists.
+unavailable-subtitle: 우리는 반체제 공산주의자들 내에 접선책이 없습니다.
 on-arrival: wittorf_secret = 1; reformist_dissent += 5; left_dissent += 5
 
-Some among our leadership consider it unsavory to engage in cloak-and-dagger scheming. However, keeping this secret might be necessary to work with the KPD, and the information might become useful later.
+지도부 일각에서는 이런 비밀 공작에 관여하는 것을 탐탁지 않게 여깁니다. 하지만, 이 정보를 비밀에 부치는 것이 공산당과의 협력에 필요할 수도 있고, 나중에 유용하게 쓰일 수도 있습니다.

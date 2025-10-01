@@ -1,46 +1,46 @@
-title: Young Plan
+title: 영 플랜
 new-page: true
-subtitle: The right-wing coalition has collapsed...
+subtitle: 우익 연정이 붕괴하다…
 tags: event
 view-if: year = 1929 and month >= 7 and young_plan_seen = 0 and in_right_coalition
 on-arrival: young_plan_seen = 1
 max-visits: 1
 
-= The Young Plan and the fall of the coalition
+= 영 플랜과 연정의 붕괴
 
-The Foreign Ministry under Gustav Streseman has agreed to the Young Plan, an agreement with the Western powers to reduce Germany's reparation payments and give us more fiscal autonomy. Simultaneously, France will agree to withdraw its military occupation from the Rhineland.
+구스타프 슈트레제만 외무장관은 독일의 배상금 지불액을 줄이고 재정 자율권을 확대하는 내용의 서방 국가들과의 협정, '영 플랜’에 합의했습니다. 동시에 프랑스는 라인란트에서 점령군을 철수하기로 합의할 것입니다.
 
-While this seems to be a positive development for the country, the DNVP (and especially its leader, Alfred Hugenberg) opposes the plan, claiming that any reparations are a form of national slavery. They have called for a vote of no confidence against the government, supported by the NSDAP and the KPD, and for a referendum on the Young Plan.
+이는 국가적으로 긍정적인 진전으로 보이지만, 독일국가인민당(DNVP, 특히 그 지도자인 알프레드 후겐베르크)은 모든 배상금이 '민족적 예속’이라 주장하며 이 계획에 반대하고 있습니다. 그들은 나치당과 공산당의 지지를 받아 정부 불신임 투표와 영 플랜에 대한 국민투표를 요구했습니다.
 
-We can either vote to bring down the government and hold new elections, or "tolerate" a government led by the remaining bourgeois parties.
+우리는 정부를 무너뜨리고 총선을 실시하는 데 동참하거나, 남은 부르주아 정당들이 이끄는 정부를 '묵인’할 수 있습니다.
 
 - @vonc_yes
 - @vonc_no
 - @no_matter
 
 @vonc_yes
-title: Support the vote of no confidence, voting against the government.
-subtitle: The government will collapse, and there will be new elections.
+title: 정부 불신임 투표를 지지한다, 정부에 반대표를 던진다.
+subtitle: 정부가 붕괴하고 새로운 선거가 실시될 것이다.
 view-if: neo_weimar_coalition >= 50
 on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 5; dvp_relation -= 5; z_relation -= 5;
 call: set_next_election_time
 
-The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+우파 연립정부가 붕괴했습니다. 새로운 선거는 [+ next_election_month : month +] [+ next_election_year +]에 실시될 예정입니다.
 
 
 @vonc_no
-title: Support the rump Center-led government, voting in favor of the government.
-subtitle: We would essentially provide "toleration" to a bourgeois government.
+title: 중앙당 주도 정부를 지지한다, 정부에 찬성표를 던진다.
+subtitle: 우리는 본질적으로 부르주아 정부를 "묵인"하는 것이 된다.
 view-if: neo_weimar_coalition >= 50
 on-arrival: spd_toleration = 1; in_right_coalition = 0; left_dissent += 8; 
 
-By supporting the government, we have essentially entered into a "toleration" arrangement with the [+ chancellor +] government. We do not have a voice in the government, but we are responsible for its continued stability. The left of our party opposes this plan, and would rather that we hold new elections.
+정부를 지지함으로써 우리는 본질적으로 [+ chancellor +] 정부에 대한 "묵인" 협정을 체결한 것입니다. 정부 내 발언권은 없지만, 정부의 지속적 안정에 대한 책임은 우리가 지게 됩니다. 당내 좌파는 이 계획에 반대하며, 차라리 새 선거를 실시하기를 원합니다.
 
 @no_matter
-title: It does not matter what we do.
-subtitle: The anti-government parties have over 50% of the vote, no matter our choices.
+title: 우리가 무엇을 하든 중요하지 않다
+subtitle: 반정부 정당들이 과반수를 차지했기 때문에 우리의 결정은 중요하지 않다.
 view-if: neo_weimar_coalition < 50
 call: set_next_election_time
 on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 5
 
-The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+우파 연립정부가 붕괴했습니다. 새로운 선거는 [+ next_election_month : month +] [+ next_election_year +]에 실시될 예정입니다.

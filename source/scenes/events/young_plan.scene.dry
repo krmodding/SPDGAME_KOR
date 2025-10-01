@@ -1,40 +1,40 @@
-title: Young Plan
+title: 영플랜
 new-page: true
-subtitle: A new agreement on reparations
+subtitle: 배상금에 대한 새로운 협정
 tags: event
 view-if: year = 1929 and month >= 7 and in_right_coalition = 0 and young_plan_seen = 0
 on-arrival: young_plan_seen = 1
 max-visits: 1
 
-= Young Plan
+= title: 영플랜
 
-The Young Plan is an agreement with the Western powers to reduce Germany's reparation payments and give us more fiscal autonomy. Simultaneously, France will agree to withdraw its military occupation from the Rhineland.
+'영 플랜’은 독일의 배상금 지불액을 줄이고 재정 자율권을 확대하는 서방 국가들과의 협정입니다. 동시에 프랑스는 라인란트에서 점령군을 철수하기로 합의할 것입니다.
 
-While this seems to be a positive development for the country, the Right is campaigning hard against this plan, as are the Communists for whatever reason. They claim that any reparations are a form of national slavery, and have organized a referendum against it.
+국가적으로 긍정적인 발전으로 보임에도, 우파와 웬일인지 공산주의자들까지 이 계획에 반대하는 캠페인을 맹렬히 벌이고 있습니다. 그들은 모든 배상금이 '민족적 예속’이라 주장하며, 이 계획에 반대하는 국민투표를 조직했습니다.
 
-- @pro_plan: Campaign in favor of the Young Plan and against the referendum.
-- @no_plan: Do not campaign on the Young Plan, one way or another.
+- @pro_plan: 영 플랜 지지 및 국민투표 반대 캠페인을 벌인다.
+- @no_plan: 영 플랜에 대해 어떤 캠페인도 벌이지 않는다.
 
 @pro_plan
 
-How should we campaign in favor of the Plan?
+우리는 어떻게 이 계획을 지지하는 캠페인을 해야 할까?
 
-- @internationalism: As part of a broader campaign in favor of internationalism and pacifism.
-- @rational: The Young Plan is simply the most rational choice for Germany.
+- @internationalism: 국제주의와 평화주의를 지지하는 더 큰 캠페인의 일환으로.
+- @rational: 영 플랜은 독일에게 가장 이성적인 선택일 뿐이다.
 
 @internationalism
 on-arrival: nationalism -= 5*(1-dissent) if pacifism >= 2 else nationalism += 3; pacifism += 1; workers_spd += 5*(1-dissent) if pacifism >= 3 and nationalism <= 50; workers_nsdap += 4 if pacifism <= 3; rural_nsdap += 5; catholics_spd -= 4 if pacifism <= 3; rural_dvp -= 4
 
-We rail hard against nationalism and in favor of pacifism and belonging to the international community of nations. The referendum easily fails, with only around 15% of voters supporting it. It seems that nationalism is not omnipotent in Germany, despite everything. [? if pacifism >= 3 and nationalism <= 50 : We have rallied the workers to the cause of internationalism. ?]
+우리는 민족주의를 강하게 비판하고, 평화주의와 국제 사회의 일원으로서의 독일을 옹호합니다. 국민투표는 손쉽게 부결되었고, 약 15%의 유권자만이 찬성했습니다. 결국 독일에서 민족주의가 전능한 것은 아님이 드러났습니다. [? if pacifism >= 3 and nationalism <= 50 : 우리는 노동자들을 국제주의의 대의로 결집시키는 데 성공했습니다. ?]
 
 
 @rational
 on-arrival: nationalism += 5; workers_nsdap += 4; rural_nsdap += 5; catholics_spd -= 4; workers_spd -= 3; rural_dvp -= 5
 
-The referendum easily fails, with only around 15% of voters supporting it. It seems that the German people have a sense of rationality, after all.
+국민투표는 약 15%의 유권자만이 찬성하여 손쉽게 부결됩니다. 결국, 독일 국민도 이성적인 판단력을 가지고 있는 모양입니다.
 
 
 @no_plan
 on-arrival: nationalism += 5; workers_spd -= 3; old_middle_spd -= 3; new_middle_spd -= 3; pacifism -= 1; workers_nsdap += 5; rural_nsdap += 5; rural_dnvp -= 5; catholics_spd -= 5; rural_dvp -= 5;
 
-The referendum easily fails with or without our presence in the campaign, with only around 15% of voters supporting it. However, nationalist sentiment is inflammed, and the right-wing parties are using our silence around the Plan as a tacit admission of its faults. Our silence has only emboldened the Right, especially the NSDAP.
+국민투표는 우리의 선거운동 참여 여부와 무관하게 약 15%의 유권자만이 찬성하며 손쉽게 부결됩니다. 그러나 민족주의적 분위기가 고조되었고, 우파 정당들은 우리가 침묵한 것을 이 계획의 문제점을 사실상 인정한 것처럼 이용하고 있습니다. 우리의 침묵은 오히려 우익, 특히 나치당을 더욱 대담하게 만들었습니다.
