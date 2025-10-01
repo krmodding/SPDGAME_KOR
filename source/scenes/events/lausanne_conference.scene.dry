@@ -1,15 +1,15 @@
-title: Lausanne Conference
-subtitle: On the question of reparations...
+title: 로잔 회의
+subtitle: 전쟁 배상금 문제에 관하여…
 view-if: year = 1932 and month >= 6 and hoover_moratorium_seen = 1 and reparations > -2 and unemployed >= 15
 on-arrival: reparations = -2; budget += 1; workers_dvp += 3 if foreign_minister_party == "DVP"; new_middle_dvp += 3 if foreign_minister_party == "DVP"; old_middle_dvp += 3 if foreign_minister_party == "DVP"; rural_dvp += 3 if foreign_minister_party == "DVP"; workers_z += 3 if foreign_minister_party == "Z"; new_middle_z += 3 if foreign_minister_party == "Z"; old_middle_z += 3 if foreign_minister_party == "Z"; rural_z += 3 if foreign_minister_party == "Z"; workers_spd += 3 if foreign_minister_party == "SPD"; new_middle_spd += 3 if foreign_minister_party == "SPD"; old_middle_spd += 3 if foreign_minister_party == "SPD"; rural_spd += 3 if foreign_minister_party == "SPD";
 new-page: true
 max-visits: 1
 tags: event
 
-= Lausanne Conference
+= 로잔 회의
 
-At the Lausanne Conference, the Allies have met with Germany's representatives in order to deal with the issue of war reparations once and for all. In light of the current economic crisis, the Allies believe that Germany is unable to make the reparation payments.
+연합국은 로잔 회의에서 전쟁 배상금 문제를 최종적으로 매듭짓기 위해 독일 대표단과 만났습니다. 현재의 경제 위기를 고려할 때, 연합국은 독일이 더 이상 배상금을 지불할 능력이 없다고 판단하고 있습니다.
 
-Therefore, our reparations have been paused indefinitely! This should reduce the strain on our budget. [? if spd_in_government and foreign_minister_party == "SPD": Even though this is not our accomplishment, our foreign ministry is eager to take credit for this accomplishment. ?][? if not spd_in_government and foreign_minister_party != "SPD": Even though this is not the work of the foreign ministry, it is eager to take credit for this accomplishment. ?]
+따라서, 우리의 전쟁 배상금 지불이 무기한 중단되었습니다! 이로써 우리 정부의 재정 부담이 줄어들 것입니다.  [? if spd_in_government and foreign_minister_party == "SPD": 이것이 우리가 직접 이뤄낸 성과는 아니지만, 우리 외무부는 이번 성과를 자신들의 공으로 돌리고 싶어 합니다. ?][? if not spd_in_government and foreign_minister_party != "SPD": 이것이 현 외무부의 성과는 아니지만, 외무부는 이번 성과를 자신들의 공으로 돌리고 싶어 합니다. ?]
 
 

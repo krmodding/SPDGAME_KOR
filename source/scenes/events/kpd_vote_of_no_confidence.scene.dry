@@ -1,63 +1,63 @@
-title: The KPD calls a vote of no confidence against the current government!
-subtitle: We have angered the KPD too much...
+title: 공산당이 현 정부에 대한 불신임안 발의!
+subtitle: 공산당을 너무 자극했습니다…
 new-page: true
 view-if: spd_in_government = 1 and ((in_popular_front = 1 and kpd_coalition_dissent >= 3) or (in_left_front = 1 and kpd_coalition_dissent >= 4)) and spd_r < 50 and not constructive_vonc
 tags: event
 go-to: menu
 
-= Vote of No Confidence
+= 불신임 투표
 
-The KPD has called a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
+우리의 여러 정책과 의견 충돌을 이유로 공산당(KPD)이 불신임안을 발의했습니다. 만약 이 안이 가결되면, 몇 달 안에 총선이 치러질 것입니다.
 
 @menu
 
-- @try_assuage: Try to assuage them somehow.
-- @support_center: Could we form a new government based on the Center Party and [+ ddp_name +] (and possibly DVP)?
-- @let_it_happen: Let the vote happen.
+- @try_assuage: 공산당을 달래본다.
+- @support_center: 중앙당과 [+ ddp_name +](그리고 경우에 따라 DVP)를 기반으로 한 새 정부를 구성할 수 있을까?
+- @let_it_happen: 투표를 그대로 진행시킨다.
 
 @try_assuage
 
-How do we assuage the KPD?
+공산당을 어떻게 달랠 수 있을까요?
 
-- @resources: Use our resources to reduce dissent within the coalition.
-- @thalmann: Appoint Thälmann as chancellor instead of [+ chancellor +].
-- @support_center: Could we form a new government?
-- @let_it_happen: Never mind. Let the vote happen.
+- @resources: 자금을 이용해 연정 내 불만을 잠재운다
+- @thalmann: [+ chancellor +] 대신 텔만을 총리로 임명한다..
+- @support_center: 우리가 새 정부를 구성할 수 있을까?
+- @let_it_happen: 그만두자. 투표를 그대로 진행시킨다.
 
 @thalmann
 choose-if: president == "Braun"
-subtitle: This would be pretext for a right-wing coup.
-unavailable-subtitle: [? if president == "Hindenburg" : President Hindenburg would never allow this. ?]
+subtitle: 이건 우익 쿠데타의 빌미를 제공하게 될 것이다.
+unavailable-subtitle: [? if president == "Hindenburg" : 힌덴부르크 대통령은 이를 절대로 허용하지 않을 것입니다. ?]
 on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"
 
-With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
+[+ president +] 대통령은 매우 마지못해 [+ chancellor +]를 총리로 임명합니다.
 
-Immediately, [+ chancellor +] goes to work building a "Soviet Germany": consolidating as much power as possible in the KPD, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
+즉시, [+ chancellor +]는 ‘소비에트 독일’ 건설에 착수합니다. 가능한 모든 권력을 공산당에 집중시키고, 국가기관에서 반공주의자들을 숙청하며, '인민의 적’들을 향해 거리의 투사들을 내보냅니다.
 
-In response to [+ chancellor +] being appointed Chancellor, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop the KPD from taking power. We are forced to be on the same side as the KPD, whether we want to or not.
+[+ chancellor +]가 총리로 임명되자, 우익 세력은 거의 즉각적으로 쿠데타를 시도합니다. 철모단과 나치 돌격대 병력이 베를린에 진입하여 우리 지지자들과 즉시 충돌하기 시작합니다! 국방군 내 반동분자 장교들은 부대를 이끌고 병영을 나와 철모단에 합류하여 공산당의 집권을 저지하려 하고 있습니다. 좋든 싫든, 우리는 이제 공산당과 같은 편에 설 수밖에 없습니다.
 
 - @civil_war
 
 
 @resources
 choose-if: resources >= 3 and kpd_ultimatum_seen = 0
-unavailable-subtitle: -3 resources - [? if resources < 3 : We do not have enough resources. ?][? if kpd_ultimatum_seen : This is beyond the point when resources could fix. ?]
-subtitle: -3 resources
+unavailable-subtitle: 자금 -3  - [? if resources < 3 : 자금 -3 - 자금이 부족합니다. ?][? if kpd_ultimatum_seen : 이미 자금만으로는 해결할 수 있는 시점을 지났습니다. ?]
+subtitle: 자금 -3 
 on-arrival: resources -= 3; kpd_coalition_dissent -= 1;
 
-By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
+연정 파트너들에게 자금을 지원함으로써, 우리 정책에 대한 그들의 불만을 잠재울 수 있습니다. 투박하지만 효과적인 방법입니다.
 
 
 @support_center
 choose-if: (weimar_coalition >= 50 and z_relation >= 40) or (grand_coalition >= 50 and z_relation >= 45 and dvp_relation >= 30)
-unavailable-subtitle: [? if grand_coalition < 50 : This would not give us a majority. ?] [? if z_relation < 45 : After working with the Communists, the Center Party does not wish to form a coalition with us. ?] [? if dvp_relation < 30 : The DVP would rather see the government fall than rescue us from the Communists. ?]
+unavailable-subtitle: [? if grand_coalition < 50 : 이렇게 해도 과반 의석을 확보할 수 없습니다. ?] [? if z_relation < 45 : 공산당과 협력한 이후, 중앙당은 우리와의 연정 구성을 원치 않습니다. ?] [? if dvp_relation < 30 : 독일인민당(DVP)은 공산주의자들로부터 우리를 구해주기보다는 차라리 현 정부가 붕괴되는 것을 원합니다. ?]
 
-We could try to boot the KPD from our governing coalition, and form a new government[? if spd_r <= 50 : with the bourgeois parties ?].
+공산당(KPD)을 연정에서 배제하고,[? if spd_r <= 50 : 부르주아 정당들과 ?] 새로운 정부를 구성할 수도 있습니다 .
 
-- @election_1928.spd_majority: Form an SPD government, without the KPD?
-- @election_1928.weimar_coalition: Form a Weimar Coalition?
-- @election_1928.grand_coalition: Form a Grand Coalition?
-- @let_it_happen: There is nothing we can do.
+- @election_1928.spd_majority: 공산당 없이, 사민당 정부를 구성한다?
+- @election_1928.weimar_coalition: 바이마르 연정 정부를 구성한다?
+- @election_1928.grand_coalition: 대연정 정부를 구성한다?
+- @let_it_happen: 우리가 할 수 있는일은 없다.
 
 
 @let_it_happen
@@ -70,13 +70,13 @@ go-to: let_it_happen_braun if president = "Braun"; let_it_happen_hindenburg if p
 @let_it_happen_braun
 on-arrival: next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_in_government = 0; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "I"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "I"; reichswehr_minister_party = "I"; economic_minister_party = "I"; finance_minister_party = "I"; agriculture_minister_party = "I";
 
-The vote succeeds, and our coalition has collapsed. Chancellor [+ chancellor +] will lead a caretaker government until the next election.
+불신임안이 가결되어 연정은 붕괴했습니다. [+ chancellor +] 총리는 다음 총선까지 임시 정부를 이끌게 됩니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+차기 총선은 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정되었습니다.
 
 @let_it_happen_hindenburg
 on-arrival: next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_in_government = 0; in_popular_front = 0; in_left_front = 0; chancellor = "Brüning"; chancellor_party = "Z "; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "DVP"; agriculture_minister_party = "Z"; coalition_dissent = 0; kpd_coalition_dissent = 0; pro_republic -= 5; old_middle_spd -= 3; new_middle_spd -= 2; workers_spd -= 3 if pro_republic < 50; workers_spd -= 4 if pro_republic < 40; old_middle_nsdap += 4 if pro_republic < 50; new_middle_nsdap += 3 if pro_republic < 50
 
-The vote succeeds, and our government has resigned. Chancellor Brüning has been appointed as the head of an acting government, consisting solely of the bourgeois parties.
+불신임안이 가결되어 우리 정부는 총사퇴했습니다. 브뤼닝 총리가 부르주아 정당들만으로 구성된 과도 정부의 수반으로 임명되었습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+차기 총선은 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정되었습니다.

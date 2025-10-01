@@ -1,33 +1,33 @@
-title: Labor Unrest
-subtitle: Clashes between workers and employers in the Ruhr...
+title: 노동 쟁의
+subtitle: 루르 지역의 노사 갈등…
 view-if: year = 1928 and month = 12 and spd_in_government and labor_minister_party != "SPD"
 max-visits: 1
 new-page: true
 face-image: img/Kollwitz_Weavers.jpg
 tags: event
 
-= Labor Unrest
+= 노동 쟁의
 
-The mining and metals industry of the Ruhr region is beset by a wave of strikes against cuts to wages and benefits. Meanwhile, employers have started a retaliatory lockout to force their workers to accept these cuts. Both the strikers and the employers look to the SPD in the government to resolve this crisis.
+루르 지역의 광업 및 금속 산업이 임금과 복지 삭감에 반대하는 파업 물결로 몸살을 앓고 있습니다. 이에 맞서 사용자 측은 노동자들이 삭감안을 받아들이도록 압박하기 위해 직장 폐쇄로 맞서고 있습니다. 파업 노동자와 사용자 양측 모두 정부 내 사민당이 이 위기를 해결해주기를 바라고 있습니다.
 
-- @support_labor: Support labor in their demands.
-- @support_employers: Support the employers in their demands.
-- @balance: Try to strike a compromise between the sides.
+- @support_labor: 노동자 측의 요구를 지지한다.
+- @support_employers: 사용자 측의 요구를 지지한다.
+- @balance: 양측의 타협을 중재한다.
 
 @support_labor
-subtitle: This will alienate the bourgeoisie.
+subtitle: 이 결정은 부르주아 계층의 반발을 살 것입니다.
 on-arrival: labor_strength += 5; labor_dissent -= 5; left_dissent -= 5; workers_spd += 6*(1-dissent); coalition_dissent += 1; dvp_relation -= 4; capital_strike_progress += 1 if dvp_relation <= 30; capital_strike_progress += 1 if unemployed > 15; capital_strike_progress += 1 if unemployed > 24; labor_goal_completed += 1; inflation += 0.1; economic_growth -= 0.2
 
-Supporting labor is always popular in the SPD, although many of our coalition partners represent employers, and they are less enthused.
+노동자들을 지지하는 것은 사민당 내에서 항상 인기가 있지만, 사용자들을 대변하는 우리의 많은 연정 파트너들은 이 결정에 시큰둥합니다.
 
 @support_employers
-subtitle: This will alienate the workers.
+subtitle: 이 결정은 노동자들의 반발을 살 것입니다.
 on-arrival: labor_dissent += 8; left_dissent += 8; workers_spd -= 6; coalition_dissent -= 1; dvp_relation += 5; z_relation += 5; coalition_dissent -= 1; workers_kpd += 5; kpd_coalition_dissent += 1; kpd_relation -= 8; capital_strike_progress -= 1 if capital_strike_progress > 1; capital_strike_progress -= 1 if capital_strike_progress > 8
 
-Even though most workers grudgingly accept the our intervention, there is deep bitterness developing against the SPD, especially among the more radical workers. The Communists stand to gain.
+대부분의 노동자들이 마지못해 우리의 중재를 받아들였지만, 특히 강경파 노동자들 사이에서 사민당에 대한 깊은 반감이 싹트고 있습니다. 이는 공산당에게 이득이 될 것입니다.
 
 @balance
-subtitle: Both sides need to share the pain in the current crisis.
+subtitle: 현 위기 상황에서는 양측 모두 고통 분담이 필요하다.
 on-arrival: labor_dissent += 4; workers_spd -= 2; kpd_coalition_dissent += 1; kpd_relation -= 5; workers_kpd += 2
 
-Many workers are unhappy at our compromises, but they will learn to accept that we are all in a shared struggle against economic forces. This is perhaps the best we could do given the present circumstances.
+많은 노동자들이 우리의 타협안에 불만을 품고 있지만, 경제 위기라는 공동의 적에 맞서고 있다는 현실을 결국 받아들일 것입니다. 현재 상황을 고려할 때 이것이 아마 최선의 선택일 것입니다.

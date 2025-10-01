@@ -1,15 +1,15 @@
-title: Left-wing Split
+title: 좌파의 분당
 new-page: true 
-subtitle: The Left's disagreements with our policies have grown too severe.
+subtitle: 우리 정책에 대한 당내 좌파의 불만이 극에 달했습니다.
 tags: event
 view-if: left_dissent >= 60
 on-arrival: left_split = 1; left_strength = left_strength/2; workers_spd -= 5; unemployed_spd -= 5; workers_other += 5; workers_kpd += 3; n_advisors -= 1 if levi_advisor == 1; levi_advisor = 0; rb_strength -= 300; kpd_relation -= 5; rb_militancy -= 0.05 if rb_militancy >= 0.1; n_advisors -= 1 if seydewitz_advisor == 1; seydewitz_advisor = 0; n_advisors -= 1 if rosenfeld_advisor == 1; rosenfeld_advisor = 0; n_advisors -= 1 if siemsen_advisor == 1; siemsen_advisor = 0
 go-to: sapd_formed if centrists_resign = 1 and not sapd_formed
 max-visits: 1
 
-= Left-wing members split
+= 당내 좌파 세력의 분당
 
-Our policy choices have greatly offended the left, and many of their leaders have split to form a new party, the SAPD, or Socialist Worker's Party. They do not count a huge section of our membership, so this should be survivable.
+우리의 정책 노선에 크게 반발한 당내 좌파는, 다수의 지도자들이 탈당하여 사회주의 노동자당(SAPD)이라는 신당을 창당했습니다. 당원 구성에서 큰 비중을 차지하는 것은 아니므로, 이 위기는 극복할 수 있을 것입니다.
 
-[? if centrists_resign = 1 : Many former Centrist Marxists have joined with the SAPD, the party formed by dissident leftists. They have brought their support base and organization skills to the party, leading to its growth as a nascent rival to the SPD for the support of the working class. ?]
+[? if centrists_resign = 1 : 다수의 구(舊) 중도 마르크스주의자들이 좌익 반대파가 창당한 사회주의 노동자당(SAPD)에 합류했습니다. 그들의 지지 기반과 조직력이 더해지면서, SAPD는 노동계급의 지지를 두고 사민당과 경쟁하는 신생 라이벌로 성장하고 있습니다. ?]
 

@@ -1,4 +1,4 @@
-title: The KPD checks upon our progress in accomplishing the coalition's goals...
+title: 공산당이 연정 목표 이행 경과를 점검하다…
 view-if: (in_popular_front or in_left_front) and (kpd_ultimatum_timer = 0 or (welfare_goal_completed and agriculture_goal_completed and economy_goal_completed and finance_goal_completed and labor_goal_completed and reichswehr_goal_completed)) and kpd_goals_seen = 1 and kpd_ultimatum_seen = 0 and spd_in_government
 on-arrival: {!
 Q.kpd_ultimatum_seen = 1;
@@ -40,47 +40,47 @@ new-page: true
 tags: event
 go-to: goals_success if kpd_goals_completed; goals_failed if not kpd_goals_completed
 
-= KPD Goals
+= 공산당의 요구 사항
 
-At the start of this government, the KPD presented a list of goals for the coalition:
+현 정부 출범 당시, 공산당(KPD)은 다음과 같은 연정 목표 목록을 제시했습니다:
 
-[? if welfare_goal = 1 : - Expand social welfare programs - [? if welfare_goal_completed : success ?][? if not welfare_goal_completed: failed ?] ?]
+[? if welfare_goal = 1 : - 사회 복지 프로그램 확대. - [? if welfare_goal_completed : 성공 ?][? if not welfare_goal_completed: 실패 ?] ?]
 
-[? if agriculture_goal = 1 : - Enact a land reform program. - [? if agriculture_goal_completed : success ?][? if not agriculture_goal_completed: failed ?] ?]
+[? if agriculture_goal = 1 : - 토지 개혁 프로그램 실시. - [? if agriculture_goal_completed : 성공 ?][? if not agriculture_goal_completed: 실패 ?] ?]
 
-[? if economy_goal = 1 : - Start substantial nationalization of the economy. - [? if economy_goal_completed : success ?][? if not economy_goal_completed: failed ?] ?]
+[? if economy_goal = 1 : - 주요 산업 국유화 착수. - [? if economy_goal_completed : 성공 ?][? if not economy_goal_completed: 실패 ?] ?]
 
-[? if finance_goal = 1 : - Make taxes more progressive. - [? if finance_goal_completed : success ?][? if not finance_goal_completed: failed ?] ?]
+[? if finance_goal = 1 : - 조세 누진성 강화. - [? if finance_goal_completed : 성공 ?][? if not finance_goal_completed: 실패 ?] ?]
 
-[? if labor_goal = 1 : - Support workers in labor disputes. - [? if labor_goal_completed : success ?][? if not labor_goal_completed: failed ?] ?]
+[? if labor_goal = 1 : - 노동 쟁의에서 노동자 측 지원. - [? if labor_goal_completed : 성공 ?][? if not labor_goal_completed: 실패 ?] ?]
 
-[? if foreign_goal = 1 : - Improve our relations with the Soviet Union. - [? if foreign_goal_completed : success ?][? if not foreign_goal_completed: failed ?] ?]
+[? if foreign_goal = 1 : - 소비에트 연방과의 관계 개선. - [? if foreign_goal_completed : 성공 ?][? if not foreign_goal_completed: 실패 ?] ?]
 
-[? if reichswehr_goal = 1 : - Reduce funding for the Reichswehr. - [? if reichswehr_goal_completed : success ?][? if not reichswehr_goal_completed: failed ?] ?]
+[? if reichswehr_goal = 1 : - 국방군 예산 삭감. - [? if reichswehr_goal_completed : 성공 ?][? if not reichswehr_goal_completed: 실패 ?] ?]
 
 @goals_failed
 on-arrival: kpd_relation -= 10; workers_spd -= 8; unemployed_spd -= 8;
 
-Unfortunately, we have failed to accomplish all of the goals the KPD set out. They plan to call a vote of no confidence against our government, and have already begun mounting a propaganda campaign to delegitimize our government in the eyes of the workers.
+안타깝게도, 우리는 공산당이 제시한 목표를 모두 달성하는 데 실패했습니다. 그들은 우리 정부에 대한 불신임안을 발의할 계획이며, 이미 노동자들 앞에서 우리 정부의 정통성을 훼손하기 위한 선전 활동에 돌입했습니다.
 
-- @appeal: Appeal to the Communists to have patience - we are trying!
-- @kpd_vote_of_no_confidence.support_center: Could we form a new government based on the Center Party and [+ ddp_name +] (and possibly DVP)?
-- @kpd_vote_of_no_confidence.let_it_happen: Let the vote happen.
-- @no_vonc: They cannot call a vote of no confidence due to the constitutional reforms, but they can obstruct our government at every opportunity.
+- @appeal: 공산당에게 인내를 호소한다 - 우리는 노력 중이다!
+- @kpd_vote_of_no_confidence.support_center: 중앙당과 [+ ddp_name +](그리고 경우에 따라 DVP)를 기반으로 한 새 정부를 구성할 수 있을까?
+- @kpd_vote_of_no_confidence.let_it_happen: 투표를 그대로 진행시킨다.
+- @no_vonc: 헌법 개혁 때문에 그들은 불신임 투표를 소집할 수 없지만, 사사건건 우리 정부를 방해할 수는 있다.
 
 @appeal
 choose-if: (kpd_score >= 4 and kpd_relation > 50 and kpd_appeal_seen = 0) or kpd_party_leader = "Conciliators"
-unavailable-subtitle: [? if kpd_score < 4: They do not see us as serious in trying to achieve the goals of the coalition. ?] [? if kpd_relation < 50: Our relations are too poor. ?] [? if kpd_appeal_seen = 1: we do not have any more time. ?]
+unavailable-subtitle: [? if kpd_score < 4: 그들은 우리가 연정 목표 달성에 진지하지 않다고 생각합니다. ?] [? if kpd_relation < 50: 관계가 너무 악화되었습니다. ?] [? if kpd_appeal_seen = 1: 이제 더 이상 시간이 없습니다. ?]
 on-arrival: kpd_ultimatum_seen = 0; kpd_ultimatum_timer += 6; kpd_appeal_seen = 1
 
-We argue that we are working hard to achieve the coalition's goals, and in the name of proletarian solidarity, we must make this coalition function. Surprisingly, the KPD hears our pleas, and is willing to give us six more months before the coalition goals must be achieved.
+우리는 연정 목표 달성을 위해 최선을 다하고 있으며, 노동계급 연대의 이름으로 이 정부를 반드시 성공시켜야 한다고 주장합니다. 놀랍게도 공산당은 우리의 호소를 받아들여, 목표 달성을 위해 6개월의 시간을 더 주기로 했습니다.
 
 
 @goals_success
 on-arrival: workers_spd += 8; unemployed_spd += 8; kpd_relation += 10; workers_kpd += 5; kpd_coalition_success += 1
 go-to: popular_front_achievement if in_popular_front; united_front_achievement if in_left_front
 
-Against all expectations, the KPD's goals have all been met! Apparently the Communists did not prepare for this eventuality, a worker's government successfully built through democratic means. They will continue to "tolerate" our government for the rest of our term, while still acting as a watchdog against bourgeois backsliding.
+예상을 뒤엎고 공산당의 목표가 모두 달성되었습니다! 민주적인 절차를 통해 노동자 정부가 성공적으로 수립되는 이러한 상황은 공산주의자들도 예상하지 못했던 것 같습니다. 그들은 남은 임기 동안 우리 정부를 계속 '묵인’하는 한편, 부르주아적 퇴행을 감시하는 역할을 자처할 것입니다.
 
 
 @popular_front_achievement
@@ -95,4 +95,4 @@ achievement: einheitsfront_2
 view-if: constructive_vonc
 on-arrival: in_popular_front = 0; in_left_front = 0; in_minority_government = 1;
 
-We have been effectively made a minority government, and the KPD intends to obstruct our attempts to pass policy.
+우리는 사실상 소수 정부가 되었으며, 공산당은 우리의 모든 정책 추진을 방해할 작정입니다.

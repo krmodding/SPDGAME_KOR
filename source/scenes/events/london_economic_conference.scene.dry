@@ -1,5 +1,5 @@
-title: London Economic Conference
-subtitle: The League of Nations unites to tackle the Great Depression...
+title: 런던 경제 회의
+subtitle: 국제 연맹이 대공황 극복을 위해 단결하다…
 view-if: year = 1933 and month >= 6
 on-arrival: london_economic_conference_seen = 1
 new-page: true
@@ -7,17 +7,17 @@ max-visits: 1
 go-to: economic_recovery if unemployed < 15; no_recovery if unemployed >= 15
 tags: event
 
-= London Economic Conference
+= 런던 경제 회의
 
 # TODO: if you've recovered, you get economic recovery
 # if you haven't recovered, you can either support Roosevelt or support the UK/France
 
-The League of Nations is hosting a conference to discuss the state of the global economy and potential solutions to the ongoing depression. All parties want to reduce tariffs to encourage trade. However, the Western powers are at an impasse; France and to a lesser extent Britain are calling for fixed currency exchange rates, while President Roosevelt of the United States wants to print new money to stimulate demand, calling for "controlled inflation". The Europeans want to reduce their debts to the US, while America favors continued full payments.
+국제 연맹이 세계 경제 현황과 현재 진행 중인 대공황에 대한 해법을 논의하기 위한 회의를 주최합니다. 모든 참가국이 무역 활성화를 위한 관세 인하를 원하고 있습니다. 하지만 서방 강대국들은 교착 상태에 빠졌습니다. 프랑스와 (정도는 약하지만) 영국이 고정 환율을 요구하는 반면, 미국 루스벨트 대통령은 수요 진작을 위해 화폐를 발행하는 '통제된 인플레이션’을 주장하고 있습니다. 또한 유럽 국가들은 미국에 대한 채무 삭감을 원하지만, 미국은 전액 상환 입장을 고수하고 있습니다.
 
 @economic_recovery
 
-[? if wtb_adopted or budget <= 0: Germany has largely recovered from the crisis, owing in large part to the same sorts of economic policies that Roosevelt is pursuing. ?]
-[? if not wtb_adopted and budget > 0: Germany has largely recovered from the crisis, without having to resort to budget deficits or devaling the currency. ?]
+[? if wtb_adopted or budget <= 0: 독일은 루스벨트가 추진하는 정책들과 유사한 경제 정책 덕분에 위기에서 상당 부분 회복했습니다. ?]
+[? if not wtb_adopted and budget > 0: 독일은 재정 적자나 통화 평가절하에 의존하지 않고도 위기에서 상당 부분 회복했습니다. ?]
 
 - @support_roosevelt
 - @support_france
@@ -27,7 +27,7 @@ The League of Nations is hosting a conference to discuss the state of the global
 
 @no_recovery
 
-Germany, like the rest of the world, is still deep in the economic crisis, even if it has appeared to bottom out.
+독일은 최악의 상황은 벗어난 것처럼 보이지만, 여전히 세계의 다른 나라들처럼 깊은 경제 위기의 늪에 빠져 있습니다.
 
 - @support_roosevelt
 - @support_france
@@ -37,60 +37,60 @@ Germany, like the rest of the world, is still deep in the economic crisis, even 
 
 
 @stable_currency_out_of_gov
-title: German representatives call for stable currency, along with Britain and France.
+title: 독일 대표단, 영국 및 프랑스와 함께 통화 안정 촉구.
 view-if: not spd_in_government
 on-arrival: west_relation += 1
 
-As expected, the conservative German bankers support Britain and France's plan to stabilize currency exchange rates. In response to the continued support for fixed currency exchange rates and the impasse on debts, the Americans pull out of the conference, leaving it with no agreements whatsoever.
+예상대로, 독일의 보수적인 은행가들은 영국과 프랑스의 환율 안정화 계획을 지지합니다. 고정 환율에 대한 강경한 입장과 채무 문제에 대한 교착 상태가 이어지자, 미국은 회의에서 철수했고 회의는 아무런 합의 없이 끝나버렸습니다.
 
-[? if unemployed >= 15 : Nevertheless, the world economy is slowly improving due in part to the economic stimulus and more liberal trade policies of the Roosevelt administration. ?]
-[? if unemployed < 15 : Nevertheless, the world economy is slowly improving due in part to the economic stimulus and more liberal trade policies of the Roosevelt administration as well as our own economic plan. ?]
+[? if unemployed >= 15 : 그럼에도 불구하고, 루스벨트 행정부의 경기 부양책과 자유 무역 정책 덕분에 세계 경제는 서서히 회복되고 있습니다. ?]
+[? if unemployed < 15 : 그럼에도 불구하고, 루스벨트 행정부의 경기 부양책과 자유 무역 정책, 그리고 우리 자신의 경제 계획 덕분에 세계 경제는 서서히 회복되고 있습니다. ?]
 
 
 @support_roosevelt
-title: Support Roosevelt's ideas - we must devalue currency.
+title: 루스벨트의 구상을 지지한다 - 통화 평가절하가 필요하다.
 view-if: spd_in_government
 
 
-We support Roosevelt's plan for controlled inflation, leaving us at odds with the European powers. In response to the continued support for fixed currency exchange rates by France and Britain and the impasse on debts, the Americans pull out of the conference, leaving it with no agreements whatsoever.
+우리는 통제된 인플레이션에 대한 루스벨트의 계획을 지지하며, 이로 인해 다른 유럽 강대국들과 대립하게 되었습니다. 프랑스와 영국의 고정 환율제 고수와 채무 문제 교착 상태에 대한 반발로 미국이 회의에서 철수하면서, 회의는 아무런 합의 없이 끝나고 말았습니다.
 
 @support_france
-title: Support France and Britain - we must have stable currency.
+title: 프랑스와 영국을 지지한다 - 통화 안정이 우선이다.
 view-if: spd_in_government
 on-arrival: west_relation += 1; eu_progress += 1
 
-Our position brings us closer to other European powers. In response to the continued support for fixed currency exchange rates and the impasse on debts, the Americans pull out of the conference, leaving it with no agreements whatsoever.
+우리의 입장은 다른 유럽 강대국들과의 관계를 더욱 돈독하게 만들었습니다. 고정 환율제 고수와 채무 문제 교착 상태에 대한 반발로 미국이 회의에서 철수하면서, 회의는 아무런 합의 없이 끝나고 말았습니다.
 
 
 @salvage
-title: Can we try to salvage the negotiations?
+title: 우리가 협상을 되살려볼 수 있을까?
 view-if: spd_in_government
 
-How should we try to salvage the negotiations?
+어떻게 협상을 되살려야 할까요?
 
-- @salvage_currency: Try to convince France and Britain that slowly controlled inflation is possible and desirable.
-- @salvage_debts: Try to convince the US to reduce war debts for the sake of peace.
-- @no_business: Nothing can be done.
+- @salvage_currency: 점진적인 통제된 인플레이션이 가능하며 바람직하다는 점을 프랑스와 영국에 설득한다.
+- @salvage_debts: 평화를 위해 전쟁 부채를 삭감해달라고 미국을 설득한다.
+- @no_business: 아무것도 할 수 없다.
 
 @salvage_currency
 choose-if: woytinsky_advisor = 1 and wtb_implemented > 1
-unavailable-subtitle: Wladimir Woytinsky would be extremely helpful right now.
+unavailable-subtitle: 지금 블라디미르 보이틴스키가 있다면 큰 도움이 될 텐데.
 on-arrival: unemployed -= 2 if unemployed >= 10; unemployed -= 1.5 if unemployed >= 5; inflation += 1.5; workers_spd += 4*(1-dissent); new_middle_spd += 3*(1-dissent); economic_growth += 1.5 if economic_growth < 3
 
-Wladimir Woytinsky, now part of our delegation to the conference, uses our successful implementation of the WTB-plan in order to argue for loosening currency valuation. The argument is at least somewhat convincing, and an agreement is reached, leading to increased inflation and demand stimulus throughout the world.
+현재 우리 대표단에 포함된 블라디미르 보이틴스키가 WTB 계획의 성공 사례를 들어 통화 평가절하의 필요성을 역설합니다. 그의 주장은 어느 정도 설득력을 얻었고, 결국 합의가 이루어져 전 세계적인 인플레이션과 수요 진작으로 이어졌습니다.
 
 @salvage_debts
 choose-if: reparations <= -2 and pacifism >= 3 and (rearmament_exposed or west_relation >= 3)
-unavailable-subtitle: We cannot argue for pacifism in our current state.
+unavailable-subtitle: 현재 상태로는 평화주의를 주장할 수 없습니다.
 on-arrival: budget += 1; unemployed -= 1 if unemployed >= 10; unemployed -= 1 if unemployed >= 5; inflation += 1 if inflation < 0; new_middle_spd += 4*(1-dissent); workers_spd += 3*(1-dissent); economic_growth += 1 if economic_growth < 3
 
-We try to argue that reducing war debts will reduce the risk of a future European war, using our successful disarmament and the reduction in Versailles reparation payments as an argument. The argument is at least somewhat convincing to the Americans, leading to an agreement to reduce debts from the Great War. This indirectly also improves our economy.
+우리는 성공적인 군비 축소와 베르사유 조약 배상금 감축을 선례로 들며, 전쟁 부채 감축이 미래 유럽 전쟁의 위험을 줄일 것이라고 주장합니다. 이 주장은 미국 측에 어느 정도 설득력을 얻었고, 결국 제1차 세계대전 부채를 감축하는 합의로 이어졌습니다. 이는 간접적으로 우리 경제에도 긍정적인 영향을 미칩니다.
 
 @no_business
-title: This conference is none of our concern.
+title: 이 회의는 우리와 상관없는 일이다.
 view-if: spd_in_government
 
-The conference collapses, as expected. In response to the continued support for fixed currency exchange rates and the impasse on debts, the Americans pull out of the conference, leaving it with no agreements whatsoever.
+예상대로 회의는 결렬되었습니다. 고정 환율제 고수와 채무 문제 교착 상태에 대한 반발로 미국이 회의에서 철수하면서, 회의는 아무런 합의 없이 끝나고 말았습니다.
 
-[? if unemployed >= 15 : Nevertheless, the world economy is slowly improving due in part to the economic stimulus and more liberal trade policies of the Roosevelt administration. ?]
-[? if unemployed < 15 : Nevertheless, the world economy is slowly improving due in part to the economic stimulus and more liberal trade policies of the Roosevelt administration as well as our own economic plan. ?]
+[? if unemployed >= 15 : 그럼에도 불구하고, 루스벨트 행정부의 경기 부양책과 자유 무역 정책 덕분에 세계 경제는 서서히 회복되고 있습니다. ?]
+[? if unemployed < 15 : 그럼에도 불구하고, 루스벨트 행정부의 경기 부양책과 자유 무역 정책, 그리고 우리 자신의 경제 계획 덕분에 세계 경제는 서서히 회복되고 있습니다. ?]
