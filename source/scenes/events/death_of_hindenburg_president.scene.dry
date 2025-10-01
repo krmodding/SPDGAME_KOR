@@ -352,7 +352,7 @@ on-arrival: dvp_candidate = spd_candidate
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 max-visits: 1
 
-[? if dvp_candidate = 우리의 좋은 관계 덕분에, 독일 인민당이 [+ spd_candidate +]를 지지하기로 했습니다! ?]
+[? if dvp_candidate = spd_candidate: 우리의 좋은 관계 덕분에, 독일 인민당이 [+ spd_candidate +]를 지지하기로 했습니다! ?]
 
 @convince_dvp_unity
 title: 독일 인민당(DVP)이 [+ spd_candidate +]를 지지하도록 설득하기.
