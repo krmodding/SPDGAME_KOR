@@ -8,13 +8,13 @@ tags: party_affairs; antifascism
 
 # Forming the Iron Front
 
-The Nazis' strength is gaining, as shown by their recent election results and their violent presence in the streets. Their fascism threatens to plunge Germany once again into the abyss.
+최근 선거 결과와 길거리에서의 폭력적인 활동에서 볼 수 있듯이, 나치의 세력은 점점 강해지고 있습니다. 그들의 파시즘은 독일을 다시 한번 심연 속으로 몰아넣으려 위협하고 있습니다.
 
-Many in our party are calling for urgent action. The "neorevisionist" faction, led by young socialists like Carlo Mierendorff and Julius Leber, have formed specifically around this cause. But many in all factions of the party are calling for action.
+당내 많은 이들이 시급한 대응을 촉구하고 있습니다. 카를로 미렌도르프, 율리우스 레버와 같은 젊은 사회주의자들이 이끄는 ‘신수정주의’ 분파는 바로 이 문제를 해결하기 위해 결성되었습니다. 하지만 당내 모든 분파에서 행동을 요구하는 목소리가 높습니다.
 
-- @not_a_big_deal: The Nazis' moment will pass. Let's not get too hasty.
+- @not_a_big_deal: 나치의 시대는 지나갈 거다. 너무 성급하게 굴지 말자.
 - @economic_crisis
-- @major_crisis: We must do something to confront the Nazis.
+- @major_crisis: 나치에 맞서 무언가 조치를 취해야 한다.
 - @iron_front
 
 
@@ -22,10 +22,10 @@ Many in our party are calling for urgent action. The "neorevisionist" faction, l
 on-arrival: nazi_urgency -= 1; left_dissent += 5; neorevisionist_dissent += 15
 view-if: mierendorff_advisor = 0 and leber_advisor = 0 and schumacher_advisor = 0
 
-The Nazis are just another far-right movement that will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
+나치는 머지않아 스스로의 모순으로 인해 사라질 또 하나의 극우 운동에 불과합니다. 그들을 상대하기 위한 특별한 정책을 수립할 필요는 없습니다.
 
 @economic_crisis
-title: We must address the economic crisis first.
+title: 먼저 경제 위기에 대응해야 합니다.
 view-if: economic_plan == 0 and black_thursday_seen == 1
 go-to: crisis_program
 
@@ -33,24 +33,24 @@ go-to: crisis_program
 view-if: nazi_urgency < 5
 on-arrival: nazi_urgency += 1; neorevisionist_dissent -= 5; neorevisionist_strength += 5
 
-The Nazis are one of the foremost threats to the German republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
+나치는 독일 공화국에 대한 최우선 위협 중 하나입니다. 하지만, 우리는 여전히 그들에 맞설 전략을 구상 중이며 행동을 취하기 위한 당내 공감대를 형성하기 위해 노력하고 있습니다. 이 문제는 나중에 다시 확인해 주십시오.
 
 @iron_front
-title: Form the Iron Front!
-subtitle: The Iron Front consists of the SPD, the trade unions, and the Reichsbanner.
+title: 강철 전선(Iron Front)을 결성하라!
+subtitle: 강철 전선은 사민당, 노동조합, 그리고 국기단으로 구성됩니다.
 view-if: nazi_urgency >= 3 and iron_front_formed == 0
 on-arrival: iron_front_formed = 1; radicalization += 1; nazi_urgency += 1; workers_spd += 5*(1-dissent); pro_republic += 5*(1-dissent); left_dissent -= 8; neorevisionist_dissent -= 10; neorevisionist_strength += 5
 achievement: eiserne_front
 
-The Nazi threat can no longer be ignored. We must build a new organization to confront them - the Iron Front - consisting of the SPD, the ADGB trade union federation, and the *Reichsbanner Schwarz-Rot-Gold*. We have a new symbol - the Three Arrows, pointing down towards the left.
+나치의 위협은 더는 무시할 수 없습니다. 우리는 그들에게 맞서 싸울 새로운 조직, '강철 전선'을 결성해야 합니다. 강철 전선은 사민당, 독일노동조합총연맹(ADGB), 그리고 ‘흑적금 국기단’ (Reichsbanner Schwarz-Rot-Gold)으로 구성됩니다. 우리는 왼쪽 아래를 향하는 '세 개의 화살’이라는 새로운 상징을 갖게 되었습니다.
 
-What do the three arrows stand for?
+세 개의 화살은 무엇을 의미합니까?
 
-- @unity: Unity, Activity, and Discipline.
-- @anti: Opposition to Fascism, Stalinism, and Monarchism.
-- @orgs: The SPD, ADGB, and Reichsbanner.
-- @wtb: Woytinsky, Tarnow, and Baade of the WTB-Plan
-- @all: All of the above.
+- @unity: 단결, 행동, 규율.
+- @anti: 파시즘, 스탈린주의, 군주주의에 대한 반대.
+- @orgs: 사민당, 독일노동조합총연맹, 그리고 국기단.
+- @wtb: 보이틴스키, 타르노프, 바데의 WTB 계획.
+- @all: 위의 모든 것.
 
 @unity
 go-to: if_end
@@ -70,4 +70,4 @@ go-to: if_end
 
 @if_end
 
-The Iron Front has given a new energy to our party.
+강철 전선은 우리 당에 새로운 활력을 불어넣었습니다.

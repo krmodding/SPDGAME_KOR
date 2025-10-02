@@ -7,40 +7,40 @@ is-card: true
 card-image: img/poster_1.png
 tags: party_affairs
 
-= Choosing our enemies
+= 우리의 적을 선택하기
 
-In our media and campaign materials, who should we consider as our main opponents?
+언론과 선거 홍보물에서, 누구를 우리의 주된 적으로 설정해야 할까요?
 
-[? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
+[? if enemies != 0 : 이전에는, [+ enemies +]를 우리의 주적으로 간주했습니다. 노선을 전환할 필요가 있을까요? ?]
 
-- @anti_dem: The anti-democratic parties of the far right and left - the KPD, NSDAP, and DNVP.
-- @far_right: The far right - the NSDAP and DNVP.
-- @nsdap: The NSDAP alone.
-- @kpd: The KPD.
-- @bourgeois: The bourgeois parties - the Center and DVP.
+- @anti_dem: 반민주적 극우와 극좌 정당 - 공산당(KPD), 나치당(NSDAP), 국가인민당(DNVP).
+- @far_right: 극우 세력 - 나치당(NSDAP)과 국가인민당(DNVP).
+- @nsdap: 오직 나치당(NSDAP)만.
+- @kpd: 공산당(KPD).
+- @bourgeois: 부르주아 정당 - 중앙당과 인민당(DVP).
 - @easy_discard
 
 @anti_dem
 on-arrival: enemies = "anti-democratic parties"; center_strength += 5; reformist_strength += 5; left_dissent += 5; workers_kpd -= 2; workers_nsdap -= 2; workers_dnvp -= 2; kpd_relation -= 10
 
-Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the KPD in the future.
+극우와 극좌를 동시에 공격하는 것은 부르주아 정당과 싸우길 선호하는 당내 좌파를 제외한 모두에게 지지를 받습니다. 하지만, 이는 미래에 공산당과 화해할 가능성을 저해할 수 있습니다.
 
 @far_right
 on-arrival: enemies = "far right"; left_strength += 5; left_dissent -= 5; workers_nsdap -= 3; workers_dnvp -= 3;
 
-Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, while the right is critical of our lack of response to the KPD. Our bourgeois coalition partners are also skeptical of our lack of commitment to anti-communism.
+극우 세력을 공격하는 것은 당 전체적으로 지지를 받지만, 좌파는 부르주아 정당들도 똑같이 위험하다고 여기며, 당내 우파는 공산당에 대한 미온적인 대응을 비판합니다. 우리의 부르주아 연정 파트너들 또한 우리의 반공주의적 입장이 확고하지 않다고 의심합니다.
 
 @nsdap
 on-arrival: enemies = "NSDAP"; neorevisionist_strength += 5; nazi_urgency += 1; workers_nsdap -= 4;
 
-[? if nazi_urgency == 0 or nsdap_r < 10 : The NSDAP is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if nazi_urgency > 0 and nsdap_r >= 10 : The Nazis are the most urgent problem for us to deal with. ?]
+[? if nazi_urgency == 0 or nsdap_r < 10 : 나치당은 지금 당장은 실속 없이 시끄럽기만 한 소수 정당일 뿐입니다. 당내 많은 이들이 우리의 선택에 의구심을 품고 있습니다. ?][? if nazi_urgency > 0 and nsdap_r >= 10 : 나치는 우리가 해결해야 할 가장 시급한 문제입니다. ?]
 
 @kpd
 on-arrival: enemies = "KPD"; reformist_strength += 5; left_dissent += 8; reformist_dissent -= 5; kpd_relation -= 15; dvp_relation += 5; z_relation += 5; workers_kpd -= 4;
 
-Attacking the KPD is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the KPD, this may not be the best choice.
+공산당 공격은 당내 강경 좌파를 제외한 모두의 지지를 받으며, 부르주아 정당들로부터도 어느 정도 인정을 받을 수 있습니다. 하지만, 만약 공산당과 화해할 생각이 있다면, 이는 최선의 선택이 아닐 수 있습니다.
 
 @bourgeois
 on-arrival: enemies = "bourgeois parties"; left_strength += 8; left_dissent -= 5; dvp_relation -= 5; z_relation -= 5; kpd_relation += 5; reformist_dissent += 8; workers_z -= 3; coalition_dissent += 1
 
-Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.
+우리의 반(反)부르주아적 수사는 좌파에게는 인기가 있지만, 향후 정부 구성에 필요한 연정 구축을 더 어렵게 만들 수 있습니다.

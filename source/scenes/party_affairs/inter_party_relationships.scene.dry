@@ -8,113 +8,113 @@ card-image: img/weimar_coalition_2.jpg
 max-visits: 12
 #subtitle: Building relations with the other political parties of Germany.
 
-= Inter-Party Relationships
+= 타 정당과의 관계
 
-The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+사민당은 아직 단독으로 집권할 수 없습니다. 선거에서 과반을 확보하지 못했기 때문에, 다른 정당들의 지지가 필요합니다. 최근 우리 정부는 사민당, 중앙당, 민주당으로 구성된 바이마르 연정이었습니다. 이들 정당에 손을 내밀어 관계를 더욱 돈독히 하거나, 아니면 독자 노선을 걸을 수도 있습니다.
 
-- @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
-- @center: Strengthen our bonds with the Catholic Center Party.
-- @kpd: Work towards repairing relationships with the Communist Party.
-- @spd_alone: The SPD can stand alone for now.
+- @liberals: 좌파 자유주의 성향의 독일민주당, 보수 자유주의 성향의 독일인민당과의 유대를 강화한다.
+- @center: 가톨릭 중앙당과의 유대를 강화한다.
+- @kpd: 공산당과의 관계 개선을 위해 노력한다.
+- @spd_alone: 사민당은 당분간 독자 노선을 걷는다.
 - @easy_discard
 
 
 @kpd
-subtitle: -1 resources
+subtitle: 자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자금이 부족합니다.
 on-arrival: resources -= 1; kpd_inter_party_seen += 1
 go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectifed_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectifed_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
 
 @kpd_1
 on-arrival: kpd_relation += 6*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 2; dvp_relation -= 3
 
-The communists are suspicious of our overtures, especially the Stalinist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
+공산주의자들은 우리의 접근을 의심하고 있습니다. 특히 우리를 '사회 파시스트’라 부르기를 고집하는 스탈린주의 지도부는 더욱 그렇습니다. 하지만, 기층 조직과 지역 단위에서는 교류가 이루어지고 있습니다.
 
 @kpd_rectification_of_history
 
-One stumbling block for our relations with the KPD is our history of conflict, dating back to 1918 and 1919. The KPD is especially contemptuous of Gustav Noske, the SPD "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other KPD revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two SPD-turned-KPD leaders who were killed during the suppression of the uprising.
+공산당과의 관계에서 한 가지 걸림돌은 1918년과 1919년까지 거슬러 올라가는 우리의 갈등의 역사입니다. 공산당은 특히 스파르타쿠스 봉기를 비롯한 여러 공산당 봉기를 폭력적으로 진압하라고 명령한 것으로 알려진 사민당의 ‘사냥개’ 구스타프 노스케를 극도로 경멸합니다. 그들은 또한 봉기 진압 과정에서 살해된, 사민당에서 공산당으로 전향한 두 지도자 로자 룩셈부르크와 카를 리프크네히트의 죽음에 대한 책임도 우리에게 돌리고 있습니다.
 
-For further improvements in KPD relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
+공산당과의 관계를 더욱 개선하기 위해서는, 노스케를 출당시키고 룩셈부르크와 리프크네히트를 위한 추모 행사를 여는 것이 필요할지도 모릅니다.
 
-- @yes_history: Yes, we must apologize for our past actions.
-- @no_history: No, we have no need to apologize.
+- @yes_history: 그래, 우리의 과거 행동에 대해 사과해야 한다.
+- @no_history: 아니, 사과할 필요 없습니다.
 
 @yes_history
 on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; left_dissent -= 6; left_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
 
-As part of normalizing relations with the KPD, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
+공산당과의 관계 정상화의 일환으로, 우리는 과거의 잘못을 인정해야만 합니다. 우리는 노스케를 출당시켰고, 봉기 당시 군에 의해 희생된 이들을 위한 공개 추모 행사를 열었습니다.
 
-This leads to tensions with the moderates and reformists within our party, and criticism from the conservative and liberal parties.
+이 조치는 당내 온건파와 개혁파와의 갈등으로 이어졌으며, 보수 및 자유주의 정당들의 비판을 받고 있습니다.
 
 @no_history
 on-arrival: kpd_relation -= 3
 
-We have no need to apologize for the actions of Ebert and Noske; it is the Communists' fault for launching a violent insurrection.
+에베르트와 노스케의 행동에 대해 사과할 필요는 없습니다. 폭력적인 반란을 일으킨 것은 공산주의자들의 잘못입니다.
 
 
 @kpd_2
 on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 3; dvp_relation -= 3
 
-After the success of the coalition government with the KPD, they are much more amenable to us.
+공산당과 함께한 연립 정부가 성공을 거둔 후, 그들은 우리에게 훨씬 더 협조적으로 나오고 있습니다.
 
 @kpd_blutmai
 on-arrival: kpd_relation += 3*(1 - dissent); reformist_dissent += 1
 
-After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
+‘피의 5월’ 사건 이후, 공산주의자들과 화해하는 것은 불가능에 가깝지는 않더라도 어렵습니다. 그럼에도 불구하고, 우리는 노력해야 합니다.
 
 @center
-subtitle: -1 resources
+subtitle: 자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자금이 부족합니다.
 on-arrival: resources -= 1; z_relation += 2 if z_party_leader == "Joos"
 go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if spd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"
 
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
 
-We are currently in opposition to the Center-led government, but that does not preclude the general building of feelings of good will.
+우리는 현재 중앙당이 이끄는 정부의 야당이지만, 그렇다고 해서 전반적인 우호 관계 구축을 배제하는 것은 아닙니다.
 
 @center_coalition
 on-arrival: z_relation += 8*(1 - dissent)
 
-We are currently coalition partners with them, so improving relations comes naturally.
+현재 우리는 그들과 연정 파트너이므로, 관계 개선은 자연스럽게 따라올 것입니다.
 
 @center_bruning
 on-arrival: z_relation += 5*(1 - dissent)
 
-The Brüning semi-autocratic regime makes building friendly relations difficult, but not impossible.
+브뤼닝의 반(半)독재 정권 하에서는 우호적인 관계를 구축하기가 어렵지만, 불가능하지는 않습니다.
 
 @liberals
-subtitle: -1 resources
+subtitle: 자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자금이 부족합니다.
 on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
 go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribound if year > 1930
 
-The [+ ddp_name +] has been one of our closest allies through the course of the Republic.
+[+ ddp_name +]는 바이마르 공화국 시기 내내 우리의 가장 가까운 동맹 중 하나였습니다.
 
 @dvp_stresemann
 on-arrival: dvp_relation += 8*(1 - dissent)
 
-Gustav Stresemann, the leader of the DVP is the best foreign policy leaders of the republic, and while he has previously expressed monarchist tendencies, he has been friendly towards us.
+인민당의 지도자인 구스타프 슈트레제만은 공화국 최고의 외교 정책 전문가이며, 과거 군주제적 성향을 보였음에도 우리에게 우호적이었습니다.
 
 @dvp_loss
 on-arrival: dvp_relation += 5*(1 - dissent)
 
-With the death of Gustav Stresemann, the DVP is much less likely to be accommodating of us. In addition, the liberal parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
+구스타프 슈트레제만의 사망으로, 인민당(DVP)은 우리에게 협조적일 가능성이 훨씬 낮아졌습니다. 게다가 자유주의 정당들은 선거에서 계속해서 약세를 보이고 있으므로, 우리의 노력을 다른 곳에 쏟는 것이 더 나을 수도 있습니다.
 
-However, given the influence of the DVP among the other right-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+하지만 다른 우익 정당들 사이에서 [? if president == "Hindenburg": 그리고 힌덴부르크 대통령에게 ?] 인민당(DVP)이 가지는 영향력을 고려할 때, 그들에게 영향력을 행사하는 것은 여전히 유용할 수 있습니다.
 
 @dvp_moribound
 on-arrival: dvp_relation += 5*(1 - dissent)
 
-The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
+자유주의 정당들([+ ddp_name +]와 인민당(DVP) 모두)은 선거에서 거의 소멸 직전이므로, 우리의 노력을 다른 곳에 쏟는 편이 더 나을지도 모릅니다.
 
-However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+하지만 다른 우익 정당들 사이에서 [? if president == "Hindenburg": 그리고 힌덴부르크 대통령에게 ?] 인민당(DVP)이 가지는 영향력을 고려할 때, 그들에게 영향력을 행사하는 것은 여전히 유용할 수 있습니다.
 
 @spd_alone
 
-Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
+우리가 '할 수 없어서’든 '하지 않아서’든, 현 시점에서는 다른 정당들과 관계를 맺지 않습니다.
 
-- @return: Continue...
+- @return: 계속하기…
