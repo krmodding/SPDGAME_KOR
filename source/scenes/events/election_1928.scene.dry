@@ -1,4 +1,4 @@
-title: Reichstag Elections
+title: 국가의회 선거
 new-page: true
 tags: event
 priority: -1
@@ -15,26 +15,26 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 총선 결과가 속속 발표되고 있습니다.
 
-- @election_algorithm: May we do our best...
+- @election_algorithm: 우리가 최선을 다했기를 바랄 뿐…
 - @cancel_elections
 
 @cancel_elections
-title: We cannot hold the elections now. Cancel the elections.
-subtitle: This is an anti-democratic move that may backfire.
+title: 지금은 선거를 치를 수 없다. 선거를 취소한다.
+subtitle: 역효과를 낳을 수 있는 반민주적인 조치입니다.
 view-if: in_emergency_government == 1 and president == "Braun" and not presidential_powers
 
-Since we are currently ruling as part of an emergency government, we may use quasi-constitutional trickery to significantly delay these elections, and continue governing via Article 48. This is likely to be extremely unpopular both with our base and with the other parties. However, this may be necessary to prevent the extremists from gaining power.
+현재 우리는 비상 정부의 일원이므로, 준 헌법적인 계책을 동원해 이번 선거를 상당 기간 연기하고 제48조를 통해 통치를 이어갈 수 있습니다. 이는 우리 지지층은 물론 다른 정당들로부터도 극심한 반발을 살 것입니다. 하지만 극단주의자들이 권력을 잡는 것을 막기 위해 필요한 조치일지도 모릅니다.
 
-- @cancel_elections_2: Yes, do it.
-- @election_algorithm: No, let's hold the elections.
+- @cancel_elections_2: 그래, 그렇게 하자.
+- @election_algorithm: 아니, 선거를 치르자.
 
 @cancel_elections_2
 on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; dvp_relation -= 8; z_relation -= 8; ddp_relation -= 10; kpd_relation -= 8; coup_progress += 2; workers_spd -= 4; new_middle_spd -= 5; old_middle_spd -= 5; rural_spd -= 5; catholics_spd -= 5; unemployed_spd -= 5; coup_progress += 2 if nsdap_normalized >= 0.3; coup_progress += 2 if nsdap_normalized + dnvp_normalized >= 0.5; sa_strength += 100 if coup_progress >= 7; sh_strength += 100 if coup_progress >= 7
 achievement: ausnahmezustand
 
-Fine. President [+ president +] has taken the unprecedented step of canceling these elections. New elections are scheduled for [+ next_election_month : month +] [+ next_election_year +].
+좋습니다. [+ president +] 대통령이 선거를 취소하는 전례 없는 조치를 내렸습니다. 차기 선거는 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정되었습니다.
 
-Let us hope this does not backfire.
+이 조치가 부디 역효과를 낳지 않기를 바랍니다.
 
 @post_election_1928
 on-arrival: {!
@@ -269,7 +269,7 @@ if (window && d3) {
 !}
 go-to: coalition_menu
 
-= Ergebnisübersicht
+= 선거 결과
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
@@ -306,11 +306,11 @@ go-to: coalition_menu
 
 우익 연정 (중앙당 + 바이에른 인민당 + 인민당 + 기타 정당 + 국가인민당): [+ right_coalition +]%
 
-[? if nazi_urgency <= 1 and nsdap_r >= 15 : 나치당의 득표율이 급증하는 현상은 매우 우려스러운 일이다. 많은 사람들은 이 정당이 죽어가고 있다고 믿었으나, 이제는 독일 민주주의의 가장 큰 위협으로 간주하고 있다. ?]
+[? if nazi_urgency <= 1 and nsdap_r >= 15 : 나치당의 득표율 급증은 매우 우려스러운 현상입니다. 많은 이들이 이 정당이 소멸하고 있다고 믿었지만, 이제는 독일 민주주의의 가장 큰 위협으로 떠올랐습니다. ?]
 
-[? if anti_democratic_coalition >= 50 : 반 민주주의 정당인 공산당·국가인민당·나치당이 하원의 과반수를 차지하고 있다. 안정적인 정부를 구성하는 것은 거의 불가능할 듯하다. ?]
+[? if anti_democratic_coalition >= 50 : 반민주주의 정당인 공산당, 국가인민당, 나치당이 의회 과반을 차지했습니다. 안정적인 정부 구성은 거의 불가능해 보입니다. ?]
 
-여러 가지 연정 방안이 정치권 안팎에서 활발히 논의되고 있다.
+이제 다양한 연정 구성 방안이 정계 안팎에서 활발히 논의되고 있습니다.
 
 @coalition_menu
 
@@ -332,44 +332,44 @@ go-to: coalition_menu
 @popular_front_coalition
 title: 새로운... "인민전선"?
 subtitle: 사민당 + 공산당 + 중앙당 + [+ ddp_name +]  [? if sapd_formed: + 사노당 ?]([+ popular_front_coalition +]%)
-unavailable-subtitle: 사민당 + 공산당 + 중앙당 + [+ ddp_name +] [? if sapd_formed: + 사노당 ?]([+ popular_front_coalition +]%) - [? if ((kpd_relation < 65 and kpd_party_leader == "Thälmann") or (kpd_relation < 45 and kpd_party_leader == "Conciliators")): We do not have good enough relations with the KPD. ?][? if (z_relation < 45 and z_party_leader == "Joos") or (z_relation < 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation < 55 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators"): We do not have good enough relations with the Center Party. ?][? if communist_coalition < 3 : The Communists are unwilling to compromise at all. ?]
+unavailable-subtitle: 사민당 + 공산당 + 중앙당 + [+ ddp_name +] [? if sapd_formed: + 사노당 ?]([+ popular_front_coalition +]%) - [? if ((kpd_relation < 65 and kpd_party_leader == "Thälmann") or (kpd_relation < 45 and kpd_party_leader == "Conciliators")): 공산당과의 관계가 충분히 좋지 않습니다. ?][? if (z_relation < 45 and z_party_leader == "Joos") or (z_relation < 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation < 55 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators"): 중앙당과의 관계가 충분히 좋지 않습니다. ?][? if communist_coalition < 3 : 공산주의자들은 타협할 의사가 전혀 없습니다. ?]
 view-if: popular_front_coalition >= 50
 choose-if: (((kpd_relation >= 65 and kpd_party_leader == "Thälmann") or (kpd_relation >= 45 and kpd_party_leader == "Conciliators")) and ((z_relation >= 45 and z_party_leader == "Joos") or (z_relation >= 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation >= 55 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators")) and ddp_relation >= 50 and communist_coalition >= 3) or (z_party_leader == "Joos" and kpd_party_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)
 
-Could we really form a coalition that included both the Center and the Communists? It seems like an absurd concept, but given our good relationships with both sides, it is not an impossibility.
+중앙당과 공산당을 모두 아우르는 연정을 정말 구성할 수 있을까요? 터무니없는 구상 같지만, 양측과의 관계가 좋기에 불가능하지만은 않습니다.
 
-The far-right might attempt a coup, if such a coalition were formed.
+만약 이런 연정이 구성된다면, 극우 세력이 쿠데타를 시도할지도 모릅니다.
 
-- @popular_front_2: Form the Popular Front!
-- @great_popular_front: Form the Popular Front!
+- @popular_front_2: 인민전선을 구성하자!
+- @great_popular_front: 인민전선을 구성하자!
 
 @popular_front_2
 view-if: z_party_leader != "Joos" or kpd_party_leader != "Conciliators"
 
-Somehow, both the Communists and Center are at the very least willing to entertain negotiations. Of course, KPD radicals and Center conservatives derail the negotiations almost immediately. The KPD demands leadership of the coalition for themselves and their chairman Ernst Thälmann, [? if spd_r > kpd_r : despite our higher vote share, ?]while the Center is offended by the prospect of helping Bolsheviks enter government. *Something* must be done to restore balance.
+어찌 된 일인지 공산당과 중앙당 모두 최소한 협상에 응할 의사는 보입니다. 물론 공산당 내 급진파와 중앙당 내 보수파가 즉시 협상을 틀어버렸습니다. 공산당은 [? if spd_r > kpd_r : 우리가 더 많은 표를 얻었음에도 불구하고 ?]자신들의 의장 에른스트 텔만이 연정을 이끌어야 한다고 요구하고, 중앙당은 볼셰비키의 입각을 돕는다는 생각 자체에 불쾌감을 드러냅니다. 이 균형을 바로잡기 위해 *무언가* 조치가 필요합니다.
 
 - @popular_front_resources
 - @popular_front_democracy
 - @popular_front_braun
-- @coalition_menu: This is impossible. Try another governing arrangement.
+- @coalition_menu: 이것은 불가능하다. 다른 연정 구성을 시도하자.
 
 @popular_front_resources
-title: Use our resources to smooth things over.
-unavailable-subtitle: Required: 4 resources
-subtitle: -4 resources
+title: 자금을 사용하여 문제를 원만히 해결한다.
+unavailable-subtitle: 필요: 4 자금
+subtitle: 자금 -4
 choose-if: resources >= 4
 on-arrival: resources -= 4
 go-to: popular_front_success
 
 @popular_front_democracy
-title: Convince the KPD to accept democracy.
-subtitle: [? if kpd_party_leader == "Conciliators" : The Conciliator leadership of the KPD at least claim to support the Popular Front. ?]
-unavailable-subtitle: Our relationship with the KPD is not high enough.
+title: 공산당이 민주주의를 수용하도록 설득한다.
+subtitle: [? if kpd_party_leader == "Conciliators" : 공산당의 조정파 지도부는 적어도 인민전선을 지지한다고 주장하고 있습니다. ?]
+unavailable-subtitle: 공산당과의 관계가 충분히 좋지 않습니다.
 choose-if: (kpd_relation >= 60 and communist_coalition >= 3) or kpd_party_leader == "Conciliators"
 go-to: popular_front_success
 
 @popular_front_braun
-title: Use pressure from President Braun to force the parties to cooperate.
+title: 브라운 대통령의 압력을 이용하여 정당들이 협력하도록 만든다.
 view-if: president == "Braun"
 go-to: popular_front_success
 
@@ -379,34 +379,34 @@ on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitsche
 achievement: grosse_volksfront
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 
-Somehow, the coalition is successfully formed! The conciliatory leadership of the Center Party and KPD helped make the negotiations possible. We still need a chancellor; the only acceptable choice among the parties was Rudolf Breitscheid of the SPD, acceptable to the Center and KPD [? if president == "Hindenburg" : as well as President Hindenburg, albeit extremely reluctantly ?].
+왜인지는 몰라도, 마침내 연정이 성공적으로 구성되었습니다! 중앙당과 공산당의 온건파 지도부가 협상을 가능하게 했습니다. 이제 총리가 필요합니다. 모든 정당이 받아들일 수 있는 유일한 선택지는 사민당의 루돌프 브라이트샤이트였습니다. 그는 중앙당과 공산당은 물론, [? if president == "Hindenburg" : 힌덴부르크 대통령도 아주 마지못해 ?]받아들인 인물이었습니다..
 
 @popular_front_success
 on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 achievement: volksfront
 
-Somehow, surprisingly, the coalition is successfully formed! We still need a chancellor; the only acceptable choice among the parties was Rudolf Breitscheid of the SPD, acceptable to the Center and KPD [? if president == "Hindenburg" : as well as President Hindenburg, albeit extremely reluctantly ?].
+왜인지는 몰라도, 마침내 연정이 성공적으로 구성되었습니다! 이제 총리가 필요합니다. 모든 정당이 받아들일 수 있는 유일한 선택지는 사민당의 루돌프 브라이트샤이트였습니다. 그는 중앙당과 공산당은 물론, [? if president == "Hindenburg" : 힌덴부르크 대통령도 아주 마지못해 ?] 받아들인 인물이었습니다.
 
 @popular_front_no_civil_war
 on-arrival: kpd_goals_seen = 0; finance_minister_party = "Z"; interior_minister_party = "Z"; economic_minister_party = "Z"; labor_minister_party = "Z"; foreign_minister_party = "Z"; agriculture_minister_party = "Z"; reichswehr_minister = "I"; leverage = spd_r + kpd_r;
 achievement: volksfront
 
-In response to the KPD's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
+공산당이 내각에 참여하자, 우익 진영은 당분간 ‘관망’ 자세를 취하고 있습니다. 그들은 인민전선 정부가 불안정하고 무능해서 스스로 붕괴할 것이며, 그로 인해 좌파와 중도파의 명예가 실추되어 결국 바이마르 공화국이 파멸에 이를 것이라 기대합니다. 그들이 틀렸다는 것을 증명하는 것이 우리의 과제입니다.
 
-The KPD has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" within the Popular Front government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that the Popular Front would inevitably fail, and that our failure would benefit them.
+공산당은 내각 참여에 대해서는 거리를 두고 있습니다. 그들은 인민전선 정부 내에서 "충성스러운 야당"으로서 외부에서 우리를 지지하는 한편, 노동자들을 자신들의 편으로 끌어들이기 위한 독자적인 선전 활동을 벌이겠다고 주장합니다. 그들은 인민전선이 결국 실패할 것이며, 우리의 실패가 자신들에게 이득이 되리라 기대하는 듯합니다.
 
-- @ministries: First, we must select our ministries.
+- @ministries: 우선, 내각을 구성해야 합니다.
 
 
 @popular_front_civil_war
 on-arrival: kpd_relation = 80; reichswehr_loyalty += 0.25;
 
-In response to the KPD's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop us from taking power.
+공산당이 내각에 참여하자, 우익은 즉각 쿠데타를 일으켰습니다. 철모단과 나치 돌격대가 베를린으로 진격하여 우리 지지자들과 즉시 충돌하기 시작했습니다! 국방군 내 반동분자 장교들은 부대를 이끌고 병영을 나와 우리가 정권을 잡는 것을 막기 위해 철모단에 합류했습니다. 
 
-The Center manages to diffuse some of the hostility from the Reichswehr and the Stahlhelm, but fail to prevent the outbreak of fighting. We are forced to fight on the same side as the KPD, whether we want to or not.
+중앙당이 국방군과 철모단의 적개심을 일부 누그러뜨리는 데 성공했지만, 전투의 발발까지는 막지 못했습니다. 이제 우리는 좋든 싫든 공산당과 같은 편에서 싸워야 합니다.
 
-- @civil_war: A civil war, then.
+- @civil_war: 그렇다면, 내전이다.
 
 
 
@@ -417,91 +417,91 @@ view-if: far_right_coalition >= 50
 go-to: far_right_win if (year >= 1932 or nsdap_r >= 44) and president != "Braun"; far_right_fail if (year < 1932 and nsdap_r < 44) and president != "Braun"; far_right_braun if president == "Braun"
 priority: 2
 
-There are enough votes for the Nazis and the DNVP to form a coalition. [+ nsdap_leader +] has made his participation in government contingent on being appointed chancellor. It is up to President [+ president +] to decide.
+나치당과 국가인민당이 연정을 구성하기에 충분한 의석이 확보되었습니다. [+ nsdap_leader +]는 자신이 총리로 임명되어야만 정부에 참여하겠다고 밝혔습니다. 이제 결정은 [+ president +] 대통령의 손에 달려 있습니다.
 
 @far_right_win
 on-arrival: chancellor = nsdap_leader; chancellor_party = "NSDAP"
 
-[? if president == "Hindenburg" : President Hindenburg's camarilla ?][? if president == "Braun" : President Braun somehow ?] has decided that [+ nsdap_leader +] must be chancellor [? if president == "Hindenburg": , and the aging president accepts their recommendations. ?][? if president == "Braun" : because it is what the constitution would stipulate. ?]
+[? if president == "Hindenburg" : 힌덴부르크 대통령의 측근들이 ?][? if president == "Braun" : 어찌 된 일인지 브라운 대통령이 ?] [+ nsdap_leader +] 를 총리로 임명하기로 결정했습니다. [? if president == "Hindenburg": 그리고 노쇠한 대통령은 그들의 권고를 수락했습니다. ?][? if president == "Braun" : 헌법이 그렇게 규정하고 있기 때문입니다. ?]
 
-- @hitler_takes_power: What do we do now?
+- @hitler_takes_power: 이제 우린 어떡해야 하는가?
 
 
 @far_right_fail
 on-arrival: chancellor = "Schleicher"; chancellor_party = "I"; pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
-The reactionary establishment is still very skeptical of the Nazis, so instead, [+ president +] appoints Kurt von Schleicher, a former general, as chancellor, to try to "tame" the Nazis.
+반동적인 기득권층은 여전히 나치에 대해 매우 회의적이어서, [+ president +] 대통령은 나치를 ‘길들이기’ 위해 전직 장군인 쿠르트 폰 슐라이허를 총리로 임명합니다.
 
-Schleicher's government is deeply unpopular among all parties of the Reichstag. Despite his support for a coalition with the NSDAP, the Nazis want power all to themselves, without Schleicher.
+슐라이허 정부는 국가의회의 모든 정당으로부터 극심한 반발을 사고 있습니다. 정작 슐라이허는 나치당과의 연정을 지지하지만, 나치당은 슐라이허를 배제하고 모든 권력을 독차지하려 합니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+차기 총선은 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정되었습니다.
 
 @far_right_braun
 on-arrival: coup_progress += 2
 
-President Braun faces a dilemma. Is it "democratic" to let democracy be destroyed, if the majority of voters have willed it so? Some, even on the left, suggest that the Nazis would not *truly* be as horrific as their platform suggests, and that giving them power would let them discredit themselves in the eyes of the public.
+브라운 대통령은 딜레마에 빠졌습니다. 이게 다수 유권자의 뜻이라면, 민주주의가 파괴되도록 내버려 두는 것이 과연 "민주적"인 일일까요? 심지어 좌파 일각에서조차 나치가 내세우는 강령만큼 끔찍하지는 않을 것이며, 그들에게 권력을 쥐여주면 대중 앞에서 스스로 신뢰를 잃고 몰락할 것이라는 주장이 나옵니다.
 
-Alternatively, Braun could use the emergency powers of the presidency. Article 48 has been used by Hindenburg to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
+다른 한편으로, 브라운은 대통령 비상대권을 사용할 수도 있습니다. 제48조는 힌덴부르크가 반민주적이고 반노동자적인 정책들을 공포하는 데 사용했습니다. 과연 제48조는 악뿐만 아니라 선을 위해서도 사용될 수 있을까요?
 
-- @emergency_braun: We will form an emergency government with Braun's support.
-- @new_elections: We will have new elections.
-- @far_right_win: Let the Nazis form their government.
+- @emergency_braun: 브라운 대통령의 지원 하에 비상 정부를 구성한다.
+- @new_elections: 재선거를 실시한다.
+- @far_right_win: 나치가 정부를 구성하도록 둔다.
 
 
 @left_coalition
-title: Is a United Left coalition possible?
+title: 통일 좌파 연정이 가능한가?
 subtitle: SPD + KPD [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%)
-unavailable-subtitle: SPD + KPD [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the KPD. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
+unavailable-subtitle: SPD + KPD [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : 공산당(KPD)과 관계가 충분히 좋지 않습니다. ?][? if communist_coalition < 3 : 공산주의자들은 정부에 참여하기에는 너무 급진적인 노선에 헌신하고 있습니다. ?]
 view-if: left_coalition >= 50
 choose-if: (kpd_relation >= 50 or (kpd_party_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3
 
-There are enough votes for a SPD + KPD coalition government, if such a thing were actually possible.
+이론적으로는 사민당과 공산당이 연정을 구성할 수 있는 의석은 충분합니다.
 
-The far-right might attempt a coup, if such a coalition were formed.
+만약 이런 연정이 구성된다면, 극우 세력이 쿠데타를 시도할지도 모릅니다.
 
-- @left_coalition_impossible: This is impossible.
-- @left_coalition_possible: This could be possible.
+- @left_coalition_impossible: 이건 불가능하다.
+- @left_coalition_possible: 가능할지도 모른다.
 
 @left_coalition_impossible
 go-to: coalition_menu
 
-A far left coalition is impossible.
+극좌파 연정 구성은 불가능합니다.
 
 
 @left_coalition_possible
 
-The KPD is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Ernst Thälmann as chancellor in exchange for a coalition. [? if president == "Hindenburg" : There is no chance whatsoever that President Hindenburg would approve of the appointment of a die-hard communist as chancellor. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our centrist or left-leaning members as chancellor.
+양당 기층 당원들 간의 우호적인 분위기에도 불구하고, 공산당 지도부는 여전히 연정 참여를 매우 꺼리고 있습니다. 특히 스탈린주의 지도부는 이를 격렬히 반대합니다. 그들은 연정 구성의 대가로 에른스트 텔만을 총리로 임명하라고 요구합니다. [? if president == "Hindenburg" : 힌덴부르크 대통령이 강성 공산주의자를 총리로 임명하는 것을 승인할 가능성은 눈곱만큼도 없습니다. ?] 다른 방법으로는, 만약 그들과의 관계가 충분히 좋다면, 우리 당의 중도 혹은 좌파 성향 인사를 총리로 지지하도록 설득해 볼 수 있습니다.
 
-- @thalmann_chancellor: Appoint Thälmann as chancellor.
+- @thalmann_chancellor: 텔만을 총리로 임명한다.
 - @left_coalition_resources
 - @left_coalition_relations
-- @coalition_menu: Try a different governing arrangement.
+- @coalition_menu: 다른 연정 구성을 시도해본다.
 
 @thalmann_chancellor
 choose-if: president == "Braun" and reformist_strength + neorevisionist_strength < left_strength
-unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
+unavailable-subtitle: [? if president != "Braun": [+ president +]대통령은 결코 그런 일을 허용하지 않을 겁니다. ?] [? if reformist_strength >= left_strength : 원내 다수파는 텔만을 총리로 지지하지 않을 것입니다. ?]
 on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"; kpd_relation = 80; in_left_front = 1; spd_in_government = 1 
 
-With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
+대통령은 아주 마지못해 [+ chancellor +]를 총리로 임명합니다.
 
-Immediately, [+ chancellor +] goes to work building a "Soviet Germany": consolidating as much power as possible in the KPD, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
+임명되자마자, [+ chancellor +]는 ‘소비에트 독일’ 건설에 착수합니다. 가능한 모든 권력을 공산당에 집중시키고, 국가 기관에서 반공주의자들을 숙청하며, '인민의 적’에 맞서 길거리 투쟁가들을 내보냅니다.
 
-In response to [+ chancellor +] being appointed Chancellor, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop the KPD from taking power. We are forced to be on the same side as the KPD, whether we want to or not.
+ [+ chancellor +]가 총리로 임명되자 우익세력은 거의 즉각적으로 쿠데타를 시도합니다. 철모단과 나치 돌격대가 베를린으로 진격하여 우리 지지자들과 충돌하기 시작했습니다! 국방군 내 반동분자 장교들은 부대를 이끌고 병영을 나와 공산당의 집권을 막기 위해 철모단에 합류했습니다. 좋든 싫든, 우리는 공산당과 같은 편에서 싸울 수밖에 없는 처지가 되었습니다.
 
 - @civil_war
 
 
 @left_coalition_resources
-title: Use our resources to smooth things over.
-unavailable-subtitle: Required: 3 resources
-subtitle: -3 resources
+title: 자금을 사용하여 문제를 원만히 해결한다.
+unavailable-subtitle: 필요: 3 자금
+subtitle: 자금 -3
 choose-if: resources >= 3
 on-arrival: resources -= 3
 go-to: left_coalition_success
 
 @left_coalition_relations
-title: Convince the KPD to accept democracy.
-unavailable-subtitle: Our relationships with the KPD are not good enough.
+title: 공산당이 민주주의를 수용하도록 설득한다.
+unavailable-subtitle: 공산당과의 관계가 충분히 좋지 않습니다.
 choose-if: kpd_relation >= 60 or kpd_party_leader == "Conciliators"
 go-to: left_coalition_success
 
@@ -511,63 +511,63 @@ on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Thälmann as chancellor. The consensus choice for chancellor, accepted by the SPD, KPD, and President [+ president +], is Rudolf Breitscheid, who belongs to the centrist faction of the SPD, but was acceptable to the left due to his previous membership in the left-wing anti-war USPD.
+놀랍게도, 어떻게든 텔만을 총리로 임명하지 않고도 좌파 연정이 성공적으로 구성되었습니다. 사민당, 공산당, 그리고 [+ president +] 대통령 모두가 합의한 총리 후보는 루돌프 브라이트샤이트였습니다. 그는 사민당 중도파에 속하지만, 과거 좌파 성향의 반전 단체인 독립사회민주당(USPD)에 몸담았던 이력 덕분에 좌파의 동의를 얻을 수 있었습니다.
 
 # just raise the coup limit, don't immediately go to civil war
 
 @left_coalition_no_civil_war
 on-arrival: kpd_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05
 
-In response to the KPD's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
+공산당이 내각에 참여하자, 우익 진영은 당분간 ‘관망’ 자세를 취하고 있습니다. 그들은 우리 정부가 불안정하고 무능해서 스스로 붕괴할 것이며, 그로 인해 좌파의 명예가 실추되어 결국 바이마르 공화국이 파멸에 이를 것이라 기대합니다. 그들이 틀렸다는 것을 증명하는 것이 우리의 과제입니다.
 
-The KPD has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
+공산당은 내각 참여에 대해서는 거리를 두고 있습니다. 그들은 ‘노동자 정부’ 내에서 "충성스러운 야당"으로서 외부에서 우리를 지지하는 한편, 노동자들을 자신들의 편으로 끌어들이기 위한 독자적인 선전 활동을 벌이겠다고 주장합니다. 그들은 우리가 결국 실패할 것이며, 우리의 실패가 자신들에게 이득이 되리라 기대하는 듯합니다.
 
-Whatever their reasoning is, the SPD has control over the ministries of government.
+그들의 속내가 어떻든, 정부의 각 부처는 사민당이 맡게 되었습니다.
 
 @left_coalition_civil_war
 on-arrival: reichswehr_loyalty += 0.1
 
-In response to the KPD's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the Stahlhelm and Nazi SA enter Berlin and begin clashing with our supporters. Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop us from taking power.
+공산당의 내각 참여에 대응하여 우익은 즉각 쿠데타를 일으켰습니다. 철모단과 나치 돌격대 병력이 베를린으로 진입해 우리 지지자들과 충돌하기 시작했습니다. 국방군 내의 반동분자 장교들은 부대를 이끌고 병영을 나와 우리가 정권을 잡는 것을 막기 위해 철모단에 합류했습니다.
 
-- @civil_war: A civil war, then.
+- @civil_war: 그렇다면, 내전이다.
 
 
 
 @right_coalition
 title: 정부 구성에 참여하지 않는다. (우익 연정이 형성되도록 허락한다)
 subtitle: 중앙당 + 바이에른 인민당 + 독일 인민당 + 독일 국가인민당 + 기타 정당 ([+ right_coalition +]%)
-unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
+unavailable-subtitle: 국가인민당(DNVP)은 중앙당과의 연정에 관심이 없습니다.
 view-if: right_coalition >= 50
 choose-if: year < 1929
 
-There are enough votes for a right-wing coalition of the Center (+ BVP), DVP, DNVP, and minor conservative parties. [? if largest_party == "SPD": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
+중앙당(+바이에른 인민당), 인민당(DVP), 국가인민당(DNVP) 및 군소 보수 정당들이 연합할 경우 우익 연정을 구성할 수 있는 의석이 확보됩니다. [? if largest_party == "SPD": 하지만 원내 제1당인 우리가 정부 구성 책임을 포기하는 것으로 비춰질 것입니다. ?]
 
-- @right_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
-- @grand_coalition: Actually, we wish to form a grand coalition after all.
+- @right_coalition_sure: 그래, 정부 구성에 대한 책임을 포기하고 우익 연정이 집권하도록 하자.
+- @grand_coalition: 역시, 우리는 대연정을 구성하고자 한다.
 
 @no_right_coalition
 go-to: no_majority
 
-However, the DNVP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the Center Party. Thus, there is no clear path towards a Reichstag majority.
+하지만, 국가인민당(DNVP)과 그 지도자 후겐베르크는 중앙당에 속한 '11월의 범죄자들’과는 연정을 구성할 수 없다며 거부하고 있습니다. 따라서, 의회 과반수를 확보할 뚜렷한 방법이 없습니다.
 
 @right_coalition_sure
-subtitle: This will be extremely unpopular within our party.
+subtitle: 이 결정은 당 내에서 극심한 반발을 살 것입니다.
 on-arrival: pro_republic -= 5; center_dissent += 15; left_dissent += 10; labor_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5
 go-to: right_coalition_2
 
 
 @right_coalition_2
-unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
+unavailable-subtitle: 국가인민당(DNVP)은 중앙당과의 연정에 관심이 없습니다.
 view-if: right_coalition >= 50
 choose-if: year < 1929
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_right_coalition = 1;
 
-Even though the DNVP is very reluctant to participate in such a coalition, they still accede to President Hindenburg's wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor.
+국가인민당(DNVP)이 그러한 연정 참여를 매우 꺼렸음에도 불구하고, 그들은 결국 힌덴부르크 대통령의 뜻을 따랐습니다. 그리하여 브뤼닝을 총리로 하는 과반 중도우파 연정이 구성되었습니다.
 
 
 
 @no_majority
-title: There is no clear governing majority.
+title: 확실한 다수 연정 구성이 불가능합니다.
 view-if: weimar_coalition < 50 and (grand_coalition < 50 or grand_coalition_failed == 1) and president = "Hindenburg" and far_right_coalition < 50
 on-arrival: no_majority_elections += 1
 go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; no_majority_papen if chancellor = "Papen" and no_majority_papen_elections == 0; no_majority_papen_2 if chancellor == "Papen" and no_majority_papen_elections > 0; no_majority_schleicher if chancellor = "Schleicher"; no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
@@ -579,11 +579,11 @@ go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; n
 @no_majority_spd
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
-There is no path to an obviously workable majority. Since President Hindenburg is unwilling to work with a minority or caretaker SPD government, his preferred chancellor is Heinrich Brüning of the Center Party, who could lead a "presidential" government.
+작동 가능한 다수 연정을 구성할 뾰족한 수가 없습니다. 힌덴부르크 대통령은 사민당 소수 정부나 임시 정부와는 협력할 의사가 없으므로, '대통령 내각’을 이끌 수 있는 중앙당의 하인리히 브뤼닝을 총리로 선호합니다.
 
-- @toleration_bruning: We will tolerate Brüning.
-- @new_grand_coalition: We will try to form a new grand coalition.
-- @new_elections: We will have new elections.
+- @toleration_bruning: 브뤼닝 정부를 묵인한다.
+- @new_grand_coalition: 새로운 대연정 구성을 시도한다.
+- @new_elections: 재선거를 실시한다.
 
 # - if NSDAP is the largest party and the 
 
@@ -594,39 +594,39 @@ go-to: no_majority_bruning_toleration if (no_majority_elections <= 3 and anti_de
 @hindenburg_appoints_papen
 on-arrival: chancellor = "Papen"; chancellor_party = "I"; next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; sa_banned = 0; pro_republic -= 8; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I";
 
-There is no path to a majority government. President Hindenburg is tired of the chaos, and appoints Franz von Papen as chancellor instead of Brüning. Papen is a indenpendent formerly from the Center Party, and is significantly to the right of the majority of the Center Party.
+다수 연정 구성의 길이 보이지 않습니다. 혼란에 지친 힌덴부르크 대통령은 브뤼닝 대신 프란츠 폰 파펜을 총리로 임명합니다. 파펜은 과거 중앙당 소속이었던 무소속 인사로, 중앙당의 주류보다 훨씬 우익적인 인물입니다.
 
-Papen is immediately faced with a vote of no confidence, given his unpopularity. However the SPD votes, he is guaranteed to fall, due to the unanimous hatred against him from all other parties.
+인기가 없는 파펜은 즉각 불신임 투표에 직면합니다. 사민당이 어떤 표를 던지든, 다른 모든 정당들이 한목소리로 그를 증오하기에 그의 실각은 기정사실입니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+차기 총선은 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정되었습니다.
 
 @no_majority_bruning_toleration
 on-arrival: no_majority_bruning_elections += 1
 
-There is no path to a majority government. One option would be to have a continuation of the current Brüning government; if we tolerate it, then it would retain a majority vote against no-confidence.
+다수 연정을 구성할 방법이 없습니다. 한 가지 선택지는 현 브뤼닝 정부를 유지하는 것입니다. 우리가 이 정부를 묵인한다면, 불신임 투표를 막아낼 다수는 확보할 수 있을 겁니다.
 
-Alternatively, we could try to form a "new grand coalition" of all constitutional parties except the NSDAP, KPD, and DNVP. The stumbling block are the minor conservative parties such as the "Economic Party of the Middle Class", who detest any hint of socialism and would ruin the country before working with Marxists.
+다른 방법으로는 나치당, 공산당, 국가인민당을 제외한 모든 헌법 수호 정당들로 '신(新) 대연정’을 구성하는 것입니다. 하지만 ‘중산층경제당’ 같은 군소 보수 정당들이 걸림돌입니다. 그들은 사회주의의 기미만 보여도 질색하며, 마르크스주의자들과 손을 잡느니 차라리 나라를 망치려 들 것입니다.
 
-The third option is to have new elections.
+세 번째 선택지는 재선거입니다.
 
-- @toleration_bruning: We will tolerate Brüning.
-- @new_grand_coalition: We will try to form a new grand coalition.
-- @new_elections: We will have new elections.
+- @toleration_bruning: 브뤼닝 정부를 묵인한다.
+- @new_grand_coalition: 새로운 대연정 구성을 시도한다.
+- @new_elections: 재선거를 실시한다.
 - @unity_government
 
 
 @new_grand_coalition
-title: A "New Grand Coalition" of all the constitutional parties?
-subtitle: SPD + Z + BVP + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%)
+title: 모든 공화주의 정당들로 구성된 “신(新) 대연정”?
+subtitle: 사민당 + 중앙당 + 바이에른 인민당 + [+ ddp_name +] + 인민당 + 기타 ([+ neo_weimar_coalition +]%)
 view-if: neo_weimar_coalition >= 50 and grand_coalition < 50
 choose-if: z_relation >= 50 and dvp_relation >= 30
-unavailable-subtitle: SPD + Z + BVP + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 50 : We do not have adequate relations with the Center Party. ?][? if dvp_relation < 30 : We do not have adequate relations with the DVP. ?]
+unavailable-subtitle: 사민당 + 중앙당 + 바이에른 인민당 + [+ ddp_name +] + 인민당 + 기타 ([+ neo_weimar_coalition +]%) - [? if z_relation < 50 : 중앙당과의 관계가 좋지 않습니다. ?][? if dvp_relation < 30 : 인민당(DVP)과의 관계가 좋지 않습니다. ?]
 
-How do we convince vehemently anti-socialist parties to allow us to form a majority coalition? Our largely benevolent relations with the Center and DVP may allow us some leverage.
+격렬한 반(反)사회주의 정당들을 설득하여 다수 연정을 구성하려면 어떻게 해야 할까요? 중앙당 및 인민당과의 대체로 우호적인 관계가 약간의 지렛대가 될 수 있을 겁니다.
 
 - @use_resources
-- @toleration_bruning: No. We will tolerate a minority government.
-- @new_elections: No. We will have new elections.
+- @toleration_bruning: 아니. 우리는 소수 정부를 묵인할 것이다.
+- @new_elections: 아니. 재선거를 실시할 것이다.
 - @unity_government
 
 @use_resources
