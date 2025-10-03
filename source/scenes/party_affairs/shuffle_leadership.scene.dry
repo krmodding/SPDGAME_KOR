@@ -7,194 +7,194 @@ on-arrival: month_activities += 1; shuffle_leadership_timer = 8;
 card-image: img/vorwarts_2.jpg
 go-to: rm_main
 
-Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
+당 지도부를 교체하는 것은 고통스러운 일이지만, 변화하는 상황에 적응하기 위해 필요할지도 모릅니다.
 
-Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength.
+고문을 해임하면 해당 분파의 불만이 커지고, 고문을 임명하면 해당 분파의 세력이 강해집니다.
 
-- @rm_main: Remove advisors
-- @add_advisors: Add advisors
-- @remove_none: Don't change advisors.
+- @rm_main: 고문 해임
+- @add_advisors: 고문 추가
+- @remove_none: 고문을 교체하지 않는다.
 - @easy_discard
 
 
 ###################### removing leaders
 
 @rm_main
-title: Remove advisors.
+title: 고문 해임
 tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
-- @add_advisors: Add advisors
+- @add_advisors: 고문 추가
 
 @remove_none
-title: Stop changing advisors.
+title: 고문을 교체하지 않는다.
 go-to: root
 tags: remove_advisor
 
 
 @remove_hilferding
-title: Remove Hilferding
+title: 힐퍼딩 해임
 view-if: hilferding_advisor = 1
 on-arrival: hilferding_advisor = 0; center_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Hilferding has been removed as an advisor. The Centrist faction disapproves.
+힐퍼딩이 고문직에서 해임되었습니다. 중도파가 반발하고 있습니다.
 
 @remove_wels
-title: Remove Wels
+title: 웰스 해임
 view-if: wels_advisor = 1
 tags: remove_advisor
 on-arrival: wels_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Wels has been removed as an advisor. The Centrist faction disapproves.
+웰스가 고문직에서 해임되었습니다. 중도파가 반발하고 있습니다.
 
 @remove_muller
-title: Remove Müller
+title: 뮐러 해임
 view-if: muller_advisor = 1
 tags: remove_advisor
 on-arrival: muller_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Müller has been removed as an advisor. The Centrist faction disapproves.
+뮐러가 고문직에서 해임되었습니다. 중도파가 반발하고 있습니다.
 
 
 @remove_breitscheid
-title: Remove Breitscheid
+title: 브라이트샤이트 해임
 view-if: breitscheid_advisor = 1
 tags: remove_advisor
 on-arrival: breitscheid_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Breitscheid has been removed as an advisor. The Centrist faction disapproves.
+브라이트샤이트가 고문직에서 해임되었습니다. 중도파가 반발하고 있습니다.
 
 # reformists
 
 
 @remove_severing
-title: Remove Severing
+title: 제베링 해임
 view-if: severing_advisor = 1
 tags: remove_advisor
 on-arrival: severing_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Severing has been removed as an advisor. The Reformist faction disapproves.
+제베링이 고문직에서 해임되었습니다. 개혁파가 반발하고 있습니다.
 
 @remove_braun
-title: Remove Braun
+title: 브라운 해임
 view-if: braun_advisor = 1
 tags: remove_advisor
 on-arrival: braun_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Braun has been removed as an advisor. The Reformist faction disapproves.
+브라운이 고문직에서 해임되었습니다. 개혁파가 반발하고 있습니다.
 
 @remove_juchacz
-title: Remove Juchacz
+title: 유하치 해임
 view-if: juchacz_advisor = 1
 tags: remove_advisor
 on-arrival: juchacz_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Juchacz has been removed as an advisor. The Reformist faction disapproves.
+유하치가 고문직에서 해임되었습니다. 개혁파가 반발하고 있습니다.
 
 @remove_pfulf
-title: Remove Pfülf
+title: 퓔프 해임
 view-if: pfulf_advisor = 1
 tags: remove_advisor
 on-arrival: pfulf_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Pfülf has been removed as an advisor. The Reformist faction disapproves.
+퓔프가 고문직에서 해임되었습니다. 개혁파가 반발하고 있습니다.
 
 
 # labor
 
 @remove_leipart
-title: Remove Leipart
+title: 라이파르트 해임
 view-if: leipart_advisor = 1
 tags: remove_advisor
 on-arrival: leipart_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Leipart has been removed as an advisor. The Labor faction disapproves.
+라이파르트가 고문직에서 해임되었습니다. 노동파가 반발하고 있습니다.
 
 @remove_aufhauser
-title: Remove Aufhäuser
+title: 아우프호이저 해임
 view-if: aufhauser_advisor = 1
 tags: remove_advisor
 on-arrival: aufhauser_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Aufhäuser has been removed as an advisor. The Labor faction disapproves.
+아우프호이저가 고문직에서 해임되었습니다. 노동파가 반발하고 있습니다.
 
 @remove_wissell
-title: Remove Wissell
+title: 비셀 해임
 view-if: wissell_advisor = 1
 tags: remove_advisor
 on-arrival: wissell_advisor = 0; labor_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Wissell has been removed as an advisor. The Labor faction disapproves.
+비셀이 고문직에서 해임되었습니다. 노동파가 반발하고 있습니다.
 
 
 @remove_woytinsky
-title: Remove Woytinsky
+title: 보이틴스키 해임
 view-if: woytinsky_advisor = 1
 tags: remove_advisor
 on-arrival: woytinsky_advisor = 0; labor_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Woytinsky has been removed as an advisor. The Labor faction disapproves.
+보이틴스키가 고문직에서 해임되었습니다. 노동계가 반발하고 있습니다.
 
 # left
 
 @remove_levi
-title: Remove Levi
+title: 레비 해임
 view-if: levi_advisor = 1
 tags: remove_advisor
 on-arrival: levi_advisor = 0; left_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Levi has been removed as an advisor. The Leftist faction disapproves.
+레비가 고문직에서 해임되었습니다. 좌파가 반발하고 있습니다.
 
 @remove_sender
-title: Remove Sender
+title: 센더 해임
 view-if: sender_advisor = 1
 tags: remove_advisor
 on-arrival: sender_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Sender has been removed as an advisor. The Leftist faction disapproves.
+센더가 고문직에서 해임되었습니다. 좌파가 반발하고 있습니다.
 
 @remove_rosenfeld
-title: Remove Rosenfeld
+title: 로젠펠트 해임
 view-if: rosenfeld_advisor = 1
 tags: remove_advisor
 on-arrival: rosenfeld_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Rosenfeld has been removed as an advisor. The Leftist faction disapproves.
+로젠펠트가 고문직에서 해임되었습니다. 좌파가 반발하고 있습니다.
 
 @remove_seydewitz
-title: Remove Seydewitz
+title: 자이데비츠 해임
 view-if: seydewitz_advisor = 1
 tags: remove_advisor
 on-arrival: seydewitz_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Seydewitz has been removed as an advisor. The Leftist faction disapproves.
+자이데비츠가 고문직에서 해임되었습니다. 좌파가 반발하고 있습니다.
 
 @remove_siemsen
-title: Remove Siemsen
+title: 짐젠 해임
 view-if: siemsen_advisor = 1
 tags: remove_advisor
 on-arrival: siemsen_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Siemsen has been removed as an advisor. The Leftist faction disapproves.
+짐젠이 고문직에서 해임되었습니다. 좌파가 반발하고 있습니다.
 
 
 
@@ -202,31 +202,31 @@ Siemsen has been removed as an advisor. The Leftist faction disapproves.
 # neorevisionists
 
 @remove_mierendorff
-title: Remove Mierendorff
+title: 미렌도르프 해임
 view-if: mierendorff_advisor = 1
 tags: remove_advisor
 on-arrival: mierendorff_advisor = 0; neorevisionist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Mierendorff has been removed as an advisor. The Neorevisionist faction disapproves.
+미렌도르프가 고문직에서 해임되었습니다. 신수정주의파가 반발하고 있습니다.
 
 @remove_leber
-title: Remove Leber
+title: 레버 해임
 view-if: leber_advisor = 1
 tags: remove_advisor
 on-arrival: leber_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Leber has been removed as an advisor. The Neorevisionist faction disapproves.
+레버가 고문직에서 해임되었습니다. 신수정주의파가 반발하고 있습니다.
 
 @remove_schumacher
-title: Remove Schumacher
+title: 슈마허 해임
 view-if: schumacher_advisor = 1
 tags: remove_advisor
 on-arrival: schumacher_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Schumacher has been removed as an advisor. The Neorevisionist faction disapproves.
+슈마허가 고문직에서 해임되었습니다. 신수정주의파가 반발하고 있습니다.
 
 
 ## nonfactional
@@ -234,43 +234,43 @@ Schumacher has been removed as an advisor. The Neorevisionist faction disapprove
 # tbh I'm not sure if Baade should be a reformist or nonfactional. same for stampfer. they were vaguely reformist-aligned but had pretty different ideas from the other reformists here. so they're non-factional.
 
 @remove_baade
-title: Remove Baade
+title: 바데 해임
 view-if: baade_advisor = 1
 tags: remove_advisor
 on-arrival: baade_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Baade has been removed as an advisor.
+바데가 고문직에서 해임되었습니다.
 
 #The Reformist faction disapproves.
 
 
 @remove_hirschfeld
-title: Remove Hirschfeld
+title: 히르슈펠트 해임
 view-if: hirschfeld_advisor = 1
 tags: remove_advisor
 on-arrival: hirschfeld_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Hirschfeld has been removed as an advisor. 
+히르슈펠트가 고문직에서 해임되었습니다.
 
 @remove_stampfer
-title: Remove Stampfer
+title: 슈탐퍼 해임
 view-if: stampfer_advisor = 1
 tags: remove_advisor
 on-arrival: stampfer_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Stampfer has been removed as an advisor. 
+슈탐퍼가 고문직에서 해임되었습니다. 
 
 @remove_radbruch
-title: Remove Radbruch
+title: 라드브루흐 해임
 view-if: radbruch_advisor = 1
 tags: remove_advisor
 on-arrival: radbruch_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Radbruch has been removed as an advisor. 
+라드브루흐가 고문직에서 해임되었습니다.
 
 
 
@@ -279,13 +279,13 @@ Radbruch has been removed as an advisor.
 ####################### adding advisors
 
 @add_advisors
-title: Add advisors
+title: 고문 추가
 choose-if: n_advisors < 3
-unavailable-subtitle: Maximum of 3 advisors.
+unavailable-subtitle: 고문은 최대 3명까지 입니다.
 go-to: advisor_menu
 
 @advisor_menu
-title: Add other advisors.
+title: 다른 고문 추가하기.
 tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
 frequency: 1
 
