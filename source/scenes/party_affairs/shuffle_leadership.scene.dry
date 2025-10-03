@@ -290,14 +290,14 @@ tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_adv
 frequency: 1
 
 
-- @centrist: Add Centrists
-- @left: Add Leftists
-- @reformist: Add Reformists
-- @labor: Add Labor
-- @neorev: Add Neorevisionists
-- @nonfactional: Add non-factional advisors
-- @rm_main: Remove advisors instead.
-- @remove_none: Stop changing advisors.
+- @centrist: 중도파 추가
+- @left: 좌파 추가
+- @reformist: 개혁파 추가
+- @labor: 노동파 추가
+- @neorev: 신수정주의파 추가
+- @nonfactional: 무소속 고문 추가
+- @rm_main: 고문 해임하기
+- @remove_none: 고문 교체 중단
 
 @centrist
 view-if: n_advisors < 3
@@ -330,8 +330,8 @@ view-if: n_advisors < 3
 - #nonfactional_advisor
 
 @add_hilferding
-title: Rudolf Hilferding
-subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+title: 루돌프 힐퍼딩
+subtitle: 루돌프 힐퍼딩은 경제학자이자 우리 당의 주요 마르크스주의 이론가 중 한 명입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 우파와 좌파에 맞서기, 관용 정책 수호, 재정 정책, 경제 민주주의 ?]
 is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
@@ -339,11 +339,11 @@ view-if: hilferding_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: hilferding_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Rudolf Hilferding is now an advisor.
+루돌프 힐퍼딩이 이제 고문입니다.
 
 @add_wels
-title: Otto Wels
-subtitle: Otto Wels is a long-time party organizer and member of the leadership, serving under Friedrich Ebert. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
+title: 오토 웰스
+subtitle: 오토 웰스는 프리드리히 에베르트 밑에서 활동한 오랜 당 조직가이자 지도부원입니다.  {!<br><br>!}[? if difficulty < 0 : 활동 - 의제 정리, 당 기강 확립, 긴급 모금 ?]
 is-card: true
 card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
@@ -351,11 +351,11 @@ view-if: wels_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: wels_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Otto Wels is now an advisor.
+오토 웰스가 이제 고문입니다.
 
 @add_muller
-title: Hermann Müller
-subtitle: Hermann Müller is the last Social Democratic Chancellor. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
+title: 헤르만 뮐러
+subtitle: 헤르만 뮐러는 마지막 사회민주당 출신 총리입니다.. {!<br><br>!}[? if difficulty < 0 : 활동 - 연정 협상, 묵인 정책 수호 ?]
 is-card: true
 card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
@@ -363,11 +363,11 @@ view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists
 on-arrival: muller_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Hermann Müller is now an advisor.
+헤르만 뮐러가 이제 고문입니다.
 
 @add_breitscheid
-title: Rudolf Breitscheid
-subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+title: 루돌프 브라이트샤이트
+subtitle: 루돌프 브라이트샤이트는 교육 수준 높은 배경을 가졌으며, 우리 당의 외교 정책 지도자 중 한 명입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 국제 관계, 외교 정책, 당 기강 확립 ?]
 is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
 view-if: breitscheid_advisor = 0 and n_advisors < 3
@@ -375,14 +375,14 @@ on-arrival: breitscheid_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: center_advisor
 
-Rudolf Breitscheid is now an advisor.
+루돌프 브라이트샤이트가 이제 고문입니다.
 
 # reformist
 
 
 @add_severing
-title: Carl Severing
-subtitle: Carl Severing is a one-time Prussian interior minister and police reformer. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Police Affairs ?]
+title: 칼 제베링
+subtitle: 칼 제베링은 전 프로이센 내무장관이자 경찰 개혁가입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 프로이센 보루, 경찰 문제 ?]
 is-card: true
 card-image: img/portraits/SeveringCarl.jpg
 tags: reformist_advisor
@@ -390,11 +390,11 @@ view-if: severing_advisor = 0 and n_advisors < 3
 on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Carl Severing is now an advisor.
+칼 제베링이 이제 고문입니다.
 
 @add_braun
-title: Otto Braun
-subtitle: Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known Social Democratic leaders. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
+title: 오토 브라운
+subtitle: 오토 브라운은 프로이센 주 총리이며, 가장 인지도 높고 널리 알려진 사회민주당 지도자 중 한 명입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 프로이센 보루, 연정 협상 ?]
 is-card: true
 card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
@@ -402,11 +402,11 @@ view-if: braun_advisor = 0 and n_advisors < 3
 on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Otto Braun is now an advisor.
+오토 브라운이 이제 고문입니다.
 
 @add_juchacz
-title: Marie Juchacz
-subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
+title: 마리 유하츠
+subtitle: 마리 유하츠는 상호부조 단체인 '노동자 복지회’의 설립자입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 긴급 모금, 노동자 복지, 여성 조직 ?]
 is-card: true
 card-image: img/portraits/JuchaczMarie.jpg
 view-if: juchacz_advisor = 0 and n_advisors < 3
@@ -414,11 +414,11 @@ on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 tags: reformist_advisor
 
-Marie Juchacz is now an advisor.
+마리 유하츠가 이제 고문입니다.
 
 @add_pfulf
-title: Antonie Pfülf
-subtitle: Antonie Pfülf is a leader in social policy and women's rights. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
+title: 안토니에 퓔프
+subtitle: 안토니에 퓔프는 사회 정책 및 여성 인권 분야의 지도자입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 대중 정당 지지, 여성 인권 ?]
 is-card: true
 card-image: img/portraits/PfülfAntonie.jpg
 view-if: pfulf_advisor = 0 and n_advisors < 3
@@ -426,15 +426,15 @@ on-arrival: pfulf_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: reformist_advisor
 
-Antonie Pfülf is now an advisor.
+안토니에 퓔프가 이제 고문입니다.
 
 
 
 # left
 
 @add_levi
-title: Paul Levi
-subtitle: Paul Levi is a former KPD leader who was purged for criticizing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the KPD ?]
+title: 파울 레비
+subtitle: 파울 레비는 공산당 정책을 비판했다는 이유로 숙청된 전 독일공산당 지도자입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 좌파 강화, 공산당과의 협력 ?]
 is-card: true
 card-image: img/portraits/LeviPaul.jpg
 view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and left_split = 0
@@ -442,11 +442,11 @@ on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Paul Levi is now an advisor.
+파울 레비가 이제 고문입니다.
 
 @add_sender
-title: Toni Sender
-subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
+title: 토니 센더
+subtitle: 토니 센더는 반전 및 여성 인권 옹호가이며 제국의회 의원입니다. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/SenderToni.jpg
 view-if: sender_advisor = 0 and n_advisors < 3
@@ -454,11 +454,11 @@ on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Toni Sender is now an advisor.
+토니 센더가 이제 고문입니다.
 
 @add_rosenfeld
-title: Kurt Rosenfeld
-subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the KPD, Against Toleration ?]
+title: 쿠르트 로젠펠트
+subtitle: 쿠르트 로젠펠트는 변호사이자 반군국주의 활동가이며 제국의회 의원입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 좌파 강화, 공산당과의 협력, 묵인 협정 반대 ?]
 is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
 view-if: rosenfeld_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -466,11 +466,11 @@ on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Kurt Rosenfeld is now an advisor.
+쿠르트 로젠펠트가 이제 고문입니다.
 
 @add_seydewitz
-title: Max Seydewitz
-subtitle: Max Seydewitz is a former leader of the youth wing, current supporter of the left wing of the SPD, and advocates for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
+title: 막스 자이데비츠
+subtitle: 막스 자이데비츠는 전 청년 조직 지도자이자 현재 사민당 좌파 지지자이며, 계급 투쟁을 옹호합니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 계급 투쟁 집회, 사회주의 청년, 묵인 협정 반대 ?]
 is-card: true
 card-image: img/portraits/SeydewitzMax.jpg
 view-if: seydewitz_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -478,11 +478,11 @@ on-arrival: seydewitz_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Max Seydewitz is now an advisor.
+막스 자이데비츠가 이제 고문입니다.
 
 @add_siemsen
-title: Anna Siemsen
-subtitle: Anna Siemsen is an and educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
+title: 안나 지엠즌
+subtitle: 안나 지엠즌은 교육 개혁 옹호가이자 평화주의자로, 전쟁 이전에 박사 학위를 받은 몇 안 되는 독일 여성 중 한 명입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 평화주의 집회, 교육과정, 교육 구조 ?]
 is-card: true
 card-image: img/portraits/SiemsenAnna.jpg
 view-if: siemsen_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -490,15 +490,15 @@ on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Anna Siemsen is now an advisor.
+안나 지엠즌이 이제 고문입니다.
 
 
 
 # labor
 
 @add_leipart
-title: Theodor Leipart
-subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
+title: 테오도르 라이파르트
+subtitle: 테오도르 라이파르트는 독일노동조합총연맹(ADGB)의 지도자입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 노동자 조직화, 경제 위기 대응 ?]
 is-card: true
 card-image: img/portraits/LeipartTheodor.jpg
 tags: labor_advisor
@@ -506,11 +506,11 @@ view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
-Theodor Leipart is now an advisor.
+테오도르 라이파르트가 이제 고문입니다.
 
 @add_aufhauser
-title: Siegfried Aufhäuser
-subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
+title: 지크프리트 아우프호이저
+subtitle: 지크프리트 아우프호이저는 화이트칼라 노동조합 연맹인 AfA-Bund의 지도자입니다 {!<br><br>!}[? if difficulty < 0 : 활동 - 화이트칼라 노동자 조직화, 노조-당 협력, 경제 위기 대응 ?]
 is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
 tags: labor_advisor
@@ -518,11 +518,11 @@ view-if: aufhauser_advisor = 0 and n_advisors < 3
 on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
-Siegfried Aufhäuser is now an advisor.
+지크프리트 아우프호이저가 이제 고문입니다.
 
 @add_wissell
-title: Rudolf Wissell
-subtitle: Rudolf Wissell is an economist who has been the Labor Minister, and is an advocate for the interests of labor within the government. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
+title: 루돌프 비셀
+subtitle: 루돌프 비셀은 전 노동부 장관을 역임한 경제학자이며, 정부 내에서 노동자의 이익을 옹호합니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 노조-당 협력, 노동권 ?]
 is-card: true
 card-image: img/portraits/WissellRudolf.jpg
 tags: labor_advisor
@@ -530,12 +530,12 @@ view-if: wissell_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
-Rudolf Wissell is now an advisor.
+루돌프 비셀이 이제 고문입니다.
 
 
 @add_woytinsky
-title: Wladimir Woytinsky
-subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead trade union economist. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
+title: 블라디미르 보이틴스키
+subtitle: 블라디미르 보이틴스키는 전 러시아 멘셰비키 출신으로, 현재 수석 노동조합 경제학자입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 경제 위기 대응, 경제 계획 실행 ?]
 is-card: true
 card-image: img/portraits/WoytinskyWladimir.jpg
 tags: labor_advisor
@@ -543,14 +543,14 @@ view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
-Wladimir Woytinsky is now an advisor.
+블라디미르 보이틴스키가 이제 고문입니다.
 
 
 # neorevisionist leaders
 
 @add_mierendorff
-title: Carlo Mierendorff
-subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and the originator of the "Neo-Revisionist" movement. He is an anti-Nazi strategist. {!<br><br>!}[? if difficulty < 0 : Actions - Build the Iron Front, Warning About the Nazis ?]
+title: 카를로 미렌도르프
+subtitle: 카를로 미렌도르프는 제국의회 최연소 의원 중 한 명이며, ‘신수정주의’ 운동의 창시자입니다. 그는 반나치 전략가입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 강철 전선 구축, 나치에 대한 경고 ?]
 is-card: true
 card-image: img/portraits/MierendorffCarlo.jpg
 view-if: mierendorff_advisor = 0 and n_advisors < 3
@@ -558,11 +558,11 @@ on-arrival: mierendorff_advisor = 1; n_advisors += 1; neorevisionist_strength +=
 go-to: advisor_menu
 tags: neorev_advisor
 
-Carlo Mierendorff is now an advisor.
+카를로 미렌도르프가 이제 고문입니다.
 
 @add_schumacher
-title: Kurt Schumacher
-subtitle: Kurt Schumacher is a Great War veteran and energetic speaker for the social-democratic cause, and favors reformist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Building the Reichsbanner, Addressing the Economic Crisis ?]
+title: 쿠르트 슈마허
+subtitle: 쿠르트 슈마허는 1차대전 참전용사이자 사회민주주의 대의를 위한 정력적인 연설가이며, 개혁주의 정책을 지지합니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 긴급 모금, 국기단 강화, 경제 위기 대응 ?]
 is-card: true
 card-image: img/portraits/SchumacherKurt.jpg
 tags: neorev_advisor
@@ -570,11 +570,11 @@ view-if: schumacher_advisor = 0 and n_advisors < 3
 on-arrival: schumacher_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
 go-to: advisor_menu
 
-Kurt Schumacher is now an advisor.
+쿠르트 슈마허가 이제 고문입니다.
 
 @add_leber
-title: Julius Leber
-subtitle: Julius Leber is a former Reichswehr officer who resigned in opposition to the Kapp coup attempt. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Democracy, Military Affairs, Building a People's Party ?]
+title: 율리우스 레버
+subtitle: 율리우스 레버는 카프 쿠데타 시도에 반대하여 사임한 전 국가방위군 장교입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 민주주의를 위한 집회, 군사 문제, 대중 정당 건설 ?]
 is-card: true
 card-image: img/portraits/LeberJulius.jpg
 view-if: leber_advisor = 0 and n_advisors < 3
@@ -582,13 +582,13 @@ on-arrival: leber_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
 go-to: advisor_menu
 tags: neorev_advisor
 
-Julius Leber is now an advisor.
+율리우스 레버가 이제 고문입니다.
 
 # Nonfactional advisors
 
 @add_baade
-title: Fritz Baade
-subtitle: Fritz Baade is one of the few agricultural policy experts in the SPD. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
+title: 프리츠 바데
+subtitle: 프리츠 바데는 사민당 내 몇 안 되는 농업 정책 전문가 중 한 명입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 농업 정책, 농촌 유세, 경제 위기 대응 ?]
 is-card: true
 card-image: img/portraits/BaadeFritz.jpg
 view-if: baade_advisor = 0 and n_advisors < 3
@@ -596,12 +596,12 @@ on-arrival: baade_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
 
-Fritz Baade is now an advisor.
+프리츠 바데가 이제 고문입니다.
 
 
 @add_hirschfeld
-title: Magnus Hirschfeld
-subtitle: Magnus Hirschfeld is the founder of the Institut für Sexualwissenschaft and an advocate for the rights of sexual minorities. {!<br><br>!}[? if difficulty < 0 : Actions - Homosexual Rights, Women's Rights, Science Funding ?]
+title: 마그누스 히르슈펠트
+subtitle: 마그누스 히르슈펠트는 성과학 연구소의 설립자이자 성소수자 인권 옹호가입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 동성애자 인권, 여성 인권, 과학 기금 지원 ?]
 is-card: true
 card-image: img/portraits/HirschfeldMagnus.jpg
 view-if: hirschfeld_advisor = 0 and n_advisors < 3
@@ -609,13 +609,13 @@ on-arrival: hirschfeld_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
 
-Magnus Hirschfeld is now an advisor.
+마그누스 히르슈펠트가 이제 고문입니다.
 
 # TODO: add radbruch, stampfer
 
 @add_radbruch
-title: Gustav Radbruch
-subtitle: Gustav Radbruch is a renowned legal scholar and long-time SPD justice minister. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
+title: 구스타프 라드브루흐
+subtitle: 구스타프 라드브루흐는 저명한 법학자이자 오랫동안 사민당 법무부장관을 역임했습니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 사법 문제, 헌법 개혁 ?]
 is-card: true
 card-image: img/portraits/RadbruchGustav.jpg
 view-if: radbruch_advisor = 0 and n_advisors < 3
@@ -623,12 +623,12 @@ on-arrival: radbruch_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
 
-Gustav Radbruch is now an advisor.
+구스타브 라드브루흐가 이제 고문입니다.
 
 
 @add_stampfer
-title: Friedrich Stampfer
-subtitle: Friedrich Stampfer is the long-time editor-in-chief of Vorwärts, our party newspaper. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the KPD ?]
+title: 프리드리히 슈탐퍼
+subtitle: 프리드리히 슈탐퍼는 우리 당 기관지인 '전진’의 오랜 편집장입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 언론, 편집 방침, 공산당과의 협력 ?]
 is-card: true
 card-image: img/portraits/StampferFriedrich.jpg
 view-if: stampfer_advisor = 0 and n_advisors < 3
@@ -636,6 +636,6 @@ on-arrival: stampfer_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
 
-Friedrich Stampfer is now an advisor.
+프리드리히 슈탐퍼가 이제 고문입니다.
 
 
