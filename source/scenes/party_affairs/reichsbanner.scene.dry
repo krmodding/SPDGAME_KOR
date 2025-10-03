@@ -14,10 +14,10 @@ max-visits: 6
 
 [? if workers_spd < 46 or workers_spd < workers_nsdap or workers_spd < workers_kpd : The Reichsbanner is having a more difficult time recruiting, as the SPD is no longer the dominant party among the workers. Many of its members have left. ?]
 
-- @militant: Fund more military-style training and equipment for the Reichsbanner.
-- @militant_2: Use our existing resources to support more training for the Reichsbanner.
-- @same: Keep the Reichsbanner as it is.
-- @cut_rb: Cut funding for the Reichsbanner.
+- @militant: 국기단을 위해 군사식 훈련과 장비에 더 많은 자금을 지원한다.
+- @militant_2: 우리의 기존 자원을 활용하여 국기단의 훈련을 더 지원한다.
+- @same: 국기단을 현재 상태로 유지한다.
+- @cut_rb: 국기단 예산을 삭감한다.
 - @women_rb
 - @easy_discard
 - @cancel_advisor_action
@@ -26,39 +26,39 @@ max-visits: 6
 
 @militant
 choose-if: resources >= rb_militarization_cost
-unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed).
-subtitle: -[+ rb_militarization_cost +] resources
+unavailable-subtitle: 자금 부족 ([+ rb_militarization_cost +] 필요).
+subtitle: 자금 -[+ rb_militarization_cost +]
 on-arrival: resources -= rb_militarization_cost; rb_investment += 1; rb_strength += 100; rb_militancy += 0.05; left_strength += 2; left_dissent -= 2; reformist_dissent += 5; spd_militancy += 0.05; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); z_relation -= 5 if historical_mode 
 
-Some in our party decry the increasing militarization of the Reichsbanner. They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
+당내 일각에서는 국기단의 군사화가 심화되는 것을 비판합니다. 이것이 우익 민족주의자들이나 공산주의자들을 모방하는 것이며, 중도 정당들과의 동맹을 소원하게 만들 위험이 있다고 말합니다. 반면, 공산주의자들에게 갈 뻔했던 좌익 급진주의자들이 우리 조직으로 더 많이 유입되고 있습니다.
 
-[? if historical_mode : The Center Party decries the militarization of the Reichsbanner, and its members are leaving the republican organization. ?]
+[? if historical_mode : 중앙당은 국기단의 군사화를 규탄하고 있으며, 중앙당 소속 단원들이 조직을 떠나고 있습니다. ?]
 
 
 @militant_2
 view-if: funded_reichsbanner >= 1
 on-arrival: rb_militancy += 0.02; funded_reichsbanner -= 1
 
-As we have already funded resources towards the Reichsbanner, we can invest in building up their militancy.
+우리는 이미 국기단에 자금을 지원했으므로, 이를 활용하여 전투력을 강화할 수 있습니다.
 
 
 @same
 
-The Reichsbanner is already serving the purpose it needs to serve. There is no reason to change what already works.
+국기단은 이미 제 역할을 다하고 있습니다. 이미 잘 작동하는 것을 바꿀 이유가 없습니다.
 
-- @return: Continue...
+- @return: 계속하기…
 
 
 @cut_rb
-subtitle: +1 resources
+subtitle: 자금 +1
 on-arrival: resources += 1; rb_strength -= 100; rb_militancy -= 0.05; left_strength -= 2; left_dissent -= 2; spd_militancy -= 0.05; workers_kpd += 2; unemployed_kpd += 2
 
-Cutting resources to the Reichsbanner causes a drop in the membership, and leads some would-be members to join the Communists instead.
+국기단 예산을 삭감하면 단원 수가 줄어들고, 일부 잠재적 단원들이 대신 공산당에 가입하게 될 것입니다.
 
 
 @women_rb
-title: Allow women to join the Reichsbanner.
-subtitle: -1 resources - This might cause a backlash from existing members.
+title: 여성이 국기단에 가입하는 것을 허용한다.
+subtitle: 자금 -1 - 기존 단원들의 반발을 살 수 있습니다.
 choose-if: resources > 0
 view-if: womens_rights >= 4 and sender_advisor == 1 and iron_front_formed == 1
 on-arrival: resources -= 1; rb_militancy *= 0.85; rb_strength += 400; women_in_rb = 1; rb_militancy += 0.05 if repealed_175; rb_militancy += 0.04 if trans_rights; rb_militancy += 0.02 if reformed_183;
@@ -66,9 +66,9 @@ go-to: homosexual if trans_rights or repealed_175 or reformed_183
 max-visits: 1
 achievement: women_reichsbanner
 
-The suggestion to allow women into the Reichsbanner is ridiculed by most, except for Toni Sender. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and homosexuals ?].
+국기단에 여성을 받아들이자는 제안은 토니 젠더를 제외한 거의 모든 사람에게 비웃음을 샀습니다. 하지만 지금은 비상한 시기이며, 기꺼이 함께할 사람이라면 누구든 필요합니다. 따라서 우리는 여성을 위한 특수 부대를 조직합니다. [? if homosexual_rights > 0: 심지어 성전환자와 동성애자를 위한 비밀 부대까지도 말입니다. ?].
 
-After allowing women to join, the number of comrades who leave is more than balanced out by the number of radicalized women and others who join. However, many of our departed members were veterans, and many of the new members have no experience with military-style training.
+여성이 가입할 수 있게 된 후, 이탈하는 단원 수보다 급진화된 여성 및 기타 신규 가입자 수가 많아 손실을 상쇄하고도 남습니다. 하지만 떠난 단원들 중 다수는 참전용사였고, 신규 단원들 대부분은 군사 훈련 경험이 없습니다.
 
 @homosexual
 achievement: anders_als_die_andern
