@@ -29,8 +29,8 @@ max-visits: 1
 
 @arm_rb
 subtitle: 자금 -[+ rb_militarization_cost +]
-choose-if: 자금 부족 ([+ rb-militarization_cost +] 필요).
-unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed).
+choose-if: resources >= rb_militarization_cost
+unavailable-subtitle: 자금 부족 ([+ rb-militarization_cost +] 필요).
 on-arrival: resources -= rb_militarization_cost; rb_militancy += 0.06; rb_strength += 50; sa_strength += 50; z_relation -= 5 if historical_mode 
 
 우리는 국기단의 훈련을 강화하고 더 많은 무기를 구매했습니다.
