@@ -24,11 +24,11 @@ tags: govt_affairs, cabinet
 
 # science increases economic growth...
 
-= Education and Science
+= 교육과 과학
 
-Education in Germany is an area of mixed responsibility between the state governments and the central government. The Weimar Constitution claims that schools are the domain of the central government, but in practice much of it is left to the states, as the Reichstag has historically been unable to pass an education law. Currently, with our control of Prussia and the Chancellorship, we can try to set policy for a large part of the country.
+독일의 교육은 주 정부와 중앙 정부가 공동의 책임을 지는 분야입니다. 바이마르 헌법은 학교가 중앙 정부의 소관이라고 규정하고 있지만, 제국의회가 역사적으로 교육법을 통과시키지 못해 실제로는 많은 부분이 주정부에 위임되어 있습니다. 현재 프로이센과 총리직을 장악한 우리는 국가 대부분의 정책을 결정하려고 시도할 수 있습니다.
 
-[? if major_curriculum: Current educational curriculum - [+ major_curriculum +], [+ minor_curriculum +] ?]
+[? if major_curriculum: 현행 교육과정 - [+ major_curriculum +], [+ minor_curriculum +] ?]
 
 @ed_menu
 view-if: not last_advisor_action
@@ -36,82 +36,82 @@ view-if: not last_advisor_action
 - @increase_science
 - @structure
 - @curriculum
-- @return: Do not enact any policies for now.
+- @return: 지금은 어떤 정책도 시행하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 
 @increase_science
-title: Increase funding for scientific research.
+title: 과학 연구 기금을 증액한다.
 choose-if: economic_minister_party = "SPD"
-unavailable-subtitle: This requires the Economic Ministry.
+unavailable-subtitle: 경제부의 협조가 필요합니다.
 
-Socialism has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and reactionary attitudes of many academics, science in the German Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
+사회주의는 언제나 과학과 합리성을 지지해왔습니다. 1차 대전, 초인플레이션, 그리고 많은 학자들의 정치화되고 반동적인 태도라는 좌절에도 불구하고 독일 공화국의 과학은 여전히 세계의 부러움을 사고 있습니다. 대규모로 자금을 확대하여, 우리는 그 위상을 유지하고 우리의 성과를 더욱 키워나가고자 합니다.
 
 - @kwg
 - @applied
 - @medical
 - @cut_funding
-- @ed_menu: Do not increase research funding.
+- @ed_menu: 연구 기금을 증액하지 않는다.
 - @cancel_advisor_action
 
 @kwg
-title: Fund the Kaiser Wilhelm Society for basic scientific research.
-subtitle: -1 budget
+title: 기초 과학 연구를 위해 카이저 빌헬름 학회에 자금을 지원한다.
+subtitle: 예산: -1
 choose-if: budget >= 1
 on-arrival: budget -= 1; science += 1; kwg_research += 1; economic_growth += 0.3 if economic_growth <= 8; new_middle_spd += 5*(1-dissent); ddp_relation += 5*(1-dissent); unemployed -= 0.2 if unemployed >= 4; west_relation += 1; science_funding += 1
 
-The Kaiser Wilhelm Society is one of the most respected scientific research institutions in the world, with physicist Albert Einstein as its most famous employee. Our research program is to provide the Society with additional resources to hire and train scientists and conduct fundamental research, based on the scientists' own interests.
+카이저 빌헬름 학회는 물리학자 알베르트 아인슈타인이 가장 유명한 연구원으로 있는, 세계에서 가장 존경받는 과학 연구 기관 중 하나입니다. 우리의 연구 프로그램은 과학자들의 자율적인 관심사에 기반하여, 학회가 과학자들을 고용하고 훈련하며 기초 연구를 수행할 수 있도록 추가적인 자원을 제공하는 것입니다.
 
 @applied
-title: Fund applied research in economically useful technologies.
-subtitle: -1 budget
+title: 경제적으로 유용한 기술에 대한 응용 연구에 자금을 지원한다.
+subtitle: 예산: -1
 choose-if: budget >= 1
 on-arrival: budget -= 1; science += 1; applied_research += 1; economic_growth += 0.5 if economic_growth <= 8 and applied_research <= 1; economic_growth += 3 if applied_research > 1; new_middle_spd += 5*(1-dissent); workers_spd += 3*(1-dissent); ddp_relation += 5*(1-dissent); unemployed -= 0.5 if unemployed >= 4; capital_strike_progress -= 1 if capital_strike_progress > 1; science_funding += 1
 
-Our research program focuses on collaborating with industry to develop useful technologies, creating new research institutions for applied science. This collaboration is focused on economic growth and development.
+우리의 연구 프로그램은 산업계와 협력하여 유용한 기술을 개발하고, 응용 과학을 위한 새로운 연구 기관을 창설하는 데 중점을 둡니다. 이 협력은 경제 성장과 발전에 초점을 맞추고 있습니다.
 
 
 @medical
-title: Fund biomedical research at the hospitals and medical schools.
-subtitle: -1 budget
+title: 병원 및 의과대학의 생의학 연구에 자금을 지원한다.
+subtitle: 예산 +1
 choose-if: budget >= 1
 on-arrival: budget -= 1; science += 1; medical_research += 1; economic_growth += 0.4 if economic_growth <= 8; new_middle_spd += 5*(1-dissent); workers_spd += 3*(1-dissent); ddp_relation += 5*(1-dissent); unemployed -= 0.2 if unemployed >= 4; science_funding += 1
 
-Our research program focuses on medical research to improve the treatment of diseases and public health. [? if change_sex: Some of our medical advancements include new methods for sex change surgery and hormone therapy for transsexual individuals. ?]
+우리의 연구 프로그램은 질병 치료와 공중 보건 개선을 위한 의학 연구에 중점을 둡니다. [? if change_sex: 리의 의학적 발전 중 일부는 성전환자들을 위한 성전환 수술 및 호르몬 요법의 새로운 방법을 포함합니다. ?]
 
 @cut_funding
-title: Cut science funding.
-subtitle: +1 budget
+title: 과학 기금을 삭감한다.
+subtitle: 예산 +1
 choose-if: science_funding >= 1
-unavailable-subtitle: We have not funded science.
+unavailable-subtitle: 우리는 과학에 자금을 지원한 적이 없습니다.
 on-arrival: budget += 1; science -= 1; science_funding -= 1; applied_research -= 0.33; kwg_research -= 0.33; medical_research -= 0.33; economic_growth -= 0.5; new_middle_spd -= 5; workers_spd -= 2; ddp_relation -= 5; unemployed += 0.3
 
-We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the SPD.
+우리는 과학 기금을 삭감했습니다. 이는 경제 성장에 악영향을 미치며, 실직한 과학자들은 더 이상 사민당을 지지하지 않을 가능성이 높습니다.
 
 
 @structure
-title: Change the structure and funding of education.
+title: 교육 구조 및 재정을 변경한다.
 
-Education in Germany has traditionally been organized on religious and class lines. Schools are often either Protestant or Catholic (or rarely Jewish), and religious classes are required in most mixed-denomination schools. In addition, the working class has at most eight years of public education in primary and middle schools, while the middle and upper classes have access to private schools and Gymnasiums that prepare students for universities. Thus, the universities tend to be dominated by conservatives and reactionaries, which has negative consequences for bureaucratic recruitment.
+독일의 교육은 전통적으로 종교와 계급을 기준으로 조직되어 왔습니다. 학교들은 주로 개신교나 가톨릭교(드물게는 유대교) 계열이며, 종교가 혼합된 대부분의 학교에서는 종교 수업이 필수입니다. 또한, 노동 계급은 초등학교와 중학교에서 최대 8년의 공교육만을 받는 반면, 중산층과 상류층은 대학 진학을 준비시키는 사립학교와 김나지움에 다닐 수 있습니다. 이로 인해 대학은 보수주의자와 반동주의자들이 주도하는 경향이 있으며, 이는 관료 채용에 부정적인 영향을 미칩니다.
 
 - @secularize
 - @public_hs
 - @school_boards
-- @ed_menu: Do not change school funding or organization.
+- @ed_menu: 학교 재정이나 조직을 변경하지 않는다.
 - @cancel_advisor_action
 
 @secularize
-title: Support secular schools to end the religious dominance in education.
-subtitle: -1 budget
-unavailable-subtitle: -1 budget - requres a majority of parties to support secular schools.
+title: 교육에서 종교의 지배를 끝내기 위해 세속 학교를 지원한다.
+subtitle: 예산 -1
+unavailable-subtitle: 예산 -1. 다수 정당이 세속 학교를 지지해야 합니다.
 choose-if: budget >= 1 and (progressive_coalition + dvp_r >= 50)
 view-if: secularized = 0
 
-Are you sure about this? The Weimar Coalition had an agreement to not touch religious schools; the Catholic Center Party will revolt.
+정말 확실합니까? 바이마르 연정은 종교 학교를 건드리지 않기로 합의했습니다. 가톨릭 중앙당이 들고일어날 것입니다.
 
-- @secularize_2: Yes, do it.
-- @ed_menu: No, do not touch religious education.
+- @secularize_2: 그래, 하자.
+- @ed_menu: 아니, 종교 교육은 건드리지 말자.
 - @cancel_advisor_action
 
 @secularize_2
@@ -120,95 +120,95 @@ go-to: vote_of_no_confidence.vonc_menu if in_weimar_coalition or in_grand_coalit
 
 # instant VONC from zentrum
 
-The SPD, [+ ddp_name +], DVP, and KPD vote in favor of secular education, overcoming the opposition of the religiously-oriented Center Party and DNVP. We have funded secular community schools to replace some previous denominational schools.
+사민당, [+ ddp_name +], 독일인민당, 공산당이 세속 교육에 찬성하여, 종교적 성향의 중앙당과 독일국민당의 반대를 누르고 통과시켰습니다. 우리는 일부 기존의 종파 학교를 대체하기 위해 세속 공동체 학교에 자금을 지원했습니다.
 
-[? if in_weimar_coalition or in_grand_coalition or in_popular_front or in_emergency_government: Of course, the Center Party is in revolt at this proposal, and have called for a vote of no confidence in our government. ?]
+[? if in_weimar_coalition or in_grand_coalition or in_popular_front or in_emergency_government: 물론, 중앙당은 이 제안에 반발하여 우리 정부에 대한 불신임안을 발의했습니다. ?]
 
 
 
 @public_hs
-title: Increase educational opportunities for the working class by funding public high schools.
-subtitle: -1 budget
+title: 공립 고등학교에 자금을 지원하여 노동계급의 교육 기회를 확대한다.
+subtitle: 예산 -1
 choose-if: budget >= 1
 on-arrival: budget -= 1; public_hs += 1; workers_spd += 6*(1-dissent); unemployed_spd += 3*(1-dissent); prussian_police_loyalty += 0.04; education_science += 0.5; unemployed -= 0.2; economic_growth += 0.2; pro_republic += 4*(1-dissent);
 max-visits: 3
 
 # this makes the bureaucracy more proletarian
-We have funded more public secondary schools so that proletarian children may receive the same education as middle and upper-class children, and can be prepared for universities.
+우리는 더 많은 공립 중등학교(고등학교)에 자금을 지원하여 노동계급 자녀들이 중상류층 자녀들과 같은 교육을 받고 대학 진학을 준비할 수 있도록 했습니다.
 
 
 @school_boards
-title: Create elected school boards to give local areas more control over education.
+title: 지역에 교육 자치권을 더 많이 부여하기 위해 선출직 학교 위원회를 창설한다.
 on-arrival: school_boards += 1; workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); education_science += 0.2;
 view-if: school_boards = 0
 
-We have created local elected school boards, and delegated some of the decision-making for local schools to them.
+우리는 지역 선출 학교 위원회를 창설하고, 지역 학교에 대한 의사 결정 일부를 그들에게 위임했습니다.
 
 
 @curriculum
-title: Change the educational curriculum.
+title: 교육과정을 변경한다.
 choose-if: curriculum_timer = 0
-unavailable-subtitle: [? if curriculum_timer > 0 : It is too early to change the curriculum again. ?][? if not spd_prussia: We are not in control of the Prussian state government. ?]
+unavailable-subtitle: [? if curriculum_timer > 0 : 교육과정을 다시 바꾸기에는 너무 이릅니다. ?][? if not spd_prussia: 우리는 프로이센 주 정부를 통제하고 있지 않습니다. ?]
 
-Many socialists believe that education in Germany is not fit for the modern era. Much of the educational system still follows imperial-era traditions of militaristic discipline, and far-right professors and students rule the universities. Nevertheless, there have been strides in bringing working-class children into the schools.
+많은 사회주의자들은 독일 교육이 현대에 맞지 않는다고 생각합니다. 교육 제도의 상당 부분이 여전히 제정 시대의 군국주의적 규율 전통을 따르고 있으며, 극우 성향의 교수와 학생들이 대학을 지배하고 있습니다. 그럼에도 불구하고, 노동계급 자녀들을 학교 교육에 편입시키는 데는 진전이 있었습니다.
 
-What should be the major focus of our new curriculum?
+새로운 교육과정의 주요 중점은 무엇이어야 할까요?
 
 - @dem_major
 - @science_major
 - @human_major
 - @vocational_major
 - @trad_major
-- @ed_menu: Do not change the curriculum now.
+- @ed_menu: 지금은 교육과정을 바꾸지 않는다.
 - @cancel_advisor_action
 
 # note: education_science is a variable that affects how much education affects economic growth.
 
 @dem_major
-title: Democratic curriculum
-subtitle: Critical thinking, democratic citizenship, and collaboration
+title: 민주적 교육과정.
+subtitle: 비판적 사고, 민주 시민 의식, 협동
 on-arrival: curriculum_timer = 50; major_curriculum = "democratic"; pro_republic += 5*(1-dissent); workers_spd += 3*(1-dissent); democratization += 1; z_relation -= 3; dvp_relation -= 5; coalition_dissent += 1 if in_grand_coalition; pacifism += 1; education_science += 0.3
 go-to: curriculum_minor
 
-We should teach students how to be citizens of a democratic republic, by teaching them to critically evaluate politics and current events, to exercise their rights and to respect the rights of other citizens. Traditionalists of all stripes are critical of this curriculum.
+우리는 학생들에게 정치와 시사를 비판적으로 평가하고 자신의 권리를 행사하며 다른 시민의 권리를 존중하는 법을 가르쳐 민주 공화국의 시민이 되는 방법을 가르쳐야 합니다. 모든 성향의 전통주의자들이 이 교육과정에 비판적입니다.
 
 @science_major
-title: Scientific curriculum
-subtitle: Modern science, mathematics, and technical skills
+title: 과학적 교육과정
+subtitle: 현대 과학, 수학, 기술 능력
 on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; coalition_dissent += 1 if in_weimar_coalition; z_relation -= 5; ddp_relation += 4*(1-dissent); kpd_relation += 3*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 2*(1-dissent)
 go-to: curriculum_minor
 
-Our educational system should reflect the modern age, and we should teach science and rational thinking. Religious conservatives tend to react negatively against this. 
+우리 교육 제도는 현 시대를 반영해야 하며, 과학과 합리적 사고를 가르쳐야 합니다. 종교적 보수주의자들은 이에 부정적인 반응을 보이는 경향이 있습니다.
 
 @human_major
-title: Humanist curriculum
-subtitle: Arts, literature, history, and philosophy
+title: 인문학적 교육과정
+subtitle: 예술, 문학, 역사, 철학
 on-arrival: curriculum_timer = 50; major_curriculum = "humanist"; ddp_relation += 3*(1-dissent); new_middle_spd += 4*(1-dissent); education_science += 0.2
 go-to: curriculum_minor
 
-Our educational curriculum should be focused on the humanities, including arts, literature, history, and philosophy. Some criticize this curriculum as focusing too much on "useless" subjects, while others worry that the arts establishment is too closely tied to romantic nationalism.
+우리 교육과정은 예술, 문학, 역사, 철학 등 인문학에 초점을 맞춰야 합니다. 일부에서는 이 교육과정이 ‘쓸모없는’ 과목에 지나치게 집중한다고 비판하고, 다른 이들은 예술계가 낭만적 민족주의와 너무 밀접하게 연관되어 있다고 우려합니다.
 
 @vocational_major
-title: Vocational curriculum
-subtitle: Useful technical skills for future careers
+title: 직업 교육과정
+subtitle: 미래 직업을 위한 유용한 기술 능력
 on-arrival: curriculum_timer = 50; major_curriculum = "vocational"; dvp_relation += 3*(1-dissent); ddp_relation += 3*(1-dissent); workers_spd += 4*(1-dissent); rural_spd += 2*(1-dissent); unemployed_spd += 3*(1-dissent); new_middle_spd -= 1; unemployed -= 0.1; education_science += 0.5
 go-to: curriculum_minor
 
-Education should be focused on providing a useful hands-on education, and teach the skills that will be most useful for students' future lives.
+교육은 유용한 실제적 교육을 제공하고, 학생들의 미래에 가장 유용할 기술을 가르치는 데 집중해야 합니다.
 
 
 @trad_major
-title: Traditional curriculum
-subtitle: Classics, discipline, and nationalism
+title: 전통적 교육과정.
+subtitle: 고전, 규율, 민족주의
 on-arrival: curriculum_timer = 50; major_curriculum = "traditional"; dvp_relation += 5*(1-dissent); z_relation += 4*(1-dissent); old_middle_spd += 3*(1-dissent); rural_spd += 3*(1-dissent); pacifism -= 1 if pacifism > 0; pro_republic -= 5; education_science += 0.2
 go-to: curriculum_minor
 
-The traditional curriculum had a focus on ancient history and language (particularly Latin and Greek), as well as rigid discipline and some level of militarism.
+전통적인 교육과정은 고대 역사와 언어(특히 라틴어와 그리스어)에 중점을 두었으며, 엄격한 규율과 어느 정도의 군국주의적 색채를 띠었습니다.
 
 
 @curriculum_minor
 
-And what should be a secondary focus of the curriculum?
+그렇다면 교육과정의 부차적인 중점은 무엇이어야 할까요?
 
 - @dem_minor
 - @science_minor
@@ -217,44 +217,44 @@ And what should be a secondary focus of the curriculum?
 - @trad_minor
 
 @dem_minor
-title: Democratic curriculum
-subtitle: Critical thinking, democratic citizenship, and collaboration
+title: 민주적 교육과정
+subtitle: 비판적 사고, 민주 시민 의식, 협동
 view-if: major_curriculum != "democratic"
 on-arrival: minor_curriculum = "democratic"; pro_republic += 3*(1-dissent); workers_spd += 2*(1-dissent); democratization += 1; z_relation -= 2; dvp_relation -= 3;
 
-We should teach students how to be citizens of a democratic republic, by teaching them to critically evaluate politics and current events, to exercise their rights and to respect the rights of other citizens. Traditionalists of all stripes are critical of this curriculum.
+우리는 학생들에게 정치와 시사를 비판적으로 평가하고 자신의 권리를 행사하며 다른 시민의 권리를 존중하는 법을 가르쳐 민주 공화국의 시민이 되는 방법을 가르쳐야 합니다. 모든 성향의 전통주의자들이 이 교육과정에 비판적입니다.
 
 @science_minor
-title: Scientific curriculum
-subtitle: Modern science, mathematics, and technical skills
+title: 과학적 교육과정
+subtitle: 현대 과학, 수학, 기술 능력
 view-if: major_curriculum != "scientific"
 on-arrival: minor_curriculum = "scientific"; education_science += 0.5; z_relation -= 3; ddp_relation += 3*(1-dissent); kpd_relation += 2*(1-dissent); new_middle_spd += 2*(1-dissent); workers_spd += 2*(1-dissent)
 
-Our educational system should reflect the modern age, and we should teach science and rational thinking. Religious conservatives tend to react negatively against this. 
+우리 교육 제도는 현 시대를 반영해야 하며, 과학과 합리적 사고를 가르쳐야 합니다. 종교적 보수주의자들은 이에 부정적인 반응을 보이는 경향이 있습니다.
 
 @human_minor
-title: Humanist curriculum
-subtitle: Arts, literature, history, and philosophy
+title: 인문학적 교육과정
+subtitle: 예술, 문학, 역사, 철학
 view-if: major_curriculum != "humanist"
 on-arrival: minor_curriculum = "humanist"; new_middle_spd += 3*(1-dissent); ddp_relation += 3*(1-dissent);
 
-Our educational curriculum should be focused on the humanities, including arts, literature, history, and philosophy. Some criticize this curriculum as focusing too much on "useless" subjects, while others worry that the arts establishment is too closely tied to romantic nationalism.
+우리 교육과정은 예술, 문학, 역사, 철학 등 인문학에 초점을 맞춰야 합니다. 일부에서는 이 교육과정이 ‘쓸모없는’ 과목에 지나치게 집중한다고 비판하고, 다른 이들은 예술계가 낭만적 민족주의와 너무 밀접하게 연관되어 있다고 우려합니다.
 
 @vocational_minor
-title: Vocational curriculum
-subtitle: Useful technical skills for future careers
+title: 직업 교육과정
+subtitle: 미래 직업을 위한 유용한 기술 능력
 view-if: major_curriculum != "vocational"
 on-arrival: minor_curriculum = "vocational"; education_science += 0.3; workers_spd += 3*(1-dissent); unemployed_spd += 2*(1-dissent);
 
-Education should be focused on providing a useful hands-on education, and teach the skills that will be most useful for students' future lives.
+교육은 유용한 실제적 교육을 제공하고, 학생들의 미래에 가장 유용할 기술을 가르치는 데 집중해야 합니다.
 
 
 @trad_minor
-title: Traditional curriculum
-subtitle: Classics, discipline, and nationalism
+title: 전통적 교육과정.
+subtitle: 고전, 규율, 민족주의
 view-if: major_curriculum != "traditional"
 on-arrival: minor_curriculum = "traditional"; dvp_relation += 2*(1-dissent); z_relation += 2*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); pro_republic -= 3
 
-The traditional curriculum had a focus on ancient history and language (particularly Latin and Greek), as well as rigid discipline.
+전통적인 교육과정은 고대 역사와 언어(특히 라틴어와 그리스어)에 중점을 두었으며, 또한 엄격한 규율을 강조했습니다.
 
 
