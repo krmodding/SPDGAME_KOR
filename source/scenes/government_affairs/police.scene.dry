@@ -6,27 +6,27 @@ on-arrival: police_timer += 6; month_actions += 1
 view-if: spd_in_government = 1 and interior_minister_party = "SPD" and police_timer <= 0
 card-image: img/portraits/SeveringCarl.jpg
 
-= Internal Security
+= 국내 안보
 
-The Interior Ministry controls internal security throughout the German Republic. While most police work is delegated to the states, the national security agency can perform special investigations.
+내무부는 독일 공화국 전역의 국내 안보를 담당합니다. 대부분의 경찰 업무는 각 주에 위임되지만, 국가 안보 기관은 특별 수사를 수행할 수 있습니다.
 
-As with the state police units and the Reichswehr, the internal police tends to be reactionary, and has serious issues with loyalty to the elected government of the Republic.
+주 경찰 및 국방군과 마찬가지로, 내무부 소속 경찰 조직 또한 반동적인 경향이 있으며, 선출된 공화국 정부에 대한 충성심에 심각한 문제가 있습니다.
 
-- @loyalty: Improve the loyalty of the Interior Ministry forces.
-- @investigate_corruption: Investigate corruption by big businesses.
-- @investigate_far_right: Investigate illegal activity among the far right.
-- @domestic_enemies: Investigate or ban our domestic enemies.
+- @loyalty: 내무부 경찰력의 충성도를 향상시킨다.
+- @investigate_corruption: 대기업의 부패를 수사한다.
+- @investigate_far_right: 극우 세력의 불법 활동을 수사한다.
+- @domestic_enemies: 국내의 정적을 수사하거나 이들의 활동을 금지한다.
 - @deport_hitler
-- @root: Take no action for now.
+- @root: 지금은 아무 조치도 취하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @loyalty
 on-arrival: interior_police_loyalty += 0.1
 
-As with the Prussian state police, there are measures we can take to root out reactionary and anti-democratic sentiment in the police. We can improve training and recruiting procedures, and identify and remove known fascists and the like.
+프로이센 주 경찰의 경우와 마찬가지로, 경찰 내의 반동적이고 반민주적인 정서를 근절하기 위해 우리가 취할 수 있는 조치들이 있습니다. 우리는 훈련 및 채용 절차를 개선하고, 알려진 파시스트와 그 유사 세력을 색출하여 제거할 수 있습니다.
 
-Current interior police loyalty: [+ interior_police_loyalty : loyalty +]
+현재 내무부 경찰 충성도: [+ interior_police_loyalty : loyalty +]
 
 
 @investigate_corruption
@@ -35,12 +35,12 @@ go-to: investigate_corruption_success if interior_police_loyalty >= 0.5; investi
 @investigate_corruption_success
 on-arrival: investigate_corruption += 1; workers_spd += 5*(1-dissent); inflation -= 0.1 if inflation > 3; inflation -= 0.2 if inflation >= 8
 
-Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the SPD.
+대기업의 부패는 물론 만연해 있습니다. 우리는 여러 건의 비리를 적발했으며, 이를 공표함으로써 [+ interior_minister +] 내무부 장관의 활동에 새로운 관심이 쏠리게 되었고, 그의 대중적 인기와 사민당의 지지율도 높아졌습니다.
 
 
 @investigate_corruption_failure
 
-Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
+안타깝게도, 우리의 수사는 아무런 성과를 거두지 못했습니다. 수사 대상이 경찰 내 첩자에 의해 미리 정보를 받았다는 소문이 있습니다.
 
 @investigate_far_right
 go-to: investigate_far_right_success if interior_police_loyalty >= 0.55; investigate_far_right_failure if interior_police_loyalty < 0.55
@@ -48,14 +48,14 @@ go-to: investigate_far_right_success if interior_police_loyalty >= 0.55; investi
 @investigate_far_right_success
 on-arrival: investigate_far_right += 1; sa_strength -= 20; workers_nsdap -= 3; new_middle_nsdap -= 3; nazi_urgency += 1 if investigate_far_right == 2; nazi_urgency += 2 if investigate_far_right == 3; workers_nsdap -= 3 if investigate_far_right == 3; new_middle_nsdap -= 3 if investigate_far_right == 3; old_middle_nsdap -= 3 if investigate_far_right == 3; unemployed_spd -= 3 if investigate_far_right == 3; coup_progress -= 1 if coup_progress >= 7
 
-[? if investigate_far_right == 1 : We have discovered collusion between Hjalmar Schacht, president of the Reichsbank, and the Nazis. This is very useful information. ?]
-[? if investigate_far_right == 2 : We have discovered illegal arms smuggling by the SA, the Nazi paramilitary. ?]
-[? if investigate_far_right == 3 : We have discovered a secret cache of documents from the NSDAP detailing their plan to violently take over the country if they enter into power. This is an anti-constitutional plot, and will be publicized and persecuted. ?]
-[? if investigate_far_right > 3 : Of course the Nazis are doing crimes; everyone knows that. Now, we finally have proof. ?]
+[? if investigate_far_right == 1 : 우리는 제국은행 총재 얄마르 샤흐트와 나치당의 결탁을 발견했습니다. 이것은 매우 유용한 정보입니다. ?]
+[? if investigate_far_right == 2 : 나치의 준군사조직인 돌격대의 불법 무기 밀매를 발견했습니다. ?]
+[? if investigate_far_right == 3 : 우리는 나치당이 집권할 경우 폭력적으로 국가를 전복할 계획을 상세히 기술한 비밀 문서 은닉처를 발견했습니다. 이는 반헌법적인 음모이므로, 공개적으로 알려 처벌받게 될 것입니다. ?]
+[? if investigate_far_right > 3 : 물론 나치가 범죄를 저지르고 있다는 사실은 모두가 알고 있습니다. 이제, 마침내 증거를 잡았습니다. ?]
 
-[? if coup_progress >= 6: There are reports of an imminent coup by the far-right. We have attempted to disrupt some of these plans, but the threat is still present. ?]
+[? if coup_progress >= 6: 극우 세력에 의한 쿠데타가 임박했다는 보고가 있습니다. 우리는 이들의 계획 일부를 저지하려 시도했지만, 위협은 여전히 남아있습니다. ?]
 
 
 @investigate_far_right_failure
 
-Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
+안타깝게도, 우리의 수사는 아무런 성과를 거두지 못했습니다. 수사 대상이 경찰 내 첩자에 의해 미리 정보를 받았다는 소문이 있습니다.

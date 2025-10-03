@@ -7,41 +7,41 @@ view-if: spd_in_government = 1 and reichswehr_minister_party = "SPD" and militar
 card-image: img/portraits/LeberJulius.jpg
 #subtitle: Dealing with the Reichswehr.
 
-= Military Policy
+= 국방 정책
 
-The Reichswehr is a deeply reactionary institution that has been generally hostile to any notion of socialism or democracy. However, we now control the military as part of the government. What should we do to reform it?
+국방군은 사회주의나 민주주의라는 개념 자체에 전반적으로 적대적인, 매우 반동적인 기관입니다. 하지만 이제 우리는 정부의 일원으로서 군부를 통제합니다. 군부를 개혁하기 위해 무엇을 해야 할까요?
 
-- @increase_funding: Increase funding for the military to purchase its loyalty.
-- @decrease_funding: Reduce funding for the military so we have more for social spending.
-- @reform: Conduct a thorough reform of the ranks, reducing the influence of reactionaries and making it more hospitable to us.
-- @root: No change to military policy.
+- @increase_funding: 군부의 충성을 얻기 위해 국방 예산을 증액한다.
+- @decrease_funding: 국방 예산을 삭감하여 사회 복지 지출에 더 많이 사용한다.
+- @reform: 군 계급에 대한 철저한 개혁을 단행하여 반동주의자들의 영향력을 줄이고 군부가 우리에게 더 우호적이 되도록 만든다.
+- @root: 군사 정책을 변경하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @increase_funding
-subtitle: -1 budget
+subtitle: 예산 -1
 choose-if: budget >= 1
-unavailable-subtitle: We do not have the budget.
+unavailable-subtitle: 예산이 없습니다.
 on-arrival: budget -= 1; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.07 if reichswehr_loyalty < 1; reichswehr_strength += 20; left_dissent += 5; kpd_coalition_dissent += 1; west_relation -= 1; east_relation -= 1; reparations_negotiation -= 1; eu_progress -= 1; economic_growth += 0.1
 
-The military and the center-right parties are pleasantly surprised that we would increase military funding. Our membership tends to be anti-military, and is less enthused. Germany's neighbors are watching our military buildup with worry. [? if reparations >= 0 : This is not good for the reparations negotiations. ?]
+군부와 중도우파 정당들은 우리가 국방 예산을 증액한 것에 기분 좋게 놀랐습니다. 우리 당원들은 대체로 반군부 성향이라 덜 열광적입니다. 독일의 이웃 국가들은 우리의 군비 증강을 우려하며 주시하고 있습니다. [? if reparations >= 0 : 이는 전쟁 배상금 협상에 좋지 않습니다. ?]
 
 @decrease_funding
-subtitle: +1 budget
-unavailable-subtitle: There is nothing left to cut.
+subtitle: 예산 +1
+unavailable-subtitle: 더 이상 삭감할 것이 없습니다.
 choose-if: reichswehr_strength > 0
 on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition == 1; dvp_relation -= 8; reichswehr_militancy -= 1; reichswehr_strength -= 20; sh_strength += 15; sa_strength += 5; sh_militancy += 0.05; reichswehr_loyalty -= 0.05 if reichswehr_loyalty > 0; coup_progress += 1; coup_progress += 1 if reichswehr_loyalty < 0.2; coup_progress += 1 if reichswehr_loyalty < 0.1; coup_progress += 1 if reichswehr_loyalty <= 0; reichswehr_goal_completed = 1; economic_growth -= 0.1
 
-The military has fewer guns and fewer soldiers. There is no hint of a coup yet, but we do not know where the line will be drawn. The center-right parties are committed to the military and deeply opposed to our budget cuts.
+군대의 총기와 병사 수가 줄었습니다. 아직 쿠데타의 징후는 없지만, 한계선이 어디일지는 알 수 없습니다. 중도우파 정당들은 군부를 지지하며 우리의 예산 삭감에 강하게 반대합니다.
 
-Many demobilized soldiers have joined the right-wing paramilitaries such as the Stahlhelm and SA, and weapons are missing from our stockpiles.
+제대한 많은 병사들이 철모단이나 돌격대 같은 우익 준군사조직에 가담했고, 우리의 무기고에서 무기가 사라지고 있습니다.
 
 @reform
-subtitle: -1 budget
+subtitle: 예산 -1
 choose-if: budget >= 1 and reichswehr_loyalty < 1
-unavailable-subtitle: [? if budget < 1 : We do not have the budget. ?][? if reichswehr_loyalty >= 1 : The Reichswehr is already fully loyal to the democratic government. ?]
+unavailable-subtitle: [? if budget < 1 : 예산이 없습니다. ?][? if reichswehr_loyalty >= 1 : 국방군은 이미 민주 정부에 완전히 충성하고 있습니다. ?]
 on-arrival: coalition_dissent += 1 if in_grand_coalition == 1; reichswehr_loyalty += 0.15; reichswehr_militancy -= 0.5 if reichswehr_loyalty < 0.5; budget -= 1; coup_progress += 1; dvp_relation -= 5; pacifism += 1; democratization += 1;
 
-Our efforts are at least somewhat successful; we have changed the recruiting and training patterns so that more soldiers from non-reactionary backgrounds can join, hopefully changing the culture of the forces. We have also removed some of the officers who supported the previous Kapp putsch.
+우리의 노력은 어느 정도 성공을 거두었습니다. 우리는 더 많은 비반동적 배경의 병사들이 입대할 수 있도록 징집 및 훈련 방식을 변경하여 군 문화를 바꾸고자 합니다. 또한 과거 카프 폭동을 지지했던 일부 장교들을 숙청했습니다.
 
-The center-right parties are committed to the military and deeply suspicious of our efforts to reform it.
+중도우파 정당들은 군부를 지지하며, 군을 개혁하려는 우리의 노력을 매우 의심하고 있습니다.

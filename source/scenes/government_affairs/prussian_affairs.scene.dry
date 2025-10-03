@@ -7,24 +7,24 @@ tags: govt_affairs
 card-image: img/braun.jpg
 #subtitle: The state government of Prussia is a bulwark of democracy...
 
-= Prussian Affairs
+= 프로이센 주 정책
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the Center and Democratic parties. It is the most stable and democratic state government in Germany, led by the able Otto Braun.
+독일에서 단연 가장 크고 중요한 주인 프로이센은 우리 당이 중앙당 및 민주당과 연정을 이루어 통치하고 있습니다. 유능한 오토 브라운이 이끄는 이곳은 독일에서 가장 안정적이고 민주적인 주 정부입니다.
 
-We can enact policies in Prussia.
+우리는 프로이센에서 정책을 시행할 수 있습니다.
 
-- @police_loyalty: Bolster the loyalty of the police.
-- @police_strength: Recruit additional police.
-- @bureaucracy: Purge the bureaucracy of reactionary elements.
-- @ban_sa: Ban the SA, the Nazi paramilitary group.
-- @unban_sa: Reverse the SA ban.
-- @ban_rfb: Ban the RFB, the Communist paramilitary.
-- @unban_rfb: Reverse the RFB ban.
-- @ban_sh: Ban the Stahlhelm, the Nationalist paramilitary.
-- @unban_sh: Reverse the Stahlhelm ban.
-- @negotiate_concordat: Negotiate a concordat with the Vatican.
-- @sign_concordat: Sign a concordat with the Vatican.
-- @root: No new policies are needed.
+- @police_loyalty: 경찰의 충성도를 강화한다.
+- @police_strength: 경찰 인력을 추가로 모집한다.
+- @bureaucracy: 관료 조직에서 반동주의자를 숙청한다.
+- @ban_sa: 나치의 준군사조직인 돌격대를 금지한다.
+- @unban_sa: 돌격대 금지 조치를 해제한다.
+- @ban_rfb: 공산당의 준군사조직인 적색전선전사동맹을 금지한다.
+- @unban_rfb: 적색전선전사동맹 금지 조치를 해제한다.
+- @ban_sh: 국가주의 준군사조직인 철모단을 금지한다.
+- @unban_sh: 철모단 금지 조치를 해제한다.
+- @negotiate_concordat: 바티칸과 정교 협약을 협상한다.
+- @sign_concordat: 바티칸과 정교 협약을 체결한다.
+- @root: 새로운 정책은 필요하지 않습니다.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -33,65 +33,65 @@ view-if: prussian_police_loyalty < 1
 on-arrival: prussian_police_loyalty += 0.1
 
 # increase police loyalty
-The police have historically been overrun with reactionaries, and we are trying to change this, little by little. We have improved the training and recruitment process to select for a broader demographic than the traditional conservatives, and to put a tighter leash on their political activity. In addition, we set up committees to investigate the ranks of the police and remove those with far-right sympathies. It is a slow and arduous work.
+역사적으로 경찰은 반동주의자들로 가득했고, 우리는 이를 조금씩 바꾸려 노력하고 있습니다. 우리는 전통적인 보수파보다 더 다양한 인구 집단을 선발하고 그들의 정치 활동을 더 엄격히 통제하기 위해 훈련 및 채용 절차를 개선했습니다. 또한, 경찰 내부를 조사하여 극우 성향을 가진 이들을 제거하기 위한 위원회를 설치했습니다. 이는 더디고 힘든 작업입니다.
 
-Current police loyalty: [+ prussian_police_loyalty : loyalty +].
+현재 경찰 충성도: [+ prussian_police_loyalty : loyalty +].
 
 @police_strength
 on-arrival: prussian_police_strength += 20
 
-We have increased the size of the Prussian police.
+프로이센 경찰 인력을 증원했습니다.
 
 @bureaucracy
 on-arrival: prussian_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
 
-The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-monarchy and pro-dictatorship elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
+관료 조직은 매우 반동적이며, 다수가 자신의 권력을 남용하여 우파를 편들고 있습니다. 군주제와 독재를 옹호하는 세력을 제거함으로써 관료제를 민주화할 수 있습니다. 일부 반대자들은 우리가 개인의 자유를 침해한다고 주장하지만, 공화국의 안보를 위해 필요한 일일지도 모릅니다.
 
 @ban_sa
 view-if: nazi_urgency >= 3 and sa_banned == 0
 on-arrival: sa_strength *= 0.9; sa_strength *= 0.75 if prussian_police_loyalty >= 0.75; sa_banned = 1; dvp_relation -= 3; prussian_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6;
 
-As it turns out, the Nazi SA has many allies in the police and bureaucracy. Our relationship with the police weakens, and the SA can still organize illegally, right under the police's noses. [? if prussian_police_loyalty >= 0.7 : Nevertheless, the SA is substantially weakened by our ban. ?] 
+알고 보니 나치 돌격대(SA)는 경찰과 관료 조직에 많은 협력자를 두고 있었습니다. 경찰과의 관계는 악화되고, SA는 여전히 경찰의 눈앞에서 불법적인 조직 활동을 계속할 수 있습니다. [? if prussian_police_loyalty >= 0.7 : 그럼에도 불구하고, SA는 우리의 금지 조치로 인해 상당히 약화됩니다. ?] 
 
 @unban_sa
 view-if: sa_banned = 1
 on-arrival: sa_banned = 0; sa_strength += 100; sa_militancy += 0.05
 
-The SA is no longer banned. They immediately go on a recruiting spree.
+돌격대 금지가 해제되었습니다. 그들은 즉시 대대적인 조직원 모집에 나섭니다.
 
 @ban_sh
 on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 5; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; sh_ban_timer = 6;
 view-if: sh_banned == 0
 
-[? if president == "Hindenburg": Banning the Stahlhelm weakens our relationship with President Hindenburg, as well as the political right and the police. ?][? if president != "Hindenburg": Banning the Stahlhelm weakens our relationship with the political right and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the right wing of our coalition. ?] In addition, the Stahlhelm still operates out of public sight. 
+[? if president == "Hindenburg": 철모단을 금지하면 힌덴부르크 대통령뿐만 아니라 우익 정치권 및 경찰과의 관계가 악화됩니다 ?][? if president != "Hindenburg": 철모단을 금지하면 우익 정치권 및 경찰과의 관계가 악화됩니다. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : 또한 힌덴부르크가 우리 연정 내 우파에 미치는 영향력 때문에 우리 연정 또한 약화됩니다. ?] 게다가, 철모단은 여전히 은밀하게 활동하고 있습니다.
 
 @unban_sh
 view-if: sh_banned = 1
 on-arrival: sh_banned = 0; sh_strength += 100
 
-The Stahlhelm is no longer banned.
+철모단 금지가 해제되었습니다.
 
 
 @ban_rfb
 view-if: communist_coalition < 3 and rfb_banned = 0
 on-arrival: kpd_relation -= 15; rfb_strength -= 50; rfb_banned = 1; communist_coalition -= 1; z_relation += 5; dvp_relation += 5; prussian_police_loyalty += 0.1
 
-The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
+경찰은 이 금지령을 열성적으로, 어쩌면 지나치게 열성적으로 집행합니다. 공산주의자들은 이를 두고 사회주의자들이 좌파를 배신했다는 또 하나의 증거로 삼습니다. 하지만 온건파와 중도우파 정당들, 그리고 경찰은 이 조치를 지지합니다.
 
 @unban_rfb
 view-if: rfb_banned = 1
 on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1
 
-The Communist RFB is no longer banned.
+적색전선전사동맹 금지가 해제되었습니다.
 
 @negotiate_concordat
 view-if: prussian_concordat_progress < 1
 on-arrival: prussian_concordat_progress += 1; z_relation += 2*(1-dissent);
 
-We are making progress towards negotiating a concordat between Prussia and the Catholic church.
+우리는 프로이센과 가톨릭 교회 간의 정교 협약 협상에서 진전을 보이고 있습니다.
 
 @sign_concordat
 view-if: prussian_concordat_progress >= 1 and prussian_concordat = 0
 on-arrival: prussian_concordat = 1; z_relation += 5; catholics_spd += 3*(1-dissent)
 
-We have signed a Concordat between the Free State of Prussia and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Prussia. This sets the stage for the negotiation of a national Concordat covering all of Germany.
+우리는 프로이센 자유주와 로마 가톨릭 교회 간의 정교 협약을 체결하여 프로이센 내 가톨릭 신자들의 종교 자유를 보장했습니다. 이는 독일 전체를 아우르는 국가적 정교 협약 협상의 발판을 마련합니다.

@@ -6,28 +6,28 @@ on-arrival: shuffle_cabinet_timer = 6;
 view-if: spd_in_government == 1 and shuffle_cabinet_timer == 0 and chancellor_party == "사민당" and not in_spd_majority and not in_emergency_government and not in_left_front
 card-image: img/muller_cabinet.jpg
 
-Do we wish to shuffle our cabinet? This might upset our current coalition.
+내각을 개편하시겠습니까? 이는 현재의 연립 정부를 불안하게 만들 수 있습니다.
 
-Current cabinet:
+현재 내각:
 
-Labor: [+ labor_minister_party +]
+노동부: [+ labor_minister_party +]
 
-Interior: [+ interior_minister_party +]
+내무부: [+ interior_minister_party +]
 
-Finance: [+ finance_minister_party +]
+재무부: [+ finance_minister_party +]
 
-Economic: [+ economic_minister_party +]
+경제부: [+ economic_minister_party +]
 
-Justice: [+ justice_minister_party +]
+법무부: [+ justice_minister_party +]
 
-Foreign: [+ foreign_minister_party +]
+외무부: [+ foreign_minister_party +]
 
-Reichswehr: [+ reichswehr_minister_party +]
+국방부: [+ reichswehr_minister_party +]
 
-Agriculture: [+ agriculture_minister_party +]
+농업부: [+ agriculture_minister_party +]
 
-- @shuffle: Yes, do it.
-- @root: No, there is no need.
+- @shuffle: 그래, 하자.
+- @root: 아니, 필요 없다.
 - @easy_discard
 - @cancel_advisor_action
 

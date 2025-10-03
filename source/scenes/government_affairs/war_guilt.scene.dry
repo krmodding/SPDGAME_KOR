@@ -7,28 +7,28 @@ view-if: spd_in_government = 1 and war_guilt_timer = 0
 card-image: img/reichstag_1.jpg
 max-visits: 1
 
-= Reichstag War Guilt Inquiry
+= 제국의회 전쟁 책임 조사 위원회
 
-The War Guilt Inquiry has been an intermittent Reichstag committee for investigating the causes of the Great War and the German defeat. So far, it has faced massive resistance from the military establishment up to President Hindenburg.
+전쟁 책임 조사 위원회는 세계대전의 원인과 독일의 패배를 조사하기 위해 제국의회에서 간헐적으로 열렸습니다. 지금까지 힌덴부르크 대통령을 비롯한 군부의 극심한 저항에 부딪혔습니다.
 
-- @restart: Restart the inquiry.
-- @root: Do nothing.
+- @restart: 조사를 재개한다.
+- @root: 아무것도 하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @restart
 on-arrival: war_guilt += 1
 
-What is the goal of this tribunal?
+이 조사의 목표는 무엇입니까?
 
-- @pure_history: To provide a historical record of the events of the war.
-- @rewrite: To revise the popular German histories and finally put to rest the "stabbed in the back" myth.
+- @pure_history: 전쟁 사건의 역사적 기록을 제공하는 것.
+- @rewrite: 통속적인 독일 역사를 수정하고 ‘배후 중상설’ 신화를 마침내 종식시키는 것.
 
 @pure_history
 
-The history is being compiled, as it always has been.
+언제나처럼, 역사는 편찬되고 있습니다.
 
 @rewrite
 on-arrival: pacifism += 1; nationalism -= 5*(1-dissent); pro_republic += 5*(1-dissent); coup_progress += 1
 
-Destroying the "stabbed in the back" myth, in addition to finally correcting the historical record, would do a great deal to improve our party's reputation. This is why it would be resisted by the military establishment every step of the way.
+ ‘배후 중상설’ 신화를 파괴하는 것은 역사 기록을 마침내 바로잡는 것과 더불어 우리 당의 평판을 크게 향상시킬 것입니다. 이것이 군부가 모든 단계에서 저항하는 이유입니다.
