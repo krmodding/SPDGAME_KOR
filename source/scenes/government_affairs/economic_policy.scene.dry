@@ -116,7 +116,7 @@ achievement: wirtschaftspolitik
 @nationalize_deficit_1
 title: 국유화 프로그램을 위한 재정 적자를 감수한다.
 choose-if: left_strength > reformist_strength + center_strength or woytinsky_advisor == 1
-subtitle: [? 보이틴스키라면 우리를 재정 적자 지지로 이끌 수 있을 것이다. ?]
+subtitle: [? if woytinsky_advisor: 보이틴스키라면 우리를 재정 적자 지지로 이끌 수 있을 것이다. ?]
 unavailable-subtitle: [? if left_strength <= reformist_strength + center_strength: 당내에서는 아직 이 목적을 위한 재정 적자를 지지하지 않습니다. ?] [? if not woytinsky_advisor : 아마도 고문을 영입하면 이 조치를 받아들이게 만드는 데 도움이 될까요? ?]
 on-arrival: nationalization_progress += 1; capital_strike_progress += 3; unemployed -= 3 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; budget -= nationalize_budget; works_program += 1; workers_spd += 8*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 2; dvp_relation -= 6; z_relation -= 4; new_middle_spd -= 3; old_middle_spd -= 3; economy_goal_completed += 1; inflation += 3; economic_growth += 2 if economic_growth < 5;
 achievement: wirtschaftspolitik
