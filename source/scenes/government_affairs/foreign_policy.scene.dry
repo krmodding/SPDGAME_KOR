@@ -8,9 +8,9 @@ card-image: img/portraits/BreitscheidRudolf.jpg
 go-to: fp_menu
 #subtitle: International relations and dealing with Versailles.
 
-= Foreign Policy
+= 외교 정책
 
-What should our foreign policy priority be?
+우리의 외교 정책 우선순위는 무엇이 되어야 할까요?
 
 @fp_menu
 
@@ -27,177 +27,177 @@ What should our foreign policy priority be?
 - @concordat
 - @support_austria
 - @support_austria_2
-- @root: Do not enact any policies for now.
+- @root: 지금은 어떤 정책도 시행하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @improve_west
-title: Improve our relations with the Western Allies.
+title: 서방 연합국과의 관계를 개선한다.
 on-arrival: west_relation += 2; reparations_negotiation += 1
 
-The key to peace in Europe is a rapproachment between France and Germany. We are taking steps towards that rapproachment. [? if young_plan_seen == 0 : This is difficult to do when France is occupying a major portion of Germany's territory, but we are working on that part. ?]
+유럽 평화의 열쇠는 프랑스와 독일의 관계 개선에 있습니다. 우리는 그 관계 개선을 위해 조치를 취하고 있습니다. [? if young_plan_seen == 0 : 프랑스가 독일 영토의 상당 부분을 점령하고 있는 상황에서는 어려운 일이지만, 그 문제를 해결하기 위해 노력하고 있습니다. ?]
 
 @improve_east
-title: Improve our relations with our eastern neighbors.
+title: 동부 이웃 국가들과의 관계를 개선한다.
 on-arrival: east_relation += 2;
 
-We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
+우리는 또한 독일의 침략을 당연히 우려하고 있는 동부 이웃 국가인 폴란드와 체코슬로바키아와의 관계 개선도 목표로 하고 있습니다. 그들에게 우리의 평화적인 의도를 설득할 수 있기를 바랍니다.
 
 @improve_soviet
-title: Improve our relations with the Soviet Union.
-subtitle: We could also broach the question of the KPD...
+title: 소련과의 관계를 개선한다.
+subtitle: 독일 공산당 문제도 꺼내볼 수 있습니다…
 
-The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
+소련 또한 베르사유 조약이 만든 국제 질서로 인해 고통받았으며, 우리의 비밀 재무장 계획에 참여해 왔습니다. 1922년의 라팔로 조약은 우리의 우호 관계를 확인시켜주었습니다.
 
-The Soviets are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our anti-communist coalition partners would be upset, but we could assuage them by asking the Soviets for secret assistance in training and equiping the Reichswehr.
+소련은 경제 및 개발 원조를 요청하고 있습니다. 그들은 전반적으로 여전히 가난한 나라이며 서방 강대국들을 필사적으로 따라잡으려 하고 있습니다. 우리의 반공 연정 파트너들이 불만을 가질 수도 있지만, 소련에게 국방군 훈련 및 장비에 대한 비밀 지원을 요청함으로써 그들을 달랠 수 있습니다.
 
-- @soviet_economic_aid_yes_mil: Provide aid, in exchange for Reichswehr assistance.
-- @soviet_economic_aid_yes: Provide aid, in exchange for only good relations.
-- @soviet_economic_aid_no: Don't provide aid.
+- @soviet_economic_aid_yes_mil: 국방군 지원을 조건으로 원조를 제공한다.
+- @soviet_economic_aid_yes: 우호 관계만을 대가로 원조를 제공한다.
+- @soviet_economic_aid_no: 원조를 제공하지 않는다.
 
 @soviet_economic_aid_yes_mil
 choose-if: budget >= 1
 subtitle: -1 budget
 on-arrival: budget -= 1; soviet_relation += 1; reichswehr_militancy += 0.2; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
 
-The Soviets are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
+소련은 우리가 원조를 보낸 것에 만족하며 우리 군의 훈련을 돕기로 합의했습니다. 국방군은 우리의 지원에 감사를 표하고 있습니다.
 
 @soviet_economic_aid_yes
 choose-if: budget >= 1
-subtitle: -1 budget
+subtitle: 예산 -1
 on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_goal_completed += 1
 
-The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
+소련은 우리가 원조를 보냈고, 그 대가로 특별한 것을 요구하지 않은 점에 만족하고 있습니다. 우리 연정 파트너들은 그다지 만족하지 않습니다.
 
-- @kpd: Ask if Moscow could help repair our relations with the KPD.
-- @wittorf: Do the Soviets know about the Wittorf Affair? Do they know that we know?
-- @root: Do not mention the KPD.
+- @kpd: 공산당과의 관계 개선을 모스크바가 도와줄 수 있는지 묻는다.
+- @wittorf: 소련은 비토르프 사건에 대해 알고 있을까? 그들은 우리가 알고 있다는 사실을 알까?
+- @root: 공산당에 대해서는 언급하지 않는다.
 
 @soviet_economic_aid_no
 
-The Soviets are slightly upset, but they seemed to expect this answer.
+소련은 약간 불쾌해했지만, 이런 답변을 예상한 듯합니다.
 
 
 @kpd
 on-arrival: kpd_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
 
-We also mention the KPD in our conversations with the Soviet ambassador. They claim that the KPD is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the KPD.
+우리는 소련 대사와의 대화에서 독일 공산당 문제도 언급했습니다. 그들은 공산당이 소련 정부와는 완전히 독립적이며, 갈등은 텔만의 탓이라고 주장합니다. 하지만, 우리 대화 직후 공산당의 태도가 약간 누그러졌음을 감지할 수 있었습니다.
 
 @wittorf
 view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0
-unavailable-subtitle: It is impossible that Stalin and the Comintern could be moved on their policy.
+unavailable-subtitle: 스탈린과 코민테른이 정책을 바꿀 가능성은 없습니다.
 on-arrival: wittorf_soviet_union = 1; kpd_relation += 6*(1-dissent); kpd_foreign_seen = 1
 max-visits: 1
 
-Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Thälmann, but perhaps now they will be less inclined to defend him.
+물론 스탈린과 코민테른의 여러 지도자들은 비토르프 사건에 대해 알고 있지만, 우리 또한 알고 있다는 사실은 모르는 것 같습니다. 코민테른은 텔만에게 면죄부를 주는 서사를 만들 계획이었지만, 이제는 그를 옹호하려는 의지가 덜할지도 모릅니다.
 
 
 @customs_union
-title: Form a customs union with Austria?
-subtitle: This will likely incur the wrath of France.
-unavailable-subtitle: This is superseded by the European Union.
+title: 오스트리아와 관세 동맹을 결성할까?
+subtitle: 이는 프랑스의 분노를 살 가능성이 높습니다.
+unavailable-subtitle: 이는 유럽 연합 창설로 대체되었습니다.
 choose-if: eu = 0
 view-if: black_thursday_seen = 1 and customs_union = 0
 
-The right has long desired closer ties with Austria, with the eventual goal of the merger of the two German-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
+우파는 오랫동안 오스트리아와의 관계 강화를 바라왔으며, 궁극적인 목표는 두 독일어권 국가의 합병입니다. 오스트리아와의 관세 동맹은 이 목표를 향한 첫걸음입니다. 더불어, 많은 이들이 오스트리아와의 동맹이 현재의 경제 상황을 개선할 것이라고 믿습니다.
 
-However, the Allies, especially France, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
+하지만 연합국, 특히 프랑스는 반대할 가능성이 높습니다. 이 협정은 베르사유 조약의 조항을 위반하는 것이며, 이는 경제 제재로 이어져 우리 경제에 더 큰 타격을 줄 수 있습니다.
 
-- @customs_union_2: Yes, do it!
-- @fp_menu: No, we should do something else.
+- @customs_union_2: 그래, 하자!
+- @fp_menu: 아니, 우리는 다른 것을 해야 한다.
 
 @customs_union_2
 on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2; z_relation += 6; dvp_relation += 6; coalition_dissent -= 1 if coalition_dissent > 0; coup_progress -= 1
 max-visits: 1
 
-We have formed a customs union with Austria! The right-wing parties are praising us for this unexpected turn of events.
+우리가 오스트리아와 관세 동맹을 결성했습니다! 우익 정당들은 이 예상치 못한 진전에 대해 우리를 칭찬하고 있습니다.
 
-Immediately, France and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
+즉각 프랑스와 다른 주변국들이 항의를 제기했습니다. 장기적인 반응은 아직 지켜봐야 할 것입니다.
 
 
 @negotiate
-title: Negotiate regarding our remaining obligations from the Treaty of Versailles.
-subtitle: [? if young_plan_seen == 1 : After passing the Young Plan, France has committed to withdrawing from the Rhineland. Now, we must see if they can reduce our reparations further, given the economic depression. ?]
+title: 베르사유 조약상 남은 의무에 관해 협상한다.
+subtitle: [? if young_plan_seen == 1 : 영 플랜 통과 후 프랑스는 라인란트 철수를 약속했습니다. 이제 경제 불황을 고려하여 그들이 우리의 배상금을 추가로 감면해 줄 수 있는지 알아봐야 합니다. ?]
 view-if: reparations > -2 and reparations_negotiation < 3
 on-arrival: west_relation += 1; reparations_negotiation += 1; reparations_negotiation += 1 if pacifism >= 3; reparations_negotiations += 1 if nationalism <= 50; reparations_negotiation += 1 if west_relation >= 3
 
-Negotiations procede smoothly for the most part. The Western powers are convinced of Germany's sincerity and goodwill. [? if nationalism <= 50 or pacifism >= 3 : They are pleased to see that we are renouncing militarism. ?]
+협상은 대체로 순조롭게 진행됩니다. 서방 열강들은 독일의 진정성과 선의를 믿고 있습니다. [? if nationalism <= 50 or pacifism >= 3 : 그들은 우리가 군국주의를 포기하는 것을 보고 기뻐합니다. ?]
 
 
 @reduce_reparations
-title: The Western Allies are finally willing to pause our reparations payments!
-subtitle: Our negotiations have been successful.
+title: 서방 연합국들이 마침내 우리 배상금 지불 유예에 동의했다!
+subtitle: 우리의 협상이 성공했습니다.
 view-if: reparations_negotiation >= 3 and black_thursday_seen == 1 and reparations > -2
 on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0
 max-visits: 1
 
-Finally, given both the economic circumstances and our continued negotiations, the Western Allies are willing to pause our reparations payments! Much of the credit must go to American president Hoover, who has been friendlier towards us than the Europeans.
+마침내, 경제 상황과 계속된 협상을 감안하여 서방 연합국들이 우리 배상금 지불 유예에 동의했습니다! 많은 공로는 유럽인들보다 우리에게 더 우호적이었던 후버 미국 대통령에게 돌려야 할 것입니다.
 
-This has reduced tensions within our government, and our party has gotten credit for the achievement.
+이로써 우리 정부 내의 긴장이 완화되었으며, 우리 당은 이 성과에 대한 공로를 인정받게 되었습니다.
 
 @expose
-title: Expose the secret rearmament plans of the previous foreign ministry!
+title: 이전 외무부의 비밀 재무장 계획을 폭로한다!
 view-if: rearmament_exposed == 0
 on-arrival: west_relation += 2; east_relation += 1; nationalism -= 5*(1-dissent); pro_republic += 5*(1-dissent); coalition_dissent += 1; rearmament_exposed += 1; reparations_negotiation += 3; coup_progress += 2
 
-The previous foreign ministry, despite its benevolent and peaceful face, was secretly helping the Reichswehr to build up its forces, in contravention of the Treaty of Versailles.
+이전 외무부는 온화하고 평화로운 겉모습과는 달리, 베르사유 조약을 위반하며 국방군의 군비 증강을 비밀리에 돕고 있었습니다.
 
-The Allies are grateful of our exposure and repudiation of militarism. Our partners in the coalition are less supportive.
+연합국들은 군국주의를 폭로하고 거부한 우리의 조치에 감사하고 있습니다. 우리의 연정 파트너들은 그다지 지지하지 않습니다.
 
 
 @concordat_negotiate
-title: Negotiate a Concordat between the Germany and the Vatican.
+title: 독일과 바티칸 간의 정교 협약을 협상한다.
 view-if: prussian_concordat = 1 and reichskonkordat = 0 and reichskonkordat_progress < 4
 on-arrival: reichskonkordat_progress += 2; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; z_relation += 3*(1-dissent)
 
-The Roman Catholic Church is interested in furthering relations with the German Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The Center Party is especially interested in making this agreement.
+로마 가톨릭 교회는 과거 제국의 반가톨릭 정책보다 우리를 선호하여 독일 공화국과의 관계 발전에 관심을 보이고 있습니다. 우리는 국가 내에서 교회의 권리와 이익을 공식적으로 인정하는 바티칸과 공화국 간의 협약인 정교 협약 체결을 위해 노력하고 있습니다. 중앙당이 특히 이 협정 체결에 관심이 많습니다.
 
-[? if family_law : Our liberalized divorce policies make it difficult to build relations with the Vatican. ?] [? if abortion : Our legalization of abortion make it difficult to connect with the Church. ?]
+[? if family_law : 우리의 자유화된 이혼 정책은 바티칸과의 관계 수립을 어렵게 합니다. ?] [? if abortion : 우리의 낙태 합법화는 교회와의 관계 개선을 어렵게 합니다. ?]
 
 @concordat
-title: We can sign a Concordat with the Vatican!
+title: 바티칸과 정교 협약을 체결할 수 있다!
 view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
 on-arrival: reichskonkordat = 1; z_relation += 15*(1-dissent); catholics_spd += 8*(1-dissent); catholics_z += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front;
 achievement: reichskonkordat
 
-We have successfully signed a Concordat between Germany and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the German state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Germany are pleased, as are their representatives in the Center Party.
+우리는 독일과 로마 가톨릭 교회 간의 정교 협약을 성공적으로 체결했습니다! 이 조약은 교회와 독일 국가 간의 공식적인 관계를 규정하며, 가톨릭 신자들의 예배의 자유와 교회가 자체적으로 성직자를 임명할 권리를 보장합니다. 독일의 가톨릭 신자들과 중앙당 내의 그들의 대표자들 모두 기뻐하고 있습니다.
 
 @support_austria
-title: Diplomatically support Austrian democracy against the Dollfuß dictatorship.
+title: 돌푸스 독재에 맞서 오스트리아 민주주의를 외교적으로 지지한다.
 view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
 on-arrival: sdapo_strength += 1; left_dissent -= 3; center_dissent -= 3
 
-We provide verbal backing to Austrian democracy, wage a war of words against Austrofascism, and promulgate additional trade sanctions. Time will tell if it will be enough.
+우리는 오스트리아 민주주의에 대한 구두 지지를 표명하고, 오스트리아 파시즘에 대한 언론전을 벌이며 추가적인 무역 제재를 공표합니다. 이것만으로 충분할지는 시간이 지나봐야 알 것입니다.
 
 @support_austria_2
-title: Provide material support to Austrian democracy against the Dollfuß dictatorship.
-subtitle: -1 budget
+title: 돌푸스 독재에 맞서는 오스트리아 민주주의에 물질적 지원을 제공한다.
+subtitle: 예산 -1
 choose-if: budget >= 1
 view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
 on-arrival: budget -= 1; sdapo_strength += 3; left_dissent -= 6; center_dissent -= 6
 
-In public, we provide verbal backing to Austrian democracy, wage a war of words against Austrofascism, and promulgate additional trade sanctions. Privately, we provide financial and various forms of "support" to our comrades in Austria in their struggle against dictatorship.
+공개적으로 우리는 오스트리아 민주주의를 구두로 지지하고, 오스트리아 파시즘에 대한 언론전을 벌이며 추가적인 무역 제재를 공표합니다. 비공개적으로는 독재에 맞서 싸우는 오스트리아의 동지들에게 재정적 지원과 다양한 형태의 "지원"을 제공합니다.
 
 @european_union
-title: Take steps to form a "European Union".
-subtitle: Is a "United States of Europe" possible?
-unavailable-subtitle: [? if west_relation < 5 : Our relations with the West are not good enough. ?] [? if east_relation < 4 : Our relations with the East are not good enough. ?]
+title: “유럽 연합” 결성을 위한 조치를 취한다.
+subtitle: "유럽 합중국"은 가능한가?
+unavailable-subtitle: [? if west_relation < 5 : 서유럽 국가들과의 관계가 충분히 좋지 않습니다. ?] [? if east_relation < 4 : 동유럽 국가들과의 관계가 충분히 좋지 않습니다. ?]
 view-if: reparations <= -2 and eu_progress < 2 and eu = 0
 choose-if: west_relation >= 5 and east_relation >= 4
 on-arrival: eu_progress += 1; west_relation += 1
 
-Forming a "United States of Europe" has long been part of the Social Democratic foreign program. Finally, we are taking steps towards it. Given our positive relations with the other countries of Europe, we can begin to hold multilateral negotiations for more European federalism. It will take time to hammer out the exact shape of this future "European Union", however.
+“유럽 합중국” 건설은 오랫동안 사회민주당 외교 강령의 일부였습니다. 드디어 우리는 그를 향한 첫 발걸음을 내딛습니다. 다른 유럽 국가들과의 긍정적인 관계를 바탕으로, 더 강력한 유럽 연방주의를 위한 다자간 협상을 시작할 수 있습니다. 하지만 이 미래의 "유럽 연합"의 정확한 형태를 구체화하는 데는 시간이 걸릴 것입니다.
 
 
 @european_union_2
-title: We can sign a treaty to form a European Union!
+title: 유럽 연합 결성을 위한 조약에 서명할 수 있다!
 view-if: west_relation >= 5 and east_relation >= 4 and eu_progress >= 2 and eu = 0
 on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 5*(1-dissent); rural_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1; economic_growth += 1; economic_growth += 1 if economic_growth < 3
 max-visits: 1
 achievement: eu
 
-Along with France, Great Britain, and many other states of Western and Eastern Europe, we have signed a treaty to form a European Union! It is hoped that Europe has learned the lessons of the Great War; never again will there be another war that tears the continent apart.
+프랑스, 영국 및 다른 많은 서유럽, 동유럽 국가들과 함께 우리는 유럽 연합을 결성하는 조약에 서명했습니다! 유럽이 대전쟁의 교훈을 배워, 다시는 대륙을 분열시키는 전쟁이 일어나지 않기를 바랍니다.
 
-A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for German products and new sources of investment.
+연합의 주요 내용은 유럽 국가 간 인적·물적 이동의 자유를 보장하고 환율을 안정시키는 것입니다. 이는 독일 제품에 새로운 시장을 제공하고 새로운 투자처를 열어줍니다.
 
-Fascist Italy remains a problem, and the Soviet Union also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.
+파시스트 이탈리아는 여전히 문제로 남아 있으며, 소련 역시 이 체제 밖에 있습니다. 하지만 지금으로서는 대륙 전체에 평화와 번영에 대한 새로운 희망이 싹트고 있습니다.
