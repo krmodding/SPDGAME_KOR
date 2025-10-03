@@ -8,9 +8,9 @@ on-arrival: month_actions += 1; reichsbanner_timer += 6; rb_militarization_cost 
 max-visits: 6
 #subtitle: Paramilitary organizing in defense of the republic.
 
-= Reichsbanner
+= 국기단
 
-The *Reichsbanner Schwarz-Rot-Gold* is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the SPD, Center, and [+ ddp_name +], but by far the largest component is with the SPD.
+*흑적금 국기단*은 공화국을 위협하는 극단주의자들로부터 공화국을 수호하기 위한 대중 조직입니다. 어떤 이들은 이를 준군사조직이라고 부르기도 하지만, 현재로서는 군대와는 거리가 멉니다. 공식적으로는 사민당(SPD), 중앙당, [+ ddp_name +] 등 민주주의 수호 정당들과 연계되어 있지만, 실제 구성원의 압도적 다수는 사민당원입니다.
 
 [? if workers_spd < 46 or workers_spd < workers_nsdap or workers_spd < workers_kpd : The Reichsbanner is having a more difficult time recruiting, as the SPD is no longer the dominant party among the workers. Many of its members have left. ?]
 

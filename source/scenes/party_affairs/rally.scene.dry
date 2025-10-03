@@ -9,12 +9,12 @@ go-to: main_rally; sa_disrupt if sa_strength > 180 and not sa_banned and not ret
 
 @sa_disrupt
 
-The Nazi SA has disrupted our rally! Their street troops are preventing us from meeting.
+나치 돌격대가 우리 집회를 방해했습니다! 그들의 거리 부대가 우리가 모이는 것을 막고 있습니다.
 
-- @police_protect: Call the police to protect our rally.
-- @rb_protect: Use the Reichsbanner to protect our rally.
-- @both_protect: The police and Reichsbanner should work together to protect our rally.
-- @cancel: Cancel the rally.
+- @police_protect: 경찰에 집회 보호를 요청한다.
+- @rb_protect: 국기단을 동원해 우리 집회를 보호한다.
+- @both_protect: 경찰과 국기단이 협력하여 우리 집회를 보호해야 한다.
+- @cancel: 집회를 취소한다.
 
 @police_protect
 view-if: spd_prussia == 1
@@ -24,12 +24,12 @@ go-to: police_protect_win if police_protect_success >= 0; police_protect_lose if
 @police_protect_win
 go-to: main_rally
 
-The police successfully protected our rally, so it can go ahead as usual.
+경찰이 성공적으로 우리 집회를 보호하여, 예정대로 진행될 수 있습니다.
 
 @police_protect_lose
 on-arrival: strife += 1; workers_nsdap += 3
 
-Unfortunately, the police were unable or unwilling to hold back the SA mob. The Nazis have won this show of strength.
+안타깝게도 경찰은 나치 돌격대의 폭동을 막지 못했거나 막을 의지가 없었습니다. 이번 힘겨루기에서는 나치가 승리했습니다.
 
 @rb_protect
 on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy; strife += 1
@@ -38,84 +38,84 @@ go-to: rb_protect_win if rb_success >= 0; rb_protect_lose if rb_success < 0
 @rb_protect_win
 go-to: main_rally
 
-The Reichsbanner has successfully protected our rally against the SA! Our meeting can go ahead as usual.
+국기단이 돌격대로부터 성공적으로 우리 집회를 보호했습니다! 예정대로 모임을 계속할 수 있습니다.
 
 @rb_protect_lose
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
-Unfortunately, the Reichsbanner was not able to hold back the SA mob. The Nazis have won this show of strength.
+안타깝게도 국기단은 돌격대의 폭력배들을 막아내지 못했습니다. 이번 힘겨루기에서는 나치가 이겼습니다.
 
 @both_protect
 view-if: spd_prussia
 choose-if: prussian_police_training > 0
-unavailable-subtitle: The loyal sections of the police have never coordinated with the Reichsbanner before.
+unavailable-subtitle: 경찰 내 충성파는 이전까지 국기단과 협력해 본 적이 없습니다.
 on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy + prussian_police_loyalty*prussian_police_militancy*prussian_police_strength*2; strife += 1
 go-to: both_protect_win if rb_success >= 0; both_protect_lose if rb_success < 0
 
 @both_protect_win
 go-to: main_rally
 
-The police and Reichsbanner have successfully protected our rally against the SA! Our meeting can go ahead as usual.
+경찰과 국기단이 힘을 합쳐 돌격대로부터 성공적으로 우리 집회를 보호했습니다! 예정대로 모임을 계속할 수 있습니다.
 
 @both_protect_lose
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
-Unfortunately, the police and Reichsbanner were not able to hold back the SA mob. The Nazis have won this show of strength.
+안타깝게도 경찰과 국기단은 돌격대의 폭도들을 막아내지 못했습니다. 이번 힘겨루기에서는 나치가 승리했습니다.
 
 
 @cancel
 on-arrival: workers_nsdap += 3;
 
-The SA have won this show of strength.
+이번 힘겨루기에서는 돌격대가 이겼습니다.
 
 @main_rally
 
-Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
+대규모 집회는 사회민주당의 일상에서 흔한 모습이며, 특히 선거를 앞두고 더욱 그렇습니다. 이번 집회의 주된 주제는 무엇입니까?
 
-- @class_struggle: The class struggle of the proletariat against the bourgeoisie.
-- @welfare: Sozialpolitik - the maintenance and expansion of social welfare programs.
-- @democracy: Expanding our nascent democracy and defending it against dictatorship and fascism.
-- @pacifism: Opposing war, nationalism, and militarism at all costs.
-- @wtb: Support the WTB plan!
-- @local: A mixture of various local and national concerns that resonate most with the audience.
+- @class_struggle: 부르주아에 맞선 프롤레타리아의 계급 투쟁.
+- @welfare: 사회 정책(Sozialpolitik) - 사회 복지 프로그램의 유지 및 확대.
+- @democracy: 우리의 신생 민주주의를 확장하고 독재와 파시즘으로부터 수호하자.
+- @pacifism: 어떤 희생을 치르더라도 전쟁, 민족주의, 군국주의에 반대한다.
+- @wtb:  WTB 계획을 지지하자!
+- @local: 청중에게 가장 큰 공감을 불러일으키는 다양한 지역 및 국가적 현안의 조합.
 - @easy_discard
 
 @class_struggle
 on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2;
 
-Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
+우리의 계급 투쟁 메시지는 노동계급 좌파에게는 호소력이 있지만, 중산층을 소외시킬 수 있습니다. [? if nationalization_progress > 0 : 국유화에서의 성과가 우리의 메시지를 뒷받침해주었습니다. ?]
 
 @welfare
 on-arrival: workers_spd += 3*(1-dissent); workers_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;
 
-The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
+개혁주의적 메시지는 사회민주주의의 성과로 혜택을 본 조직 노동자들에게 호소력이 있습니다. [? if welfare > 1 : 복지 확대에서의 우리의 성과 덕분에 이 메시지가 더욱 효과적이 되었습니다. ?]
 
 @democracy
 on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_spd += 4*(1-dissent) if democratization >= 3; unemployed_spd += 3*(1-dissent) if democratization >= 3; pro_republic += 4*(1 - dissent) if democratization >= 3; new_middle_spd += 4*(1-dissent) if democratization >= 3 
 
-Our speakers defend the republican system and rail against the monarchists and authoritarians who threaten it.
+우리 연사들은 공화정을 옹호하며, 이를 위협하는 군주주의자와 권위주의자들을 맹렬히 비판합니다.
 
-[? if democratization < 3 : Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat. ?]
-[? if democratization >= 3 : Since we have consistently made democratization a theme of our campaign, the workers are enthusiastic about our message. ?]
+[? if democratization < 3 : 민주주의에 대한 담론은 보다 현실적인 문제만큼 노동자들을 자극하지는 않습니다. 하지만 이는 바뀔 수 있습니다. 프롤레타리아에게 정치 교육을 제공하는 것도 우리 임무의 일부입니다 ?]
+[? if democratization >= 3 : 우리가 꾸준히 민주화를 선거운동의 주제로 삼았기 때문에, 노동자들은 우리의 메시지에 열광하고 있습니다. ?]
 
 @pacifism
 on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_spd += 4*(1 - dissent) if pacifism >= 3; unemployed_spd += 3*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; new_middle_spd += 4*(1-dissent) if pacifism >= 3
 
-Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War.
+우리 연사들은 군부와 그 밑 빠진 독으로 들어가는 모든 지출을 규탄합니다. 일부 과감한 연사들은 제1차 세계대전을 일으킨 군 엘리트들의 책임에 의문을 제기하기도 합니다.
 
-[? if pacifism < 3 : Given the volume of nationalist indoctrination in our society, it is difficult to argue so vehemently against the military. ?]
-[? if pacifism >= 3 : Since we have consistently made pacifism a theme of our campaign, the workers are enthusiastic about our message. ?]
+[? if pacifism < 3 : 우리 사회에 만연한 민족주의적 세뇌를 고려할 때, 군부에 대해 이토록 격렬하게 반대 주장을 펴기는 어렵습니다. ?]
+[? if pacifism >= 3 : 우리가 꾸준히 평화주의를 선거운동의 주제로 삼았기 때문에, 노동자들은 우리의 메시지에 열광하고 있습니다. ?]
 
 @wtb
 view-if: wtb_adopted = 1
 choose-if: return_to_normalcy = 0
-unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
+unavailable-subtitle: 경제 위기는 이제 대체로 종식되었으며, 대중은 더 이상 이 문제에 관심이 없습니다.
 on-arrival: wtb_support += 1; workers_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); rural_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent);
 
-The WTB plan has become a popular rallying cry for our party. The workers are eager to go back to work, and that is exactly what the plan promises.
+WTB 계획은 우리 당의 인기 있는 집회 구호가 되었습니다. 노동자들은 일터로 돌아가기를 간절히 원하며, 이것이 바로 이 계획이 약속하는 바입니다.
 
 
 @local
 on-arrival: workers_spd += 3*(1-dissent); old_middle_spd += 1*(1-dissent); new_middle_spd += 2*(1-dissent); unemployed_spd += 3*(1-dissent);
 
-Our speakers have gauged the mood and are speaking to the issues that seem to most affect the workers in this moment.
+우리 연사들은 분위기를 파악하고 현재 노동자들에게 가장 큰 영향을 미치는 것으로 보이는 현안에 대해 이야기하고 있습니다.

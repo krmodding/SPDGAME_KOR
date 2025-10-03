@@ -8,17 +8,17 @@ tags: party_affairs
 max-visits: 4
 #subtitle: Can the SPD move beyond the working class?
 
-= Building a People's Party
+= 대중 정당 건설
 
-Contrary to orthodox Marxist predictions, the industrial proletariat is not constantly increasing in size. The rapid growth of the "new middle class" of white-collar workers and the persistence of small farmers and the peasantry confound predictions of a working-class majority.
+정통 마르크스주의의 예측과 달리, 산업 프롤레타리아 계급의 규모는 꾸준히 증가하고 있지 않습니다. 사무직 노동자인 '신중산층’의 급격한 성장과 소농 및 영세농의 잔존은 노동계급이 다수가 될 것이라는 예측을 무색하게 만듭니다.
 
-In order to build a socialist majority, many reformists and neorevisionists are calling for our party to move beyond the urban working class, to embrace the concerns of the middle class, farmers, and women of all classes. We can create a new and inclusive vision of the party that encompasses all people who work for a living, which is almost everyone in the country save the aristocrats and top capitalists.
+사회주의적 다수를 형성하기 위해, 많은 개혁파와 신수정주의자들은 우리 당이 도시 노동계급을 넘어서 중산층, 농민, 그리고 모든 계층 여성들의 관심사를 포용해야 한다고 주장합니다. 귀족과 최상층 자본가를 제외한 나라의 거의 모든 사람, 즉 생계를 위해 일하는 모든 이를 아우르는 새롭고 포용적인 정당의 비전을 창출할 수 있습니다.
 
-- @support_peoples_party: Yes, we must become a people's party!
-- @build_support: We must build additional support before becoming a people's party.
-- @support_peoples_party_hard: Despite strong opposition from the Center and Left factions, we will become a people's party.
-- @no_new_ideas: No, we will always be a party of the working class.
-- @root: Perhaps we can discuss this at a later time.
+- @support_peoples_party: 그래, 우리는 대중 정당이 되어야 한다!
+- @build_support: 대중 정당이 되기 전에 추가적인 지지를 확보해야 한다.
+- @support_peoples_party_hard: 중도파와 좌파의 강한 반대에도 불구하고, 우리는 대중 정당이 될 것이다.
+- @no_new_ideas: 아니, 우리는 언제까지나 노동계급의 정당으로 남을 것이다.
+- @root: 이 문제는 나중에 다시 논의할 수 있을 것 같다.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -26,18 +26,18 @@ In order to build a socialist majority, many reformists and neorevisionists are 
 view-if: (neorevisionist_strength + reformist_strength < left_strength + center_strength) or peoples_party_support < 5
 on-arrival: peoples_party_support += 1; neorevisionist_strength += 5; left_strength -= 5; left_dissent += 5
 
-Within our party, we are pushing forward proposals for a people's party against the Left and Center.
+당내에서 우리는 좌파와 중도파의 반대에 맞서 대중 정당으로의 전환 제안을 추진하고 있습니다.
 
 
 @support_peoples_party
 choose-if: (neorevisionist_strength + reformist_strength >= left_strength + center_strength) and peoples_party_support >= 4
-unavailable-subtitle: The opposition is too strong.
+unavailable-subtitle: 반대가 너무 강합니다.
 on-arrival: neorevisionist_strength += 15; reformist_strength += 15; neorevisionist_dissent -= 10; reformist_dissent -= 10; peoples_party = 1; workers_spd -= 12; rural_spd += 10; new_middle_spd += 10; old_middle_spd += 8; catholics_spd += 8; left_dissent += 25; center_dissent += 20; kpd_relation -= 10; kpd_coalition_dissent += 1; coalition_dissent -= 1; z_relation += 5*(1-dissent); dvp_relation += 5*(1-dissent)
 achievement: volkspartei
 
-In an emergency conference, we have decided to become a people's party that encompasses all of the regular people of Germany, not just the workers and urban poor. The Left and Center claim that our new party platform is a betrayal of our founding principles, a turn away from Marxism towards bourgeois opportunism. Whatever the case, we are now a party representing all of the people, not just the proletariat.
+긴급 전당대회에서, 우리는 노동자와 도시 빈민뿐만 아니라 독일의 모든 평범한 사람들을 아우르는 대중 정당이 되기로 결정했습니다. 좌파와 중도파는 우리의 새로운 강령이 창당 이념을 배반하고 마르크스주의에서 부르주아 기회주의로 돌아선 것이라 비난합니다. 어찌 되었든, 우리는 이제 프롤레타리아뿐만 아니라 모든 국민을 대표하는 정당입니다.
 
-Should we run a new campaign to publicize our new platform?
+우리의 새로운 강령을 알리기 위해 새로운 캠페인을 시작해야 할까요?
 
 - @campaign_workers
 - @campaign_middle
@@ -48,14 +48,14 @@ Should we run a new campaign to publicize our new platform?
 
 
 @support_peoples_party_hard
-subtitle: This will increase dissent.
+subtitle: 이는 당내 반발을 키울 것입니다.
 view-if: (neorevisionist_strength + reformist_strength < left_strength + center_strength) or (peoples_party_support < 4)
 on-arrival: neorevisionist_strength += 10; reformist_strength += 8; peoples_party = 1; workers_spd -= 15; rural_spd += 10; new_middle_spd += 10; old_middle_spd += 8; catholics_spd += 8; left_dissent += 40; center_dissent += 40; kpd_relation -= 10; kpd_coalition_dissent += 1; coalition_dissent -= 1
 achievement: volkspartei
 
-It is an arduous and contentious process, but we have pushed through the proposal to become a people's party. The Left and Center claim that our new party platform is a betrayal of our founding principles, a turn away from Marxism towards bourgeois opportunism. Whatever the case, we are now a party representing all of the people, not just the proletariat.
+험난하고 논쟁적인 과정이었지만, 우리는 대중 정당으로의 전환안을 끝내 통과시켰습니다. 좌파와 중도파는 새 강령이 창당 이념을 배반하고 마르크스주의를 버리고 부르주아 기회주의로 돌아선 것이라 비난합니다. 어쨌든, 우리는 이제 프롤레타리아만이 아닌 모든 국민을 대표하는 정당입니다.
 
-Should we run a new campaign to publicize our new platform?
+우리의 새로운 강령을 알리기 위해 새로운 캠페인을 시작해야 할까요?
 
 - @campaign_workers
 - @campaign_middle
@@ -65,46 +65,46 @@ Should we run a new campaign to publicize our new platform?
 - @campaign_catholics
 
 @campaign_workers
-title: Campaign among the workers, to assuage their doubts about our changes.
+title: 노동자들 사이에서 선거운동을 벌여, 우리의 변화에 대한 의구심을 달랜다.
 on-arrival: workers_spd += 6*(1-dissent);
 
-The workers are still a key part of our constituency, and we must not alienate them in the transformation of our party.
+노동자들은 여전히 우리의 핵심 지지 기반이며, 당의 변화 과정에서 그들을 등지게 해서는 안 됩니다.
 
 @campaign_middle
-title: Campaign among the middle classes.
+title: 중산층 사이에서 선거운동을 벌인다.
 on-arrival: old_middle_spd += 5*(1-dissent); new_middle_spd += 6*(1-dissent)
 
-As a people's party, we represent the employees and small businesspeople of the middle class, and they are becoming receptive to our messages.
+대중 정당으로서 우리는 중산층의 회사원과 자영업자를 대표하며, 그들은 점점 우리의 메시지에 귀를 기울이고 있습니다.
 
 @campaign_rural
-title: Campaign in rural areas.
+title: 농촌 지역에서 선거운동을 벌인다.
 choose-if: rural_policy > 0
-unavailable-subtitle: We have not enacted any rural policies yet.
+unavailable-subtitle: 아직 농촌 관련 정책을 시행하지 않았습니다.
 on-arrival: rural_spd += 7*(1-dissent)
 
-As a people's party, we represent farmers and rural workers as well, and they are becoming receptive to our messages.
+대중 정당으로서 우리는 농민과 농촌 노동자 역시 대표하며, 그들은 점점 우리의 메시지에 반응하고 있습니다.
 
 @campaign_unemployed
-title: Campaign among the unemployed.
+title: 실업자들 사이에서 선거운동을 벌인다.
 on-arrival: unemployed_spd += 6*(1-dissent);
 
-As a people's party, the urban poor are still a key part of our constituency.
+대중 정당으로서, 도시 빈민 또한 여전히 우리의 중요한 지지 기반입니다.
 
 @campaign_women
-title: Campaign among women of all classes.
+title: 모든 계층의 여성들 사이에서 선거운동을 벌인다.
 on-arrival: workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); rural_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent);
 
-As a people's party, we represent women of all classes.
+대중 정당으로서 우리는 모든 계층의 여성을 대표합니다.
 
 @campaign_catholics
-title: Campaign among political Catholics.
+title: 가톨릭 유권자들 사이에서 선거운동을 벌인다.
 on-arrival: catholics_spd += 7*(1-dissent);
 
-Catholics have historically been tied to the Center Party, but there is no reason why our party cannot appeal to them. The Prussian Concordat in particular is a sign of our friendship with Catholicism.
+역사적으로 가톨릭 신자들은 중앙당을 지지해왔지만, 우리 당이 그들에게 어필하지 못할 이유는 없습니다. 특히 프로이센 정교조약은 가톨릭에 대한 우리의 친선을 보여주는 예입니다.
 
 
 @no_new_ideas
 on-arrival: neorevisionist_strength -= 6; neorevisionist_dissent += 5; center_strength += 8; left_strength += 3; peoples_party = 0; peoples_party_support -= 3
 
-The Social Democrats have been and will always be a party of the working class.
+사회민주당은 언제나 노동계급의 정당이었으며, 앞으로도 영원히 그럴 것입니다.
 
