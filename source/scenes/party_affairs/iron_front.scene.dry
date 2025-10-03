@@ -1,4 +1,4 @@
-title: The Iron Front
+title: 강철 전선
 new-page: true
 is-card: true
 view-if: iron_front_formed == 1 and iron_front_timer = 0
@@ -7,51 +7,51 @@ card-image: img/iron_front.png
 frequency: 200
 tags: party_affairs, antifascism
 
-= The Iron Front
+= 강철 전선
 
-The Iron Front is our new antifascist coordination front, consisting of the SPD, the trade unions, and the Reichsbanner. How should we use the Iron Front?
+강철 전선은 사민당, 노동조합, 그리고 국기단으로 구성된 우리의 새로운 반파시즘 연대 조직입니다. 이 강철 전선을 어떻게 활용해야 할까요?
 
-[? if workers_spd < 45 or workers_spd < workers_nsdap or workers_spd < workers_kpd : Unfortunately, the Iron Front's effectiveness is dragged down by the SPD's unpopularity, as the SPD is no longer the dominant party among the workers. Many Reichsbanner members have left, and many workers are not interested. ?]
+[? if workers_spd < 45 or workers_spd < workers_nsdap or workers_spd < workers_kpd : 안타깝게도 사민당이 더 이상 노동자들 사이에서 압도적인 지지를 받는 정당이 아니게 되면서, 당의 낮은 인기 때문에 강철 전선의 효율성도 떨어지고 있습니다. 많은 국기단 단원들이 이탈했고, 노동자들 다수가 무관심합니다. ?]
 
-- @defense: Rally for defense against the fascists with the Reichsbanner.
-- @pacifism: Rally for pacifism, against nationalism and war.
-- @republic: Rally to save the democratic republic against dictatorship.
-- @wtb: Rally for economic change and the WTB-Plan.
+- @defense: 국기단과 함께 파시스트에 맞서 방어를 위한 집회를 연다.
+- @pacifism: 평화주의를 위해, 민족주의와 전쟁에 반대하는 집회를 연다.
+- @republic: 독재에 맞서 민주 공화국을 수호하기 위한 집회를 연다.
+- @wtb: 경제 변화와 WTB 계획을 위한 집회를 연다.
 - @antisemitism
 - @easy_discard
 
 @defense
-subtitle: -[+ rb_militarization_cost +] resources
+subtitle: -[+ rb_militarization_cost +] 자금
 choose-if: resources >= rb_militarization_cost
 on-arrival: resources -= rb_militarization_cost; rb_strength += 50; rb_militancy += 0.05; z_relation -= 5 if historical_mode
 
-The Iron Front rallies for the militant defense of the republic against the fascist paramilitaries, strengthening the Reichsbanner.
+강철 전선은 파시스트 준군사조직에 맞서 공화국을 무장 수호하기 위한 집회를 열어, 국기단을 강화합니다.
 
-[? if historical_mode : The Center Party decries the militarization of the Reichsbanner and Iron Front, and its members are leaving the republican organization. ?]
+[? if historical_mode : 중앙당은 국기단과 강철 전선의 군사화를 규탄하고, 중앙당 소속 단원들이 조직을 탈퇴하고 있습니다. ?]
 
 
 @pacifism
 on-arrival: pacifism += 1; nationalism -= 5 if pacifism >= 3; workers_spd += 5*(1-dissent) if pacifism >= 4; unemployed_spd += 4*(1-dissent) if pacifism >= 4; new_middle_spd += 4*(1-dissent) if pacifism >= 4
 
-The Iron Front rallies against nationalism and war.
+강철 전선은 민족주의와 전쟁에 반대하는 집회를 열었습니다.
 
 @republic
 on-arrival: pro_republic += 5*(1-dissent); democratization += 1; workers_spd += 5*(1-dissent) if democratization >= 4; unemployed_spd += 4*(1-dissent) if democratization >= 4; new_middle_spd += 4*(1-dissent) if democratization >= 4
 
-The Iron Front rallies in defense of the democratic republic and against dictatorship.
+강철 전선은 민주 공화국을 수호하고 독재에 반대하는 집회를 열었습니다.
 
 @wtb
 choose-if: return_to_normalcy = 0
-unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
+unavailable-subtitle: 경제 위기가 이제 대체로 종식되었고, 대중들은 더 이상 그 문제에 관심이 없습니다.
 view-if: wtb_adopted == 1
 on-arrival: workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 3*(1-dissent); rural_spd += 3*(1-dissent);
 
-The WTB-Plan is the rallying point for the entire SPD and its affiliated organizations, including the Iron Front.
+WTB 계획은 강철 전선을 포함한 사민당 전체와 관련 조직들의 구심점입니다.
 
 @antisemitism
-title: Rally against antisemitism and in defense of Jewish Germans.
+title: 반유대주의에 맞서고 유대계 독일인을 보호하기 위한 집회를 연다.
 view-if: confronting_antisemitism > 1
 on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_nsdap -= 4*(1-dissent); unemployed_nsdap -= 4*(1-dissent);
 
 # TODO
-The Nazis and other far-right political movements are increasingly turning their hatred against the Jewish community of Germany. The Iron Front rallies in defense of individual Jews and the broader community against violence.
+나치를 비롯한 극우 정치세력들이 독일에 거주하는 유대인 공동체에 대한 증오를 점점 더 노골적으로 드러내고 있습니다. 강철 전선은 개별 유대인과 공동체 전체를 폭력으로부터 보호하기 위한 집회를 열었습니다.

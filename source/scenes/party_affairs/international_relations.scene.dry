@@ -8,61 +8,61 @@ card-image: img/international.jpg
 max-visits: 4
 #subtitle: Building ties with our fraternal socialist parties.
 
-At the Labor and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
+노동사회주의 인터내셔널에서 우리는 유럽을 비롯한 전 세계의 형제 사회주의 정당들과 관계를 맺을 수 있습니다.
 
-- @fr_uk: Build relationships with the French SFIO and British Labour Party to move their governments in Germany's favor.
-- @austria: Learn organization and street fighting from the Austrian SDAPÖ.
-- @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
-- @comintern: Forget the second international - embed a spy in the Comintern's conference.
-- @america: Contact the Socialist party of America.
-- @return: We do not need international contacts at the moment.
+- @fr_uk: 프랑스 사회당(SFIO) 및 영국 노동당과 관계를 구축하여 그들 정부가 독일에 우호적인 태도를 취하도록 유도한다.
+- @austria: 오스트리아 사회민주노동당(SDAPÖ)으로부터 조직 구성과 시가전 기술을 배운다.
+- @scandi: 스칸디나비아 사회민주주의자들로부터 경제와 개혁의 방향을 배운다.
+- @comintern: 제2 인터내셔널은 잊어라 - 코민테른 회의에 첩자를 잠입시킨다.
+- @america: 미국 사회당과 접촉한다.
+- @return: 현재로서는 국제적인 교류가 필요 없다.
 - @easy_discard
 - @cancel_advisor_action
 
 @fr_uk
-subtitle: -1 resources
+subtitle: 자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자금이 부족합니다.
 on-arrival: resources -= 1; west_relation += 1; reformist_strength += 5; pacifism += 1; moderate_plan_support += 1
 
-The socialists of France and Britain can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
+프랑스와 영국의 사회주의자들은 자국 정부가 독일에 더 우호적인 태도를 보이도록 영향을 미칠 수 있습니다. 이를 통해 우리의 전쟁 배상금 부담이 줄어들기를 기대합니다.
 
 @austria
-subtitle: -1 resources [? if austrian_parliament_seen and not austrian_civil_war_seen: - We will also help the Austrians oppose their dictatorship. ?]
+subtitle: 자금 -1 [? if austrian_parliament_seen and not austrian_civil_war_seen: - 우리는 오스트리아 동지들이 독재에 맞서 싸우는 것도 도울 것입니다. ?]
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자금이 부족합니다.
 audio: shuffle music/communist/workers_of_vienna_normalized.mp3
 on-arrival: left_strength += 5; radicalization += 1; rb_militancy += 0.03; resources -= 1; austria_relation += 1; sdapo_strength += 1 if austrian_parliament_seen = 1
 
-Our Reichsbanner can learn much in paramilitary organization and training from the Austrian Republikanischer Schutzbund (Republican Protection Units), the paramilitary branch of the Austrian social democrats.
+우리의 국기단은 오스트리아 사회민주주의자들의 준군사 조직인 '공화국 수비대'에게서 준군사 조직 구성과 훈련에 대해 많은 것을 배울 수 있습니다.
 
-[? if austrian_parliament_seen and not austrian_civil_war_seen: We are also helping the Austrian Social Democratic Worker's Party build up their resources in preparation for a future struggle, legally and illegally. ?]
+[? if austrian_parliament_seen and not austrian_civil_war_seen: 우리는 또한 오스트리아 사회민주노동당이 합법적, 비합법적 수단을 총동원하여 미래의 투쟁에 대비한 자원을 축적하는 것을 돕고 있습니다 ?]
 
 
 @scandi
-subtitle: -1 resources
+subtitle: 자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자금이 부족합니다.
 on-arrival: reformist_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1
 
-The programs of the Nordic socialists involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
+북유럽 사회주의자들의 정책은 경제에 대한 적극적인 정부 개입을 특징으로 합니다. 우리는 그들의 경제 전략과 노동계급을 넘어 더 넓은 지지층을 확보한 방법에서 배울 점이 많습니다.
 
 @comintern
-subtitle: -1 resources
+subtitle: 자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자금이 부족합니다.
 on-arrival: resources -= 1; kpd_relation += 5*(1-dissent); communist_coalition += 1 if comintern_seen == 0; comintern_seen += 1
 
-The Stalinists of the KPD insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the Communists. By observing the Comintern, we can better understand the KPD, enabling us to potentially improve relations, or counter the KPD if it may come to that.
+공산당 내 스탈린주의자들은 우리를 "사회 파시스트"라고 부르며, 사회민주주의자들이 실제 파시스트와 같거나 더 나쁘다고 주장합니다. 당연하게도, 이는 공산주의자들과의 관계에 전혀 도움이 되지 않습니다. 코민테른을 관찰함으로써 우리는 공산당을 더 잘 이해하게 되어 관계 개선의 실마리를 찾거나, 필요하다면 공산당에 대응할 수 있게 될 것입니다.
 
 @america
-subtitle: -1 resources
+subtitle: 자금 -1
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자금이 부족합니다.
 on-arrival: resources -= 1
 
-The Socialist Party of America is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
+미국 사회당은 규모가 작고 지지 기반이 미미합니다. 우리가 그들을 위해 해줄 수 있는 것도 별로 없고, 반대로 그들이 우리를 위해 해줄 수 있는 것도 거의 없습니다.
 
 @reduce
 
-We do not need the international contacts at the moment.
+지금은 국제적인 교류가 필요하지 않습니다.

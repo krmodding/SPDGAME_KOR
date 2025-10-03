@@ -8,25 +8,25 @@ tags: party_affairs
 frequency: 400
 max-visits: 1
 
-= Neorevisionism: A New Idea
+= 신수정주의: 새로운 사상
 
-Several young socialists, led by Carlo Mierendorff, are calling for a "new revisionism" in response to the Nazi threat. This political tendency calls for a mass movement in favor of democracy in order to counter the Nazi and Communist movements, and to update our rhetoric and imagery to appeal to emotion and not just reason.
+카를로 미렌도르프가 이끄는 몇몇 젊은 사회주의자들이 나치의 위협에 대응하여 "신수정주의"를 주창하고 있습니다. 이 정치적 흐름은 나치와 공산주의 운동에 맞서기 위해 민주주의를 지지하는 대중 운동을 촉구하며, 이성뿐만 아니라 감성에도 호소할 수 있도록 우리의 수사와 상징을 현대화할 것을 요구합니다.
 
-#- @shuffle_leadership: It's time to change our advisors to take into account new ideas.
-- @support_neo: Support the neorevisionist movement.
-- @no_new_ideas: We don't need new ideas.
+#- @shuffle_leadership: 새로운 사상을 받아들이기 위해 지도부를 개편할 때이다.
+- @support_neo: 신수정주의 운동을 지지한다.
+- @no_new_ideas: 새로운 사상은 필요 없다.
 - @easy_discard
 
 @support_neo
 on-arrival: neorevisionist_strength += 10; nazi_urgency += 1; neorevisionism = 1; peoples_party_support += 1
 
-We support the new leaders, and start using new-style propaganda techniques in our campaigns. The results are uncertain so far...
+우리는 새로운 지도자들을 지지하며, 선거운동에 새로운 방식의 선전 기술을 도입하기 시작합니다. 결과는 아직 불확실합니다…
 
-- @shuffle_leadership: We should use this opportunity to change the party's leadership.
-- @root: Continue...
+- @shuffle_leadership: 이 기회를 빌어 당 지도부를 교체해야 합니다.
+- @root: 계속하기…
 
 
 @no_new_ideas
 on-arrival: neorevisionist_strength -= 5; center_strength += 5; neorevisionism = -1
 
-We do not need these new ideas; they seem to imitate too closely those of the Nazis and Communists.
+이런 새로운 사상은 필요 없습니다. 나치와 공산주의자들의 방식을 너무나도 빼닮은 것 같습니다.
