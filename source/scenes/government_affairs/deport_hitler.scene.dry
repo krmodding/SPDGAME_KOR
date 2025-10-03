@@ -1,23 +1,23 @@
 title: 히틀러 추방
-subtitle: He is a foreign citizen and a criminal, after all.
-unavailable-subtitle: [? if judicial_reform < 2 : Unfortunately, the reactionary judiciary will not cooperate. ?] [? if presidential_election_seen == 1 : Hitler has already been made a citizen of Germany, in the run-up to the presidential election. ?] [? if not spd_prussia : We cannot do this without the cooperation of the Prussian police, who are not currently in our control. ?]
+subtitle: 어쨌든 그는 외국인이며 범죄자입니다.
+unavailable-subtitle: [? if judicial_reform < 2 : 안타깝게도, 반동적인 사법부는 협조하지 않을 것입니다. ?] [? if presidential_election_seen == 1 : 히틀러는 이미 대통령 선거를 앞두고 독일 시민권을 취득했습니다. ?] [? if not spd_prussia : 현재 우리가 통제하고 있지 않은 프로이센 경찰의 협조 없이는 이 일을 할 수 없습니다. ?]
 view-if: nazi_urgency >= 3 and hitler_deported = 0 and chancellor != "Papen" and chancellor != "Schleicher" and investigate_far_right >= 2
 choose-if: judicial_reform >= 2 and presidential_election_seen == 0 and spd_prussia == 1
 
-Is it really that simple? Won't his supporters react violently to this suggestion? And even if the deportation does succeed, won't he just re-enter the country, or perhaps organize from Austria? And, some people consider this to be an anti-democratic abuse of power, using the law in order to target a political opponent.
+정말 그렇게 간단할까요? 그의 지지자들이 이 제안에 폭력적으로 반응하지 않을까요? 설령 추방에 성공한다 해도, 그가 그저 재입국하거나 오스트리아에서 세력을 조직하지는 않을까요? 게다가, 일부에서는 이를 정치적 상대를 겨냥하기 위해 법을 악용하는 반민주적인 권력 남용으로 여깁니다.
 
-- @deport: Deport him!
-- @no_deport: No, we must not.
+- @deport: 그를 추방한다!
+- @no_deport: 안 돼, 우리는 그래선 안 된다.
 
 @deport
 go-to: deport_violence if sa_strength >= 200; deport_success if sa_strength < 200
 
 @deport_violence
 
-When the police approach, he is surrounded by his SA guards, preventing him from being extricated! We can attempt to force a confrontation, but that may have negative consequences. The Reichsbanner may also attempt to draw off the SA.
+경찰이 접근하자, 그는 자신의 돌격대(SA) 경호원들에게 둘러싸여 있어 연행이 불가능했습니다! 강제 연행을 시도할 수도 있지만, 부정적인 결과를 낳을 수 있습니다. 국기단이 돌격대의 주의를 끄는 것을 시도할 수도 있습니다.
 
-- @force_approach: Force the approach!
-- @no_deport: Cancel the deportation.
+- @force_approach: 강제로 집행한다!
+- @no_deport: 추방을 취소한다.
 
 @force_approach
 on-arrival: {!
@@ -37,25 +37,25 @@ go-to: force_fail if deportation_success == 0; force_success if deportation_succ
 @force_fail
 on-arrival: sa_strength += 50; workers_nsdap += 5; unemployed_nsdap += 5; new_middle_nsdap += 5; old_middle_nsdap += 5; rural_nsdap += 5; coup_progress += 3
 
-Unfortunately, our forces fail to disloge the SA from their positions surrounding Hitler. He is seen as both a strong and powerful leader and a victim, further reinforcing his image. The Nazis are left stronger than ever.
+안타깝게도, 우리 병력은 히틀러를 둘러싼 돌격대를 몰아내는 데 실패했습니다. 그는 강하고 강력한 지도자인 동시에 희생자로 비춰져 그의 이미지는 더욱 강화되었습니다. 나치는 그 어느 때보다 강력해졌습니다.
 
 @force_success
 on-arrival: hitler_deported = 1; sa_strength = sa_strength/2; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; unemployed_nsdap -= 10; sa_banned = 1; coup_progress -= 2; nsdap_leader = "Goebbels"
 achievement: deport_hitler
 
-The confrontation ends with the police and Reichsbanner prevailing, capturing Hitler so he can be deported! This is a sign of weakness, and his physical distance makes organizing difficult, impeding the Nazi effort to win more votes.
+충돌은 경찰과 국기단의 승리로 끝나, 히틀러를 체포하여 추방 절차를 밟을 수 있게 되었습니다! 이는 약함의 징조이며, 그의 물리적 부재는 조직 활동을 어렵게 만들어 나치가 더 많은 표를 얻는 데 차질을 빚게 합니다.
 
-In Hitler's absence, Joseph Goebbels has become the temporary leader of the Nazi party, with substantial influence from Hermann Göring.
+히틀러가 없는 동안, 요제프 괴벨스가 헤르만 괴링의 상당한 영향력 하에 나치당의 임시 지도자가 되었습니다.
 
 @deport_success
 on-arrival: hitler_deported = 1; sa_strength = sa_strength/2; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; unemployed_nsdap -= 10; coup_progress -= 2; nsdap_leader = "Goebbels"
 achievement: deport_hitler
 
-Somehow, the plan worked! There was minimal resistance to Hitler's deportation. This is a sign of weakness, and his physical distance makes organizing difficult, impeding the Nazi effort to win more votes.
+ 어떻게 된 일인지 계획이 성공했습니다! 히틀러의 추방에 대한 저항은 거의 없었습니다. 이는 약함의 징조이며, 그의 물리적 부재는 조직 활동을 어렵게 만들어 나치가 더 많은 표를 얻는 데 차질을 빚게 합니다.
 
-In Hitler's absence, Joseph Goebbels has become the temporary leader of the Nazi party, with substantial influence from Hermann Göring.
+히틀러가 없는 동안, 요제프 괴벨스가 헤르만 괴링의 상당한 영향력 하에 나치당의 임시 지도자가 되었습니다.
 
 @no_deport
 go-to: root
 
-We will not be deporting Hitler.
+우리는 히틀러를 추방하지 않을 것입니다.

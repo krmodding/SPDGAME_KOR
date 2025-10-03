@@ -7,51 +7,51 @@ card-image: img/portraits/BaadeFritz.jpg
 tags: govt_affairs, cabinet
 #subtitle: Issues of farmer financing, grain purchasing, and land reform.
 
-= Agricultural Policy
+= 농업 정책
 
-While agricultural policy has historically not been the domain of the SPD, there is much need for policy in this area. Our urban constituencies hope for cheaper and more stable food supplies, while small farmers need economic relief. There is also the movement for land reform, to break up the large aristocratic estates and redistribute land to peasants.
+역사적으로 농업 정책은 사민당의 주된 분야가 아니었지만, 현재 이 분야에 대한 정책이 시급합니다. 우리 지지 기반인 도시 유권자들은 더 저렴하고 안정적인 식량 공급을 바라고 있으며, 소농들은 경제적 구제를 필요로 합니다. 더불어 대규모 귀족 영지를 해체하여 농민에게 토지를 재분배하자는 토지 개혁 운동도 일어나고 있습니다.
 
 - @land_reform
 - @agricultural_finance
 - @pro_consumer
 - @state_buyer
-- @root: Do not enact any policies for now.
+- @root: 지금은 어떤 정책도 시행하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @land_reform
-title: Land Reform
-subtitle: -1 budget - Break up the large aristocratic estates and give land to landless workers.
-unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?] [? if judicial_reform < 2 : The judiciary would never allow this. ?]
+title: 토지 개혁
+subtitle: 예산 -1 - 대규모 귀족 영지를 해체하고 토지가 없는 노동자들에게 토지를 분배한다.
+unavailable-subtitle: [? if budget <= 0 : 예산 1이 필요합니다. ?] [? if judicial_reform < 2 : 사법부가 이 조치를 결코 용납하지 않을 것입니다. ?]
 choose-if: judicial_reform >= 2 and budget > 0
 on-arrival: budget -= 1; land_reform += 1; coalition_dissent += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; dvp_relation -= 5; z_relation -= 4; left_strength += 8; left_dissent -= 5; rural_sol += 3; rural_policy += 1; coup_progress += 1; agriculture_goal_completed += 1;
 max-visits: 4
 
-With our policy of land reform, we are acquiring farmland from large estates, and giving the land to farmworkers' associations and small peasants. In essence, this brings class struggle to the countryside, breaking the semi-feudal property relations present in East Prussia and other areas with large estates. The bourgeois parties and large farmers despise our intrusion into the sacredness of private property, while leftists are cautiously optimistic.
+토지 개혁 정책을 통해 우리는 대규모 영지로부터 농지를 확보하여 농업 노동자 조합과 소농들에게 분배하고 있습니다. 이는 본질적으로 농촌에 계급 투쟁을 도입하여, 동프로이센 및 기타 대영지 지역에 존재하는 반봉건적 소유 관계를 타파하는 것입니다. 부르주아 정당들과 대지주들은 사유 재산의 신성함을 침해하는 우리의 조치를 경멸하지만, 좌파들은 조심스러운 낙관론을 보이고 있습니다.
 
 
 @agricultural_finance
-title: Agricultural Financing
-subtitle: -1 budget - Increase financing for agricultural credit and insurance.
+title: 농업 금융 지원
+subtitle: 예산 -1 - 농업 신용 및 보험 금융 지원을 확대한다.
 choose-if: budget >= 1
 on-arrival: budget -= 1; agricultural_finance += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); peoples_party_support += 1; center_dissent += 5; left_dissent += 4; rural_sol += 4; rural_policy += 1; economic_growth += 0.2;
 
-We have increased financial support for small farmers, providing access to credit and insurance, saving them from privation. The left and center of our party are opposed to our rural policy, seeing these policies as giveaways to petit-bourgeois farmers.
+우리는 소농에 대한 재정 지원을 확대하여, 신용과 보험에 대한 접근성을 높여 그들을 곤경에서 구했습니다. 당내 좌파와 중도파는 이러한 정책들이 소부르주아 농민들을 위한 선심성 정책에 불과하다며 우리의 농촌 정책에 반대하고 있습니다.
 
 
 @pro_consumer
-title: Food Procurement
-subtitle: -1 budget - Provide inexpensive food for workers.
+title: 식량 조달 정책
+subtitle: 예산 -1 - 노동자들에게 저렴한 식량을 공급한다.
 choose-if: budget >= 1
 on-arrival: budget -= 1; pro_consumer += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); workers_sol += 4; coalition_dissent += 1 if black_thursday_seen; economic_growth += 0.2;
 
-We have increased state purchasing of food staples to provide to urban workers and the poor. This benefits workers more than it benefits farmers, as we are negotiating for lower purchase prices. [? if black_thursday_seen and (in_weimar_coalition or in_grand_coalition) : Our coalition partners consider this policy to be a wasteful handout. ?]
+우리는 도시 노동자와 빈민에게 공급하기 위해 주요 식량의 국가 매입을 확대했습니다. 더 낮은 매입 가격을 협상하기 때문에, 이 정책은 농민보다 노동자에게 더 큰 혜택을 줍니다. [? if black_thursday_seen and (in_weimar_coalition or in_grand_coalition) : 우리의 연정 파트너들은 이 정책을 낭비적인 선심성 지원으로 간주합니다. ?]
 
 @state_buyer
-title: State Buyer
-subtitle: -2 budget - Create a state monopoly for grain purchases, guaranteeing prices for farmers and stable prices for consumers. [? if judicial_reform < 2 : The judiciary would never allow this. ?]
+title: 국가 곡물 매입 독점
+subtitle: 예산 -2 - 곡물 매입을 위한 국가 독점 기관을 창설하여, 농민에게는 가격을 보장하고 소비자에게는 안정적인 가격을 제공한다. [? if judicial_reform < 2 : 사법부가 이 조치를 결코 용납하지 않을 것입니다. ?]
 choose-if: budget >= 2 and judicial_reform >= 2
 on-arrival: budget -= 2; state_buyer = 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); workers_spd += 4*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); dvp_relation -= 5; z_relation -= 3; peoples_party_support += 1; rural_policy += 2; capital_strike_progress += 1; economic_growth += 0.4;
 max-visits: 1
 
-Our new purchasing agency guarantees fair prices for farmers, while also providing lower food prices for workers and the urban poor. This policy necessitates heavy spending and an unprecedented level of state intervention in the economy, raising the ire of conservative economists.
+새로 설립된 매입 기관은 농민에게는 공정한 가격을 보장하고, 동시에 노동자와 도시 빈민에게는 더 낮은 식량 가격을 제공합니다. 이 정책은 막대한 지출과 전례 없는 수준의 국가 경제 개입을 필요로 하여 보수적인 경제학자들의 분노를 사고 있습니다.

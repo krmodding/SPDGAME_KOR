@@ -7,42 +7,42 @@ view-if: spd_in_government = 1 and coalition_dissent >= 1 and coalition_affairs_
 card-image: img/muller_cabinet.jpg
 #subtitle: There is dissent within our coalition.
 
-= Coalition Affairs
+= 연정 문제 관리
 
-Our coalition is in trouble. The right-leaning members of the Center [? if in_grand_coalition: and DVP ?] are constantly criticizing us for our policies, and are threatening to call a vote of no confidence to collapse this government[? if spd_prussia :, or to do the same for our government in the state of Prussia ?].
+우리 연정이 위기에 처했습니다. 중앙당과 [? if in_grand_coalition: 독일인민당(DVP) ?]의 우파 인사들은 끊임없이 우리의 정책을 비판하며, 내각 불신임 투표를 발의하여 이 정부를 무너뜨리겠다고 위협하고 있습니다. [? if spd_prussia :아니면 프로이센 주 정부에 대해서도 똑같이 하겠다고 합니다 ?].
 
-How do we reduce tensions with the coalition?
+연정과의 긴장을 어떻게 완화해야 할까요?
 
-- @promise_cuts: Agree to the bourgeois plans to cut welfare.
-- @resources: Use our party resources to support our allies.
-- @bring_down: Instead, we will bring down the government with a no-confidence vote, and call for new elections.
-- @no_change: Take none of these actions.
+- @promise_cuts: 부르주아 정당의 복지 삭감 계획에 동의한다.
+- @resources: 우리 당의 자금을 사용하여 연정 파트너를 지원한다.
+- @bring_down: 차라리, 우리가 불신임 투표로 정부를 무너뜨리고 새 선거를 요구한다.
+- @no_change: 어떠한 조치도 취하지 않는다..
 - @easy_discard
 
 
 @promise_cuts
 on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 5; welfare -= 1; budget += 1; coalition_dissent = 0
 
-Fine. By cutting welfare, we have reduced dissent within the coalition.
+좋습니다. 복지 지출을 삭감함으로써 연정 내의 불만을 줄였습니다.
 
 @resources
-subtitle: -2 resources
+subtitle: 자금 -2
 view-if: historical_mode = 0
-unavailable-subtitle: Not enough resources (need 2).
+unavailable-subtitle: 자금 부족 (2 필요).
 choose-if: resources >= 2
 on-arrival: resources -= 2; coalition_dissent -= 1
 
-By transferring campaign funds to our coalition partners, we can make our policies more acceptable to them. Some would call this corruption, but perhaps it is necessary to save democracy.
+연정 파트너들에게 선거 자금을 지원함으로써, 그들이 우리의 정책을 더 쉽게 받아들이도록 만들 수 있습니다. 누군가는 이를 부패라고 부를 수도 있겠지만, 민주주의를 구하기 위해서는 어쩔 수 없는 일일지도 모릅니다.
 
 @no_change
 
-No. We will not do this.
+안 됩니다. 우리는 그렇게 하지 않겠습니다.
 
 @bring_down
-subtitle: Bring down this government before our opponents do.
+subtitle: 정적들이 손쓰기 전에 이 정부를 무너뜨린다.
 on-arrival: spd_in_government = 0; in_grand_coalition = 0; in_weimar_coalition = 0; chancellor = "Brüning"; chancellor_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 5; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 5
 
-We have called for a vote of no confidence in ourselves, and have brought down this government. Chancellor [+ chancellor +] currently rules as acting chancellor.
+우리는 우리 자신에 대한 불신임안을 발의하여 현 정부를 무너뜨렸습니다. 현재는 [+ chancellor +] 총리가 총리 대행을 맡고 있습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+새 선거는 [+ next_election_year +]년 [+ next_election_month : month +]월로 정해졌습니다.
 

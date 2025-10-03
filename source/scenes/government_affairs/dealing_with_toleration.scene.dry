@@ -1,4 +1,4 @@
-title: 신임공급
+title: 묵인 협정
 new-page: true
 is-card: true
 card-image: img/portraits/BrüningHeinrich.jpg
@@ -7,78 +7,78 @@ on-arrival: dealing_with_toleration_timer += 6; month_actions += 1
 tags: govt_affairs
 #subtitle: Despite not being in government, we can still provide support.
 
-= Dealing with Toleration
+= 묵인 협정 다루기
 
-We are currently acting as external support to the government of Chancellor [+ chancellor +]. How should we use our position?
+우리는 현재 [+ chancellor +] 총리가 이끄는 정부를 외부에서 지원해주고 있습니다. 이 입지를 어떻게 활용해야 할까요?
 
 - @break_toleration
 - @urge_against_austerity
 - @improve_relations
 - @new_grand_coalition
-- @stay_course: Stay the course, for stability's sake.
+- @stay_course: 안정을 위해 현재 노선을 유지한다.
 - @easy_discard
 
 @break_toleration
 view-if: not constructive_vonc
-title: End the toleration agreement with a vote of no confidence!
+title: 불신임 투표로 묵인 협정을 끝낸다!
 
-Are we sure about this? A vote of no confidence would trigger new elections, and potentially an increased vote-share for the extremist parties.
+정말 확실합니까? 불신임은 새 선거로 이어질 것이며, 극단주의 정당들의 득표율만 높여줄 수 있습니다.
 
-- @vonc: Yes, end this arrangement!
-- @stay_course: No, we should stay the course.
+- @vonc: 그래, 이 협정을 끝내자!
+- @stay_course: 아니, 현 상태를 유지해야 한다.
 
 @vonc
 on-arrival: spd_in_government = 0; spd_toleration = 0; in_grand_coalition = 0; chancellor = "Brüning"; chancellor_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 5; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 5; left_dissent -= 5
 
-We have called for a vote of no confidence, and have brought down this government. Chancellor [+ chancellor +] currently rules as acting chancellor.
+우리는 불신임안을 발의하여 현 정부를 무너뜨렸습니다. 현재는 [+ chancellor +] 총리가 총리 대행을 맡고 있습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+새 선거는 [+ next_election_year +]년 [+ next_election_month : month +]월로 정해졌습니다.
 
 @urge_against_austerity
-title: Urge the coalition against austerity politics, and to increase social spending.
+title: 연정에 긴축 정책 중단과 사회 지출 확대를 촉구한다.
 choose-if: budget >= 1
-unavailable-subtitle: This can only happen with a budget surplus.
+unavailable-subtitle: 이는 예산 흑자가 있을 때만 가능합니다.
 go-to: urge_success if dvp_relation >= 30 and z_relation >= 40; urge_failure if dvp_relation < 30 or z_relation < 40
 
 @urge_success
 on-arrival: welfare += 1; budget -= 1; workers_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); z_relation -= 3; dvp_relation -= 3; reformist_dissent -= 5; center_dissent -= 5; labor_dissent -= 5;
 
-We have successfully urged the coalition parties to increase social spending! Unfortunately, the center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
+우리는 연정 파트너들에게 사회 지출을 늘리도록 성공적으로 촉구했습니다! 하지만 불행하게도 중도우파 정당들은 점차 우리를 귀찮은 존재로 여기게 되어, 이 협상을 계속 이어가려 하지 않을 수도 있습니다.
 
 @urge_failure
 on-arrival: z_relation -= 3; dvp_relation -= 3
 
-Unfortunately, our negotiations have met with failure. The center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
+안타깝게도, 우리의 협상은 실패했습니다. 중도우파 정당들은 점차 우리를 귀찮은 존재로 여기게 되어, 이 협상을 계속 이어가려 하지 않을 수도 있습니다.
 
 
 @improve_relations
-title: Improve relations with the parties of the coalition.
+title: 연정 파트너 정당들과의 관계를 개선한다.
 on-arrival: z_relation += 5*(1-dissent); dvp_relation += 4*(1-dissent); left_dissent += 5;
 
-We have increased our level of contact and discussions with the parties of the coalition, primarily the Center Party and DVP.
+우리는 연정 파트너인 중앙당과 독일인민당(DVP)을 중심으로 접촉과 논의를 확대했습니다.
 
-Our attempts to reach out to the center-right are met with disdain by leftists within our party.
+중도우파와 교류하려는 우리의 시도는 당내 좌파들로부터 경멸을 받고 있습니다.
 
 
 
 
 @new_grand_coalition
-title: Can we join the government in a new grand coalition?
+title: 우리가 새로운 대연정에 참여하여 정부에 합류할 수 있을까?
 view-if: neo_weimar_coalition >= 50
 choose-if: z_relation >= 50 and dvp_relation >= 30 and resources >= 2
-subtitle: We will need 2 resources to smooth out the process of forming the coalition.
-unavailable-subtitle: [? if z_relation < 50 : We do not have adequate relations with the Center Party. ?][? if dvp_relation < 30 : We do not have adequate relations with the DVP. ?] [? if resources < 2 : We do not have enough resources. ?]
+subtitle: 연정 구성 과정을 원활하게 하기 위해 자금 2가 필요합니다.
+unavailable-subtitle: [? if z_relation < 50 : 중앙당과의 관계가 충분히 좋지 않습니다. ?][? if dvp_relation < 30 : 독일인민당(DVP)과의 관계가 충분히 좋지 않습니다. ?] [? if resources < 2 : 자금이 부족합니다. ?]
 on-arrival: resources -= 2; spd_in_government = 1; in_grand_coalition = 1; spd_toleration = 0; left_dissent += 6; reformist_strength += 5; leverage = 20 if leverage >= 20
 achievement: constitutional_coalition
 
-Our negotiations have succeeded, and the Center Party and DVP have agreed to form a new coalition government with us!
+우리의 협상은 성공했으며, 중앙당과 독일인민당(DVP)은 우리와 새로운 연립 정부를 구성하는 데 합의했습니다!
 
-We are now part of a "constitutional coalition" government that includes all parties except the extremists of the KPD, DNVP, and NSDAP. [+ chancellor +] will remain as chancellor. Leftists in our party are skeptical of this arrangement.
+우리는 이제 공산당(KPD), 독일국민당(DNVP), 나치당(NSDAP) 같은 극단주의 정당을 제외한 모든 정당이 참여하는 '헌법 수호 연정’의 일원이 되었습니다. [+ chancellor +]가 총리직을 계속 맡을 것입니다. 당내 좌파들은 이 연정에 대해 회의적인 시각을 보이고 있습니다.
 
-- @election_1928.ministries: Now, we must select our ministries.
+- @election_1928.ministries: 이제, 우리가 맡을 부처를 선택해야 합니다.
 
 
 
 @stay_course
 
-We will stay the course of toleration, for the sake of stability.
+안정을 위해, 우리는 현재의 묵인 협정을 계속 유지할 것입니다.
