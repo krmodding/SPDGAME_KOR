@@ -5,40 +5,40 @@ card-image: img/portraits/MüllerHermann.jpg
 new-page: true
 view-if: muller_advisor = 1
 
-= Herman Müller
+= 헤르만 뮐러
 
 
-뮐러는 전직 [? if chancellor = "Müller": 국가수상이자 현 ?] 국가수상이다. 그는 오랫동안 사회민주주의를 대표해온 지도자이다.
+뮐러는 전직 [? if chancellor = "Müller": 국가수상이자 현 ?] 국가수상입니다. 그는 오랫동안 사회민주주의를 대표해온 지도자입니다.
 
 - @coalition
 - @toleration
 - @snap_election
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @coalition
-title: Negotiating with the Coalition
-subtitle: Müller can improve our relationships with our coalition partners.
+title: 연정 파트너와 협상
+subtitle: 뮐러는 연정 파트너들과의 관계를 개선할 수 있습니다.
 choose-if: advisor_action_timer <= 0 and spd_in_government = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government: The SPD is not in government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if not spd_in_government: 사민당이 정부에 참여하고 있지 않습니다. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 5; ddp_relation += 5; dvp_relation += 5
 
-We have improved our relations with the Z, [+ ddp_name +], and DVP, and reduced tensions with the coalition.
+ 우리는 중앙당(Z), [+ ddp_name +], 그리고 독일인민당(DVP)과의 관계를 개선하고, 연정 내 갈등을 완화했습니다.
 
 
 @toleration
-title: Defending Toleration
-subtitle: Müller supports the toleration arrangement with the bourgeois parties.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_toleration: The SPD is not in toleration. ?]
+title: 묵인 협정 옹호
+subtitle: 뮐러는 부르주아 정당들과의 묵인 협정를 지지합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if not spd_toleration: 사민당이 묵인 협정을 맺지 않고 잇습니다. ?]
 choose-if: spd_in_government = 0 and spd_toleration = 1 and advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_dissent -= 8; neorevisionist_dissent -= 8; center_dissent -= 5;
 
-We have reduced dissent among the anti-toleration factions. 
+우리는 묵인 협정을 반대하는 계파들의 불만을 줄였습니다.
 
 @snap_election
-title: Snap Election
-subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Müller" : Müller must be Chancellor. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 조기 총선
+subtitle: 조기 총선을 요구합니다.
+unavailable-subtitle: [? if chancellor != "Müller" : 뮐러가 총리여야 합니다. ?][? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer == 0 and chancellor == "Müller"
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+우리는 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정된 새로운 선거를 소집했습니다.

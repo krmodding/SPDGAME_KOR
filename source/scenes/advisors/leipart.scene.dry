@@ -5,40 +5,40 @@ card-image: img/portraits/LeipartTheodor.jpg
 view-if: leipart_advisor = 1
 new-page: true 
 
-= Theodor Leipart
+= 테오도어 라이파르트
 
-라이파르트는 전국 최대 규모의 사회주의 노동조합 연맹체인 일반독일노동조합동맹(ADGB)의 위원장이다.
+라이파르트는 독일 최대의 사회주의 노동조합 연맹인 '일반독일노동조합연합(ADGB)'의 위원장입니다.
 
 - @organizing
 - @depression
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 # leipart was one of the people who argued for union independence
 #- @union_unity
 
 @organizing
-title: Organizing workers
-subtitle: Improve our standing among the workers.
+title: 노동자 조직화
+subtitle: 노동자들 사이에서 우리의 입지를 강화합니다.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; workers_spd += 4*(1-dissent); workers_spd += 3*(1-dissent) if wtb_adopted == 1; labor_strength += 2;
 
-We have increased our organizing among the workers.
+우리는 노동자들 사이에서 조직 활동을 강화했습니다.
 
 @depression
-title: Addressing the economic crisis
-subtitle: Formulate a plan to get us out of this mess.
+title: 경제 위기 대응
+subtitle: 이 난국을 타개할 계획을 수립합니다.
 choose-if: advisor_action_timer <= 0 and wtb_adopted = 0 and black_thursday_seen
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if black_thursday_seen == 0 : 현재는 경제 위기 상황이 아닙니다. ?][? if wtb_adopted > 0 : 우리는 이미 WTB 계획을 채택했습니다. ?]
 on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 1
 
-The WTB-Plan, standing for its primary supporters Woytinsky, Tarnow, and Baade, has been adopted as the unions' plan for getting us out of the depression. Leipart canvasses in favor of this policy throughout the party and the unions.
+주요 지지자인 보이틴스키, 타르노프, 바데의 이름을 딴 WTB 계획은 불황을 타개하기 위한 노조의 계획으로 채택되었습니다. 라이파르트는 당과 노조 전반에 걸쳐 이 정책에 대한 지지를 호소합니다.
 
 @union_unity
-title: Union-party coordination
-subtitle: Reduce dissent among the unions.
+title: 노조-정당 간 공조
+subtitle: 노조 내 불만을 감소시킵니다.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; labor_dissent -= 5; labor_strength += 5
 
-We have reduced tensions with the Labor faction, and increased its strength in the party.
+우리는 노동파와의 갈등을 완화하고, 당내에서 그들의 입지를 강화했습니다.

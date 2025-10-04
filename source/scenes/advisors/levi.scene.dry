@@ -5,28 +5,28 @@ card-image: img/portraits/LeviPaul.jpg
 view-if: levi_advisor = 1
 new-page: true 
 
-= Paul Levi
+= 파울 레비
 
-레비는 공산당의 전 당수로, 폭력과 혁명적 모험주의에 집착하는 공산당을 떠나 사민당에 합류했다.
+레비는 공산당의 전 지도자로, 폭력과 혁명적 모험주의에 집착하는 공산당을 떠나 사민당에 합류했습니다.
 
 - @building_the_left
 - @kpd_cooperation
 - @root: Return to main
 
 @building_the_left
-title: Building the Left
-subtitle: Push the SPD to the left.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 좌파 세력 구축
+subtitle: 사민당을 좌경화합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 10; left_dissent -= 8; reformist_dissent += 3
 
-We have increased the strength of the left faction with the SPD. This raised concern among the moderate reformists in the party.
+우리는 사민당 내 좌파의 세력을 강화했습니다. 이는 당내 온건 개혁파들의 우려를 낳았습니다.
 
 @kpd_cooperation
-title: Cooperation with the KPD
-subtitle: Any cooperation between the parties requires compromise from the KPD as well as the SPD.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 공산당과의 협력
+subtitle: 양당 간의 협력은 공산당뿐만 아니라 사민당의 타협도 필요합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 5; kpd_relation += 6*(1-dissent); reformist_dissent += 3; communist_coalition += 1 if kpd_cooperation_seen <= 1; kpd_cooperation_seen += 1
 
-Levi attempts to reach out to his former colleagues to dissuade the KPD from their current extreme Stalinist path. Some concessions are extracted.
+레비는 예전 동료들에게 접촉하여 공산당의 현재 극단적인 스탈린주의 노선을 재고하도록 설득하려 시도합니다. 일부 양보를 얻어냈습니다.

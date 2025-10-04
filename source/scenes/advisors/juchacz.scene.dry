@@ -5,41 +5,41 @@ card-image: img/portraits/JuchaczMarie.jpg
 view-if: juchacz_advisor = 1
 new-page: true 
 
-= Marie Juchacz
+= 마리 유하츠
 
-유하츠는 자발적 복지 단체인 노동자 복지 협회(AWO)의 창립자이며, 빈곤 속에서 홀로 아이를 키운 경험이 그녀를 사회주의로 이끌었다. 그녀는 사민당 지도부의 대표적인 여성 원로로, 남성이 주를 이루는 지도부가 여성의 목소리를 필요로 할 때 그녀에게 종종 "의지"해왔다.
+유하츠는 자발적 복지 단체인 노동자 복지 협회(AWO)의 창립자이며, 빈곤 속에서 홀로 아이를 키운 경험을 통해 사회주의자가 되었습니다. 그녀는 사민당의 대표적인 여성 원로로서, 남성 위주의 지도부가 여성의 목소리를 필요로 할 때면 종종 그녀에게 '의지’하곤 했습니다.
 
 - @emergency_fundraising
 - @welfare
 - @organizing_women
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @emergency_fundraising
-title: Emergency Fundraising
-subtitle: An emergency infusion of resources.
+title: 긴급 자금 조달
+subtitle: 부족한 자금을 긴급히 수혈합니다.
 view-if: difficulty < 1
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; resources += dues
 
-We have gained +[+ dues +] resources.
+자금 +[+ dues +]를 획득했습니다.
 
 @welfare
-title: Support Workers' Welfare, our mutual aid organization.
-subtitle: -1 resources
+title: 우리의 상호부조 조직인 ‘노동자 복지 협회’ 지원
+subtitle: 자금 -1
 choose-if: resources > 0 and advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 0: Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if resources < 0: 자금이 부족합니다. ?]
 on-arrival: resources -= 1; workers_aid += 1; unemployed_spd += 5*(1 - dissent); workers_spd += 3*(1-dissent); workers_spd += 2*(1-dissent) if black_thursday_seen; advisor_action_timer = 6;
 
-We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
+우리는 '노동자 복지 협회’에 대한 지원금을 늘렸습니다.  [? if black_thursday_seen > 0 : 경제 위기의 시대에, 이는 실업자들 사이에서 당의 입지를 다지는 데 도움이 될 것입니다. ?]
 
 @organizing_women
-title: Organizing women
-subtitle: Juchacz's strategies are aimed at more "traditional" women.
+title: 여성 조직화
+subtitle: 유하츠의 전략은 보다 ‘전통적인’ 여성들을 대상으로 합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: womens_rights += 1; workers_spd += 4*(1-dissent); rural_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); advisor_action_timer = 6
 
-Juchacz's strategies for organizing women are aimed at working-class housewives, and acknowledge women's traditional household roles. We argue that our economic welfare programs will improve the livelihoods of women and their families.
+유하츠의 여성 조직화 전략은 노동계급 주부들을 대상으로 하며, 여성의 전통적인 가사 역할을 인정하는 방식입니다. 우리는 우리의 경제 복지 프로그램이 여성과 그 가족들의 생계를 향상시킬 것이라 주장합니다.
 
-[? if spd_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+[? if spd_r < 50 : 안타깝게도, 여성들은 여전히 부르주아 정당을 더 많이 지지하는 경향이 있습니다. ?]

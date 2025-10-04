@@ -1,4 +1,4 @@
-title: Cabinet
+title: 내각
 is-pinned-card: true
 tags: advisor
 card-image: img/muller_cabinet.jpg
@@ -6,12 +6,12 @@ view-if: difficulty < 0 and spd_in_government and chancellor_party = "SPD"
 on-arrival: last_cabinet_action = 1
 new-page: true 
 
-= Cabinet
+= 내각
 
-With an SPD chancellor and SPD cabinet members, we can direct the affairs of the national government.
+사민당 출신 총리와 내각 각료들을 통해, 우리는 중앙 정부의 국정을 이끌 수 있습니다.
 
 - #cabinet
-- @back: Return to main
+- @back: 주 메뉴로 돌아가기
 
 @back
 on-arrival: last_cabinet_action = 0
