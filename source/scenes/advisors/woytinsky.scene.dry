@@ -7,35 +7,35 @@ new-page: true
 
 = Wladimir Woytinsky
 
-블라디미르 보이틴스키는 망명 중인 러시아인 멘셰비키로, 일반독일노동조합동맹(ADGB)의 수석 경제학자이다. 그의 경제이론 핵심은 대규모 정부지출을 통한 수요자극이다.
+블라디미르 보이틴스키는 망명한 러시아 멘셰비키로서, '일반 독일 노동조합 연합(ADGB)'의 수석 경제학자입니다. 그의 경제 이론의 핵심은 대규모 정부 지출을 통한 수요 진작입니다.
 
 - @plan
 - @carry_out_policy
 - @depression
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @plan
-title: Adopt the WTB-plan!
-subtitle: Convincing the rest of the party to support the WTB-plan.
+title: WTB 계획 채택!
+subtitle: 당의 나머지 구성원들이 WTB 계획을 지지하도록 설득합니다.
 choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and wtb_support >= 3 and black_thursday_seen and (not historical_mode or ((labor_strength >= center_strength) and (labor_strength >= left_strength) and (labor_strength >= reformist_strength)))
 on-arrival: advisor_action_timer = 6;
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?][? if wtb_support < 3 : There is not enough support for the WTB-Plan. ?][? if (labor_strength < center_strength or labor_strength < left_strength or labor_strength < reformist_strength) and historical_mode : The labor faction is not strong enough. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if black_thursday_seen == 0 : 현재는 경제 위기 상황이 아닙니다. ?][? if wtb_adopted > 0 : 우리는 이미 WTB 계획을 채택했습니다. ?][? if wtb_support < 3 : WTB 계획에 대한 지지가 충분하지 않습니다. ?][? if (labor_strength < center_strength or labor_strength < left_strength or labor_strength < reformist_strength) and historical_mode : 노동파의 세력이 충분히 강하지 않습니다. ?]
 go-to: crisis_program.plan_adopted
 
 @carry_out_policy
-title: Carry out the economic plan.
-subtitle: If we are in government, we can carry out a public works program such as the WTB-Plan.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if spd_in_government == 0 : The SPD is not in government. ?][? if works_program >= 2 : We have already started implementing the plan. ?]
+title: 경제 계획 실행
+subtitle: 우리가 정부에 참여하고 있다면, WTB 계획과 같은 공공 사업 프로그램을 실행할 수 있습니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if wtb_adopted == 0 : 아직 경제 계획을 채택하지 않았습니다. ?][? if spd_in_government == 0 : 사민당은 정부에 참여하고 있지 않습니다. ?][? if works_program >= 2 : 우리는 이미 계획을 이행하기 시작했습니다. ?]
 choose-if: advisor_action_timer <= 0 and wtb_adopted and spd_in_government and wtb_implemented <= 1
 on-arrival: advisor_action_timer = 6; economic_policy_timer -= 12
 go-to: economic_policy
 
 
 @depression
-title: Addressing the economic crisis
-subtitle: Formulate a plan to get us out of the economic crisis.
+title: 경제 위기 대응
+subtitle: 경제 위기에서 벗어날 계획을 수립합니다.
 choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and black_thursday_seen == 1 and wtb_support <= 3
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if black_thursday_seen == 0 : 현재는 경제 위기 상황이 아닙니다. ?][? if wtb_adopted > 0 : 우리는 이미 WTB 계획을 채택했습니다. ?]
 on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 1
 
-The WTB-plan, named for its primary supporters Woytinsky, Tarnow, and Baade, has been adopted as the unions' plan for getting us out of the depression. Woytinsky canvasses in favor of this policy through the SPD and the unions.
+주요 지지자인 보이틴스키, 타르노프, 바데의 이름을 딴 WTB 계획은 불황을 타개하기 위한 노조의 계획으로 채택되었습니다. 보이틴스키는 사민당과 노조 전반에 걸쳐 이 정책에 대한 지지를 호소합니다.

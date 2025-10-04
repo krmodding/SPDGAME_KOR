@@ -5,35 +5,35 @@ card-image: img/portraits/SiemsenAnna.jpg
 view-if: siemsen_advisor = 1
 new-page: true 
 
-= Anna Siemsen
+= 안나 지엠즌
 
-안나 지엠즌은 교육 개혁가이자 평화주의자로, 전쟁 이전에 박사 학위를 취득한 소수의 독일 여성 중 한 명이다. 한때 그녀는 독립사민당에 소속했다.
+안나 지엠즌은 교육 개혁가이자 평화주의자이며, 전쟁 이전에 박사 학위를 취득한 소수의 독일 여성 중 한 명입니다. 한때는 독립사민당 소속이었습니다.
 
 - @campaign_pacifism
 - @structure_
 - @curriculum_
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @campaign_pacifism
-title: Rally for pacifism.
-subtitle: Campaign for internationalism and against militarism.
+title: 평화주의 운동 집회
+subtitle: 국제주의를 지지하고 군국주의에 반대하는 운동을 벌입니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6;
 go-to: rally.pacifism
 
 
 @curriculum_
-title: Change the educational curriculum.
+title: 교육 과정 개편
 choose-if: advisor_action_timer = 0 and spd_in_government and chancellor_party = "SPD" and spd_prussia and curriculum_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?][? if chancellor_party != "SPD": The SPD must control the chancellorship. ?][? if not spd_prussia: The SPD must control the Prussian government. ?][? if curriculum_timer > 0 : It is too early to change the curriculum again. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if not spd_in_government : 사민당은 현재 정부에 참여하고 있지 않습니다. ?][? if chancellor_party != "SPD": 사민당이 총리직을 통제해야 합니다. ?][? if not spd_prussia: 사민당이 프로이센 주정부를 통제해야 합니다. ?][? if curriculum_timer > 0 : 교육 과정을 다시 바꾸기에는 아직 이릅니다. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: education_science.curriculum
 
 
 @structure_
-title: Change the structure and funding of education.
+title: 교육 구조 및 재정 지원 변경
 choose-if: advisor_action_timer = 0 and spd_in_government and chancellor_party = "SPD" and spd_prussia
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?][? if chancellor_party != "SPD": The SPD must control the chancellorship. ?][? if not spd_prussia: The SPD must control the Prussian government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if not spd_in_government : 사민당은 현재 정부에 참여하고 있지 않습니다. ?][? if chancellor_party != "SPD": 사민당이 총리직을 통제해야 합니다. ?][? if not spd_prussia: 사민당이 프로이센 주정부를 통제해야 합니다. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: education_science.structure

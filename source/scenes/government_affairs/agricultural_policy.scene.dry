@@ -36,7 +36,7 @@ subtitle: 예산 -1 - 농업 신용 및 보험 금융 지원을 확대한다.
 choose-if: budget >= 1
 on-arrival: budget -= 1; agricultural_finance += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); peoples_party_support += 1; center_dissent += 5; left_dissent += 4; rural_sol += 4; rural_policy += 1; economic_growth += 0.2;
 
-우리는 소농에 대한 재정 지원을 확대하여, 신용과 보험에 대한 접근성을 높여 그들을 곤경에서 구했습니다. 당내 좌파와 중도파는 이러한 정책들이 소부르주아 농민들을 위한 선심성 정책에 불과하다며 우리의 농촌 정책에 반대하고 있습니다.
+우리는 소농에 대한 재정 지원을 확대하여, 신용과 보험에 대한 접근성을 높여 그들을 곤경에서 구했습니다. 당내 좌파와 중앙파는 이러한 정책들이 소부르주아 농민들을 위한 선심성 정책에 불과하다며 우리의 농촌 정책에 반대하고 있습니다.
 
 
 @pro_consumer

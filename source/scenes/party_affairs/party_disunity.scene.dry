@@ -14,7 +14,7 @@ tags: party_affairs
 당이 내부 갈등으로 사분오열되고 있습니다. 지도부와 당의 전반적인 노선에 불만을 품은 파벌들이 경쟁 파벌들을 방해하기 시작하면서, 표를 얻고 정책을 실행하려는 우리의 노력에 차질이 생기고 있습니다.
 
 [? if reformist_dissent > 30 : 개혁파가 우리 노선에 불만을 품고 있습니다.  ?]
-[? if center_dissent > 30 : 중도파가 당의 노선에 불만을 표하고 있습니다. ?]
+[? if center_dissent > 30 : 중앙파가 당의 노선에 불만을 표하고 있습니다. ?]
 [? if labor_dissent > 30 : 노동조합이 우리의 현재 행동 방침에 반대하고 있습니다. ?]
 [? if left_dissent > 30: 좌파 진영에서 또다시 분당 이야기가 나오고 있습니다. ?]
 [? if neorevisionist_dissent > 30 and neorevisionism = 1 : 신수정주의자들이 우리의 정치 노선에 반대하고 있습니다. ?]
@@ -48,32 +48,32 @@ on-arrival: reformist_dissent -= 7; left_dissent += 5
 더 개혁적인 자세를 취하겠다고 약속했습니다. 하지만, 이로 인해 좌파가 소외될 수 있습니다.
 
 @concessions_center
-title: 중도파에게 양보한다.
+title: 중앙파에게 양보한다.
 view-if: center_dissent > 30
 on-arrival: center_dissent -= 7; reformist_dissent += 2; left_dissent += 2; neorevisionist_dissent += 2
 
-중도파로부터 정책 제안을 더 많이 받아들이기로 약속했습니다. 이로 인해 당내 좌파와 개혁파 양쪽 모두가 불만을 가질 수 있습니다.
+중앙파로부터 정책 제안을 더 많이 받아들이기로 약속했습니다. 이로 인해 당내 좌파와 개혁파 양쪽 모두가 불만을 가질 수 있습니다.
 
 @concessions_left
 title: 좌파에게 양보한다.
 view-if: left_dissent > 30
 on-arrival: left_dissent -= 7; reformist_dissent += 5
 
-당내 좌파의 목소리에 귀 기울이겠다고 약속했습니다. 물론, 이는 중도파의 불만을 키우는 결과로 이어집니다.
+당내 좌파의 목소리에 귀 기울이겠다고 약속했습니다. 물론, 이는 중앙파의 불만을 키우는 결과로 이어집니다.
 
 @concessions_labor
 title: 노동파에 양보한다.
 view-if: labor_dissent > 30
 on-arrival: labor_dissent -= 7; center_dissent += 5
 
-노동조합에 당 의사결정에 대한 더 큰 영향력을 부여할 것입니다. 이는 정치적 의사결정을 당 중앙으로 집중시키고자 하는 중도파의 반발을 살 것입니다.
+노동조합에 당 의사결정에 대한 더 큰 영향력을 부여할 것입니다. 이는 정치적 의사결정을 당 중앙으로 집중시키고자 하는 중앙파의 반발을 살 것입니다.
 
 @concessions_neorevisionists
 title: 신수정주의자들에게 양보한다.
 view-if: neorevisionist_dissent > 30 and neorevisionism = 1
 on-arrival: neorevisionist_dissent -= 7; center_dissent += 5;
 
-신수정주의자들에게 더 많은 영향력을 주는 것은 중도파의 반발을 키울 것입니다.
+신수정주의자들에게 더 많은 영향력을 주는 것은 중앙파의 반발을 키울 것입니다.
 
 
 @do_nothing
@@ -93,7 +93,7 @@ title: 불만을 품은 좌파를 축출한다.
 view-if: left_dissent > 30
 
 @expel_center
-title: 중도파를 축출한다.
+title: 중앙파를 축출한다.
 view-if: center_dissent > 30
 
 @expel_labor

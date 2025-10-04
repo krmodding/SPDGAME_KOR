@@ -5,28 +5,28 @@ card-image: img/portraits/SeveringCarl.jpg
 view-if: severing_advisor = 1
 new-page: true 
 
-= Carl Severing
+= 카를 제베링
 
-제베링은 공화국과 프로이센 주 양쪽에서 내무장관을 역임한 인물로, 공화국내 적들을 무력화하기 위해 치안 기관을 활용하는 것을 최우선 과제로 삼는다.
+제베링은 연방과 프로이센 주 양쪽에서 내무부 장관을 역임한 인물로, 치안 기관을 활용해 공화국의 적들을 무력화하는 것을 최우선 과제로 삼습니다.
 
 - @prussian_bulwark
 - @police_affairs
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @prussian_bulwark
-title: Prussian Bulwark
-subtitle: Severing has influence over Prussian politics.
+title: 프로이센 보루
+subtitle: 제베링은 프로이센 정치에 영향력이 있습니다.
 choose-if: advisor_action_timer <= 0 and spd_prussia = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_prussia : The SPD is not in control of Prussia. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if not spd_prussia : 사민당이 프로이센을 장악하고 있지 않습니다. ?]
 on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
 go-to: prussian_affairs
 
 
 @police_affairs
-title: Police affairs 
-subtitle: We can set our police policy. 
+title: 내무부 업무
+subtitle: 우리의 내무부 정책을 수립할 수 있습니다.
 choose-if: advisor_action_timer == 0 and spd_in_government and interior_minister_party == "SPD"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if interior_minister_party != "SPD": The SPD does not have the Interior ministry. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if not spd_in_government : 사민당은 정부에 참여하고 있지 않습니다. ?][? if interior_minister_party != "SPD": 사민당이 내무부 장관직을 맡고 있지 않습니다. ?]
 on-arrival: advisor_action_timer = 6; police_timer -= 6; last_advisor_action = 1
 go-to: police
 

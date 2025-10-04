@@ -92,7 +92,7 @@ if (Q.economic_growth) {
 
 {!<span class="tooltip-text" title="좌파는 급진적이고 변혁적인 정책과 공산당과의 협력에 관심이 있다.">좌파</span>!}와의 관계: [+ left_strength : strength +], 반감도: [+ left_dissent : dissent +]
 
-{!<span class="tooltip-text" title="중도파는 중도적 마르크스주의자로써, 개혁과 혁명 사이의 균형을 찾으려고 노력한다.">중도파</span>!}와의 관계: [+ center_strength : strength +], 반감도: [+ center_dissent : dissent +]
+{!<span class="tooltip-text" title="중앙파는 중도적 마르크스주의자로써, 개혁과 혁명 사이의 균형을 찾으려고 노력한다.">중앙파</span>!}와의 관계: [+ center_strength : strength +], 반감도: [+ center_dissent : dissent +]
 
 {!<span class="tooltip-text" title="노동파는 경제 개혁과 조직된 노동자들을 위한 이익을 우선시한다.">노동파</span>!}와의 관계: [+ labor_strength : strength +], 반감도: [+ labor_dissent : dissent +]
 

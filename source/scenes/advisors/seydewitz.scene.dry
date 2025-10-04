@@ -5,42 +5,42 @@ card-image: img/portraits/SeydewitzMax.jpg
 view-if: seydewitz_advisor = 1
 new-page: true 
 
-= Max Seydewitz
+= 막스 자이데비츠
 
-자이데비츠는 사회주의 노동자청년단(SAJ)의 전직 지도자이다. 현재 사민당의 좌파를 지지하며, 계급투쟁을 옹호한다.
+자이데비츠는 '사회주의 노동자 청년단(SAJ)'의 전직 지도자입니다. 현재 사민당의 좌파를 지지하며 계급 투쟁을 옹호합니다.
 
 - @class_struggle
 - @socialist_youth
 - @against_toleration
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @class_struggle
-title: Rally for class struggle
-subtitle: The core of socialism should be the struggle of the proletariat against the bourgeoisie.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 계급 투쟁 촉구 집회
+subtitle: 사회주의의 핵심은 부르주아에 맞선 프롤레타리아의 투쟁이 되어야 합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent); workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2
 
-Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
+우리의 계급 투쟁 메시지는 노동계급 좌파에게는 호소력이 있지만, 잠재적으로 중산층의 반감을 살 수 있습니다. [? if nationalization_progress > 0 : 국유화 정책의 성과는 우리의 메시지 전달에 도움이 되었습니다. ?]
 
 
 @socialist_youth
-title: Support the Socialist Youth
-subtitle: We must end our reputation as a party for old men by increasing funding to the youth organizations. -1 resources
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if resources <= 0 : Not enough resources. ?]
+title: 사회주의 청년단 지원
+subtitle: 우리는 청년 조직에 대한 지원을 늘려 '노인들의 정당’이라는 오명을 벗어야 합니다. 자금 -1
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?] [? if resources <= 0 : 자금이 부족합니다. ?]
 choose-if: advisor_action_timer = 0 and resources > 0
 on-arrival: advisor_action_timer = 6; resources -= 1; left_strength += 5; left_dissent -= 3; rb_strength += 50; rb_militancy += 0.025; workers_spd += 2*(1-dissent); new_middle_spd += 1;
 
-Seydewitz supports building up the Socialist Youth, which attracts support to the Left and increases the militancy of the Reichsbanner.
+자이데비츠는 '사회주의 청년단’의 강화를 지지합니다. 이는 좌파에 대한 지지를 모으고 국기단의 투쟁성을 높이는 효과가 있습니다.
 
 @against_toleration
-title: Against toleration
-subtitle: Break our current toleration arrangement, and bring down the government via a no-confidence vote.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_toleration == 0 : The SPD is not currently in toleration. ?]
+title: 묵인 협정에 반대
+subtitle: 현재의 묵인 협정을 파기하고, 불신임 투표를 통해 정부를 붕괴시킵니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?] [? if spd_toleration == 0 : 사민당은 현재 묵인 협정을 맺지 않았습니다. ?]
 view-if: not constructive_vonc
 choose-if: advisor_action_timer == 0 and spd_toleration
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time + 3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 4; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 8
 
-We have grown tired of the burdens of toleration, and have called a vote of no confidence in the current minority government.
+우리는 묵인 협정에 따르는 부담에 지쳤고, 현 소수 정부에 대한 불신임안을 제출했습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+새로운 선거가 [+ next_election_year +]년 [+ next_election_month : month +]월로 정해졌습니다.

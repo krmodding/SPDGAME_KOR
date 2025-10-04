@@ -18,7 +18,7 @@ new-page: true
 
 @against_right_and_left
 title: 좌우 양파에 맞서
-subtitle: 중도파로서 힐퍼딩은 당내 계파들 사이에서 중재 역할을 모색합니다.
+subtitle: 중앙파로서 힐퍼딩은 당내 계파들 사이에서 중재 역할을 모색합니다.
 unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 5; advisor_action_time = time; center_strength += 10; left_strength -= 5; labor_strength -= 5; neorevisionist_strength -= 5; center_dissent -= 10

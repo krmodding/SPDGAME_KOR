@@ -392,7 +392,7 @@ achievement: volksfront
 on-arrival: kpd_goals_seen = 0; finance_minister_party = "Z"; interior_minister_party = "Z"; economic_minister_party = "Z"; labor_minister_party = "Z"; foreign_minister_party = "Z"; agriculture_minister_party = "Z"; reichswehr_minister = "I"; leverage = spd_r + kpd_r;
 achievement: volksfront
 
-공산당이 내각에 참여하자, 우익 진영은 당분간 ‘관망’ 자세를 취하고 있습니다. 그들은 인민전선 정부가 불안정하고 무능해서 스스로 붕괴할 것이며, 그로 인해 좌파와 중도파의 명예가 실추되어 결국 바이마르 공화국이 파멸에 이를 것이라 기대합니다. 그들이 틀렸다는 것을 증명하는 것이 우리의 과제입니다.
+공산당이 내각에 참여하자, 우익 진영은 당분간 ‘관망’ 자세를 취하고 있습니다. 그들은 인민전선 정부가 불안정하고 무능해서 스스로 붕괴할 것이며, 그로 인해 좌파와 중앙파의 명예가 실추되어 결국 바이마르 공화국이 파멸에 이를 것이라 기대합니다. 그들이 틀렸다는 것을 증명하는 것이 우리의 과제입니다.
 
 공산당은 내각 참여에 대해서는 거리를 두고 있습니다. 그들은 인민전선 정부 내에서 "충성스러운 야당"으로서 외부에서 우리를 지지하는 한편, 노동자들을 자신들의 편으로 끌어들이기 위한 독자적인 선전 활동을 벌이겠다고 주장합니다. 그들은 인민전선이 결국 실패할 것이며, 우리의 실패가 자신들에게 이득이 되리라 기대하는 듯합니다.
 
@@ -511,7 +511,7 @@ on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
-놀랍게도, 어떻게든 텔만을 총리로 임명하지 않고도 좌파 연정이 성공적으로 구성되었습니다. 사민당, 공산당, 그리고 [+ president +] 대통령 모두가 합의한 총리 후보는 루돌프 브라이트샤이트였습니다. 그는 사민당 중도파에 속하지만, 과거 좌파 성향의 반전 단체인 독립사회민주당(USPD)에 몸담았던 이력 덕분에 좌파의 동의를 얻을 수 있었습니다.
+놀랍게도, 어떻게든 텔만을 총리로 임명하지 않고도 좌파 연정이 성공적으로 구성되었습니다. 사민당, 공산당, 그리고 [+ president +] 대통령 모두가 합의한 총리 후보는 루돌프 브라이트샤이트였습니다. 그는 사민당 중앙파에 속하지만, 과거 좌파 성향의 반전 단체인 독립사회민주당(USPD)에 몸담았던 이력 덕분에 좌파의 동의를 얻을 수 있었습니다.
 
 # just raise the coup limit, don't immediately go to civil war
 
@@ -1175,7 +1175,7 @@ subtitle: 하인리히 브뤼닝이 총리가 될 겁니다. 이는 예상 밖�
 on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; z_relation += 10; dvp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "브뤼닝"; chancellor_party = "중앙당"; spd_in_government = 1; leverage += 5
 go-to: ministries
 
-이는 매우 이례적인 일로, 당내 좌파와 중도파 다수가 이 결정을 비판하고 있습니다.
+이는 매우 이례적인 일로, 당내 좌파와 중앙파 다수가 이 결정을 비판하고 있습니다.
 
 [? if year == 1928 : 빌헬름 마르크스가 사임함에 따라, 하인리히 브뤼닝이 총리로 임명되었습니다. ?]
 [? if year > 1928: 중앙당 소속의 하인리히 브뤼닝이 총리로 임명되었습니다. ?]

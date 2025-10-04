@@ -7,19 +7,19 @@ new-page: true
 
 = Otto Wels
 
-벨스는 오랫동안 사민당의 당수직을 역임해왔다. 그는 탁월한 조직가이며, 중도파의 일원이다.
+벨스는 오랫동안 사민당의 당수직을 역임해왔습니다. 그는 탁월한 조직가이며, 중앙파의 일원입니다.
 
 - @clear_agenda
 - @party_discipline
 - @emergency_fundraising
 - @snap_election
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @clear_agenda
-title: Clear the agenda
-subtitle: Removes all cards from the hand.
+title: 안건 비우기
+subtitle: 진행 중인 모든 안건(카드)을 제거합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: {!
 Q.advisor_action_timer = 6;
 if (Q.difficulty >= 0) {
@@ -29,33 +29,33 @@ if (Q.difficulty >= 0) {
 }
 !}
 
-All items from our agenda have been cleared.
+모든 안건이 지워졌습니다.
 
 @party_discipline
-title: Party Discipline
-subtitle: Reduce dissent across the party.
+title: 당 기강 확립
+subtitle: 당 전체의 불만을 감소시킵니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
 
-We have enforced party discipline to reduce dissent across all factions.
+우리는 모든 파벌의 불만을 줄이기 위해 당 기강을 확립했습니다.
 
 @emergency_fundraising
-title: Emergency Fundraising
+title: 긴급 자금 조달
 view-if: difficulty < 1
-subtitle: An emergency infusion of resources.
+subtitle: 부족한 자원을 긴급히 수혈합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; resources += dues
 
-We have gained +[+ dues +] resources.
+자금 +[+ dues +]를 획득했습니다.
 
 @snap_election
-title: Snap Election
-subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Wels" : Wels must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 조기 총선
+subtitle: 조기 총선을 요구합니다.
+unavailable-subtitle: [? if chancellor != "Wels" : 벨스가 총리나 대통령이어야 합니다. ?][? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer == 0 and (chancellor == "Wels")
 on-arrival: advisor_action_timer = 6; time_to_election = 3
 call: set_next_election_time
 
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+우리는 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정된 새로운 선거를 소집했습니다.

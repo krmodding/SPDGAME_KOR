@@ -12,7 +12,7 @@ new-page: true
 - @emergency_fundraising
 - @build_reichsbanner
 - @moderate_economic_plan
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @emergency_fundraising
 title: 긴급 자금 조달

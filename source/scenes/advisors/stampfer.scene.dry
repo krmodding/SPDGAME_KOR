@@ -5,71 +5,71 @@ card-image: img/portraits/StampferFriedrich.jpg
 view-if: stampfer_advisor = 1
 new-page: true 
 
-= Friedrich Stampfer
+= 프리드리히 슈탐퍼
 
-슈탐퍼는 당 기관지 포어베르츠-*Vorwärts*의 오랜 편집장이자 하원의원이며, 공화국을 구하기 위한 방안으로 공산당과의 협력을 지지한다. 그는 과거 제1차 세계대전 참전을 지지했던 다수사민당의 일원이었다.
+슈탐퍼는 당 기관지 '전진(Vorwärts)'의 오랜 편집장이자 국회의원이며, 공화국을 구하기 위한 방안으로서 공산당과의 협력을 지지합니다. 그는 과거 제1차 세계대전 참전을 지지했던 다수파 사민당 소속이었습니다.
 
 - @media_
 - @faction_support_
 - @kpd_cooperation
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 
 @media_
-title: Media
-subtitle: Manage our party's newspapers and media.
+title: 언론
+subtitle: 우리 당의 신문과 언론을 관리합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
 go-to: media
 
 
 @faction_support_
-title: Editorial Line
-subtitle: We can change the editorial line of Vorwärts to support a particular faction.
+title: 편집 방침
+subtitle: '전진(Vorwärts)'의 편집 방침을 변경하여 특정 파벌을 지지할 수 있습니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6
 
-Which faction should we support?
+어느 파벌을 지지하시겠습니까?
 
-- @support_left: Left
-- @support_center: Center
-- @support_labor: Labor
-- @support_reform: Reformists
-- @support_neorev: Neorevisionists
+- @support_left: 좌파
+- @support_center: 중앙파
+- @support_labor: 노동파
+- @support_reform: 개혁파
+- @support_neorev: 신수정주의파
 
 @support_left
 on-arrival: left_dissent -= 8; left_strength += 8
 
-Vorwärts prints editorials in support of Left positions.
+'전진’은 좌파의 입장을 지지하는 사설을 게재합니다.
 
 @support_center
 on-arrival: center_dissent -= 8; center_strength += 8
 
-Vorwärts prints editorials in support of centrist positions.
+'전진’은 중앙파의 입장을 지지하는 사설을 게재합니다.
 
 @support_labor
 on-arrival: labor_dissent -= 8; labor_strength += 8
 
-Vorwärts prints editorials in support of the policies of the trade unions.
+'전진’은 노동조합의 정책을 지지하는 사설을 게재합니다.
 
 @support_reform
 on-arrival: reformist_dissent -= 8; reformist_strength += 8;
 
-Vorwärts prints editorials in support of the reformist policies.
+'전진’은 개혁파의 정책을 지지하는 사설을 게재합니다.
 
 @support_neorev
 view-if: neorevisionism
 on-arrival: neorevisionist_dissent -= 8; neorevisionist_strength += 8
 
-Vorwärts prints editorials in support of neorevisionist ideas.
+'전진’은 신수정주의 이념을 지지하는 사설을 게재합니다.
 
 @kpd_cooperation
-title: Cooperation with the KPD
-subtitle: Could we build closer ties with the KPD?
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 공산당과의 협력
+subtitle: 공산당과 더 긴밀한 관계를 구축할 수 있을까요?
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 2; kpd_relation += 4*(1-dissent); reformist_dissent += 2
 
-Stampfer works towards closer ties with the KPD through our media.
+슈탐퍼는 우리 언론을 통해 공산당과의 관계 개선을 위해 노력합니다.

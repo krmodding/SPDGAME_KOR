@@ -40,7 +40,7 @@ on-arrival: hilferding_advisor = 0; center_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-힐퍼딩이 고문직에서 해임되었습니다. 중도파가 반발하고 있습니다.
+힐퍼딩이 고문직에서 해임되었습니다. 중앙파가 반발하고 있습니다.
 
 @remove_wels
 title: 웰스 해임
@@ -49,7 +49,7 @@ tags: remove_advisor
 on-arrival: wels_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-웰스가 고문직에서 해임되었습니다. 중도파가 반발하고 있습니다.
+웰스가 고문직에서 해임되었습니다. 중앙파가 반발하고 있습니다.
 
 @remove_muller
 title: 뮐러 해임
@@ -58,7 +58,7 @@ tags: remove_advisor
 on-arrival: muller_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-뮐러가 고문직에서 해임되었습니다. 중도파가 반발하고 있습니다.
+뮐러가 고문직에서 해임되었습니다. 중앙파가 반발하고 있습니다.
 
 
 @remove_breitscheid
@@ -68,7 +68,7 @@ tags: remove_advisor
 on-arrival: breitscheid_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-브라이트샤이트가 고문직에서 해임되었습니다. 중도파가 반발하고 있습니다.
+브라이트샤이트가 고문직에서 해임되었습니다. 중앙파가 반발하고 있습니다.
 
 # reformists
 
@@ -290,7 +290,7 @@ tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_adv
 frequency: 1
 
 
-- @centrist: 중도파 추가
+- @centrist: 중앙파 추가
 - @left: 좌파 추가
 - @reformist: 개혁파 추가
 - @labor: 노동파 추가

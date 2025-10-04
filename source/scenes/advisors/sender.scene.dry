@@ -7,50 +7,50 @@ new-page: true
 
 = Toni Sender
 
-센더는 부르주아 가정 출신이지만, 노동 현장에서의 경험을 통해 급진 사회주의자로 변모한 조직가이자 작가이다. 과거 그녀는 독립사민당의 일원이었으나 무장 혁명을 지지하지 않았다.
+센더는 부르주아 가정 출신이었으나 노동 현장에서의 경험을 통해 급진 사회주의자가 된 조직가이자 작가입니다. 과거 독립사민당 소속이었지만 무장 혁명은 지지하지 않았습니다.
 
 - @left_unity
 - @organizing_women
 - @against_toleration
 - @crisis
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @left_unity
-title: Left-Center Unity
-subtitle: Encourage cooperation between the left and center wings of the party.
+title: 좌파-중앙파 단결
+subtitle: 당내 좌파와 중앙파 간의 협력을 장려합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; left_dissent -= 10; labor_dissent -= 5; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
 
-We have reduced dissent among the party's factions.
+우리는 당내 파벌 간의 불만을 줄였습니다.
 
 @organizing_women
-title: Organizing women
-subtitle: Sender's strategies are aimed at young working women.
+title: 여성 조직화
+subtitle: 센더의 전략은 젊은 노동 여성을 대상으로 합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: womens_rights += 1; workers_spd += 3*(1-dissent); new_middle_spd += 5*(1-dissent); advisor_action_timer = 6
 
-Sender's message is popular among young women working in the service sector, and we have recruited many white-collar employees.
+센더의 메시지는 서비스 부문에서 일하는 젊은 여성들에게 인기가 있으며, 덕분에 많은 사무직 종사자들을 영입했습니다.
 
-[? if spd_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+[? if spd_r < 50 : 안타깝게도, 여성들은 여전히 부르주아 정당을 더 많이 지지하는 경향이 있습니다. ?]
 
 @against_toleration
-title: Against toleration
+title: 묵인 협정 반대
 view-if: not constructive_vonc
 subtitle: Break our current toleration arrangement, and bring down the government via a no-confidence vote.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_toleration == 0 : The SPD is not currently in toleration. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?] [? if spd_toleration == 0 : 사민당은 현재 묵인 협정을 맺지 않았습니다 ?]
 choose-if: advisor_action_timer == 0 and spd_toleration
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time + 3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 4; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 8
 
-We have grown tired of the burdens of toleration, and have called a vote of no confidence in the current minority government.
+우리는 묵인 협정에 따르는 부담에 지쳤고, 현 소수 정부에 대한 불신임안을 제출했습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+새로운 선거가 [+ next_election_year +]년 [+ next_election_month : month +]월로 정해졌습니다.
 
 @crisis
-title: Addressing the economic crisis
-subtitle: Sender can help support a left-wing economic program.
+title: 경제 위기 대응
+subtitle: 젠더는 좌파 경제 프로그램을 지원하는 데 도움을 줄 수 있습니다.
 choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_thursday_seen == 1 and nationalization_support <= 3
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if black_thursday_seen == 0 : 현재는 경제 위기 상황이 아닙니다. ?][? if nationalization_adopted > 0 : 우리는 이미 좌파 계획을 채택했습니다. ?]
 on-arrival: advisor_action_timer = 6;
 go-to: crisis_program.support_left

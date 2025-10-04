@@ -16,7 +16,7 @@ max-visits: 4
 
 - @support_peoples_party: 그래, 우리는 대중 정당이 되어야 한다!
 - @build_support: 대중 정당이 되기 전에 추가적인 지지를 확보해야 한다.
-- @support_peoples_party_hard: 중도파와 좌파의 강한 반대에도 불구하고, 우리는 대중 정당이 될 것이다.
+- @support_peoples_party_hard: 중앙파와 좌파의 강한 반대에도 불구하고, 우리는 대중 정당이 될 것이다.
 - @no_new_ideas: 아니, 우리는 언제까지나 노동계급의 정당으로 남을 것이다.
 - @root: 이 문제는 나중에 다시 논의할 수 있을 것 같다.
 - @easy_discard
@@ -26,7 +26,7 @@ max-visits: 4
 view-if: (neorevisionist_strength + reformist_strength < left_strength + center_strength) or peoples_party_support < 5
 on-arrival: peoples_party_support += 1; neorevisionist_strength += 5; left_strength -= 5; left_dissent += 5
 
-당내에서 우리는 좌파와 중도파의 반대에 맞서 대중 정당으로의 전환 제안을 추진하고 있습니다.
+당내에서 우리는 좌파와 중앙파의 반대에 맞서 대중 정당으로의 전환 제안을 추진하고 있습니다.
 
 
 @support_peoples_party
@@ -35,7 +35,7 @@ unavailable-subtitle: 반대가 너무 강합니다.
 on-arrival: neorevisionist_strength += 15; reformist_strength += 15; neorevisionist_dissent -= 10; reformist_dissent -= 10; peoples_party = 1; workers_spd -= 12; rural_spd += 10; new_middle_spd += 10; old_middle_spd += 8; catholics_spd += 8; left_dissent += 25; center_dissent += 20; kpd_relation -= 10; kpd_coalition_dissent += 1; coalition_dissent -= 1; z_relation += 5*(1-dissent); dvp_relation += 5*(1-dissent)
 achievement: volkspartei
 
-긴급 전당대회에서, 우리는 노동자와 도시 빈민뿐만 아니라 독일의 모든 평범한 사람들을 아우르는 대중 정당이 되기로 결정했습니다. 좌파와 중도파는 우리의 새로운 강령이 창당 이념을 배반하고 마르크스주의에서 부르주아 기회주의로 돌아선 것이라 비난합니다. 어찌 되었든, 우리는 이제 프롤레타리아뿐만 아니라 모든 국민을 대표하는 정당입니다.
+긴급 전당대회에서, 우리는 노동자와 도시 빈민뿐만 아니라 독일의 모든 평범한 사람들을 아우르는 대중 정당이 되기로 결정했습니다. 좌파와 중앙파는 우리의 새로운 강령이 창당 이념을 배반하고 마르크스주의에서 부르주아 기회주의로 돌아선 것이라 비난합니다. 어찌 되었든, 우리는 이제 프롤레타리아뿐만 아니라 모든 국민을 대표하는 정당입니다.
 
 우리의 새로운 강령을 알리기 위해 새로운 캠페인을 시작해야 할까요?
 
@@ -53,7 +53,7 @@ view-if: (neorevisionist_strength + reformist_strength < left_strength + center_
 on-arrival: neorevisionist_strength += 10; reformist_strength += 8; peoples_party = 1; workers_spd -= 15; rural_spd += 10; new_middle_spd += 10; old_middle_spd += 8; catholics_spd += 8; left_dissent += 40; center_dissent += 40; kpd_relation -= 10; kpd_coalition_dissent += 1; coalition_dissent -= 1
 achievement: volkspartei
 
-험난하고 논쟁적인 과정이었지만, 우리는 대중 정당으로의 전환안을 끝내 통과시켰습니다. 좌파와 중도파는 새 강령이 창당 이념을 배반하고 마르크스주의를 버리고 부르주아 기회주의로 돌아선 것이라 비난합니다. 어쨌든, 우리는 이제 프롤레타리아만이 아닌 모든 국민을 대표하는 정당입니다.
+험난하고 논쟁적인 과정이었지만, 우리는 대중 정당으로의 전환안을 끝내 통과시켰습니다. 좌파와 중앙파는 새 강령이 창당 이념을 배반하고 마르크스주의를 버리고 부르주아 기회주의로 돌아선 것이라 비난합니다. 어쨌든, 우리는 이제 프롤레타리아만이 아닌 모든 국민을 대표하는 정당입니다.
 
 우리의 새로운 강령을 알리기 위해 새로운 캠페인을 시작해야 할까요?
 
