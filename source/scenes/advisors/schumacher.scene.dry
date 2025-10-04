@@ -5,9 +5,9 @@ card-image: img/portraits/SchumacherKurt.jpg
 view-if: schumacher_advisor = 1
 new-page: true 
 
-= Kurt Schumacher
+= 쿠르트 슈마허
 
-제1차 세계대전 참전용사이자 신수정주의 지도자인 쿠르트 슈마허는 나치에 대한 강경한 대응을 주장한다.
+제1차 세계대전 참전용사이자 신수정주의 지도자인 쿠르트 슈마허는 나치에 대한 강경 대응을 주장합니다.
 
 - @emergency_fundraising
 - @build_reichsbanner
@@ -15,30 +15,30 @@ new-page: true
 - @root: Return to main
 
 @emergency_fundraising
-title: Emergency Fundraising
-subtitle: An emergency infusion of resources.
+title: 긴급 자금 조달
+subtitle: 부족한 자금을 긴급히 수혈합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; resources += dues
 #view-if: difficulty < 1
 
 # Schumacher's emergency fundraising is available on all difficulties.
 
-We have gained +[+ dues +] resources.
+자금 +[+ dues +]를 획득했습니다.
 
 @build_reichsbanner
-title: Reichsbanner
-subtitle: Schumacher supports providing more resources to the Reichsbanner.
+title: 국기단
+subtitle: 슈마허는 국기단에 더 많은 자원을 지원하는 것을 지지합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; reichsbanner_timer -= 6; last_advisor_action = 1
 go-to: reichsbanner
 
 @moderate_economic_plan
-title: Support the reformist economic plan
-subtitle: Call for a limited program of job creation without deficit spending.
+title: 개혁주의 경제 계획 지지
+subtitle: 재정 적자 없이 제한적인 일자리 창출 프로그램을 추진할 것을 요구합니다.
 choose-if: advisor_action_timer = 0 and moderate_plan_adopted = 0 and black_thursday_seen = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if moderate_economic_plan = 0 : We have already adopted the reformist economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?] [? if moderate_economic_plan = 0 : 우리는 이미 개혁주의 경제 계획을 채택했습니다. ?] [? if black_thursday_seen == 0 : 현재는 경제 위기 상황이 아닙니다. ?]
 on-arrival: advisor_action_timer = 6
 go-to: crisis_program.support_moderate
 

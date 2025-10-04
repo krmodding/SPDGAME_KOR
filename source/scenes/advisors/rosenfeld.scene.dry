@@ -5,41 +5,41 @@ card-image: img/portraits/RosenfeldKurt.jpg
 view-if: rosenfeld_advisor = 1
 new-page: true 
 
-= Kurt Rosenfeld
+= 쿠르트 로젠펠트
 
-로젠펠트는 베를린에서 변호사로 활동하며, 좌익 인사들을 변호해왔다. 그는 공산당과의 협력과 계급투쟁 노선을 지지한다.
+로젠펠트는 베를린에서 활동하는 변호사로, 좌익 인사들의 변호를 맡아왔습니다. 그는 공산당과의 협력과 계급 투쟁 노선을 지지합니다.
 
 - @building_the_left
 - @kpd_cooperation
 - @against_toleration
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @building_the_left
-title: Building the Left
-subtitle: Push the SPD to the left.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 좌파 세력 구축
+subtitle: 사민당을 좌경화합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 6; left_dissent -= 8; reformist_dissent += 2
 
-We have increased the strength of the left faction with the SPD.
+우리는 사민당 내 좌파의 세력을 강화했습니다.
 
 @kpd_cooperation
-title: Cooperation with the KPD
-subtitle: Push the party to be more friendly towards the KPD.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 공산당과의 협력
+subtitle: 당이 공산당에 더 우호적인 태도를 취하도록 촉구합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 5; kpd_relation += 4*(1-dissent); reformist_dissent += 2; communist_coalition += 1 if kpd_cooperation_seen <= 1; kpd_cooperation_seen += 1
 
-Through his work, Rosenfeld has defended individual KPD members; this should make some connections possible.
+로젠펠트는 활동을 통해 개별 공산당원들을 변호해왔습니다. 이를 통해 양측 간의 접점이 생길 수 있을 것입니다.
 
 @against_toleration
-title: Against toleration
+title: 관용 협정에 반대
 view-if: not constructive_vonc
-subtitle: Break our current toleration arrangement, and bring down the government via a no-confidence vote.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_toleration == 0 : The SPD is not currently in toleration. ?]
+subtitle: 현재의 관용 협정을 파기하고, 불신임 투표를 통해 정부를 붕괴시킵니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?] [? if spd_toleration == 0 : T사민당은 현재 관용 협정을 맺지 않았습니다. ?]
 choose-if: advisor_action_timer == 0 and spd_toleration
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time + 3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 4; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 8
 
-We have grown tired of the burdens of toleration, and have called a vote of no confidence in the current minority government.
+우리는 관용 협정에 따르는 부담에 지쳤고, 현 소수 정부에 대한 불신임안을 제출했습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+새로운 선거가 [+ next_election_year +]년 [+ next_election_month : month +]월로 정해졌습니다.
