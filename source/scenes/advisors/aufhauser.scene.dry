@@ -5,47 +5,47 @@ card-image: img/portraits/AufhäuserSiegfried.jpg
 view-if: aufhauser_advisor = 1
 new-page: true 
 
-= Siegfried Aufhäuser
+= 지크프리트 아우프호이저
 
-아우하우저는 사회주의 성향의 사무직 노조 결사체인 독일자유사무직총연맹(AfA-Bund)의 지도자이다.
+아우하우저는 사회주의 성향의 사무직 노조 결사체인 독일자유사무직총연맹(AfA-Bund)의 지도자입니다.
 
 - @white_collar
 - @union_unity
 - @crisis
 - @moderate_economic_plan
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @white_collar
-title: Organizing white-collar workers
-subtitle: Improve our standing among the new middle class.
+title: 화이트칼라 노동자 조직화
+subtitle: 신흥 중산층 사이에서 우리의 입지를 강화합니다.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?] 
 on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent);
 
-We have increased our organizing among white-collar workers.
+우리는 화이트칼라 노동자들 사이에서 조직 활동을 강화했습니다.
 
 @union_unity
-title: Union-party coordination
-subtitle: Reduce dissent among the unions.
+title: 노조-정당 간 공조
+subtitle: 노조 진영의 불만을 감소시킵니다.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
 
-We have reduced tensions with the Labor faction.
+우리는 노동계와의 갈등을 완화했습니다.
 
 @crisis
-title: Addressing the economic crisis
-subtitle: Aufhäuser can help support a left-wing economic program.
+title: 경제 위기 대응
+subtitle: 아우프호이저는 좌파 경제 강령을 지원하는 데 도움을 줄 수 있습니다.
 choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_thursday_seen == 1 and nationalization_support <= 3
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if black_thursday_seen == 0 : 현재는 경제 위기 상황이 아닙니다. ?][? if nationalization_adopted > 0 : 우리는 이미 좌파 계획을 채택했습니다. ?]
 on-arrival: advisor_action_timer = 6; 
 go-to: crisis_program.support_left 
 
 @moderate_economic_plan
-title: Support the reformist economic plan
-subtitle: Aufhäuser can also support a moderate economic plan.
+title: 개혁주의 경제 계획 지지
+subtitle: 아우프호이저는 온건한 경제 계획 또한 지지할 수 있습니다.
 choose-if: advisor_action_timer = 0 and moderate_plan_adopted = 0 and black_thursday_seen = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if moderate_economic_plan = 0 : We have already adopted the reformist economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?] [? if moderate_economic_plan = 0 : 우리는 이미 개혁주의 경제 계획을 채택했습니다. ?] [? if black_thursday_seen == 0 : 현재는 경제 위기 상황이 아닙니다. ?]
 on-arrival: advisor_action_timer = 6
 go-to: crisis_program.support_moderate
 

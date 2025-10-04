@@ -7,35 +7,35 @@ new-page: true
 
 = Otto Braun
 
-브라운은 독일에서 가장 큰 주인 프로이센 자유주의 총리를 [? if spd_prussia = 1 : 역임하고 있다. ?][? if spd_prussia = 0 : 역임했다. ?] 그는 부르주아 정당들과 협력을 모색하는 개혁주의 지도자이다.
+브라운은 독일에서 가장 큰 주인 프로이센 자유주의 총리를 [? if spd_prussia = 1 : 역임하고 있습니다. ?][? if spd_prussia = 0 : 역임했습니다. ?] 그는 부르주아 정당들과 협력을 모색하는 개혁주의 지도자입니다.
 
 - @coalition
 - @prussian_bulwark
 - @snap_election
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @coalition
-title: Negotiating with the Coalition
-subtitle: Braun can improve our relationships with our centrist and center-right coalition partners in Prussia as well as in the Reichstag.
+title: 연정 파트너와 협상하기
+subtitle: 브라운은 프로이센과 제국의회 양쪽에서 우리의 중도 및 중도우파 연정 파트너들과의 관계를 개선할 수 있습니다.
 choose-if: advisor_action_timer <= 0 and (spd_prussia or in_weimar_coalition or in_grand_coalition or in_popular_front)
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not spd_prussia : The SPD does not control the Prussian government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?] [? if not spd_prussia : 사민당이 프로이센 주정부를 장악하고 있지 않습니다. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 6; ddp_relation += 6; dvp_relation += 2; dvp_relation += 3 if in_grand_coalition
 
-We have improved our relations with the [? if in_grand_coalition : Center (Zentrum) Party, [+ ddp_name +], and DVP, ?][? if not in_grand_coalition: Center (Zentrum) Party and [+ ddp_name +], ?] and reduced tensions with the coalition.
+우리는 [? if in_grand_coalition : 중앙당(Zentrum), [+ ddp_name +], 그리고 독일인민당(DVP)과의 관계를 개선하고, ?][? if not in_grand_coalition: 중앙당(Zentrum) 및 [+ ddp_name +]와의 관계를 개선하고, ?] 연정 내의 갈등을 완화했습니다.
 
 @prussian_bulwark
-title: The Prussian Bulwark
-subtitle: As the Minister-President of Prussia, Braun has power over the Prussian bureaucracy and security services.
+title: 프로이센 보루
+subtitle: 프로이센의 주총리로서, 브라운은 프로이센 관료 조직과 안보 기관에 대한 권한을 갖습니다.
 choose-if: advisor_action_timer <= 0 and spd_prussia = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if spd_prussia == 0 : The SPD does not control Prussia. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?][? if spd_prussia == 0 : 사민당이 프로이센을 장악하고 있지 않습니다. ?]
 on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
 go-to: prussian_affairs
 
 @snap_election
-title: Snap Election
-subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Braun" and president != "Braun" : Braun must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if president = "Braun" and presidential_powers : We have removed this power from the president with a constitutional reform. ?]
+title: 조기 총선
+subtitle: 조기 총선을 요구합니다.
+unavailable-subtitle: [? if chancellor != "Braun" and president != "Braun" : 브라운이 총리나 대통령이어야 합니다. ?][? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?] [? if president = "Braun" and presidential_powers : 헌법 개정으로 대통령에게서 이 권한을 제거했습니다. ?]
 choose-if: advisor_action_timer == 0 and (chancellor == "Braun" or (president == "Braun" and not presidential_powers))
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
 
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+우리는 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정된 새로운 선거를 소집했습니다.

@@ -7,46 +7,46 @@ view-if: breitscheid_advisor = 1
 
 = Rudolf Breitscheid
 
-과거 독립사민당의 일원이었던 브라이트샤이드는 오랫동안 사민당의 지도자로 활동해왔다. 노동계급 출신이자 박사학위를 보유한 그는 자유주의자로 정치 경력을 시작했다.
+과거 독립사민당의 일원이었던 브라이트샤이트는 오랫동안 사민당의 지도자로 활동해왔습니다. 노동계급 출신이자 박사 학위를 가진 그는 자유주의자로 정치 경력을 시작했습니다.
 
 - @breitscheid_international
 - @breitscheid_foreign
 - @party_discipline
 - @snap_election
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @breitscheid_international
-title: International Party Relations
-subtitle: Breitscheid is one of our contacts with international socialist parties.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 국제 정당 관계
+subtitle: 브라이트샤이트는 국제 사회주의 정당들과의 연락책 중 한 명입니다.  
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
 go-to: international_relations
 
 @breitscheid_foreign
-title: Foreign Policy
-subtitle: As Foreign Minister, Breitscheid can set our foreign policy.
-unavailable-subtitle: [? if not spd_in_government: The SPD is not in government. ?] [? if foreign_minister_party != "SPD" : The SPD does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 외교 정책
+subtitle: 외무부 장관으로서 브라이트샤이트는 우리의 외교 정책을 수립할 수 있습니다.
+unavailable-subtitle: [? if not spd_in_government: 사민당이 정부에 참여하고 있지 않습니다. ?] [? if foreign_minister_party != "SPD" : 사민당이 외무부 장관직을 맡고 있지 않습니다. ?][? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer == 0 and spd_in_government and foreign_minister_party == "SPD"
 on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8; last_advisor_action = 1
 go-to: foreign_policy
 
 
 @party_discipline
-title: Party Discipline
-subtitle: Reduce dissent across the party.
+title: 당 기강 확립
+subtitle: 당 전체의 불만을 감소시킵니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
 
-We have enforced party discipline to reduce dissent across all factions.
+우리는 모든 파벌의 불만을 줄이기 위해 당 기강을 확립했습니다.
 
 
 @snap_election
-title: Snap Election
-subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Breitscheid" : Breitscheid must be Chancellor. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 조기 총선
+subtitle: 조기 총선을 요구합니다.
+unavailable-subtitle: [? if chancellor != "Breitscheid" : 브라이트샤이트가 총리여야 합니다. ?][? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남았습니다. ?]
 choose-if: advisor_action_timer == 0 and chancellor == "Breitscheid"
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+우리는 [+ next_election_year +]년 [+ next_election_month : month +]월로 예정된 새로운 선거를 소집했습니다.
